@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivo</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/misInformes.css">
+</head>
+<body class="">
+
+    <nav class="navbar2 ">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="/siboassist.png"  class="brandLogo" >
+          </a>
+        </div>
+      </nav>
+ 
+      <br>
+      <br>
+        
+       <div class="navBarContainer">
+       
+         
+         <div class="navBar">
+           <a class="iconoNavBar" href="/"><img src="/home.webp"  width="50px" srcset=""></a>
+           <a class="iconoNavBar" href="/pacienteForm"><img src="https://cdn-icons-png.flaticon.com/512/3450/3450043.png"  width="40px" srcset=""></a>
+           <a class="iconoNavBar" href="/salaDeEsperaOperador"><img src="https://cdn-icons-png.flaticon.com/512/3511/3511809.png"   width="40px" srcset=""></a>
+           <!-- <a class="iconoNavBar" href="/informes"><img src="https://cdn-icons-png.flaticon.com/512/1395/1395482.png"   width="40px" srcset=""></a> -->
+           <a class="iconoNavBar" href="/misInformesOperador/1"><img src="https://cdn-icons-png.flaticon.com/512/2001/2001114.png" style="border-bottom:solid; padding-bottom: 2px; " width="40px" srcset=""></a>
+           <a class="iconoNavBar" href="/misDatos"><img src="https://icons.veryicon.com/png/o/miscellaneous/it-operation-and-maintenance-system-of/personal-data-5.png"  width="45px" srcset=""></a>
+         </div>
+   
+         <div class="userName">
+           <h3 id="usuario"></h3>
+           <a href="/logout"><img src="/logoutIcon.webp"  width="20px" style="padding-bottom: 4px;" srcset=""></a>
+         </div>
+         
+       </div>
+
+       <br>
+       
+    
+
+    <h2> Archivo de Informes</h2> 
+    <br>
+
+    
+    <div class="d-flex flex-column align-items-center justify-content-center">
+        <button style="background-color: black; border-color: black; " class="btn btn-primary" onclick="buscar()">Buscador</button>
+    </div>
+    <br>
+   
+    <div class="table-wrapper" id="results">
+    <table  class="fl-table">    
+    <thead>
+       <tr>
+           <th>Nombre</th>
+           <th>Apellido</th>
+           <th>Fecha </th>
+           <th>Ver</th>
+       </tr>
+    </thead>
+    <tbody id="registros"></tbody>
+    </table>
+    </div> 
+     <br>
+    
+
+    
+    <nav class="container-fluid d-flex flex-column w-100 align-items-center">
+        <ul class="pagination" id="paginator">
+          
+        </ul>
+    
+    </nav>
+
+    
+    
+   
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/misInformesOperador.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+</body>
+</html>

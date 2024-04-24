@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnos a ingresar a Sala</title>
+    <link rel="stylesheet" href="/salaDeEspera.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body >
+    <nav class="navbar2 bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="/cropped-logo.png"  class="brandLogo" >
+          </a>
+        </div>
+      </nav>
+    <br>
+
+
+   <br>
+   <br>
+     
+    <div class="navBarContainer">
+      
+      <div class="userName">
+        <h3 id="usuario"></h3>
+        <a href="/logout"><img src="/logoutIcon.webp"  width="20px" style="padding-top: 7px;" srcset=""></a>
+      </div>
+      
+    </div>
+    
+ 
+    <h2 id="salaTitle">Turnos a ingresar a Sala </h2> 
+
+    <br>
+
+    <div class="divBtnReset">
+        <button class="btnSalas" onclick="buscar()">Buscador</button>
+    </div>
+    <br>
+
+
+    <div class="table-wrapper" id="results">
+    <table  class="fl-table">
+        
+    <thead>
+       <tr>
+           <th >Nombre</th>
+           <th>Apellido</th>
+           <th>Tipo</th>
+           <th>Ingresar</th>
+           <th>Eliminar </th>
+       </tr>
+    </thead>
+    <tbody id="registros"></tbody>
+    </table>
+    </div> 
+
+    <br>
+
+    <div class="flecha">
+        <a href="/"><img src="https://cdn-icons-png.flaticon.com/512/3114/3114883.png" width="40px" alt=""></a>
+    
+    </div>
+    <br>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/ingresarAsala.js"></script>
+    
+</body>
+</html>

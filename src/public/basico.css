@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* Reseting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+input[type='radio']{
+    width: 25px;
+    height: 25px;
+}
+
+input[type='checkbox']{
+    width: 25px;
+    height: 25px;
+}
+
+.wrapper {
+    max-width: 800px;
+    min-height: 800px;
+    margin: 80px auto;
+    padding: 40px 30px 30px 30px;
+    background-color: white;
+    border-radius: 15px;
+    
+}
+
+.logo {
+    width: 80px;
+    margin: auto;
+}
+
+.logo img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px black,
+        0px 0px 0px 5px black,
+        8px 8px 15px black,
+        -8px -8px 15px black;
+        background-color: white;
+}
+
+.wrapper .name {
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 1.3px;
+    padding-left: 10px;
+    color: black;
+}
+
+.wrapper .name2 {
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1.3px;
+    padding-left: 10px;
+    color: black;
+}
+
+.wrapper .form-field input {
+    width: 100%;
+    display: block;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.2rem;
+    color: black;
+    padding: 10px 15px 10px 10px;
+    /* border: 1px solid red; */
+}
+
+
+
+.wrapper .form-field {
+    padding-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: inset 5px 5px 5px #cbced1, inset -5px -5px 5px #fff;
+}
+
+.wrapper .form-field .fas {
+    color: #555;
+}
+
+.wrapper .btn {
+    box-shadow: none;
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    color: #fff;
+    border-radius: 25px;
+   
+    letter-spacing: 1.3px;
+    
+}
+
+.wrapper .btn:hover {
+    background-color: grey;
+}
+
+
+.wrapper a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: #10b6ef;
+}
+
+.wrapper a:hover {
+    color: #0ea3d4;
+}
+
+
+.logo2 {
+    width: 50px;
+    margin: auto;
+    position: absolute;
+    display: none;
+}
+
+.logo2 img {
+    width: 100%;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px #5f5f5f,
+        0px 0px 0px 5px #ecf0f3,
+        8px 8px 15px #a7aaa7,
+        -8px -8px 15px #fff;
+}
+
+.logo3 {
+    width: 50px;
+    margin: auto;
+    position: absolute;
+}
+
+.logo3 img {
+    width: 100%;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px #5f5f5f,
+        0px 0px 0px 5px #ecf0f3,
+        8px 8px 15px #a7aaa7,
+        -8px -8px 15px #fff;
+}
+
+.botoneicono{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .btnX {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+  .select{
+    width: 100%;
+  }
+
+  .miDolor{
+    display: none;
+  }
+
+  .miDiarrea{
+    display: none;
+  }
+
+  .miConstipacion{
+    display: none;
+  }
+
+  .occult{
+    display: none;
+  }
+
+  .informeForm{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .bodyInformarFlex{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+
+  
+
+
+@media(max-width: 450px) {
+    .wrapper {
+        margin: 30px 20px;
+        padding: 40px 15px 15px 15px;
+    }
+
+    .informeForm{
+        display: flex;
+        flex-direction: column;
+      }
+
+      .bodyInformarFlex{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+      }
+    
+    
+}

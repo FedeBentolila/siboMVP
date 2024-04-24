@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de test SIBO</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/basico.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body >
+    <nav class="navbar">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="/siboassist.png"  class="brandLogo" >
+          </a>
+        </div>
+      </nav>
+
+
+      <div class="wrapper">
+       
+       
+
+        <form id="form"  action="/agregarEncuesta" method="post">
+
+           
+
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/2666/2666469.png" alt="">
+            </div>
+
+            <div class="text-center mt-4 name">
+                Por favor complete el siguiente formulario
+            </div>
+
+            <div class="text-center mt-4 name">
+                Marcar aquellos síntomas que padezca con frecuencia
+            </div>
+
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Distensión Abdominal
+                </div>
+                <input type="checkbox" name="distensionAbdominal" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Diarrea
+                </div>
+                <input type="checkbox" id="diarrea" name="diarrea" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Náuseas
+                </div>
+                <input type="checkbox" name="nauseas" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Constipación
+                </div>
+                <input id="constipacion" type="checkbox" name="constipacion" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Flatulencias
+                </div>
+                <input type="checkbox" name="flatulencias" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Erutos
+                </div>
+                <input type="checkbox" name="erutos" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Dolor de cabeza
+                </div>
+                <input type="checkbox" name="cefalea" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Visión Borrosa
+                </div>
+                <input type="checkbox" name="visionBorrosa" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Falta de Concentración
+                </div>
+                <input type="checkbox" name="faltaConcentracion" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Acidez
+                </div>
+                <input type="checkbox" name="pirosis" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Insomnio
+                </div>
+                <input type="checkbox" name="insomnio" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Pérdida de peso
+                </div>
+                <input type="checkbox" name="perdidaPeso" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Cólicos abdominales
+                </div>
+                <input type="checkbox" name="colicos" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Dolor Abdominal
+                </div>
+                <input id="dolorAbdominal" type="checkbox" name="dolorAbdominal" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Cansancio
+                </div>
+                <input type="checkbox" name="cansancio" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Embotamiento mental
+                </div>
+                <input type="checkbox" name="embotamiento" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Inapetencia
+                </div>
+                <input type="checkbox" name="inapetencia" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Dolor articular
+                </div>
+                <input type="checkbox" name="artralgias" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Dermatitis
+                </div>
+                <input type="checkbox" name="dermatitis" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Dolor muscular
+                </div>
+                <input type="checkbox" name="mialgias" >
+            </div>
+            <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Regurgitación
+                </div>
+                <input type="checkbox" name="regurgitacion" >
+            </div>
+          <!--   <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                <div class="text-center  name2">
+                    Epigastralgia
+                </div>
+                <input type="checkbox" name="regurgitacion" >
+            </div> -->
+
+
+            <br>
+            <br>
+
+            <div class="logo">
+                <img src="https://static.thenounproject.com/png/258307-200.png" alt="">
+            </div>
+
+
+            <div class="text-center mt-4 name">
+                Aspecto de la materia fecal
+            </div>
+
+            <div class=" d-flex flex-column  mt-4">
+
+                <div>
+                    
+                </div>
+                
+                <label for="bristol1">Trozos duros separados, como nueces o excrementos de oveja, que pasan con dificultad</label>
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="bristol1"><img src="/bristol1.png" width="30%" alt=""></label>
+                    <input type="radio" id="bristol1" name="bristol" value="1" required />
+                </div>
+                <br>
+                <label for="bristol2">Como una salchicha compuesta de fragmentos</label>
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="bristol2"><img src="/bristol2.png" width="30%" alt=""></label>
+                    <input type="radio" id="bristol2" name="bristol" value="2" required />
+                </div>
+                <br>
+
+                <label for="bristol3">Con forma de morcilla, con grietas en la superficie</label>
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="bristol3"><img src="/bristol3.png" width="30%" alt=""></label>
+                    <input type="radio" id="bristol3" name="bristol" value="3" required />
+                </div>
+                <br>
+                <label for="bristol4">Como una salchicha o cómo serpiente, lisa y blanda</label>
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="bristol4"><img src="/bristol4.png" width="30%" alt=""></label>
+                    <input type="radio" id="bristol4" name="bristol" value="4" required />
+                </div>
+                <br>
+                <label for="bristol5">Trozos de masa pastosa con bordes definidos, que se defecan fácilmente</label>
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="bristol5"><img src="/bristol5.png" width="30%" alt=""> </label>
+                    <input type="radio" id="bristol5" name="bristol" value="5" required />
+                </div>
+
+                <br>
+                <label for="bristol6">Fragmentos blandos y esponjosos, con bordes irregulares y consistencia pastosa</label>
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="bristol6"><img src="/bristol6.png" width="30%" alt=""></label>
+                    <input type="radio" id="bristol6" name="bristol" value="6" required />
+                </div>
+                <br>
+                <label for="bristol7">Acuosa, sin pedazos sólidos, totalmente líquida</label>
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="bristol7"><img src="/bristol7.png" width="30%" alt=""> </label>
+                    <input type="radio" id="bristol7" name="bristol" value="7" required />
+                </div>
+  
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+
+
+            <div id="miDolor" class="miDolor">
+            <div class="logo">
+                <img src="https://cdn3.iconfinder.com/data/icons/pancreatic-pancreas-cancer/226/pancreatic-pancreas-cancer-003-512.png" alt="">
+            </div>
+
+
+            <div class="text-center mt-4 name">
+                Mi dolor abdominal
+            </div>
+
+            <div class="text-center mt-4 name2">
+                Es recurrente al menos 1 vez por semana durante los ultimos 3 meses
+            </div>
+            <br>
+
+            <div class=" d-flex flex-column  justify-content-between">
+
+                <div class=" occult">
+                    <label for="oculto1">OCULTO</label>
+                    <input type="radio" checked  id="oculto1"  name="dolorRecurrente" value="sinDolor" required />
+                </div>
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="pain1">Es recurrente</label>
+                    <input type="radio"  id="pain1"  name="dolorRecurrente" value="true" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="pain2">No es recurrente</label>
+                    <input type="radio"  id="pain2"  name="dolorRecurrente" value="false" required />
+                </div>
+  
+            </div>
+
+            <div class="text-center mt-4 name2">
+                Mi dolor mejora al evacuar
+            </div>
+            <br>
+
+            <div class=" d-flex flex-column  justify-content-between">
+
+                <div class=" occult">
+                    <label for="oculto2">OCULTO</label>
+                    <input type="radio" checked  id="oculto2"  name="dolorMejoraEvacuar" value="sinDolor" required />
+                </div>
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="pain3">Mejora</label>
+                    <input type="radio"  id="pain3"  name="dolorMejoraEvacuar" value="true" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="pain4">No mejora</label>
+                    <input type="radio"  id="pain4"  name="dolorMejoraEvacuar" value="false" required />
+                </div>
+  
+            </div>
+
+            <div class="text-center mt-4 name2">
+                Se asocia a cambios en la consistencia de las deposiciones
+            </div>
+            <br>
+
+            <div class=" d-flex flex-column  justify-content-between">
+
+                <div class=" occult">
+                    <label for="oculto3">OCULTO</label>
+                    <input type="radio" checked  id="oculto3"  name="dolorCambioConsistencia" value="sinDolor" required />
+                </div>
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="pain5">Se asocia</label>
+                    <input type="radio"  id="pain5"  name="dolorCambioConsistencia" value="true" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="pain6">No se asocia</label>
+                    <input type="radio"   id="pain6"  name="dolorCambioConsistencia" value="false" required />
+                </div>
+  
+            </div>
+
+            <div class="text-center mt-4 name2">
+                Se asocia a cambios en la frecuencia de las deposiciones
+            </div>
+            <br>
+
+            <div class=" d-flex flex-column  justify-content-between">
+
+                <div class="occult">
+                    <label for="oculto4">OCULTO</label>
+                    <input type="radio" checked  id="oculto4"  name="dolorCambioFrecuencia" value="sinDolor" required />
+                </div>
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="pain7">Se asocia</label>
+                    <input type="radio"  id="pain7"  name="dolorCambioFrecuencia" value="true" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="pain8">No se asocia</label>
+                    <input type="radio"  id="pain8"  name="dolorCambioFrecuencia" value="false" required />
+                </div>
+  
+            </div>
+
+            <div class="text-center mt-4 name2">
+                Empeora con stress
+            </div>
+            <br>
+
+            <div class=" d-flex flex-column  justify-content-between">
+
+                <div class=" occult">
+                    <label for="oculto5">OCULTO</label>
+                    <input type="radio" checked  id="oculto5"  name="dolorStress" value="sinDolor" required />
+                </div>
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="pain9">Empeora</label>
+                    <input type="radio"  id="pain9"  name="dolorStress" value="true" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="pain10">No empeora</label>
+                    <input type="radio"  id="pain10"  name="dolorStress" value="false" required />
+                </div>
+  
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            </div>
+
+            <div id="miDiarrea" class="miDiarrea">
+
+                <div class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3023/3023704.png" alt="">
+                </div>
+    
+    
+                <div class="text-center mt-4 name">
+                    Mi diarrea
+                </div>
+
+
+
+                <div class="text-center mt-4 name2">
+                    ¿Cada cuánto presenta diarrea?
+                </div>
+                <br>
+    
+                <div class=" d-flex flex-column  justify-content-between">
+
+                    <div class=" occult">
+                        <label for="oculto6">OCULTO</label>
+                        <input type="radio" checked  id="oculto6"  name="frecuenciaDiarrea" value="sinDiarrea" required />
+                    </div>
+                    
+                    <div class="mt-3 d-flex flex-row justify-content-between">
+                        <label for="diarrea1">Todos los días</label>
+                        <input type="radio"  id="diarrea1"  name="frecuenciaDiarrea" value="diariamente" required />
+                    </div>
+    
+                    <div class="mt-3 d-flex flex-row justify-content-between">
+                        <label for="diarrea2">1 o 2 veces por semana</label>
+                        <input type="radio"  id="diarrea2"  name="frecuenciaDiarrea" value="1-2/semana" required />
+                    </div>
+
+                    <div class="mt-3 d-flex flex-row justify-content-between">
+                        <label for="diarrea3">1 vez cada 2 semanas o mas</label>
+                        <input type="radio"  id="diarrea3"  name="frecuenciaDiarrea" value="menor1-2/semana" required />
+                    </div>
+      
+                </div>
+
+                <div class="text-center mt-4 name2">
+                    ¿Cuantas veces va al baño por dia?
+                </div>
+                <br>
+    
+                <div class=" d-flex flex-column  justify-content-between">
+
+                    <div class=" occult">
+                        <label for="oculto7">OCULTO</label>
+                        <input type="radio" checked  id="oculto7"  name="frecuenciaDeposiciones" value="sinDiarrea" required />
+                    </div>
+                    
+                    <div class="mt-3 d-flex flex-row justify-content-between">
+                        <label for="diarrea4">1 por día</label>
+                        <input type="radio"   id="diarrea4"  name="frecuenciaDeposiciones" value="1" required />
+                    </div>
+    
+                    <div class="mt-3 d-flex flex-row justify-content-between">
+                        <label for="diarrea5">3 a 5 por día</label>
+                        <input type="radio"  id="diarrea5"  name="frecuenciaDeposiciones" value="3-5" required />
+                    </div>
+
+                    <div class="mt-3 d-flex flex-row justify-content-between">
+                        <label for="diarrea6">Más de 5 por día</label>
+                        <input type="radio"  id="diarrea6"  name="frecuenciaDeposiciones" value="mayor5" required />
+                    </div>
+      
+                </div>
+
+                <div class="text-center mt-4 name2">
+                    Marcar características de mi materia fecal
+                </div>
+                <br>
+
+                <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                    <div class="text-center  name2">
+                        Voluminosas
+                    </div>
+                    <input type="checkbox" name="voluminosas" >
+                </div>
+                <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                    <div class="text-center  name2">
+                        Pastosas
+                    </div>
+                    <input type="checkbox" name="pastosas" >
+                </div>
+                <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                    <div class="text-center  name2">
+                        Flotan
+                    </div>
+                    <input type="checkbox" name="flotan" >
+                </div>
+                <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                    <div class="text-center  name2">
+                        Malolientes
+                    </div>
+                    <input type="checkbox" name="malolientes" >
+                </div>
+                <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                    <div class="text-center  name2">
+                        Con moco
+                    </div>
+                    <input type="checkbox" name="moco" >
+                </div>
+                <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                    <div class="text-center  name2">
+                        Escasa pero varias veces
+                    </div>
+                    <input type="checkbox" name="escasasYvarias" >
+                </div>
+                <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                    <div class="text-center  name2">
+                        Grasosas
+                    </div>
+                    <input id="dolorAbdominal" type="checkbox" name="esteatorrea" >
+                </div>
+                <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                    <div class="text-center  name2">
+                        Amarillas o blanquecinas
+                    </div>
+                    <input type="checkbox" name="hipocolia" >
+                </div>
+                <div class=" d-flex flex-row align-items-center justify-content-between mt-4"> 
+                    <div class="text-center  name2">
+                        Líquidas
+                    </div>
+                    <input type="checkbox" name="liquidas" >
+                </div>
+
+
+            <br>
+            <br>
+            <br>
+
+            </div>
+
+
+            <div id="miConstipacion" class="miConstipacion">
+                <div class="logo">
+                    <img src="https://static.thenounproject.com/png/5047895-200.png" alt="">
+                </div>
+    
+    
+                <div class="text-center mt-4 name">
+                    Mi Constipación
+                </div>
+
+                <div class="text-center mt-4 name2">
+                    Frecuencia de deposiciones
+                </div>
+                <br>
+    
+                <div class=" d-flex flex-column  justify-content-between">
+
+                    <div class=" occult">
+                        <label for="oculto8">OCULTO</label>
+                        <input type="radio" checked  id="oculto8"  name="frecuenciaConstipacion" value="sinConstipacion" required />
+                    </div>
+                    
+                    <div class="mt-3 d-flex flex-row justify-content-between">
+                        <label for="constipacion1">Todos los días pero me cuesta</label>
+                        <input type="radio"  id="constipacion1"  name="frecuenciaConstipacion" value="diarioYdificultoso" required />
+                    </div>
+    
+                    <div class="mt-3 d-flex flex-row justify-content-between">
+                        <label for="constipacion2">Día por medio</label>
+                        <input type="radio"  id="constipacion2"  name="frecuenciaConstipacion" value="48hs" required />
+                    </div>
+
+                    <div class="mt-3 d-flex flex-row justify-content-between">
+                        <label for="constipacion3">2 veces por semana</label>
+                        <input type="radio"  id="constipacion3"  name="frecuenciaConstipacion" value="2/semana" required />
+                    </div>
+
+                    <div class="mt-3 d-flex flex-row justify-content-between">
+                        <label for="constipacion4">1 vez por semana</label>
+                        <input type="radio"  id="constipacion4"  name="frecuenciaConstipacion" value="1/semana" required />
+                    </div>
+      
+                </div>
+
+            <br>
+            <br>
+            <br>
+
+            </div>
+
+            
+
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/1200px-Icon-round-Question_mark.svg.png" alt="">
+            </div>
+
+
+            <div class="text-center mt-4 name">
+                Duración de síntomas
+            </div>
+
+            <div class=" d-flex flex-column  mt-4">
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="contactChoice1">Mas de un año</label>
+                    <input type="radio" id="contactChoice1" name="duracionSintomas" value="+1" required />
+                </div>
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="contactChoice2">6 meses y un año</label>
+                    <input type="radio" id="contactChoice2" name="duracionSintomas" value="6m-1a" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="contactChoice3">Menos de 6 meses</label>
+                    <input type="radio" id="contactChoice3" name="duracionSintomas" value="6m" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="contactChoice4">No presento ningun síntoma</label>
+                    <input type="radio" id="contactChoice4" name="duracionSintomas" value="ninguno" required />
+                </div>
+  
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/7145/7145079.png" alt="">
+            </div>
+
+
+            <div class="text-center mt-4 name">
+                Estado de ánimo
+            </div>
+
+            <br>
+            <br>
+
+            <div class="text-center mt-4 name2">
+                Me molestaron cosas que usualmente no me molestan
+            </div>
+
+            <div class=" d-flex flex-column  justify-content-between">
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option1">Nunca</label>
+                    <input type="radio"  id="option1"  name="CESD1" value="1" required />
+                </div>
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option2">A veces</label>
+                    <input type="radio" id="option2"  name="CESD1" value="2" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option3">Muchas veces</label>
+                    <input type="radio" id="option3"  name="CESD1" value="3" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option4">Siempre</label>
+                    <input type="radio" id="option4"  name="CESD1" value="4" required />
+                </div>
+  
+            </div>
+
+
+            <div class="text-center mt-4 name2">
+                Tuve dificultad para concentrarme en lo que hacia
+            </div>
+
+            <div class=" d-flex flex-column justify-content-between">
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option11">Nunca</label>
+                    <input type="radio" id="option11" name="CESD2" value="1" required />
+                </div>
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option12">A veces</label>
+                    <input type="radio" id="option12" name="CESD2" value="2" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option13">Muchas veces</label>
+                    <input type="radio" id="option13"  name="CESD2" value="3" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option14">Siempre</label>
+                    <input type="radio" id="option14"  name="CESD2" value="4" required />
+                </div>
+  
+            </div>
+
+            <div class="text-center mt-4 name2">
+                Me sentí deprimido
+            </div>
+
+            <div class=" d-flex flex-column justify-content-between">
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option15">Nunca</label>
+                    <input type="radio" id="option15" name="CESD3" value="1" required />
+                </div>
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option16">A veces</label>
+                    <input type="radio" id="option16"  name="CESD3" value="2" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option17">Muchas veces</label>
+                    <input type="radio" id="option17"  name="CESD3" value="3" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option18">Siempre</label>
+                    <input type="radio" id="option18"  name="CESD3" value="4" required />
+                </div>
+  
+            </div>
+
+            <div class="text-center mt-4 name2">
+                Me sentí solo
+            </div>
+
+            <div class=" d-flex flex-column justify-content-between">
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option19">Nunca</label>
+                    <input type="radio" id="option19"  name="CESD4" value="1" required />
+                </div>
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option20">A veces</label>
+                    <input type="radio" id="option20" name="CESD4" value="2" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option21">Muchas veces</label>
+                    <input type="radio" id="option21" name="CESD4" value="3" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option22">Siempre</label>
+                    <input type="radio" id="option22" name="CESD4" value="4" required />
+                </div>
+  
+            </div>
+
+            <div class="text-center mt-4 name2">
+                Me sentí nervioso
+            </div>
+
+            <div class=" d-flex flex-column justify-content-between">
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option23">Nunca</label>
+                    <input type="radio" id="option23" name="CESD5" value="1" required />
+                </div>
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option24">A veces</label>
+                    <input type="radio" id="option24" name="CESD5" value="2" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option25">Muchas veces</label>
+                    <input type="radio" id="option25"  name="CESD5" value="3" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option26">Siempre</label>
+                    <input type="radio" id="option26" name="CESD5" value="4" required />
+                </div>
+  
+            </div>
+
+            <div class="text-center mt-4 name2">
+                Disfrute la vida
+            </div>
+
+            <div class=" d-flex flex-column justify-content-between">
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option27">Nunca</label>
+                    <input type="radio" id="option27"  name="CESD6" value="4" required />
+                </div>
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option28">A veces</label>
+                    <input type="radio" id="option28"  name="CESD6" value="3" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option29">Muchas veces</label>
+                    <input type="radio" id="option29" name="CESD6" value="2" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option30">Siempre</label>
+                    <input type="radio" id="option30" name="CESD6" value="1" required />
+                </div>
+  
+            </div>
+
+            <div class="text-center mt-4 name2">
+                Sentí que no le caigo bien a la gente
+            </div>
+
+            <div class=" d-flex flex-column justify-content-between">
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option31">Nunca</label>
+                    <input type="radio" id="option31" name="CESD7" value="1" required />
+                </div>
+                
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option32">A veces</label>
+                    <input type="radio" id="option32"  name="CESD7" value="2" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option33">Muchas veces</label>
+                    <input type="radio" id="option33"  name="CESD7" value="3" required />
+                </div>
+
+                <div class="mt-3 d-flex flex-row justify-content-between">
+                    <label for="option34">Siempre</label>
+                    <input type="radio" id="option34"  name="CESD7" value="4" required />
+                </div>
+  
+            </div>
+
+   
+ 
+            
+            <br>
+            <br>
+           
+            
+            <input class="btn mt-3" type="submit" value="Enviar">
+        </form>
+
+        
+     
+    </div>
+
+      
+
+      
+
+
+
+
+
+<script src="/encuesta.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

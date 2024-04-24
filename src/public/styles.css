@@ -1,0 +1,424 @@
+
+
+
+.navbar-brand{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    left: 0;
+}
+
+.nubeCh4{
+    cursor: pointer;
+}
+
+
+
+.navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.datoCelda{
+    font-size: 20px;
+}
+
+.iconoNavBar{
+    margin: 3%;
+}
+
+.brandLogo{
+    width: 50%;
+    max-width: 200px;
+    border-color: white;
+}
+
+.contenedorInicioOperador{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    width: 60%;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.contenedorInicio{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    width: 60%;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#sig-canvas {
+    border: 2px dotted #CCCCCC;
+    border-radius: 15px;
+    cursor: crosshair;
+  }
+
+.misDatos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   
+}
+
+.firmaPrevia{
+    border-color: black;
+    border-style: solid;
+}
+
+.sectionMisDatos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.usuario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.contenedorTabla{
+    width: 50%;
+}
+
+
+
+
+    .contenedorInforme{
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .valores{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+
+    .botonera{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: fit-content;
+     }
+    
+
+     .form{
+        height: max-content;
+        background-color: whitesmoke;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: max-content;
+        text-align: center;
+        padding: 80px;
+        border-radius: 20px;
+        border-color: black;
+        border-style: solid;
+    }
+    .rowInforme{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .botonX{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .btn-formx{
+        color: white;
+        background-color: blue;
+        border-color: blue;
+        border-style: solid;
+        font-size: large;
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 20px;
+    }
+
+    .btx{
+        width: 100%;
+        height: 60px;
+    }
+
+   .botonera{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+   }
+   
+   .datosInforme{
+    width: 70%;
+   }
+
+   .clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    position: sticky;
+  }
+  
+  .time {
+    display: flex;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1a202c;
+  }
+  
+  .separator {
+    margin: 0 0.5rem;
+  }
+  
+  .hours, .minutes, .seconds {
+      display: inline-block;
+      width: 5rem;
+      text-align: center;
+      background-color: #fff;
+      color: #333;
+      border-radius: 0.5rem;
+      margin: 0 0.25rem;
+      padding: 0.25rem;
+      box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+  }
+
+  .relojYproxMedicion{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+  }
+
+  .datosFirma{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: first baseline;
+    justify-content: center;
+  }
+
+  .ocultadorDeValores{
+    width: 80%;
+    align-items: center;
+  }
+
+  .formularioH2yCH3{
+    width: 100%;
+  }
+
+  .botonformHidrogenoYmetano{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .dentroFormularioH2yCH3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .userName{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-color: black;
+    border-style: solid;
+    padding: 10px;
+    border-radius: 5px;
+    border-width: thin;
+}
+
+.userNameForm{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+
+.navBarContainerForm{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.navBarContainerFormConfirmador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navBarForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    padding: 10px;
+
+}
+  
+
+   
+    
+
+
+@media (max-width: 767px) {
+
+    .navBarForm{
+        width: 100%;
+    }
+
+    .navBarContainerForm{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .userNameForm{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+    
+    }
+
+
+    .contenedorInicio{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    .dentroFormularioH2yCH3{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+    .contenedorInicioOperador{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    .contenedorTabla{
+        width: 100%;
+    }
+
+    .relojYproxMedicion{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+    
+
+    .datosInforme{
+        width: 80%;
+       }
+
+    .botoneraYdatosPaciente{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .sectionMisDatos{
+        flex-direction: column;    
+        justify-content: center;
+        align-items: flex-start;
+    
+    }
+
+    .contenedorInforme{
+        flex-direction: column;    
+        justify-content: center;
+        align-items: center;
+        padding-top: 50px;
+
+    }
+
+    .valores{
+       flex-direction: column;
+    }
+
+    .botonera{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      
+     }
+
+     .rowInforme{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .btx{
+        width: 80%;
+        height: 60px
+    }
+
+    .datosFirma{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+   
+
+
+}

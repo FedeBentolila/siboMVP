@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <title>Informe final</title>
+    <link rel="stylesheet" href="/informeFinal.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body class="container1">
+
+    <div id="printable" class="container">
+    <div id="encabezado" class="encabezado">
+        <br>
+        <br>
+        <br>
+        
+       <!--  <img src="/cropped-logo.png" class="imagen" alt="">
+
+        <div class="parrafitoEncabezado">
+            <p class="tituloEncabezado">Centro médico Dr Bustos Fernandez</p>
+            <p>Echeverría 2771</p>
+            <p>(1428) Belgrano</p>
+            <p>C.A.B.A</p>
+            <p>(011) 4788-6103/6102 y líneas rotativas </p>
+            <p>info@cmbf.com.ar</p>
+        </div> -->
+
+    </div>
+
+
+
+    <div class="tipoProtocoloYfecha">
+        <p id="tipoEstudio"></p>
+        <p id="protocolo"></p>
+        <p id="fecha"></p>
+
+    </div>
+    
+
+    <div id="datosPaciente" class="datosPaciente">
+
+        <table class="tabla">
+            <tr>
+                <td>Paciente</td>
+                <td id="nombrePaciente"></td>
+            </tr>
+            <tr>
+                <td>DNI</td>
+                <td id="dni"></td>
+            </tr>
+            <tr>
+                <td>Cobertura</td>
+                <td id="cobertura"></td>
+            </tr>
+            <tr>
+                <td>Solicitado por</td>
+                <td id="solicitante"></td>
+            </tr>
+        </table>
+
+    </div>
+    <br>
+
+    <div id="medicionesYresultado" class="medicionesYresultado">
+
+   
+            <table id="tablaResultado" class="tablaResultado">
+
+            </table>
+           
+
+     
+        <div id="formValidar" class="formValidar">
+
+            <!-- <strong>Conclusiones</strong> -->
+            <strong>Conclusiones</strong>
+            <p id="resultadoTexto"></p>
+            <strong id="tituloH">Flora hidrogénica</strong>
+            <p id="floraHidrogenica"></p>
+            <strong id="tituloM">Flora metanogénica</strong>
+            <p id="floraMetanogenica"></p>
+            
+           
+        </div>
+
+        
+
+        
+    </div>
+    <br>
+    <p id="sintomas" class="sintomas"></p>
+    <br>
+    
+    <div class="chart-container" >
+        <canvas id="myChart"></canvas>
+    </div>
+
+    
+    <div class="firma">
+        <div id="firma">
+
+        </div>
+
+    </div>
+
+  
+</div> 
+
+<img id="btn"  class="pdfDownload" src="https://png.pngtree.com/png-vector/20221207/ourmid/pngtree-pdf-download-vector-icon-png-image_6514761.png" width="100px" alt="">
+
+<!-- <button class="btn" id="btn">Descargar </button> -->
+    <br>
+    <br>
+    <a href="/misInformes/1"><img src="https://cdn-icons-png.flaticon.com/512/3114/3114883.png" width="50px" alt=""></a>
+    
+    <!-- <button class="btn"><a style="color: white;" href="/misInformes/1">Volver</a></button> -->
+    
+    <br>
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/informeFinal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf-html2canvas@latest/dist/jspdf-html2canvas.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Datos</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body >
+    <nav class="navbar ">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="./siboassist.png"  class="brandLogo" >
+          </a>
+        </div>
+      </nav>
+
+     
+
+      <div class="navBar">
+        <a class="iconoNavBar" href="/"><img src="/home.webp"  width="50px" srcset=""></a>
+        <a class="iconoNavBar" href="/pacienteForm"><img src="https://cdn-icons-png.flaticon.com/512/3450/3450043.png"  width="40px" srcset=""></a>
+        <a class="iconoNavBar" href="/salaDeEspera"><img src="https://cdn-icons-png.flaticon.com/512/3511/3511809.png"   width="40px" srcset=""></a>
+        <a class="iconoNavBar" href="/informes"><img src="https://cdn-icons-png.flaticon.com/512/1395/1395482.png"  width="40px" srcset=""></a>
+        <a class="iconoNavBar" href="/misInformes/1"><img src="https://cdn-icons-png.flaticon.com/512/2001/2001114.png"  width="40px" srcset=""></a>
+        <a class="iconoNavBar" href="/misDatos"><img src="https://icons.veryicon.com/png/o/miscellaneous/it-operation-and-maintenance-system-of/personal-data-5.png" style="border-bottom:solid; border-color: black; padding-bottom: 2px; "  width="45px" srcset=""></a>
+    </div>
+
+      <br>
+  
+
+      <section class="sectionMisDatos " >
+       
+        <div id="usuario" class="usuario" > 
+                
+        </div>
+
+            <div class="datosFirma ">
+            <div class="p-3">
+                <div >
+                    <h2>Firma-Digital</h2>
+                    
+                </div>
+           
+                <div >
+                     <canvas id="sig-canvas" width="auto" height="160">
+                         Get a better browser, bro.
+                     </canvas>
+                 </div>
+           
+                <div >
+                    <button style="background-color: black; border-color: black; " class="btn btn-primary" id="sig-submitBtn">Subir Firma</button>
+                    <button class="btn btn-default" id="sig-clearBtn">Limpiar</button>
+                </div>
+
+                <div  style="display: none;">
+                    <div >
+                        <textarea id="sig-dataUrl" class="form-control" rows="5">Data URL for your signature will go here!</textarea>
+                    </div>
+                </div>
+            
+                <div  style="display: none;">
+                    <div >
+                        <img id="sig-image" src="" alt="Your signature will go here!"/>
+                    </div>
+                </div>
+            </div>
+            
+           
+        
+            <br>
+         
+                <div class="p-3" id="ultimaFirma">
+                    <h2>Tu Firma</h2>
+                    
+                </div>
+          
+            <br>
+            <br>
+        </div>
+        
+         
+    
+
+        
+      </section>
+      <br>
+      <br>
+
+      <section class="d-flex flex-column justify-content-center align-items-center">
+
+ <!--      <div >
+        <a href="/" class="btn btn-primary">Volver</a>
+      </div> -->
+
+    </section>
+    <br>
+    <br>
+    <br>
+
+   
+
+
+
+
+
+
+<script src="./misDatos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

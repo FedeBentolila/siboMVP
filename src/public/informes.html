@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informes por validar</title>
+    <link rel="stylesheet" href="./salaDeEspera.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body class="d-flex flex-column">
+
+    <nav class="navbar2 ">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="/siboassist.png"  class="brandLogo" >
+          </a>
+        </div>
+      </nav>
+    
+        
+       <div class="navBarContainer">
+       
+         
+         <div class="navBar">
+           <a class="iconoNavBar" href="/"><img src="/home.webp"  width="50px" srcset=""></a>
+           <a class="iconoNavBar" href="/pacienteForm"><img src="https://cdn-icons-png.flaticon.com/512/3450/3450043.png"  width="40px" srcset=""></a>
+           <a class="iconoNavBar" href="/salaDeEspera"><img src="https://cdn-icons-png.flaticon.com/512/3511/3511809.png"   width="40px" srcset=""></a>
+           <a class="iconoNavBar" href="/informes"><img src="https://cdn-icons-png.flaticon.com/512/1395/1395482.png" style="border-bottom:solid; padding-bottom: 2px; "  width="40px" srcset=""></a>
+           <a class="iconoNavBar" href="/misInformes/1"><img src="https://cdn-icons-png.flaticon.com/512/2001/2001114.png"  width="40px" srcset=""></a>
+           <a class="iconoNavBar" href="/misDatos"><img src="https://icons.veryicon.com/png/o/miscellaneous/it-operation-and-maintenance-system-of/personal-data-5.png"  width="45px" srcset=""></a>
+         </div>
+   
+         <div class="userName">
+           <h3 id="usuario"></h3>
+           <a href="/logout"><img src="/logoutIcon.webp"  width="20px" style="padding-top: 7px;" srcset=""></a>
+         </div>
+         
+       </div>
+
+     
+    <h2> Informes a validar</h2> 
+    <div class="table-wrapper">
+    <table  class="fl-table">
+        
+    <thead>
+       <tr>
+           <th>Nombre</th>
+           <th>Apellido</th>
+           <th>Tipo</th>
+           <th>Fecha</th>   
+           <th>Informe</th>  
+       </tr>
+    </thead>
+    <tbody id="registros"></tbody>
+    </table>
+    </div> 
+
+    
+ 
+    
+   
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./informes.js"></script>
+    
+</body>
+</html>

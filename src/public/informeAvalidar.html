@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe a Validar</title>
+    <link rel="stylesheet" href="/informeAvalidar.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body class="container">
+
+    <div id="encabezado" class="encabezado">
+
+        <!-- <img src="/siboassist.png" class="imagen" alt=""> -->
+
+      <!--   <div class="parrafitoEncabezado">
+            <p class="tituloEncabezado">Centro médico Dr Bustos Fernandez</p>
+            <p>Echeverría 2771</p>
+            <p>(1428) Belgrano</p>
+            <p>C.A.B.A</p>
+            <p>(011) 4788-6103/6102 y líneas rotativas </p>
+            <p>info@cmbf.com.ar</p>
+        </div> -->
+
+    </div>
+
+    <br>
+    <br>
+
+    <div class="tipoProtocoloYfecha">
+        <h2 id="tipoEstudio"></h2>
+        <h2 id="protocolo"></h2>
+        <h2 id="fecha"></h2>
+
+    </div>
+    <br>
+    <br>
+
+    <div id="datosPaciente" class="datosPaciente">
+
+        <table class="tabla">
+            <tr>
+                <td>Paciente</td>
+                <td id="nombrePaciente"></td>
+            </tr>
+            <tr>
+                <td>DNI</td>
+                <td id="dni"></td>
+            </tr>
+            <tr>
+                <td>Cobertura</td>
+                <td id="cobertura"></td>
+            </tr>
+            <tr>
+                <td>Solicitado por</td>
+                <td id="solicitante"></td>
+            </tr>
+        </table>
+
+    </div>
+    <br>
+    <br>
+
+    <div id="medicionesYresultado" class="medicionesYresultado">
+
+   
+            <table id="tablaResultado" class="tablaResultado">
+
+            </table>
+            <br>
+      
+
+     
+        <form id="formValidar" class="formValidar" action="/validarInforme" method="post">
+            <h3>Conclusiones</h3>
+            <textarea name="resultadoTexto" class="resultadoTexto" id="resultadoTexto" cols="40" rows="4"></textarea>
+            <h3 id="tituloH">Flora hidrogénica</h3>
+            <textarea name="floraHidrogenica" class="resultadoTexto" id="floraHidrogenica" cols="40" rows="3"></textarea>
+            <h3 id="tituloM">Flora metanogénica</h3>
+            <input type="text" id="floraMetanogenica" name="floraMetanogenica">
+            <br>
+            <textarea name="sintomas" style="display: none;"  id="sintomasOcultos" cols="20" rows="4"></textarea>   
+            <input style="background-color: black; border-color: black; " class="btn" type="submit" value="Validar el informe">
+
+        </form>
+
+        
+
+        
+    </div>
+    <br>
+    <br>
+  
+    <div  class="chart-container" >
+        <canvas id="myChart"></canvas>
+        </div>
+    <br>
+    <br>
+
+    <textarea name="sintomas1" oninput="actualizarInput(this.value,'sintomasOcultos')" class="sintomas" id="sintomas" cols="20" rows="4"></textarea>   
+
+    
+    
+    <div class="flip">
+        <br>
+        <br>
+        <h2>Gira el celular para ver el gráfico</h2>
+        <img src="https://static.thenounproject.com/png/4208574-200.png" alt="">
+    </div>
+    
+    <br>
+    <h2><a href="/informes"><img src="https://cdn-icons-png.flaticon.com/512/3114/3114883.png" width="50px" alt=""></a></h2>
+    <br>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/informeAvalidar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

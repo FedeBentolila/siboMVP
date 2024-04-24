@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background: white;
+    
+}
+a{
+    text-align: center;
+    color: black;
+    padding: 30px 0;
+    text-decoration: none;
+}
+
+.container1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+}
+
+.encabezado{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.imagen{
+    width: 50%;
+}
+
+.tituloEncabezado{
+    color:cornflowerblue;
+    font-weight: bold;
+}
+
+.parrafitoEncabezado{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height:0;
+  
+}
+
+.tipoProtocoloYfecha{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80%;
+     line-height:0;
+     font-size: 13px;
+}
+
+.sintomas{
+    text-align: center;
+    font-size: 13px;
+}
+
+.datosPaciente{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80%;
+
+}
+
+.tabla{
+    border-style: solid;
+    border-color: black;
+    font-size: 15px;
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+}
+
+.tabla td{
+    border-style: solid;
+    border-color: black;
+}
+
+.tablaResultado{
+    border-style: solid;
+    border-color: black;
+    font-size: 15px;
+    width: 40%;
+    border: none;
+    border-collapse: collapse;
+}
+
+.tablaResultado td{
+    border-style: solid;
+    border-color: black;
+}
+
+
+
+.medicionesYresultado{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+}
+
+.formValidar{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    font-size: 14px
+ 
+}
+
+
+.btn{
+    text-decoration: none;
+    color: white;
+    background-color: blue;
+    border-color: blue;
+    border-style: solid;
+    font-size: large;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.chart-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 70%;
+    width: 70%;
+    margin: auto;
+}
+
+/* estaba en 50% y 50% en chart container */
+
+.firma{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    line-height: 0;
+}
+
+@media (max-width: 767px) {
+
+    .tipoProtocoloYfecha{
+        line-height: 1
+    }
+
+}
+
+.btn{
+    text-decoration: none;
+    color: white;
+    background-color: blue;
+    border-color: blue;
+    border-style: solid;
+    font-size: large;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.pdfDownload{
+    cursor: pointer;
+}
+
+
+/* 
+@media (max-width: 767px) {
+
+    body {
+        zoom: 60%;
+      }
+    
+
+.encabezado{
+    flex-direction: column;
+}
+
+.imagen{
+    width: 90%;
+}
+
+.tipoProtocoloYfecha{
+    line-height: 1
+}
+
+.medicionesYresultado{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+
+
+.formValidar{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+ 
+}
+
+.chart-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: auto;
+    width: auto;
+    margin: auto;
+}
+
+
+} */
+

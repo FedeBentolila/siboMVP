@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario para pacientes</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body >
+    <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="./cropped-logo.png"  class="brandLogo" >
+          </a>
+        </div>
+      </nav>
+      <br>
+      <div class="navBarContainerForm">
+
+   
+  
+    </div>
+      
+      <section class="section-padding container-fluid col-xs-12 col-md-5" >
+        <br>
+        
+       
+    
+        <form class="p-3 mt-3" id="form" action="/agregarTurno" method="post">
+
+          <div class="mb-3 text-center">
+
+          <h3>Por favor ingrese los siguiente datos</h3>
+            
+          </div>
+          <br>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required >
+
+          </div>
+
+          <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="apellido" name="apellido" required>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="dni" class="form-label">DNI</label>
+            <input type="number" class="form-control" id="dni" name="dni" required>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+
+
+          <div class="mb-3" >
+            <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="solicitante" class="form-label">¿Quién solicita el estudio?</label>
+            <input type="text" class="form-control" id="solicitante" name="solicitante" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="cobertura" class="form-label">Cobertura</label>
+            <input type="text" class="form-control" id="cobertura" name="cobertura" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="nCobertura" class="form-label">N° Cobertura</label>
+            <input type="text" class="form-control" id="nCobertura" name="nCobertura" required>
+          </div>
+
+          <label for="tipoEstudio" class="form-label">Tipo de estudio de aire espirado</label>
+            
+          <select id="tipoEstudio" onchange="displayOptions()" class="form-select" name="tipo" required>
+            <option disabled selected value> -- Elegir opción -- </option>
+            <option value="hidrogeno">Hidrógeno</option>
+            <option value="metano">Metano</option>
+            <option value="mixto">Hidrógeno y Metano</option>
+            <option value="fructosa">Intolerancia a Fructosa</option>
+            <option value="lactosa">Intolerancia a Lactosa</option>
+            <option value="sorbitol">Intolerancia a Sorbitol</option>
+            <option value="fructosaYsorbitol">Intolerancia a Lactosa y Sorbitol</option>
+          </select>
+          <br>
+          
+          <input style="background-color: black; border-color: black; " class="btn btn-primary" type="submit" value="Guardar">
+            <br>
+            
+          </form>
+      </section>
+
+    
+      <br>
+      <br>
+      <br>
+
+   
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

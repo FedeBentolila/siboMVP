@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+img{
+    cursor: pointer;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    padding: 10px;
+}
+
+.navBarContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.userName{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+h1{
+    text-align: center;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+
+
+}
+
+h2, h4{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+;
+}
+
+a{
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+
+.aDeBoton{
+    color: white;
+}
+
+/* Table Styles */
+
+
+
+.table-wrapper{
+    margin: auto;
+    overflow: clip;
+    width: 80%;
+   
+}
+
+.fl-table {
+    overflow: scroll;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border: 2px solid black;
+    font-size: 15px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    border-style: solid;
+    border-color: black;
+    background: black;
+    font-size: 15px;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: black;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  position: sticky;
+  padding: 10px 0;
+}
+
+.time {
+  display: flex;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1a202c;
+}
+
+.separator {
+  margin: 0 0.5rem;
+}
+
+.hours, .minutes, .seconds {
+    display: inline-block;
+    width: 5rem;
+    text-align: center;
+    background-color: #fff;
+    color: #333;
+    border-radius: 0.5rem;
+    margin: 0 0.25rem;
+    padding: 0.25rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+
+
+.form{
+    height: max-content;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: max-content;
+    text-align: left;
+    padding: 80px;
+    border-radius: 20px;
+    border-color: black;
+    border-style: solid;
+    
+}
+
+.botonX{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.inputTime{
+    width: 100%;
+}
+
+.btn-formx{
+    color: white;
+    border-style: solid;
+    font-size: large;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 20px;
+}
+
+
+.btn-formxClose{
+    color: white;
+    border-style: solid;
+    font-size: large;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 20px;
+}
+
+.navbar-brand{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    left: 0;
+}
+
+
+.navBar2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.iconoNavBar{
+    margin: 3%;
+}
+
+.brandLogo{
+    width: 50%;
+    max-width: 300px;
+}
+
+.salas{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btnSalas{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border-color: black;
+    border-style: solid;
+    font-size: large;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.divBtnReset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flecha{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+/* Responsive */
+
+@media (max-width: 767px) {
+
+    .navBar{
+        width: 100%;
+    }
+
+    body{
+        font-family: 'Montserrat', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        background: white;
+        display: initial;
+    
+    }
+
+    .salas{
+        flex-direction: column;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .navBarContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    
+
+
+    .table-wrapper{
+        margin: 20px 60px 70px;
+        box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+        width: auto
+    }
+
+    .botones{
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+    }
+
+    .cont33{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 10px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y:hidden;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+
+    .btn{
+        width: fit-content;
+    }
+
+    .form{
+        flex-direction: column;
+        width: max-content;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+
+}
+
