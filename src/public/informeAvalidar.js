@@ -433,9 +433,9 @@ fetch('/dataInforme', {
       
         // Verifica si la diferencia es mayor o igual a 90 minutos
         //return diferenciaMinutos >= 90;
-        //return diferenciaMinutos > 90;
+        return diferenciaMinutos > 90;
         //Bustos quiere 100
-        return diferenciaMinutos > 100;
+        //return diferenciaMinutos > 100;
       }
 
 
@@ -489,13 +489,14 @@ fetch('/dataInforme', {
 
       }
 
+        console.log(interpretadoBasal)
         //// Variables patrón fermentativo
         let patronFermentativo=``
 
         if(datosInforme.protocolo!="Glucosa 10gr"){
           if(aucH2>=3500 && siboHidrogeno==true){
             patronFermentativo=`PERFIL FERMENTATIVO AUMENTADO`
-            }else if(aucH2>=3500 && interpretadoBasal!="Normal"){
+            }else if(aucH2>=3500 && interpretadoBasal!="NORMAL"){
               patronFermentativo=`PERFIL FERMENTATIVO AUMENTADO`
             }else if(aucH2>=3500 && siboHidrogeno==false){
               patronFermentativo=`PERFIL FERMENTATIVO COLONICO AUMENTADO`
