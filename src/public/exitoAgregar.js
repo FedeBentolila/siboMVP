@@ -7,7 +7,7 @@ console.log(id)
 
 
 var qrcode = new QRCode(document.getElementById("qrcode"), {
-	text: `https://sibobustos.onrender.com/encuesta/${id}`,
+	text: `https://sibomvp.onrender.com/encuesta/${id}`,
 	width: 300,
 	height: 300,
 	colorDark : "#000000",
