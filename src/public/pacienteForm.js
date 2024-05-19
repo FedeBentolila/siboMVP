@@ -89,10 +89,10 @@ botonburger.addEventListener("click", reveal)
 function reveal (){
   let displayedNavbar=document.getElementById("reveal")
 
-  if(displayedNavbar.style.display=="none"){
-    displayedNavbar.style.display="block"
-  }else{
+  if(displayedNavbar.style.display=="block"){
     displayedNavbar.style.display="none"
+  }else{
+    displayedNavbar.style.display="block"
   }
 
 

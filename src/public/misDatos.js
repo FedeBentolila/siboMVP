@@ -229,34 +229,26 @@
       
     
             let contenedor = document.createElement("div");
-            contenedor.classList.add("contenedorTabla")
+            contenedor.classList.add("datosUsers")
             contenedor.innerHTML = 
-            `     
-                 <table class="table table-striped table-hover ">
-    <thead>
-      <tr>
-        <th scope="col"></th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th class="datoCelda" scope="row">Nombre</th>
-        <td class="datoCelda">${data.nombre}</td>
-      </tr>
-      <tr>
-        <th class="datoCelda" scope="row">Apellido</th>
-        <td class="datoCelda">${data.apellido}</td>
-      </tr>
-      <tr>
-        <th class="datoCelda" scope="row">Usuario</th>
-        <td class="datoCelda" colspan="2">${data.username}</td>
-      </tr>
-  
-     
-      
-    </tbody>
-  </table>
+            `    
+            <div class="label">
+            <label for="nombre" class="loginfieldname">Nombre</label>
+          </div> 
+          <p class="campo">${data.nombre}</p>
+
+          <div class="label">
+          <label for="nombre" class="loginfieldname">Apellido</label>
+        </div> 
+        <p class="campo">${data.apellido}</p>
+
+
+        <div class="label">
+        <label for="nombre" class="loginfieldname">Nombre de usuario</label>
+      </div> 
+      <p class="campo">${data.username}</p>
+
+        
           
             `;
             document.getElementById("usuario").appendChild(contenedor)
@@ -264,18 +256,59 @@
             if(data.firma){
               let contenedor2 = document.createElement("img");
             contenedor2.classList.add("firmaPrevia")
+            contenedor2.classList.add("sig-canvas")
             contenedor2.setAttribute("src",data.firma)
             document.getElementById("ultimaFirma").appendChild(contenedor2)
             }else{
   
               let contenedor3=document.createElement("h3");
+              contenedor3.classList.add("sig-canvas")
               contenedor3.innerHTML = `Tienes pendiente cargar tu firma`;
               document.getElementById("ultimaFirma").appendChild(contenedor3)
   
-            }
+            } 
   
   
             
             
         
     }
+
+    fetch('/dataUser')
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        
+      let usuario= data.username
+      document.getElementById("usuario3").innerText=`${usuario}`
+      document.getElementById("usuario2").innerText=`${usuario}`
+    
+      
+      })
+
+      let botonburger = document.getElementById("menuBurger")
+      botonburger.addEventListener("click", reveal)
+      
+      function reveal (){
+        let displayedNavbar=document.getElementById("reveal")
+      
+        if(displayedNavbar.style.display=="block"){
+          displayedNavbar.style.display="none"
+        }else{
+          displayedNavbar.style.display="block"
+        }
+      
+      
+        
+      }
+
+      let botonHome=document.getElementById("brandLogo")
+  botonHome.addEventListener("click", gotoHome)
+
+  let botonHome2=document.getElementById("brandLogo2")
+  botonHome2.addEventListener("click", gotoHome)
+
+  function gotoHome(){
+   window.location="/"
+  }

@@ -3,6 +3,25 @@
     padding: 0;
   }
 
+  #sig-canvas {
+    border: 2px dotted #CCCCCC;
+    border-radius: 15px;
+    cursor: crosshair;
+  }
+
+
+  .botonesFirma{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+  .sig-canvas{
+    border: 2px dotted #CCCCCC;
+    border-radius: 15px;
+  }
+
 .body{
     background: #BDE7F9 108.42%;
     display: flex;
@@ -62,13 +81,23 @@
 display: flex;
  flex-direction: row;
  justify-content: center;
+ align-items: center;
  color: var(--Color, #5D87B2);
  text-align: center;
  font-family: Roboto;
- font-size: 15px;
+ font-size: 20px;
  font-style: normal;
  font-weight: 500;
  line-height: 33.6px /* 157.156% */;
+}
+
+.tituloFirma{
+    color: var(--Color, #5D87B2);
+    font-family: Roboto;
+ font-size: 20px;
+ font-style:normal;
+ font-weight: 500;
+ line-height: 33.6px
 }
 
 .botones{
@@ -150,9 +179,10 @@ color: var(--Color, #5D87B2);
    }
 
    .campo {
+    width: 100%;
     justify-content: center;
     align-self: stretch;
-    color: #A7A7A7;
+    color: #6c6c6c;
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
@@ -168,13 +198,41 @@ color: var(--Color, #5D87B2);
     margin-bottom: 5px;
    } 
 
+   .sectionMisDatos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .datosUsers{
+    width: 60%;
+   }
+
+   .usuario{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+   }
+
+   .datosFirma{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   }
+
 
 .form{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 70%;
+    width: 100%;
     
 
    }
@@ -184,12 +242,38 @@ color: var(--Color, #5D87B2);
     border: none;
     display: flex;
     padding: 7px 25px;
+    margin: 10px;
     justify-content: center;
     align-items: center;
     gap: 10px;
     border-radius: 10px;
     background: var(--Color, #5D87B2);
     color: #FFF;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 21.38px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px /* 112.254% */;
+    width: 100%;
+    cursor: pointer;
+   
+   }
+
+   .botonblanco{
+    margin: 10px;
+    height: 50px;
+    border: none;
+    display: flex;
+    padding: 7px 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: var(--Color, white);
+    color:#5D87B2 ;
+    border: #5D86B2;
+    border-style: solid;
     text-align: center;
     font-family: Roboto;
     font-size: 21.38px;
@@ -384,6 +468,18 @@ color: var(--Color, #5D87B2);
     .imagenNuevo{
         width: 20%;
     }
+
+    .datosFirma{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       }
+
+       .datosUsers{
+        width: 100%;
+       }
 
     
     
