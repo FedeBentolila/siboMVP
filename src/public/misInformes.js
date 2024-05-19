@@ -375,7 +375,8 @@ fetch(`/dataInformes/${miPagina}`)
     .then(data => {
       
     let usuario= data.username
-    document.getElementById("usuario").innerText=`${usuario}`
+    document.getElementById("usuario3").innerText=`${usuario}`
+    document.getElementById("usuario2").innerText=`${usuario}`
   
     
     })
@@ -383,3 +384,29 @@ fetch(`/dataInformes/${miPagina}`)
     function reset(){
       location.reload()
     }
+
+    let botonHome=document.getElementById("brandLogo")
+    botonHome.addEventListener("click", gotoHome)
+  
+    let botonHome2=document.getElementById("brandLogo2")
+    botonHome2.addEventListener("click", gotoHome)
+  
+    function gotoHome(){
+     window.location="/"
+    }
+
+    let botonburger = document.getElementById("menuBurger")
+      botonburger.addEventListener("click", reveal)
+      
+      function reveal (){
+        let displayedNavbar=document.getElementById("reveal")
+      
+        if(displayedNavbar.style.display=="block"){
+          displayedNavbar.style.display="none"
+        }else{
+          displayedNavbar.style.display="block"
+        }
+      
+      
+        
+      }

@@ -188,8 +188,9 @@
             Swal.fire({
               title: "Firma Actualizada",
               text: "Recargando!",
+              color:"#5D86B2",
               icon: "success",
-              iconColor: "blue",
+              iconColor: "lightgreen",
               showConfirmButton: false,
             });
   
@@ -201,6 +202,8 @@
             Swal.fire({
               icon: "error",
               title: "Oops...",
+              color:"#5D86B2",
+              iconColor: "red",
               text: "Algo salió mal!",
             });
           });

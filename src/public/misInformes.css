@@ -1,4 +1,568 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  #sig-canvas {
+    border: 2px dotted #CCCCCC;
+    border-radius: 15px;
+    cursor: crosshair;
+  }
+
+
+  .botonesFirma{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+  .sig-canvas{
+    border: 2px dotted #CCCCCC;
+    border-radius: 15px;
+  }
+
+.body{
+    background: #BDE7F9 108.42%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.brandLogo{
+    width: 15%;
+    cursor: pointer;
+}
+
+.brandLogo2{
+    width: 8%;
+}
+
+.navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #FFF 34.65%, #BDE7F9 108.42%);
+}
+
+.componenteNavBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--Color, #5D87B2);
+    text-align: left;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.linkComponente{
+    text-decoration: none;
+}
+
+.linkComponente2{
+    text-decoration: none;
+    width: 15%;
+    margin: 20px;
+    padding: 10px;
+}
+
+.imgComponente{
+    width: 20%;
+}
+
+.tituloseccion{
+    width: 100%;
+display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ color: var(--Color, #5D87B2);
+ text-align: center;
+ font-family: Roboto;
+ font-size: 20px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 33.6px /* 157.156% */;
+}
+
+.tituloFirma{
+    color: var(--Color, #5D87B2);
+    font-family: Roboto;
+ font-size: 20px;
+ font-style:normal;
+ font-weight: 500;
+ line-height: 33.6px
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.botonescritorioseccion{
+display: flex;
+flex-direction: column;
+ align-items: center;
+ border-radius: 10px;
+ background: #FFF;
+ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.iconobotonesc{
+    width: 100px;
+    height: 100px;
+   
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+   
+}
+
+.titulobotonesc{
+color: var(--Color, #5D87B2);
+ text-align: center;
+ font-family: Roboto;
+ font-size: 18px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 24px /* 133.333% */;
+ padding: 10px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ 
+}
+
+.navBarMobile{
+    display: none;
+}
+
+.nabBarMobileContainer{
+    display: none;
+}
+
+.displayedNavbar{
+    display: none;
+}
+
+.textBoton{
+    text-align: center;
+    font-size: small;
+}
+
+.label{
+    width: 100%;
+   }
+
+   
+   .loginfieldname {
+    color: #5D86B2;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px /* 150% */;
+   }
+
+   .campo {
+    width: 100%;
+    justify-content: center;
+    align-self: stretch;
+    color: #6c6c6c;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px /* 150% */;
+    display: flex;
+    padding: 10px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid #DEE2E6;
+    background: #FFF;
+    margin-bottom: 5px;
+   } 
+
+   .sectionMisDatos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .datosUsers{
+    width: 60%;
+   }
+
+   .usuario{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+   }
+
+   .datosFirma{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   }
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    
+
+   }
+
+   .botonazul{
+    height: 50px;
+    border: none;
+    display: flex;
+    padding: 7px 25px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: var(--Color, #5D87B2);
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 21.38px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px /* 112.254% */;
+    width: 100%;
+    cursor: pointer;
+   
+   }
+
+   .botonblanco{
+    margin: 10px;
+    height: 50px;
+    border: none;
+    display: flex;
+    padding: 7px 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: var(--Color, white);
+    color:#5D87B2 ;
+    border: #5D86B2;
+    border-style: solid;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 21.38px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px /* 112.254% */;
+    width: 100%;
+    cursor: pointer;
+   
+   }
+
+.containerForm{
+    display: flex;
+ width: 60%;
+ padding: 40px;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ border-radius: 30px;
+ background: white
+}
+
+.logintitle {
+    width: 100%;
+    height: 33px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--Color, #5D87B2);
+    text-align: left;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 33.6px /* 140% */;
+    border-bottom: 1px solid lightgray ;
+   }
+
+
+
+   .table-wrapper{
+    margin: auto;
+    overflow: clip;
+    width: 80%;
+    border-radius: 30px;
+    border-color: black;
+    border-style: solid;
+   
+}
+
+.fl-table {
+
+
+    font-size: 10px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border: none;
+    font-size: 15px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    border-style: solid;
+    border-color: black;
+    background: black;
+    font-size: 15px;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: black;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+.mobileIcon{
+    display: none;
+}
+
+.desktopIcon{
+    display: block;
+}
+
+
+
+@media (max-width: 767px) {
+
+    .containerForm{
+        width: 70%;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        
+    
+       }
+
+    .reveal{
+        display: none;
+        width: 100%;
+    }
+
+    .navBar{
+        display: none;
+    }
+
+    .navBarMobile{
+        width: 100%;
+      
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background: linear-gradient(180deg, #FFF 34.65%, #BDE7F9 108.42%);
+    }
+
+    .nabBarMobileContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .displayedNavbar{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background: white;
+    }
+
+
+    .brandLogo{
+        width: 100px;
+        cursor: pointer;
+    }
+
+    .linkComponente2{
+        text-decoration: none;
+        width: 80%;
+        margin: 20px;
+        padding: 10px;
+    }
+    
+    .imgComponente{
+        width: 20%;
+    }
+    
+    .tituloseccion{
+        display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items:center ;
+     color: var(--Color, #5D87B2);
+     text-align: center;
+     font-family: Roboto;
+     font-size: 21.38px;
+     font-style: normal;
+     font-weight: 500;
+     line-height: 33.6px /* 157.156% */;
+    }
+    
+    .botones{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .botonescritorioseccion{
+    display: flex;
+    flex-direction: row;
+     align-items: center;
+     border-radius: 10px;
+     background: #FFF;
+     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    
+    }
+    
+    .iconobotonesc{
+        width: 100px;
+        height: 100px;
+       
+        display: flex;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        border-right: 1px solid rgba(93, 135, 178, 0.50);
+    }
+    
+    .titulobotonesc{
+    color: var(--Color, #5D87B2);
+     text-align: center;
+     font-family: Roboto;
+     font-size: 18px;
+     font-style: normal;
+     font-weight: 500;
+     line-height: 24px /* 133.333% */;
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: flex-start;
+    }
+
+    .textBoton{
+        text-align: left;
+        font-size: small;
+    }
+
+    .linkComponenteMobile{
+        width: 50%;
+        text-decoration: none;
+    }
+
+    .componenteNavBar{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        color: var(--Color, #5D87B2);
+        font-family: Roboto;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        padding: 10px;
+    }
+
+    .imagenNuevo{
+        width: 20%;
+    }
+
+    .datosFirma{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       }
+
+       .datosUsers{
+        width: 100%;
+       }
+
+       .mobileIcon{
+        display: block;
+    }
+    
+    .desktopIcon{
+        display: none;
+    }
+
+
+    
+    
+
+}
+
+
+
+
+
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 *{
     box-sizing: border-box;
@@ -62,9 +626,7 @@ a{
     text-decoration: none;
 }
 
-/* Table Styles */
 
-/* Aca cambie el margin de table wrapper */
 
 
 
@@ -267,7 +829,7 @@ a{
 }
 
 
-/* Responsive */
+
 
 @media (max-width: 500px) {
     
@@ -390,3 +952,4 @@ a{
 
 }
 
+ */
