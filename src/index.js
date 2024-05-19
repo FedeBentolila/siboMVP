@@ -490,38 +490,23 @@ aplicacion.get("/misDatos",ensureLoggedIn("/login"), (peticion, respuesta) => {
 
 
 
-   /*   aplicacion.get("/salaDeEspera",ensureLoggedIn("/login"), (peticion, respuesta) => {
-
-        if(peticion.user.type=="administrador"){
-          respuesta.sendFile("salaDeEspera.html", { root: publicRoot });
-        }else{
-          respuesta.sendFile("saladeEsperaOperador.html", { root: publicRoot });
-        }
-
-
-      
-    });
-
-    aplicacion.get("/salaDeEsperaOperador",ensureLoggedIn("/login"), (peticion, respuesta) => {
-      respuesta.sendFile("saladeEsperaOperador.html", { root: publicRoot });
-    }); */
-
     aplicacion.get("/salaDeEspera",ensureLoggedIn("/login"), (peticion, respuesta) => {
 
       if(peticion.user.type=="administrador"){
-        respuesta.sendFile("salaDeEspera0.html", { root: publicRoot });
+        respuesta.redirect("/salaDeEspera/1")
+        //respuesta.sendFile("salaDeEspera0.html", { root: publicRoot });
       }else{
           if(peticion.user.type=="secretario"){
             respuesta.redirect("/")
           }else{
-            respuesta.sendFile("saladeEsperaOperador0.html", { root: publicRoot });
+            respuesta.redirect("/salaDeEsperaOperador/1")
           }
         
       }
   });
 
   aplicacion.get("/salaDeEsperaOperador",ensureLoggedIn("/login"), (peticion, respuesta) => {
-    respuesta.sendFile("saladeEsperaOperador0.html", { root: publicRoot });
+    respuesta.redirect("/salaDeEsperaOperador/1")
   });
 
 

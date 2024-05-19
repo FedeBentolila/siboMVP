@@ -190,7 +190,7 @@
               text: "Recargando!",
               color:"#5D86B2",
               icon: "success",
-              iconColor: "lightgreen",
+              iconColor: "#5D86B2",
               showConfirmButton: false,
             });
   

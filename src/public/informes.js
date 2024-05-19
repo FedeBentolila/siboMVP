@@ -7,6 +7,25 @@ function render (data){
 
   for (const iterador of data) {
 
+        let tipo
+
+        if(iterador.tipo=="hidrogeno"){
+          tipo="H2"
+        }
+
+        if(iterador.tipo=="mixto"){
+          tipo="H2/CH4"
+        }
+
+        if(iterador.tipo=="metano"){
+          tipo="CH4"
+        }
+
+        if(iterador.tipo=="intolerancia"){
+          tipo="intol"
+        }
+
+
         let fechaYhora=iterador.timestamp.split(" ")
         
 
@@ -15,11 +34,10 @@ function render (data){
         contenedor.innerHTML = 
         ` 
        
-        <td> ${iterador.nombre} </td>
         <td> ${iterador.apellido} </td>
-        <td> ${iterador.tipo} </td>
+        <td> ${tipo} </td>
         <td> ${fechaYhora[0]} </td>
-        <td> <a href="/accederInforme/${iterador._id}"><img src="/openIcon.png" width=30px  alt=""></a></td>
+        <td> <a href="/accederInforme/${iterador._id}"><img src="/QRLEIDO.png" width=30px  alt=""></a></td>
               
         `;
         document.getElementById("registros").appendChild(contenedor)
@@ -42,6 +60,24 @@ fetch('/dataPacientesParaInformar')
 //// SOCKETS PARA RECIBIR EN CASO DE NUEVOS PACIENTES O ELIMINAR AL ARCHIVAR
 
 socket.on('registroFinalizado', function(registroFinalizado) {
+
+  let tipo
+
+  if(registroFinalizado[0].tipo=="hidrogeno"){
+    tipo="H2"
+  }
+
+  if(registroFinalizado[0].tipo=="mixto"){
+    tipo="H2/CH4"
+  }
+
+  if(registroFinalizado[0].tipo=="metano"){
+    tipo="CH4"
+  }
+
+  if(registroFinalizado[0].tipo=="intolerancia"){
+    tipo="intol"
+  }
     
 
 
@@ -53,11 +89,10 @@ socket.on('registroFinalizado', function(registroFinalizado) {
         contenedor.innerHTML = 
         ` 
        
-        <td> ${registroFinalizado[0].nombre} </td>
         <td> ${registroFinalizado[0].apellido} </td>
-        <td> ${registroFinalizado[0].tipo} </td>
+        <td> ${tipo} </td>
         <td> ${fechaYhora[0]} </td>
-        <td> <a href="/accederInforme/${registroFinalizado[0]._id}"><img src="/openIcon.png" width=30px  alt=""></a></td>
+        <td> <a href="/accederInforme/${registroFinalizado[0]._id}"><img src="/QRLEIDO.png" width=30px  alt=""></a></td>
               
         `;
         document.getElementById("registros").appendChild(contenedor)
@@ -131,7 +166,39 @@ fetch('/dataUser')
     .then(data => {
       
     let usuario= data.username
-    document.getElementById("usuario").innerText=`${usuario}`
+    document.getElementById("usuario3").innerText=`${usuario}`
+    document.getElementById("usuario2").innerText=`${usuario}`
   
     
     })
+
+  
+    function reset(){
+      location.reload()
+    }
+
+    let botonHome=document.getElementById("brandLogo")
+    botonHome.addEventListener("click", gotoHome)
+  
+    let botonHome2=document.getElementById("brandLogo2")
+    botonHome2.addEventListener("click", gotoHome)
+  
+    function gotoHome(){
+     window.location="/"
+    }
+
+    let botonburger = document.getElementById("menuBurger")
+      botonburger.addEventListener("click", reveal)
+      
+      function reveal (){
+        let displayedNavbar=document.getElementById("reveal")
+      
+        if(displayedNavbar.style.display=="block"){
+          displayedNavbar.style.display="none"
+        }else{
+          displayedNavbar.style.display="block"
+        }
+      
+      
+        
+      }

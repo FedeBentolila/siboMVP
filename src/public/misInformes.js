@@ -16,7 +16,7 @@ function render (data){
       <br>
     <br>
     <br>
-      <h1 style="text-align:center; color:white">Sin informes en la base de datos</h1>
+      <h1 style="text-align:center; color:#5D87B2">Sin informes en la base de datos</h1>
       <br>
     <br>
     <br>
@@ -69,6 +69,12 @@ fetch(`/dataInformes/${miPagina}`)
   })
   .then(data => {
     console.log(data)
+///////////////////////CHEQUEAR ESTO
+    if (data.articles.data.length === 0 && miPagina > 1) {
+      location.href = `/misInformes/${miPagina - 1}`;
+      return;
+  }
+////////////////////////////////////////
   render(data.articles.data)
 
   ////aca modifique en render para probar paginacion en realidad tiene que ser render(data SOLO)
@@ -90,12 +96,12 @@ fetch(`/dataInformes/${miPagina}`)
     let paginador = document.getElementById("paginator")
     paginador.innerHTML=`
     <li class="botonazul" ><a style="background-color: #5D87B2; border-color: #5D87B2; text-decoration:none; color:white " class="page-link" href="#">${pagina}</a></li>
-    <li class="botonazul" ><a style="background-color: #5D87B2; border-color: #5D87B2; color:white; text-decoration:none  " class="page-link" href="/misInformes/${(pagina+1)}"> >> </a></li>
+    <li class="botonazul" onclick="location.href='/misInformes/${(pagina+1)}'" ><a style="background-color: #5D87B2; border-color: #5D87B2; color:white; text-decoration:none  " class="page-link" href="/misInformes/${(pagina+1)}"> >> </a></li>
     `
    }else if(pagina==totalPages){
     let paginador = document.getElementById("paginator")
     paginador.innerHTML=`
-    <li class="botonazul" ><a style="background-color: #5D87B2; border-color: #5D87B2; color:white; text-decoration:none " class="page-link" href="/misInformes/${(pagina-1)}"> << </a></li>
+    <li class="botonazul" onclick="location.href='/misInformes/${(pagina-1)}'"  ><a style="background-color: #5D87B2; border-color: #5D87B2; color:white; text-decoration:none " class="page-link" href="/misInformes/${(pagina-1)}"> << </a></li>
     <li class="botonazul" ><a style="background-color: #5D87B2; border-color:#5D87B2; text-decoration:none; color:white " class="page-link" href="#">${pagina}</a></li>
 
     `
@@ -104,9 +110,9 @@ fetch(`/dataInformes/${miPagina}`)
 
     let paginador = document.getElementById("paginator")
     paginador.innerHTML=`
-    <li class="botonazul" ><a style="background-color: #5D87B2; border-color: #5D87B2; color:white; text-decoration:none " class="page-link" href="/misInformes/${(pagina-1)}"> << </a></li>
+    <li class="botonazul" onclick="location.href='/misInformes/${(pagina-1)}'" ><a style="background-color: #5D87B2; border-color: #5D87B2; color:white; text-decoration:none " class="page-link" href="/misInformes/${(pagina-1)}"> << </a></li>
     <li class="botonazul" ><a style="background-color: #5D87B2; border-color: #5D87B2; color:white; text-decoration:none " class="page-link" href="#">${pagina}</a></li>
-    <li class="botonazul" ><a style="background-color:#5D87B2; border-color: #5D87B2; color:white; text-decoration:none " class="page-link" href="/misInformes/${(pagina+1)}"> >> </a></li>
+    <li class="botonazul" onclick="location.href='/misInformes/${(pagina+1)}'"><a style="background-color:#5D87B2; border-color: #5D87B2; color:white; text-decoration:none " class="page-link" href="/misInformes/${(pagina+1)}"> >> </a></li>
 
     `
 

@@ -89,7 +89,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 50%;
 }
 
 .imgComponente{
@@ -633,7 +633,7 @@ color: var(--Color, #5D87B2);
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        width: 50%;
+        width: 100%;
     }
     
     .paginador2{
@@ -649,7 +649,6 @@ color: var(--Color, #5D87B2);
     
 
 }
-
 
 
 
