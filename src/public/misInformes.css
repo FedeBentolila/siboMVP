@@ -3,6 +3,10 @@
     padding: 0;
   }
 
+  .swal2-title {
+    font-family:Roboto;
+  }
+
   #sig-canvas {
     border: 2px dotted #CCCCCC;
     border-radius: 15px;
@@ -241,7 +245,7 @@ color: var(--Color, #5D87B2);
     height: 50px;
     border: none;
     display: flex;
-    padding: 7px 25px;
+    padding: 7px;
     margin: 10px;
     justify-content: center;
     align-items: center;
@@ -255,7 +259,30 @@ color: var(--Color, #5D87B2);
     font-style: normal;
     font-weight: 500;
     line-height: 24px /* 112.254% */;
-    width: 100%;
+    width: 80%;
+    cursor: pointer;
+   
+   }
+
+   .botonazul2{
+    height: 50px;
+    border: none;
+    display: flex;
+    padding: 7px;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: var(--Color, #5D87B2);
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 21.38px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px /* 112.254% */;
+    width: 20%;
     cursor: pointer;
    
    }
@@ -319,8 +346,9 @@ color: var(--Color, #5D87B2);
     overflow: clip;
     width: 80%;
     border-radius: 30px;
-    border-color: black;
+    border-color: #5D87B2;
     border-style: solid;
+    font-family: Roboto;
    
 }
 
@@ -350,19 +378,27 @@ color: var(--Color, #5D87B2);
 .fl-table thead th {
     color: #ffffff;
     border-style: solid;
-    border-color: black;
-    background: black;
+    border-color: #5D87B2;
+    background: #5D87B2;
     font-size: 15px;
 }
 
 
 .fl-table thead th:nth-child(odd) {
     color: #ffffff;
-    background: black;
+    background: #5D87B2;
 }
 
 .fl-table tr:nth-child(even) {
-    background: #F8F8F8;
+    background: #ffffff;
+    color: gray;
+    font-family: Roboto;
+}
+
+.fl-table tr:nth-child(odd) {
+    background: #ffffff;
+    color: gray;
+    font-family: Roboto;
 }
 
 .mobileIcon{
@@ -371,6 +407,15 @@ color: var(--Color, #5D87B2);
 
 .desktopIcon{
     display: block;
+}
+
+.containerreset{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   
 }
 
 
@@ -446,7 +491,7 @@ color: var(--Color, #5D87B2);
     
     .tituloseccion{
         display: flex;
-     flex-direction: column;
+     flex-direction: row;
      justify-content: center;
      align-items:center ;
      color: var(--Color, #5D87B2);
@@ -548,6 +593,16 @@ color: var(--Color, #5D87B2);
     
     .desktopIcon{
         display: none;
+    }
+
+    .table-wrapper{
+        margin: auto;
+        width: 90%;
+        border-radius: 30px;
+        border-color: #5D87B2;
+        border-style: solid;
+        font-family: Roboto;
+       
     }
 
 

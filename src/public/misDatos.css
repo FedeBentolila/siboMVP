@@ -3,6 +3,10 @@
     padding: 0;
   }
 
+  .swal2-title {
+    font-family:Roboto;
+  }
+
   #sig-canvas {
     border: 2px dotted #CCCCCC;
     border-radius: 15px;

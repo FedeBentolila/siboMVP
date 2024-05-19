@@ -2,6 +2,169 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis informes</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="/misInformes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+   
+</head>
+<body class="body" >
+  <nav class="navBar ">
+    <img src="/logo.png" id="brandLogo" class="brandLogo" >
+
+    <a class="linkComponente" href="/salaDeEsperaOperador">
+      <div class="componenteNavBar">
+        <strong style="padding-right: 10px;">Sala de espera</strong>
+        <img src="/saladeespera.png" class="imgComponente" alt="nuevoUsuario">
+      </div>
+    </a>
+
+    <a class="linkComponente" href="/misDatos">
+      <div class="componenteNavBar">
+        <strong style="padding-right: 10px;">Mis Datos</strong>
+        <img src="/MISDATOS.png" class="imgComponente" alt="nuevoUsuario">
+      </div>
+    </a>
+
+    <a class="linkComponente" href="/pacienteForm">
+      <div class="componenteNavBar">
+        <strong>Agregar Paciente</strong>
+        <img src="/nuevopaciente.png" class="imgComponente" alt="nuevoPaciente">
+      </div>
+    </a>
+
+    <a class="linkComponente" href="/logout">
+      <div class="componenteNavBar">
+        <strong id="usuario3"></strong>
+        <img src="/CLOSE.png" style="padding-left: 5px;" class="imgComponente" alt="nuevoUsuario">
+      </div>
+    </a> 
+  </nav>
+
+  <div class="nabBarMobileContainer">
+    <nav class="navBarMobile">
+      <img id="menuBurger" src="/menu-burger.png"  class="brandLogo2" >
+      <img src="/logo.png" id="brandLogo2"  class="brandLogo" >
+      <img src="/NOTIFICACION.png"  class="brandLogo2" >
+    </nav>
+    <div id="reveal" class="reveal">
+    <div id="displayedNavbar" class="displayedNavbar">
+
+      <a class="linkComponenteMobile" href="/salaDeEsperaOperador">
+        <div class="componenteNavBar">
+          <img style="padding-right: 10px;" src="/saladeespera.png" class="imgComponente" alt="nuevoUsuario">
+          <strong>Sala de espera</strong>
+        </div>
+      </a>
+      <br>
+
+      <a class="linkComponenteMobile" href="/misDatos">
+        <div class="componenteNavBar">
+          <img style="padding-right: 10px;" src="/MISDATOS.png" class="imgComponente" alt="nuevoUsuario">
+          <strong>Mis Datos</strong>
+        </div>
+      </a>
+      <br>
+
+      <a class="linkComponenteMobile" href="/pacienteForm">
+        <div class="componenteNavBar">
+          <img style="padding-right: 10px;" src="/nuevopaciente.png" class="imgComponente" alt="nuevoPaciente">
+          <strong>Agregar Paciente</strong>
+        </div>
+      </a>
+      <br>
+
+      <a class="linkComponenteMobile" href="/logout">
+        <div class="componenteNavBar">
+          <img src="/CLOSE.png"  class="imgComponente" alt="nuevoUsuario">
+          <strong style="padding-left: 5px;" id="usuario2"></strong>
+           </div>
+      </a> 
+
+    </div>
+  </div>
+
+
+  </div>
+  <br>
+  <br>
+  
+
+      
+
+  <div class="tituloseccion">
+    <img class="imagenNuevo" src="/ARCHIVO.png" width="5%">
+    <strong style="margin: 10px;">Archivo de Informes</strong>
+   
+</div>
+    <br>
+
+    
+    <div onclick="buscar()" class="botonesFirma" >
+        <button  class="botonazul" >
+          Buscador
+        </button>
+    </div>
+    <br>
+   
+    <div class="table-wrapper" id="results">
+    <table  class="fl-table">    
+    <thead>
+       <tr>
+           <th>Apellido</th>
+           <th>Fecha </th>
+           <th>Ver</th>
+       </tr>
+    </thead>
+    <tbody id="registros"></tbody>
+    </table>
+    </div> 
+
+    <br>
+   
+     
+
+
+    
+    <nav class="paginador">
+        <ul   id="paginator">
+          
+        </ul>
+    
+    </nav>
+
+    
+    
+   
+    
+
+
+
+
+   
+
+        
+
+    
+   
+
+
+
+    
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/misInformesOperador.js"></script>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archivo</title>
@@ -29,8 +192,7 @@
            <a class="iconoNavBar" href="/"><img src="/home.webp"  width="50px" srcset=""></a>
            <a class="iconoNavBar" href="/pacienteForm"><img src="https://cdn-icons-png.flaticon.com/512/3450/3450043.png"  width="40px" srcset=""></a>
            <a class="iconoNavBar" href="/salaDeEsperaOperador"><img src="https://cdn-icons-png.flaticon.com/512/3511/3511809.png"   width="40px" srcset=""></a>
-           <!-- <a class="iconoNavBar" href="/informes"><img src="https://cdn-icons-png.flaticon.com/512/1395/1395482.png"   width="40px" srcset=""></a> -->
-           <a class="iconoNavBar" href="/misInformesOperador/1"><img src="https://cdn-icons-png.flaticon.com/512/2001/2001114.png" style="border-bottom:solid; padding-bottom: 2px; " width="40px" srcset=""></a>
+            <a class="iconoNavBar" href="/misInformesOperador/1"><img src="https://cdn-icons-png.flaticon.com/512/2001/2001114.png" style="border-bottom:solid; padding-bottom: 2px; " width="40px" srcset=""></a>
            <a class="iconoNavBar" href="/misDatos"><img src="https://icons.veryicon.com/png/o/miscellaneous/it-operation-and-maintenance-system-of/personal-data-5.png"  width="45px" srcset=""></a>
          </div>
    
@@ -88,4 +250,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     
 </body>
-</html>
+</html> -->

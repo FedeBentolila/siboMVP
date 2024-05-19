@@ -13,7 +13,10 @@ function render (data){
     if (data.length==0) {
 
       document.getElementById("results").innerHTML=`
-      <h1>Sin informes en la base de datos</h1>
+      <br>
+    <br>
+    <br>
+      <h1 style="text-align:center; color:white">Sin informes en la base de datos</h1>
       <br>
     <br>
     <br>
@@ -25,30 +28,31 @@ function render (data){
 
   for (const iterador of data) {
 
+    let fechaYhora=iterador.timestamp.split(" ")
+
         let contenedor = document.createElement("tr");
         contenedor.innerHTML = 
         ` 
        
-        <td> ${iterador.nombre} </td>
         <td> ${iterador.apellido} </td>
-        <td> ${iterador.timestamp} </td>
+        <td> ${fechaYhora[0]} </td>
         <td> 
         <div class="mobileIcon">
-        <a href="/informeFinal/${iterador._id}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-folder2-open" viewBox="0 0 16 16">
-        <path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v.64c.57.265.94.876.856 1.546l-.64 5.124A2.5 2.5 0 0 1 12.733 15H3.266a2.5 2.5 0 0 1-2.481-2.19l-.64-5.124A1.5 1.5 0 0 1 1 6.14zM2 6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5a.5.5 0 0 0-.5.5zm-.367 1a.5.5 0 0 0-.496.562l.64 5.124A1.5 1.5 0 0 0 3.266 14h9.468a1.5 1.5 0 0 0 1.489-1.314l.64-5.124A.5.5 0 0 0 14.367 7H1.633z"/>
-      </svg></a>
+        <a href="/informeFinal/${iterador._id}">
+        <img style="cursor: pointer;" src="/LUPA.png" alt="">
+      </a>
       </div>
 
       <div class="desktopIcon">
-        <a href="#" onclick="window.open('/informeFinal/${iterador._id}','mywin')"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-folder2-open" viewBox="0 0 16 16">
-        <path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v.64c.57.265.94.876.856 1.546l-.64 5.124A2.5 2.5 0 0 1 12.733 15H3.266a2.5 2.5 0 0 1-2.481-2.19l-.64-5.124A1.5 1.5 0 0 1 1 6.14zM2 6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5a.5.5 0 0 0-.5.5zm-.367 1a.5.5 0 0 0-.496.562l.64 5.124A1.5 1.5 0 0 0 3.266 14h9.468a1.5 1.5 0 0 0 1.489-1.314l.64-5.124A.5.5 0 0 0 14.367 7H1.633z"/>
-      </svg></a>
+        <a href="#" onclick="window.open('/informeFinal/${iterador._id}','mywin')">
+        <img style="cursor: pointer;" src="/LUPA.png" alt="">
+      </a>
       </div>
       
       
       </td>
         <td> 
-        <button onclick="eliminarArchivo('${iterador._id}')"><img src="/delete.png" width=30px  alt=""></button>
+        <img style="cursor: pointer;" onclick="eliminarArchivo('${iterador._id}')" src="/DELETE.png" width=30px  alt="">
         </td>
         `;
         document.getElementById("registros").appendChild(contenedor)
@@ -78,21 +82,21 @@ fetch(`/dataInformes/${miPagina}`)
     let paginador = document.getElementById("paginator")
     paginador.innerHTML=`
     
-    <li  class="page-item active"><a style="background-color: black; border-color: black; " class="page-link" href="#">${pagina}</a></li>
+    <li class="botonazul" ><a style="background-color: #5D87B2; border-color: #5D87B2; text-decoration:none; color:white  " class="page-link" href="#">${pagina}</a></li>
     
     `
 
    }else if(pagina==1 && pagina!=totalPages){
     let paginador = document.getElementById("paginator")
     paginador.innerHTML=`
-    <li class="page-item active"><a style="background-color: black; border-color: black; " class="page-link" href="#">${pagina}</a></li>
-    <li class="page-item"><a style="background-color: black; border-color: black; color:white " class="page-link" href="/misInformes/${(pagina+1)}"> >> </a></li>
+    <li class="botonazul" ><a style="background-color: #5D87B2; border-color: #5D87B2; text-decoration:none; color:white " class="page-link" href="#">${pagina}</a></li>
+    <li class="botonazul" ><a style="background-color: #5D87B2; border-color: #5D87B2; color:white; text-decoration:none  " class="page-link" href="/misInformes/${(pagina+1)}"> >> </a></li>
     `
    }else if(pagina==totalPages){
     let paginador = document.getElementById("paginator")
     paginador.innerHTML=`
-    <li class="page-item "><a style="background-color: black; border-color: black; color:white " class="page-link" href="/misInformes/${(pagina-1)}"> << </a></li>
-    <li class="page-item active"><a style="background-color: black; border-color: black; " class="page-link" href="#">${pagina}</a></li>
+    <li class="botonazul" ><a style="background-color: #5D87B2; border-color: #5D87B2; color:white; text-decoration:none " class="page-link" href="/misInformes/${(pagina-1)}"> << </a></li>
+    <li class="botonazul" ><a style="background-color: #5D87B2; border-color:#5D87B2; text-decoration:none; color:white " class="page-link" href="#">${pagina}</a></li>
 
     `
    } 
@@ -100,9 +104,9 @@ fetch(`/dataInformes/${miPagina}`)
 
     let paginador = document.getElementById("paginator")
     paginador.innerHTML=`
-    <li class="page-item "><a style="background-color: black; border-color: black; color:white " class="page-link" href="/misInformes/${(pagina-1)}"> << </a></li>
-    <li class="page-item active"><a style="background-color: black; border-color: black; color:white " class="page-link" href="#">${pagina}</a></li>
-    <li class="page-item"><a style="background-color: black; border-color: black; color:white " class="page-link" href="/misInformes/${(pagina+1)}"> >> </a></li>
+    <li class="botonazul" ><a style="background-color: #5D87B2; border-color: #5D87B2; color:white; text-decoration:none " class="page-link" href="/misInformes/${(pagina-1)}"> << </a></li>
+    <li class="botonazul" ><a style="background-color: #5D87B2; border-color: #5D87B2; color:white; text-decoration:none " class="page-link" href="#">${pagina}</a></li>
+    <li class="botonazul" ><a style="background-color:#5D87B2; border-color: #5D87B2; color:white; text-decoration:none " class="page-link" href="/misInformes/${(pagina+1)}"> >> </a></li>
 
     `
 
@@ -147,8 +151,8 @@ fetch(`/dataInformes/${miPagina}`)
       icon: "warning",
       iconColor: "red",
       showCancelButton: true,
-      confirmButtonColor: "black",
-      cancelButtonColor: "red",
+      confirmButtonColor: "#5D87B2",
+      cancelButtonColor: "gray",
       confirmButtonText: "Borrar",
       cancelButtonText: "Cancelar"
     }).then((result) => {
@@ -181,7 +185,7 @@ fetch(`/dataInformes/${miPagina}`)
               title: "Denegado",
               text: "No puedes borrar informes archivados",
               iconColor: "red",
-              confirmButtonColor: "red",
+              confirmButtonColor: "#5D87B2",
             });
 
           }
@@ -191,7 +195,7 @@ fetch(`/dataInformes/${miPagina}`)
               title: "Borrado",
               text: "Registro Borrado",
               icon: "success",
-              iconColor: "red",
+              iconColor: "#5D87B2",
               showConfirmButton: false
             });
     
@@ -221,15 +225,16 @@ fetch(`/dataInformes/${miPagina}`)
 
   function buscar(){
     Swal.fire({
-      title: "DNI a buscar",
+      title: "Buscar por DNI",
       input: "number",
       inputAttributes: {
         autocapitalize: "off"
       },
       confirmButtonText: "Buscar",
       cancelButtonText: "Cancelar",
-      confirmButtonColor: "black",
-      cancelButtonColor: "red",
+      color:"#5D86B2",
+      confirmButtonColor: "#5D87B2",
+      cancelButtonColor: "gray",
       showCancelButton: true,
       showLoaderOnConfirm: true,
       preConfirm: async (dni) => {
@@ -253,7 +258,8 @@ fetch(`/dataInformes/${miPagina}`)
             icon: "error",
             title: "Oops...",
             text: "No se encuentran datos",
-            confirmButtonColor: "black",
+            color:"#5D86B2",
+            confirmButtonColor: "#5D86B2",
           });
         }else{
           document.getElementById("paginator").innerHTML=``
@@ -263,7 +269,6 @@ fetch(`/dataInformes/${miPagina}`)
           <table  class="fl-table">
           <thead>
            <tr>
-           <th>Nombre</th>
            <th>Apellido</th>
            <th>Fecha </th>
            <th>Ver</th>
@@ -272,39 +277,40 @@ fetch(`/dataInformes/${miPagina}`)
           </thead>
           <tbody id="registros"></tbody>
           </table>       
-          <div class="divBtnReset">
-          <button class="btnSalas" onclick="reset()">Salir</button> 
+          <div class="containerreset">
+          <button class="botonazul2" onclick="reset()">Salir</button> 
           </div> 
           `
 
 
           for (const iterador of result.value) {
 
+            let fechaYhora= iterador.timestamp.split(" ")
+
             let contenedor = document.createElement("tr");
             contenedor.innerHTML = 
             ` 
-           
-            <td> ${iterador.nombre} </td>
+          
             <td> ${iterador.apellido} </td>
-            <td> ${iterador.timestamp} </td>
+            <td> ${fechaYhora[0]} </td>
             <td> 
             <div class="mobileIcon">
-            <a href="/informeFinal/${iterador._id}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-folder2-open" viewBox="0 0 16 16">
-            <path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v.64c.57.265.94.876.856 1.546l-.64 5.124A2.5 2.5 0 0 1 12.733 15H3.266a2.5 2.5 0 0 1-2.481-2.19l-.64-5.124A1.5 1.5 0 0 1 1 6.14zM2 6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5a.5.5 0 0 0-.5.5zm-.367 1a.5.5 0 0 0-.496.562l.64 5.124A1.5 1.5 0 0 0 3.266 14h9.468a1.5 1.5 0 0 0 1.489-1.314l.64-5.124A.5.5 0 0 0 14.367 7H1.633z"/>
-          </svg></a>
+            <a href="/informeFinal/${iterador._id}">
+            <img style="cursor: pointer;" src="/LUPA.png" alt="">
+          </a>
           </div>
     
           <div class="desktopIcon">
-            <a href="#" onclick="window.open('/informeFinal/${iterador._id}','mywin','resizable=no,width=900,height=845')"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-folder2-open" viewBox="0 0 16 16">
-            <path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v.64c.57.265.94.876.856 1.546l-.64 5.124A2.5 2.5 0 0 1 12.733 15H3.266a2.5 2.5 0 0 1-2.481-2.19l-.64-5.124A1.5 1.5 0 0 1 1 6.14zM2 6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5a.5.5 0 0 0-.5.5zm-.367 1a.5.5 0 0 0-.496.562l.64 5.124A1.5 1.5 0 0 0 3.266 14h9.468a1.5 1.5 0 0 0 1.489-1.314l.64-5.124A.5.5 0 0 0 14.367 7H1.633z"/>
-          </svg></a>
+            <a href="#" onclick="window.open('/informeFinal/${iterador._id}','mywin')">
+            <img style="cursor: pointer;" src="/LUPA.png" alt="">
+          </a>
           </div>
           
           
           </td>
-            <td> 
-            <button onclick="eliminarArchivo('${iterador._id}')"><img src="/delete.png" width=30px  alt=""></button>
-            </td>
+          <td> 
+          <img style="cursor: pointer;" onclick="eliminarArchivo('${iterador._id}')" src="/DELETE.png" width=30px  alt="">
+          </td>
             `;
             document.getElementById("registros").appendChild(contenedor)
     

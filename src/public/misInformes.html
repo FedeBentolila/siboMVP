@@ -6,6 +6,9 @@
     <title>Mis informes</title>
     <script src="/socket.io/socket.io.js"></script>
     <link rel="stylesheet" href="/misInformes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
    
 </head>
 <body class="body" >
@@ -114,12 +117,18 @@
 
       
 
-    <h2> Archivo de Informes</h2> 
+  <div class="tituloseccion">
+    <img class="imagenNuevo" src="/ARCHIVO.png" width="5%">
+    <strong style="margin: 10px;">Archivo de Informes</strong>
+   
+</div>
     <br>
 
     
-    <div class="d-flex flex-column align-items-center justify-content-center">
-        <button style="background-color: black; border-color: black; " class="btn btn-primary" onclick="buscar()">Buscador</button>
+    <div onclick="buscar()" class="botonesFirma" >
+        <button  class="botonazul" >
+          Buscador
+        </button>
     </div>
     <br>
    
@@ -127,7 +136,6 @@
     <table  class="fl-table">    
     <thead>
        <tr>
-           <th>Nombre</th>
            <th>Apellido</th>
            <th>Fecha </th>
            <th>Ver</th>
@@ -144,8 +152,8 @@
 
 
     
-    <nav class="container-fluid d-flex flex-column w-100 align-items-center">
-        <ul  class="pagination" id="paginator">
+    <nav class="paginador">
+        <ul   id="paginator">
           
         </ul>
     
