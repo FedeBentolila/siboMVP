@@ -10,6 +10,16 @@ let dateStr =
   ":" +
   ("00" + date.getMinutes()).slice(-2)
 
+  let botonHome=document.getElementById("brandLogo")
+  botonHome.addEventListener("click", gotoHome)
+
+  let botonHome2=document.getElementById("brandLogo2")
+  botonHome2.addEventListener("click", gotoHome)
+
+  function gotoHome(){
+   window.location="/"
+  }
+
 
 
   let contenedor = document.createElement("div");
@@ -33,6 +43,7 @@ let dateStr =
         
       let usuario= data.username
       document.getElementById("usuario").innerText=`${usuario}`
+      document.getElementById("usuario2").innerText=`${usuario}`
     
       
       })
@@ -70,3 +81,20 @@ let dateStr =
          }
          
       }
+
+
+      let botonburger = document.getElementById("menuBurger")
+botonburger.addEventListener("click", reveal)
+
+function reveal (){
+  let displayedNavbar=document.getElementById("reveal")
+
+  if(displayedNavbar.style.display=="none"){
+    displayedNavbar.style.display="block"
+  }else{
+    displayedNavbar.style.display="none"
+  }
+
+
+  
+}

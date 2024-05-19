@@ -4,145 +4,243 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de test SIBO</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./pacienteForm.css">
+   
 </head>
-<body >
-    <nav class="navBar ">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="./siboassist.png"  class="brandLogo" >
-          </a>
-        </div>
-      </nav>
-      <br>
-      <div class="navBarContainerForm">
+<body class="body" >
+  <nav class="navBar ">
+    <img src="./logo.png" id="brandLogo" class="brandLogo" >
 
-        <div class="navBarForm">
-          <a class="iconoNavBar" href="/"><img src="/home.webp"  width="50px" srcset=""></a>
-          <a class="iconoNavBar" href="/pacienteForm"><img src="https://cdn-icons-png.flaticon.com/512/3450/3450043.png" style="border-bottom:solid; padding-bottom: 2px; border-color: black; "   width="40px" srcset=""></a>
-          <a class="iconoNavBar" href="/salaDeEspera"><img src="https://cdn-icons-png.flaticon.com/512/3511/3511809.png"  width="40px" srcset=""></a>
-          <a class="iconoNavBar" href="/misInformes/1"><img src="https://cdn-icons-png.flaticon.com/512/2001/2001114.png"  width="40px" srcset=""></a>
-          <a class="iconoNavBar" href="/misDatos"><img src="https://icons.veryicon.com/png/o/miscellaneous/it-operation-and-maintenance-system-of/personal-data-5.png"  width="45px" srcset=""></a>
-      </div>  
-      <br>
-
-      <div class="userNameForm">
-        <h3 id="usuario"></h3>
-        <a href="/logout"><img src="/logoutIcon.webp"  width="20px" style="padding-top: 7px;" srcset=""></a>
+    <a class="linkComponente" href="/salaDeEspera">
+      <div class="componenteNavBar">
+        <strong style="padding-right: 10px;">Sala de espera</strong>
+        <img src="./saladeespera.png" class="imgComponente" alt="nuevoUsuario">
       </div>
-  
+    </a>
+
+    <a class="linkComponente" href="/misInformes/1">
+      <div class="componenteNavBar">
+        <strong style="padding-right: 10px;">Archivo</strong>
+        <img src="./ARCHIVO.png" class="imgComponente" alt="nuevoUsuario">
+      </div>
+    </a>
+
+    <a class="linkComponente" href="/informes">
+      <div class="componenteNavBar">
+        <strong style="padding-right: 10px;">Informes</strong>
+        <img src="./informes.png" class="imgComponente" alt="nuevoUsuario">
+      </div>
+    </a>
+
+    <a class="linkComponente" href="/register">
+      <div class="componenteNavBar">
+        <strong>Nuevo Usuario</strong>
+        <img src="./NUEVOUSUARIO.png" class="imgComponente" alt="nuevoUsuario">
+      </div>
+    </a>
+
+    <a class="linkComponente" href="/misDatos">
+      <div class="componenteNavBar">
+        <strong>Mis Datos</strong>
+        <img src="./MISDATOS.png" class="imgComponente" alt="nuevoUsuario">
+      </div>
+    </a>
+
+    <a class="linkComponente" href="/logout">
+      <div class="componenteNavBar">
+        <strong id="usuario"></strong>
+        <img src="./CLOSE.png" style="padding-left: 5px;" class="imgComponente" alt="nuevoUsuario">
+      </div>
+    </a> 
+  </nav>
+
+  <div class="nabBarMobileContainer">
+    <nav class="navBarMobile">
+      <img id="menuBurger" src="./menu-burger.png"  class="brandLogo2" >
+      <img src="./logo.png" id="brandLogo2"  class="brandLogo" >
+      <img src="./NOTIFICACION.png"  class="brandLogo2" >
+    </nav>
+    <div id="reveal" class="reveal">
+    <div id="displayedNavbar" class="displayedNavbar">
+
+      <a class="linkComponenteMobile" href="/salaDeEspera">
+        <div class="componenteNavBar">
+          <img style="padding-right: 10px;" src="./saladeespera.png" class="imgComponente" alt="nuevoUsuario">
+          <strong>Sala de espera</strong>
+        </div>
+      </a>
+      <br>
+
+      <a class="linkComponenteMobile" href="/misInformes/1">
+        <div class="componenteNavBar">
+          <img style="padding-right: 10px;" src="./ARCHIVO.png" class="imgComponente" alt="nuevoUsuario">
+          <strong>Archivo</strong>
+        </div>
+      </a>
+      <br>
+
+      <a class="linkComponenteMobile" href="/informes">
+        <div class="componenteNavBar">
+          <img style="padding-right: 10px;" src="./informes.png" class="imgComponente" alt="nuevoUsuario">
+          <strong>Informes</strong>
+        </div>
+      </a>
+
+      <a class="linkComponenteMobile" href="/register">
+        <div class="componenteNavBar">
+          <img src="./NUEVOUSUARIO.png" class="imgComponente" alt="nuevoUsuario">
+          <strong>Nuevo Usuario</strong>
+        </div>
+      </a>
+
+      <a class="linkComponenteMobile" href="/misDatos">
+        <div class="componenteNavBar">
+          <img src="./MISDATOS.png" class="imgComponente" alt="nuevoUsuario">
+          <strong>Mis Datos</strong>
+          
+        </div>
+      </a>
+
+      <a class="linkComponenteMobile" href="/logout">
+        <div class="componenteNavBar">
+          <img src="./CLOSE.png"  class="imgComponente" alt="nuevoUsuario">
+          <strong style="padding-left: 5px;" id="usuario2"></strong>
+           </div>
+      </a> 
+
     </div>
+  </div>
+
+
+  </div>
+  <br>
+  <br>
+  <div class="tituloseccion">
+    <img class="imagenNuevo" src="./nuevopaciente.png" width="5%">
+  <strong style="margin: 10px;">Nuevo Paciente </strong>
+  <p style="margin: 10px;" > (Ingrese los datos del nuevo paciente) </p>
+  </div>
+  <br>
+  <br>
+
+      
+  <div class="containerForm">
+    <form class="form" id="form" action="/agregarPaciente" method="post">
+
+      <div class="label">
+        <label for="nombre" class="loginfieldname">Nombre</label>
+      </div> 
+        <input type="text" class="campo" id="nombre" name="nombre" required >
+    
+
+      <div class="label"> 
+        <label for="apellido" class="loginfieldname">Apellido</label>
+      </div>
+        <input type="text" class="campo" id="apellido" name="apellido" required>
+  
+
+
+      <div class="label"> 
+        <label for="dni" class="loginfieldname">DNI</label>
+      </div>
+      <input type="number" class="campo" id="dni" name="dni" required>
+
+
+      <div class="label"> 
+        <label for="email" class="loginfieldname">Email</label>
+      </div>
+        <input type="email" class="campo" id="email" name="email" required>
+     
+
+
+        <div class="label"> 
+        <label for="fechaNacimiento" class="loginfieldname">Fecha de Nacimiento</label>
+      </div>
+        <input type="date" class="campo" id="fechaNacimiento" name="fechaNacimiento" required>
+    
+
+        <div class="label"> 
+        <label for="solicitante" class="loginfieldname">¿Quién solicita el estudio?</label>
+      </div>
+        <input type="text" class="campo" id="solicitante" name="solicitante" required>
+     
+
+        <div class="label"> 
+        <label for="cobertura" class="loginfieldname">Cobertura</label>
+      </div>
+        <input type="text" class="campo" id="cobertura" name="cobertura" required>
+    
+        <div class="label"> 
+      <label for="tipoEstudio" class="loginfieldname">Tipo de estudio de aire espirado</label>
+    </div>
+      <select id="tipoEstudio" onchange="displayOptions()" class="campo" name="tipo" required>
+        <option disabled selected value> -- Elegir opción -- </option>
+        <option value="hidrogeno">Hidrógeno</option>
+        <option value="metano">Metano</option>
+        <option value="mixto">Hidrógeno y Metano</option>
+        <option value="intolerancia">Intolerancia</option>
+      </select>
+  
+      <div class="label"> 
+      <label for="protocolo" class="loginfieldname">Protocolo</label>
+    </div>
+      <select id="protocolo" class="campo" name="protocolo" required>
+        <option disabled selected value> -- Elegir opción -- </option>
+        <option class="siboOption" value="Lactulosa 10gr">Lactulosa 10gr</option>
+        <option class="siboOption" value="Glucosa 10gr">Glucosa 10 gr</option>
+        <option class="intoleranciaOption" value="Fructosa">Fructosa</option>
+        <option class="intoleranciaOption"  value="Lactosa">Lactosa</option>
+        <option class="intoleranciaOption" value="Sorbitol">Sorbitol</option>
+        <option class="intoleranciaOption" value="Fructosa-Sorbitol">Fructosa y Sorbitol</option>
+      </select>
+
+   
+      <div class="label"> 
+      <label for="intervalo" class="loginfieldname">Intervalo entre mediciones</label>
+      </div>
+      <select id="intervalo" class="campo" name="intervalo" required>
+        <option value="20">20 minutos</option>
+        <option value="15">15 minutos</option>
+        <option value="30">30 minutos</option>
+      </select>
+     
+
+      <div style="display: none;" class="label"> 
+      <label for="sala" class="loginfieldname">Sala</label>
+      </div>
+      <select style="display: none;" id="sala" class="campo" name="sala" required>
+        <option selected value="1">Sala 1</option>
+       <!--  <option value="2">Sala 2</option>
+        <option value="3">Sala 3</option> -->
+      </select>
       
 
-      <section class="section-padding container-fluid col-xs-12 col-md-5" >
+      <div class="label"> 
+      <label for="estadoDieta" class="loginfieldname">¿Dieta Previa suficiente?</label>
+      </div>
+      <select id="estadoDieta" class="campo" name="estadoDieta" required>
+        <option value="SUFICIENTE">Suficiente</option>
+        <option value="INSUFICIENTE">Insuficiente</option>
+      </select>
+      <br>
+      <br>
+
+      
+
+      
+
+      <input  class="botonazul" type="submit" value="Guardar">
         <br>
-
-        <form class="p-3 mt-3" id="form" action="/agregarPaciente" method="post">
-
-          <div class="mb-3 text-center">
-
-          <h3>Ingrese los datos del paciente</h3>
-            
-          </div>
-          <br>
-          <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required >
-
-          </div>
-
-          <div class="mb-3">
-            <label for="apellido" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="apellido" name="apellido" required>
-          </div>
+        
+      </form>
 
 
-          <div class="mb-3">
-            <label for="dni" class="form-label">DNI</label>
-            <input type="number" class="form-control" id="dni" name="dni" required>
-          </div>
 
 
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-          </div>
+  </div>
+   
 
-
-          <div class="mb-3" >
-            <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
-            <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
-          </div>
-
-          <div class="mb-3">
-            <label for="solicitante" class="form-label">¿Quién solicita el estudio?</label>
-            <input type="text" class="form-control" id="solicitante" name="solicitante" required>
-          </div>
-
-          <div class="mb-3">
-            <label for="cobertura" class="form-label">Cobertura</label>
-            <input type="text" class="form-control" id="cobertura" name="cobertura" required>
-          </div>
-
-          <label for="tipoEstudio" class="form-label">Tipo de estudio de aire espirado</label>
-            
-          <select id="tipoEstudio" onchange="displayOptions()" class="form-select" name="tipo" required>
-            <option disabled selected value> -- Elegir opción -- </option>
-            <option value="hidrogeno">Hidrógeno</option>
-            <option value="metano">Metano</option>
-            <option value="mixto">Hidrógeno y Metano</option>
-            <option value="intolerancia">Intolerancia</option>
-          </select>
-          <br>
-
-          <label for="protocolo" class="form-label">Protocolo</label>
-          <select id="protocolo" class="form-select" name="protocolo" required>
-            <option disabled selected value> -- Elegir opción -- </option>
-            <option class="siboOption" value="Lactulosa 10gr">Lactulosa 10gr</option>
-            <option class="siboOption" value="Glucosa 10gr">Glucosa 10 gr</option>
-            <option class="intoleranciaOption" value="Fructosa">Fructosa</option>
-            <option class="intoleranciaOption"  value="Lactosa">Lactosa</option>
-            <option class="intoleranciaOption" value="Sorbitol">Sorbitol</option>
-            <option class="intoleranciaOption" value="Fructosa-Sorbitol">Fructosa y Sorbitol</option>
-          </select>
-          <br>
-       
-
-          <label for="intervalo" class="form-label">Intervalo entre mediciones</label>
-          <select id="intervalo" class="form-select" name="intervalo" required>
-            <option value="20">20 minutos</option>
-            <option value="15">15 minutos</option>
-            <option value="30">30 minutos</option>
-          </select>
-          <br>
-  
-
-          <label for="sala" class="form-label">Sala</label>
-          <select id="sala" class="form-select" name="sala" required>
-            <option value="1">Sala 1</option>
-            <option value="2">Sala 2</option>
-            <option value="3">Sala 3</option>
-          </select>
-          <br>
-
-          <label for="estadoDieta" class="form-label">¿Dieta Previa suficiente?</label>
-          <select id="estadoDieta" class="form-select" name="estadoDieta" required>
-            <option value="SUFICIENTE">Suficiente</option>
-            <option value="INSUFICIENTE">Insuficiente</option>
-          </select>
-          <br>
-          <br>
-
-          
-
-          
-
-          <input style="background-color: black; border-color: black; " class="btn btn-primary" type="submit" value="Guardar">
-            <br>
-            
-          </form>
-      </section>
+        
 
     
       <br>
@@ -157,6 +255,5 @@
 
 <script src="./pacienteForm.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

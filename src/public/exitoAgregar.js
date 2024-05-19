@@ -18,9 +18,10 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
 
 let contenedorA= document.createElement("a")
 
-contenedorA.classList.add("btn")
-contenedorA.classList.add("btn-primary")
+
 
 contenedorA.innerHTML="Encuesta"
+contenedorA.classList.add("botonazul2")
+contenedorA.setAttribute("style","text-decoration:none")
 contenedorA.setAttribute("href",`/encuesta/${id}`)
 document.getElementById("link").appendChild(contenedorA)

@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+.body{
+    background: #BDE7F9 108.42%;
+}
+
+.brandLogo{
+    width: 15%;
+}
+
+.brandLogo2{
+    width: 8%;
+}
+
+.navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #FFF 34.65%, #BDE7F9 108.42%);
+}
+
+.componenteNavBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--Color, #5D87B2);
+    text-align: left;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.linkComponente{
+    text-decoration: none;
+}
+
+.linkComponente2{
+    text-decoration: none;
+    width: 15%;
+    margin: 20px;
+    padding: 10px;
+}
+
+.imgComponente{
+    width: 20%;
+}
+
+.tituloseccion{
+    display: flex;
+ flex-direction: column;
+ justify-content: center;
+ color: var(--Color, #5D87B2);
+ text-align: center;
+ font-family: Roboto;
+ font-size: 21.38px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 33.6px /* 157.156% */;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.botonescritorioseccion{
+display: flex;
+flex-direction: column;
+ align-items: center;
+ border-radius: 10px;
+ background: #FFF;
+ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.iconobotonesc{
+    width: 100px;
+    height: 100px;
+   
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+   
+}
+
+.titulobotonesc{
+color: var(--Color, #5D87B2);
+ text-align: center;
+ font-family: Roboto;
+ font-size: 18px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 24px /* 133.333% */;
+ padding: 10px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ 
+}
+
+.navBarMobile{
+    display: none;
+}
+
+.nabBarMobileContainer{
+    display: none;
+}
+
+.displayedNavbar{
+    display: none;
+}
+
+.textBoton{
+    text-align: center;
+    font-size: small;
+}
+
+
+
+
+@media (max-width: 767px) {
+
+    .reveal{
+        display: none;
+        width: 100%;
+    }
+
+    .navBar{
+        display: none;
+    }
+
+    .navBarMobile{
+        width: 100%;
+      
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background: linear-gradient(180deg, #FFF 34.65%, #BDE7F9 108.42%);
+    }
+
+    .nabBarMobileContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .displayedNavbar{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background: white;
+    }
+
+
+    .brandLogo{
+        width: 100px;
+    }
+
+    .linkComponente2{
+        text-decoration: none;
+        width: 80%;
+        margin: 20px;
+        padding: 10px;
+    }
+    
+    .imgComponente{
+        width: 20%;
+    }
+    
+    .tituloseccion{
+        display: flex;
+     flex-direction: column;
+     justify-content: center;
+     color: var(--Color, #5D87B2);
+     text-align: center;
+     font-family: Roboto;
+     font-size: 21.38px;
+     font-style: normal;
+     font-weight: 500;
+     line-height: 33.6px /* 157.156% */;
+    }
+    
+    .botones{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .botonescritorioseccion{
+    display: flex;
+    flex-direction: row;
+     align-items: center;
+     border-radius: 10px;
+     background: #FFF;
+     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    
+    }
+    
+    .iconobotonesc{
+        width: 100px;
+        height: 100px;
+       
+        display: flex;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        border-right: 1px solid rgba(93, 135, 178, 0.50);
+    }
+    
+    .titulobotonesc{
+    color: var(--Color, #5D87B2);
+     text-align: center;
+     font-family: Roboto;
+     font-size: 18px;
+     font-style: normal;
+     font-weight: 500;
+     line-height: 24px /* 133.333% */;
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: flex-start;
+    }
+
+    .textBoton{
+        text-align: left;
+        font-size: small;
+    }
+
+    .linkComponenteMobile{
+        width: 50%;
+        text-decoration: none;
+    }
+
+    .componenteNavBar{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        color: var(--Color, #5D87B2);
+        font-family: Roboto;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        padding: 10px;
+    }
+
+    
+    
+
+}

@@ -4,115 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio Operador</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-<body >
-    <nav class="navBar">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="./siboassist.png"  class="brandLogo" >
-          </a>
-        </div>
+    <link rel="stylesheet" href="./inicioadministrador.css">
+   </head>
+<body class="body" >
+    <nav class="navBar ">
+        <img src="./logo.png"  class="brandLogo" >
+       
+
+        <a class="linkComponente" href="/misDatos">
+          <div class="componenteNavBar">
+            <strong>Mis Datos</strong>
+            <img src="./MISDATOS.png" class="imgComponente" alt="nuevoUsuario">
+          </div>
+        </a>
+
+        <a class="linkComponente" href="/logout">
+          <div class="componenteNavBar">
+            <strong id="usuario"></strong>
+            <img src="./CLOSE.png" style="padding-left: 5px;" class="imgComponente" alt="nuevoUsuario">
+          </div>
+        </a> 
       </nav>
 
-      <br>
-      <br>
-      <section class="d-flex flex-column justify-content-center align-items-center">
-
-        <div class="userName">
-          <h3 id="usuario"></h3>
-          <a href="/logout"><img src="/logoutIcon.webp"  width="30px" style="padding-bottom: 3px;" srcset=""></a>
-        </div>
-
-    </section>
-
- 
-
-      <section class="d-flex flex-column justify-content-center align-items-center" >
-        <div class="contenedorInicioOperador ">
-
-         <!--  <div class="card m-5" style="width: 15rem;">
-            <img src="https://static.thenounproject.com/png/2821224-200.png" class="card-img-top p-4" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Turnos del día</h5>
-              <p class="card-text">Ver los turnos del día e ingresar a un paciente a la sala de espera </p>
-              <a href="/turnosHoy" class="btn btn-primary" style="background-color: black; border-color: black; ">Acceder</a>
-            </div>
-        </div> -->
-
-
-          <div class="card m-5" style="width: 15rem;">
-            <img src="https://cdn-icons-png.flaticon.com/512/3450/3450043.png" class="card-img-top p-4" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Nuevo Paciente</h5>
-              <p class="card-text">Agregar un paciente a la sala de espera sin turno previo  </p>
-              <a href="/pacienteForm" class="btn btn-primary" style="background-color: black; border-color: black; ">Acceder</a>
-            </div>
-        </div>
-
-          <div class="card m-5" style="width: 15rem;">
-              <img src="https://cdn-icons-png.flaticon.com/512/3511/3511809.png" class="card-img-top p-4" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Sala de Espera</h5>
-                <p class="card-text">Registrar H2 y/o CH3 en los pacientes   </p>
-                <a href="/salaDeEsperaOperador" style="background-color: black; border-color: black; " class="btn btn-primary">Acceder</a>
-              </div>
-          </div>
-
-          
-
-          <div class="card m-5" style="width: 15rem;">
-            <img src="https://cdn-icons-png.flaticon.com/512/2001/2001114.png" class="card-img-top p-4" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Sala de Archivo</h5>
-              <p class="card-text">Historial de informes, exportación a PDFs</p>
-              <a href="/misInformesOperador/1" style="background-color: black; border-color: black; " class="btn btn-primary">Acceder</a>
-            </div>
-        </div>
-
+      <div class="nabBarMobileContainer">
+        <nav class="navBarMobile">
+          <img id="menuBurger" src="./menu-burger.png"  class="brandLogo2" >
+          <img src="./logo.png"  class="brandLogo" >
+          <img src="./NOTIFICACION.png"  class="brandLogo2" >
+        </nav>
+        <div id="reveal" class="reveal">
+        <div id="displayedNavbar" class="displayedNavbar">
          
-
-          <div class="card m-5" style="width: 15rem;">
-              <img src="https://icons.veryicon.com/png/o/miscellaneous/it-operation-and-maintenance-system-of/personal-data-5.png" class="card-img-top p-4" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Mis Datos</h5>
-                <p class="card-text">Ver mis datos y modificar mi firma</p>
-                <a href="/misDatos" style="background-color: black; border-color: black; " class="btn btn-primary">Acceder</a>
-              </div>
-          </div>
-
-        <!--   <div class="card m-5" style="width: 15rem;">
-            <img src="https://t3.ftcdn.net/jpg/05/54/60/68/360_F_554606861_txKoTSp8aBaO8oARngeSbgNcSB1yWTRc.jpg" class="card-img-top p-4" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Ver todos los Turnos</h5>
-              <p class="card-text">Ver todos los turnos pendientes </p>
-              <a href="/verTurnos" class="btn btn-primary" style="background-color: black; border-color: black; ">Acceder</a>
+  
+          <a class="linkComponente" href="/misDatos">
+            <div class="componenteNavBar">
+              <strong>Mis Datos</strong>
+              <img src="./MISDATOS.png" class="imgComponente" alt="nuevoUsuario">
             </div>
-        </div> -->
-
-
-         
+          </a>
+  
+          <a class="linkComponente" href="/logout">
+            <div class="componenteNavBar">
+              <strong id="usuario2"></strong>
+              <img src="./CLOSE.png" style="padding-left: 5px;" class="imgComponente" alt="nuevoUsuario">
+            </div>
+          </a> 
+  
+        </div>
       </div>
 
-        
-      </section>
+
+      </div>
+     
       <br>
-    <br>
-
-    
-    <br>
-    <br>
-    <br>
-
-   
+      <br>
+      <p class="tituloseccion">Herramientas</p>
 
 
+      <div class="botones">
+
+        <a href="/pacienteForm" class="linkComponente2">
+          <div class="botonescritorioseccion" >
+            <div class="iconobotonesc">
+              <img src="./nuevopaciente.png" alt="">
+            </div>
+            <div class="titulobotonesc">
+              <strong>Nuevo paciente</strong>
+              <p class="textBoton">Agregar un paciente a la sala de espera</p>
+            </div>
+          </div>
+        </a>
+        
+        <a href="/salaDeEsperaOperador" class="linkComponente2">
+          <div class="botonescritorioseccion" >
+            <div class="iconobotonesc">
+              <img src="./saladeespera.png" alt="">
+            </div>
+            <div class="titulobotonesc">
+              <strong>Sala de Espera</strong>
+              <p class="textBoton">Registrar H2 o CH4 en los pacientes</p>
+           
+            </div>
+          </div>
+        </a>
+
+       
+      
+        <a href="/misInformesOperador/1" class="linkComponente2">
+          <div class="botonescritorioseccion" >
+            <div class="iconobotonesc">
+              <img src="./ARCHIVO.png" alt="">
+            </div>
+            <div class="titulobotonesc">
+              <strong>Archivo</strong>
+              <p class="textBoton">Historial de informes, exportación a PDF</p>
+           
+            </div>
+          </div>
+        </a>
+        
 
 
+      </div>
 
+     
+      <br>
 
-<script src="/inicio.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      
+
+    <script src="/inicio.js"></script>
 </body>
 </html>
+
+
+
