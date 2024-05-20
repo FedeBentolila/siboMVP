@@ -2,7 +2,7 @@ const urlParams =window.location.href;
 const myArray = urlParams.split("/");
 const sala= parseInt(myArray[4])
 
-document.getElementById("salaTitle").innerHTML=`Sala de espera ${sala}`
+//document.getElementById("salaTitle").innerHTML=`Sala de espera ${sala}`
 
 console.log(sala)
 
@@ -56,30 +56,7 @@ function render (data){
 
         }
 
-     /*    if(iterador.tipo=="hidrogeno"){
-
-         
-
-            if(iterador.hidrogeno.length==0){
-                nMedicion= 0
-                proxMedicion= fechaYhora[1]
-                hrMedicion= "pendiente"
-            }
-
-            if(iterador.hidrogeno.length==1){
-                nMedicion= "1"
-                hrMedicion= iterador.hidrogeno[0].t
-                proxMedicion= agregarMinutos(iterador.hidrogeno[0].t, intervalo)
-            }
-
-            if(iterador.hidrogeno.length>1){
-                nMedicion= iterador.hidrogeno.length
-                hrMedicion= iterador.hidrogeno[(iterador.hidrogeno.length-1)].t
-                proxMedicion= agregarMinutos(iterador.hidrogeno[(iterador.hidrogeno.length-1)].t, intervalo)
-            }
-
-        }
- */
+  
         if(iterador.tipo=="hidrogeno" || iterador.tipo=="mixto" || iterador.tipo=="intolerancia"){
 
          
@@ -124,8 +101,10 @@ function render (data){
         <td id="hrMedicion${iterador._id}"> ${hrMedicion} </td>
         <td id="proxMedicion${iterador._id}"> ${proxMedicion} </td>
         <td> <a href="/exitoAgregar/${iterador._id}"><img src="/qr.png" width=40px  alt=""></a></td>
-        <td> <a href="/acceder/${iterador._id}"><img src="/acceso.webp" width=40px  alt=""></a></td>
-        <td> <img id="boton${iterador._id}" src="/breath.png" width=40px  alt=""></td>
+        <td> <a href="/acceder/${iterador._id}"><img src="/FICHA.png" width=40px  alt=""></a></td>
+        <td class="celdaSoplar" id="boton${iterador._id}"> 
+        <img  src="/medirAzul.png" width=40px  alt="">
+        </td>
         <td></td>
         
 
@@ -163,21 +142,25 @@ function render (data){
 
            
             <div id="form" class="form" >
-                <div>
-                <h3>${iterador.nombre} </h3>
-                <h3>${iterador.apellido}</h3>
+                <div  class="logintitle2">
+                <strong>${iterador.apellido}</strong>
+                <img   width=20% src="/ESPIRADO.png" alt="">
                 </div>
-                
-                <label for="t" class="form-label">Hora</label>
-                <input type="time" name="tHidrogeno" id="tHidrogeno${iterador._id}" class="form-control inputTime" required>
-                <br>
-              
-                <label for="valorHidrogeno" class="form-label">Valor Hidrógeno</label>
-                <input type="number" name="valorHidrogeno" id="valorHidrogeno${iterador._id}" class="form-control" required>
                 <br>
 
-                <label for="sintoma" class="form-label">Síntoma</label>
-                <select id="sintoma${iterador._id}" class="form-control inputTime" name="sintoma"  required>
+                <div class="labelAndInputContainer">
+                <label for="t" class="loginfieldname">Hora:</label>
+                <input type="time" name="tHidrogeno" id="tHidrogeno${iterador._id}" class=" inputTime" required>
+                </div>
+                 <br>
+                 <div class="labelAndInputContainer">
+                <label for="valorHidrogeno" class="loginfieldname">H2:</label>
+                <input type="number" name="valorHidrogeno" id="valorHidrogeno${iterador._id}" class="inputTime2" required>
+                </div>
+                <br>
+                <div class="labelAndInputContainer">
+                <label for="sintoma" class="loginfieldname">Síntoma:</label>
+                <select id="sintoma${iterador._id}" class="inputTime2" name="sintoma"  required>
                 <option value="no">No</option>
                 <option value="distensión">Distensión Abdominal</option>
                 <option value="meteorismo">Meteorismo</option>
@@ -186,15 +169,18 @@ function render (data){
                 <option value="náuseas">Náuseas</option>
                 <option value="dolor abdominal">Dolor abdominal</option>
                 </select>
-                <br>
-                <br>
-
-                <button style="background-color: black; border-color: black; " class="btn-formx" onclick="addValueAndTime('${iterador.tipo}','${iterador._id}','${iterador.intervalo}','${minutosProtocolo}')">Agregar</button>
-                <br>
-                <br>
-                <br>
+                </div>
+                <div  class="logintitle">
+                </div>
+               
                 <div class="botonX">
-                <button style="background-color: black; border-color: black; "  id="close${iterador._id}" class="btn-formx">X</button>
+                <button class="botonazul" onclick="addValueAndTime('${iterador.tipo}','${iterador._id}','${iterador.intervalo}','${minutosProtocolo}')">Guardar Medición</button>
+                </div>
+              
+                <div class="botonX2">
+
+                <img style="position: absolute; top: 10px; right: 10px;" id="close${iterador._id}" width=8% src="/CLOSE.png" alt="">
+                
                 </div>
                 </div>
             
@@ -208,18 +194,26 @@ function render (data){
 
            
             <div id="form" class="form" >
-            <div>
-            <h3>${iterador.nombre} </h3>
-            <h3>${iterador.apellido}</h3>
+            <div  class="logintitle2">
+            <strong>${iterador.apellido}</strong>
+            <img   width=20% src="/ESPIRADO.png" alt="">
             </div>
-                <label for="tMetano" class="form-label">Hora</label>
-                <input type="time" name="tMetano" id="tMetano${iterador._id}" class="form-control inputTime" required>
+            <br>
+
+                <div class="labelAndInputContainer">
+                <label for="tMetano" class="loginfieldname">Hora:</label>
+                <input type="time" name="tMetano" id="tMetano${iterador._id}" class=" inputTime" required>
+                </div>
+                 <br>
+
+                 <div class="labelAndInputContainer">
+                <label for="valorMetano" class="loginfieldname">CH4:</label>
+                <input type="number" name="valorMetano" id="valorMetano${iterador._id}" class="inputTime2" required>
+                </div>
                 <br>
-                <label for="valorMetano" class="form-label">Valor Metano</label>
-                <input type="number" name="valorMetano" id="valorMetano${iterador._id}" class="form-control" required>
-                <br>
-                <label for="sintoma" class="form-label">Síntoma</label>
-                <select id="sintoma${iterador._id}" class="form-control inputTime" name="sintoma"  required>
+                <div class="labelAndInputContainer">
+                <label for="sintoma" class="loginfieldname">Síntoma</label>
+                <select id="sintoma${iterador._id}" class="inputTime2" name="sintoma"  required>
                 <option value="no">No</option>
                 <option value="distensión">Distensión Abdominal</option>
                 <option value="meteorismo">Meteorismo</option>
@@ -228,17 +222,19 @@ function render (data){
                 <option value="náuseas">Náuseas</option>
                 <option value="dolor abdominal">Dolor abdominal</option>
                 </select>
-                <br>
-                <br>
-                <button style="background-color: black; border-color: black; " onclick="addValueAndTime('${iterador.tipo}','${iterador._id}','${iterador.intervalo}','${minutosProtocolo}')" class="btn-formx">Agregar</button>
-                <br>
-                <br>
-                <br>
+                </div>
+                <div  class="logintitle">
+                </div>
+               
                 <div class="botonX">
-                <button style="background-color: black; border-color: black; "  id="close${iterador._id}" class="btn-formx">X</button>
+                <button class="botonazul" onclick="addValueAndTime('${iterador.tipo}','${iterador._id}','${iterador.intervalo}','${minutosProtocolo}')">Guardar Medición</button>
                 </div>
+              
+                <div class="botonX2">
+
+                <img style="position: absolute; top: 10px; right: 10px;" id="close${iterador._id}" width=8% src="/CLOSE.png" alt="">
+                
                 </div>
-            
             `
 
         }
@@ -248,21 +244,36 @@ function render (data){
 
            
             <div id="form" class="form" >
-                <div>
-                <h3>${iterador.nombre} </h3>
-                <h3>${iterador.apellido}</h3>
+            <div  class="logintitle2">
+            <strong>${iterador.apellido}</strong>
+            <img   width=20% src="/ESPIRADO.png" alt="">
+            </div>
+            <br>
+
+            <div class="labelAndInputContainer">
+            <label for="tHidrogeno" class="loginfieldname">Hora:</label>
+            <input type="time" name="tHidrogeno" id="tHidrogeno${iterador._id}" class=" inputTime" required>
+            </div>
+             <br>
+
+             <div class="labelAndInputContainer">
+                <label for="valorHidrogeno" class="loginfieldname">H2:</label>
+                <input type="number" name="valorHidrogeno" id="valorHidrogeno${iterador._id}" class="inputTime2" required>
                 </div>
-                <label for="tHidrogeno" class="form-label">Hora </label>
-                <input type="time" name="tHidrogeno" id="tHidrogeno${iterador._id}" class="form-control inputTime" required>
                 <br>
-                <label for="valorHidrogeno" class="form-label">Valor Hidrógeno</label>
-                <input type="number" name="valorHidrogeno" id="valorHidrogeno${iterador._id}" class="form-control" required>
+
+
+                <div class="labelAndInputContainer">
+                <label for="valorMetano" class="loginfieldname">CH4:</label>
+                <input type="number" name="valorMetano" id="valorMetano${iterador._id}" class="inputTime2" required>
+                </div>
                 <br>
-                <label for="valorMetano" class="form-label">Valor Metano</label>
-                <input type="number" name="valorMetano" id="valorMetano${iterador._id}" class="form-control" required>
-                <br>
-                <label for="sintoma" class="form-label">Síntoma</label>
-                <select id="sintoma${iterador._id}" class="form-control inputTime" name="sintoma"  required>
+
+
+
+                <div class="labelAndInputContainer">
+                <label for="sintoma" class="loginfieldname">Síntoma:</label>
+                <select id="sintoma${iterador._id}" class="inputTime2" name="sintoma"  required>
                 <option value="no">No</option>
                 <option value="distensión">Distensión Abdominal</option>
                 <option value="meteorismo">Meteorismo</option>
@@ -271,17 +282,19 @@ function render (data){
                 <option value="náuseas">Náuseas</option>
                 <option value="dolor abdominal">Dolor abdominal</option>
                 </select>
-                <br>
-                <br>
-                <button style="background-color: black; border-color: black; " onclick="addValueAndTime('${iterador.tipo}','${iterador._id}','${iterador.intervalo}','${minutosProtocolo}')" class="btn-formx">Agregar</button>
-                <br>
-                <br>
-                <br>
+                </div>
+                <div  class="logintitle">
+                </div>
+               
                 <div class="botonX">
-                <button style="background-color: black; border-color: black; " id="close${iterador._id}" class="btn-formx">X</button>
+                <button class="botonazul" onclick="addValueAndTime('${iterador.tipo}','${iterador._id}','${iterador.intervalo}','${minutosProtocolo}')">Guardar Medición</button>
                 </div>
+              
+                <div class="botonX2">
+
+                <img style="position: absolute; top: 10px; right: 10px;" id="close${iterador._id}" width=8% src="/CLOSE.png" alt="">
+                
                 </div>
-            
             `
 
         }
@@ -407,8 +420,8 @@ sortTableByNextMeasurement()
         <td id="hrMedicion${data._id}"> ${hrMedicion} </td>
         <td id="proxMedicion${data._id}"> ${proxMedicion} </td>
         <td> <a href="/exitoAgregar/${data._id}"><img src="/qr.png" width=40px  alt=""></a></td>
-        <td> <a href="/acceder/${data._id}"><img src="/acceso.webp" width=40px  alt=""></a></td>
-        <td> <img id="boton${data._id}" src="/breath.png" width=40px  alt=""></td>
+        <td> <a href="/acceder/${data._id}"><img src="/FICHA.png" width=40px  alt=""></a></td>
+        <td class="celdaSoplar" id="boton${data._id}"> <img  src="/medirAzul.png" width=40px  alt=""></td>
         <td></td>
      
 
@@ -444,19 +457,27 @@ sortTableByNextMeasurement()
             contenedorOculto.innerHTML=`
 
            
+           
             <div id="form" class="form" >
-                <div>
-                <h3>${data.nombre} </h3>
-                <h3>${data.apellido}</h3>
+                <div  class="logintitle2">
+                <strong>${data.apellido}</strong>
+                <img   width=20% src="/ESPIRADO.png" alt="">
                 </div>
-                <label for="t" class="form-label">Hora</label>
-                <input type="time" name="tHidrogeno" id="tHidrogeno${data._id}" class="form-control inputTime" required>
                 <br>
-                <label for="valorHidrogeno" class="form-label">Valor Hidrógeno</label>
-                <input type="number" name="valorHidrogeno" id="valorHidrogeno${data._id}" class="form-control" required>
+
+                <div class="labelAndInputContainer">
+                <label for="t" class="loginfieldname">Hora:</label>
+                <input type="time" name="tHidrogeno" id="tHidrogeno${data._id}" class=" inputTime" required>
+                </div>
+                 <br>
+                 <div class="labelAndInputContainer">
+                <label for="valorHidrogeno" class="loginfieldname">H2:</label>
+                <input type="number" name="valorHidrogeno" id="valorHidrogeno${data._id}" class="inputTime2" required>
+                </div>
                 <br>
-                <label for="sintoma" class="form-label">Síntoma</label>
-                <select id="sintoma${data._id}" class="form-control inputTime" name="sintoma"  required>
+                <div class="labelAndInputContainer">
+                <label for="sintoma" class="loginfieldname">Síntoma:</label>
+                <select id="sintoma${data._id}" class="inputTime2" name="sintoma"  required>
                 <option value="no">No</option>
                 <option value="distensión">Distensión Abdominal</option>
                 <option value="meteorismo">Meteorismo</option>
@@ -465,16 +486,22 @@ sortTableByNextMeasurement()
                 <option value="náuseas">Náuseas</option>
                 <option value="dolor abdominal">Dolor abdominal</option>
                 </select>
-                <br>
-                <br>
-                <button style="background-color: black; border-color: black; " onclick="addValueAndTime('${data.tipo}','${data._id}','${data.intervalo}','${minutosProtocolo}')" class="btn-formx">Agregar</button>
-                <br>
-                <br>
-                <br>
+                </div>
+                <div  class="logintitle">
+                </div>
+               
                 <div class="botonX">
-                <button style="background-color: black; border-color: black; "  id="close${data._id}" class="btn-formx">X</button>
+                <button class="botonazul" onclick="addValueAndTime('${data.tipo}','${data._id}','${data.intervalo}','${minutosProtocolo}')">Guardar Medición</button>
+                </div>
+              
+                <div class="botonX2">
+
+                <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+                
                 </div>
                 </div>
+            
+            
             
             `
 
@@ -484,20 +511,27 @@ sortTableByNextMeasurement()
         if(data.tipo=="metano"){
             contenedorOculto.innerHTML=`
 
-           
             <div id="form" class="form" >
-            <div>
-                <h3>${data.nombre} </h3>
-                <h3>${data.apellido}</h3>
+            <div  class="logintitle2">
+            <strong>${data.apellido}</strong>
+            <img   width=20% src="/ESPIRADO.png" alt="">
+            </div>
+            <br>
+
+                <div class="labelAndInputContainer">
+                <label for="tMetano" class="loginfieldname">Hora:</label>
+                <input type="time" name="tMetano" id="tMetano${data._id}" class=" inputTime" required>
                 </div>
-                <label for="tMetano" class="form-label">Hora</label>
-                <input type="time" name="tMetano" id="tMetano${data._id}" class="form-control inputTime" required>
+                 <br>
+
+                 <div class="labelAndInputContainer">
+                <label for="valorMetano" class="loginfieldname">CH4:</label>
+                <input type="number" name="valorMetano" id="valorMetano${data._id}" class="inputTime2" required>
+                </div>
                 <br>
-                <label for="valorMetano" class="form-label">Valor Metano</label>
-                <input type="number" name="valorMetano" id="valorMetano${data._id}" class="form-control" required>
-                <br>
-                <label for="sintoma" class="form-label">Síntoma</label>
-                <select id="sintoma${data._id}" class="form-control inputTime" name="sintoma"  required>
+                <div class="labelAndInputContainer">
+                <label for="sintoma" class="loginfieldname">Síntoma</label>
+                <select id="sintoma${data._id}" class="inputTime2" name="sintoma"  required>
                 <option value="no">No</option>
                 <option value="distensión">Distensión Abdominal</option>
                 <option value="meteorismo">Meteorismo</option>
@@ -506,15 +540,18 @@ sortTableByNextMeasurement()
                 <option value="náuseas">Náuseas</option>
                 <option value="dolor abdominal">Dolor abdominal</option>
                 </select>
-                <br>
-                <br>
-                <button style="background-color: black; border-color: black; " onclick="addValueAndTime('${data.tipo}','${data._id}','${data.intervalo}','${minutosProtocolo}')" class="btn-formx">Agregar</button>
-                <br>
-                <br>
-                <br>
-                <div class="botonX">
-                <button style="background-color: black; border-color: black; " id="close${data._id}" class="btn-formx">X</button>
                 </div>
+                <div  class="logintitle">
+                </div>
+               
+                <div class="botonX">
+                <button class="botonazul" onclick="addValueAndTime('${data.tipo}','${data._id}','${data.intervalo}','${minutosProtocolo}')">Guardar Medición</button>
+                </div>
+              
+                <div class="botonX2">
+
+                <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+                
                 </div>
             
             `
@@ -523,24 +560,37 @@ sortTableByNextMeasurement()
 
         if(data.tipo=="mixto"){
             contenedorOculto.innerHTML=`
-
-           
             <div id="form" class="form" >
-            <div>
-                <h3>${data.nombre} </h3>
-                <h3>${data.apellido}</h3>
+            <div  class="logintitle2">
+            <strong>${data.apellido}</strong>
+            <img   width=20% src="/ESPIRADO.png" alt="">
+            </div>
+            <br>
+
+            <div class="labelAndInputContainer">
+            <label for="tHidrogeno" class="loginfieldname">Hora:</label>
+            <input type="time" name="tHidrogeno" id="tHidrogeno${data._id}" class=" inputTime" required>
+            </div>
+             <br>
+
+             <div class="labelAndInputContainer">
+                <label for="valorHidrogeno" class="loginfieldname">H2:</label>
+                <input type="number" name="valorHidrogeno" id="valorHidrogeno${data._id}" class="inputTime2" required>
                 </div>
-                <label for="tHidrogeno" class="form-label">Hora</label>
-                <input type="time" name="tHidrogeno" id="tHidrogeno${data._id}" class="form-control inputTime" required>
                 <br>
-                <label for="valorHidrogeno" class="form-label">Valor Hidrógeno</label>
-                <input type="number" name="valorHidrogeno" id="valorHidrogeno${data._id}" class="form-control" required>
+
+
+                <div class="labelAndInputContainer">
+                <label for="valorMetano" class="loginfieldname">CH4:</label>
+                <input type="number" name="valorMetano" id="valorMetano${data._id}" class="inputTime2" required>
+                </div>
                 <br>
-                <label for="valorMetano" class="form-label">Valor Metano</label>
-                <input type="number" name="valorMetano" id="valorMetano${data._id}" class="form-control" required>
-                <br>
-                <label for="sintoma" class="form-label">Síntoma</label>
-                <select id="sintoma${data._id}" class="form-control inputTime" name="sintoma"  required>
+
+
+
+                <div class="labelAndInputContainer">
+                <label for="sintoma" class="loginfieldname">Síntoma:</label>
+                <select id="sintoma${data._id}" class="inputTime2" name="sintoma"  required>
                 <option value="no">No</option>
                 <option value="distensión">Distensión Abdominal</option>
                 <option value="meteorismo">Meteorismo</option>
@@ -549,17 +599,19 @@ sortTableByNextMeasurement()
                 <option value="náuseas">Náuseas</option>
                 <option value="dolor abdominal">Dolor abdominal</option>
                 </select>
-                <br>
-                <br>
-                <button style="background-color: black; border-color: black; " onclick="addValueAndTime('${data.tipo}','${data._id}','${data.intervalo}','${minutosProtocolo}')" class="btn-formx">Agregar</button>
-                <br>
-                <br>
-                <br>
+                </div>
+                <div  class="logintitle">
+                </div>
+               
                 <div class="botonX">
-                <button style="background-color: black; border-color: black; " id="close${data._id}" class="btn-formxClose">X</button>
+                <button class="botonazul" onclick="addValueAndTime('${data.tipo}','${data._id}','${data.intervalo}','${minutosProtocolo}')">Guardar Medición</button>
                 </div>
+              
+                <div class="botonX2">
+
+                <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+                
                 </div>
-            
             `
 
         }
@@ -859,15 +911,7 @@ socket.on('new2 hidrogeno', function(hidrogeno) {
 
 
 
-/*     Swal.fire({
-        title: "Cargado",
-        text: "Medición Actualizada!",
-        icon: "success",
-        iconColor: "blue",
-        showConfirmButton: true,
-      }); */
 
-   
 
 });
 
@@ -924,16 +968,7 @@ socket.on('new2 metano', function(metano) {
     
 
 
-/* 
-    Swal.fire({
-        title: "Cargado",
-        text: "Medición Actualizada!",
-        icon: "success",
-        iconColor: "blue",
-        showConfirmButton: true,
-      });
- */
-   
+
 
 });
 
@@ -1161,6 +1196,29 @@ function updateNextMeasurementColor() {
         const proxMedicionTime = proxMedicionCell.textContent.trim(); 
         const currentTimeString= currentTime.hours+":"+currentTime.minutes
         const colorCell= row.querySelector('td:nth-child(12)');
+        const iconCell= row.querySelector('td:nth-child(11)');
+        const tipoCell= row.querySelector('td:nth-child(3)');
+
+        
+
+        let tipo= tipoCell.innerText.trim()
+
+        if(tipo=="hidrogeno"){
+          tipo="H2"
+        }
+
+        if(tipo=="mixto"){
+          tipo="MX"
+        }
+
+        if(tipo=="metano"){
+          tipo="CH"
+        }
+
+        if(tipo=="intolerancia"){
+          tipo="IN"
+        }
+
 
         // Divide las cadenas en horas y minutos
         var partesHora1 = proxMedicionTime.split(":");
@@ -1180,8 +1238,21 @@ function updateNextMeasurementColor() {
 
  if (proxMedicionTimeF<= currentTimeStringF) {
             colorCell.style.backgroundColor = 'red'; 
+            iconCell.innerHTML=`
+            <div class="celdaSoplar2">
+            <p>${tipo}</p>
+            <img  src="/medirRojo.png" width=40px  alt="">
+            </div>
+            `
+            
         }else if (proxMedicionTimeF>=currentTimeStringF) {
             colorCell.style.backgroundColor = 'lightgreen'; 
+            iconCell.innerHTML=`
+            <div class="celdaSoplar2">
+            <p>${tipo}</p>
+            <img  src="/medirAzul.png" width=40px  alt="">
+            </div>
+            `
         } 
     });
 }
@@ -1229,24 +1300,7 @@ function sortTableByNextMeasurement() {
   }
   
 
-  ///funcion de InputTime
 
-  /* function inputTime(){
-    var inputHora = document.querySelectorAll('.inputTime');
-
-
-    inputHora.forEach((t)=>{
-        // Obtener la hora actual en formato HH:mm
-        var horaActual = new Date().toLocaleTimeString('en-ES', { hour12: false, hour: '2-digit', minute: '2-digit' });
-
-        console.log(horaActual)
-  // Establecer la hora actual como el marcador de posición del input
-        t.value = horaActual;
-
-    }) 
-
-  
-  } */
 
   function inputTime(){
     var inputHora = document.querySelectorAll('.inputTime');
@@ -1278,7 +1332,39 @@ fetch('/dataUser')
     .then(data => {
       
     let usuario= data.username
-    document.getElementById("usuario").innerText=`${usuario}`
+    document.getElementById("usuario3").innerText=`${usuario}`
+    document.getElementById("usuario2").innerText=`${usuario}`
   
     
     })
+
+
+    function reset(){
+        location.reload()
+      }
+  
+      let botonHome=document.getElementById("brandLogo")
+      botonHome.addEventListener("click", gotoHome)
+    
+      let botonHome2=document.getElementById("brandLogo2")
+      botonHome2.addEventListener("click", gotoHome)
+    
+      function gotoHome(){
+       window.location="/"
+      }
+  
+      let botonburger = document.getElementById("menuBurger")
+        botonburger.addEventListener("click", reveal)
+        
+        function reveal (){
+          let displayedNavbar=document.getElementById("reveal")
+        
+          if(displayedNavbar.style.display=="block"){
+            displayedNavbar.style.display="none"
+          }else{
+            displayedNavbar.style.display="block"
+          }
+        
+        
+          
+        }
