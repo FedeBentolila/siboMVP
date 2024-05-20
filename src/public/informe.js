@@ -66,7 +66,8 @@ fetch('/dataInforme', {
         document.getElementById("ultimaMedicion").innerHTML=ultimaMedicion
   
         let proxMedicion= agregarMinutos(ultimaMedicion, intervalo)
-        document.getElementById("proxMedicion").innerHTML=`Próxima: ${proxMedicion}`
+        document.getElementById("proxMedicion").innerHTML=`Próxima medición:`
+        document.getElementById("horaAzul").innerHTML=` ${proxMedicion}`
 
 
       }
@@ -86,7 +87,8 @@ fetch('/dataInforme', {
     document.getElementById("ultimaMedicion").innerHTML=ultimaMedicion
   
     let proxMedicion= agregarMinutos(ultimaMedicion, intervalo)
-    document.getElementById("proxMedicion").innerHTML=`Próxima: ${proxMedicion}`
+    document.getElementById("proxMedicion").innerHTML=`Próxima medición:`
+    document.getElementById("horaAzul").innerHTML=` ${proxMedicion}`
 
   }
 
@@ -257,9 +259,6 @@ fetch('/dataInforme', {
        });
 
 
-//////////////////////////////////////////////////////////////////////////////////////////////////OCULTOS
-
-
        let contenedorOculto=document.createElement("div")
        contenedorOculto.setAttribute("id",`formx${data._id}`)
        contenedorOculto.setAttribute("style","display: none;")
@@ -300,7 +299,7 @@ fetch('/dataInforme', {
            </div>
           
            <div class="botonX">
-           <button class="botonazul" onclick="addValueAndTime('${data.tipo}','${data._id}','${data.intervalo}','${minutosProtocolo}')">Guardar</button>
+           <button class="botonazul" onclick="addValueAndTime('${data.tipo}','${data._id}','${data.intervalo}','${minutosProtocolo}','${data.sala}')">Guardar</button>
            </div>
          
            <div class="botonX2">
@@ -320,36 +319,48 @@ fetch('/dataInforme', {
            contenedorOculto.innerHTML=`
 
           
-           <div id="form" class="form" >
-               
-               <label for="tMetano" class="form-label">Hora</label>
-               <input type="time" name="tMetano" id="tMetano${data._id}" class="form-control inputTime" required>
-               <br>
-            
-               <label for="valorMetano" class="form-label">Valor Metano</label>
-               <input type="number" name="valorMetano" id="valorMetano${data._id}" class="form-control" required>
-               <br>
-               <label for="sintoma" class="form-label">Síntoma</label>
-                <select id="sintoma${data._id}" class="form-control inputTime" name="sintoma"  required>
-                <option value="no">No</option>
-                <option value="distensión">Distensión Abdominal</option>
-                <option value="meteorismo">Meteorismo</option>
-                <option value="erutos">Erutos</option>
-                <option value="diarrea">Diarrea</option>
-                <option value="náuseas">Náuseas</option>
-                <option value="dolor abdominal">Dolor abdominal</option>
-                </select>
-                <br>
-                <br>
-               <button style="background-color: black; border-color: black; " onclick="addValueAndTime('${data.tipo}','${data._id}','${data.intervalo}','${minutosProtocolo}','${data.sala}')" class="btn-formx">Agregar</button>
-               <br>
-               <br>
-               <br>
-               <div class="botonX">
-               <button style="background-color: black; border-color: black; "  id="close${data._id}" class="btn-formx">X</button>
-               </div>
-               </div>
+          
            
+           <div id="form" class="form" >
+           <br>
+           <br>
+
+           <div class="labelAndInputContainer">
+           <label for="t" class="loginfieldname">Hora:</label>
+           <input type="time" name="tMetano" id="tMetano${data._id}" class=" inputTime" required>
+           </div>
+            <br>
+            <div class="labelAndInputContainer">
+           <label for="valorMetano" class="loginfieldname">CH4:</label>
+           <input type="number" name="valorMetano" id="valorMetano${data._id}" class="inputTime2" required>
+           </div>
+           <br>
+           <div class="labelAndInputContainer">
+           <label for="sintoma" class="loginfieldname">Síntoma:</label>
+           <select id="sintoma${data._id}" class="inputTime2" name="sintoma"  required>
+           <option value="no">No</option>
+           <option value="distensión">Distensión Abdominal</option>
+           <option value="meteorismo">Meteorismo</option>
+           <option value="erutos">Erutos</option>
+           <option value="diarrea">Diarrea</option>
+           <option value="náuseas">Náuseas</option>
+           <option value="dolor abdominal">Dolor abdominal</option>
+           </select>
+           </div>
+           <div  class="logintitle">
+           </div>
+          
+           <div class="botonX">
+           <button class="botonazul" onclick="addValueAndTime('${data.tipo}','${data._id}','${data.intervalo}','${minutosProtocolo}','${data.sala}')">Guardar</button>
+           </div>
+         
+           <div class="botonX2">
+
+           <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+           
+           </div>
+           </div>
+       
            `
 
        }
@@ -359,37 +370,56 @@ fetch('/dataInforme', {
 
           
            <div id="form" class="form" >
-               
-               <label for="tHidrogeno" class="form-label">Hora </label>
-               <input type="time" name="tHidrogeno" id="tHidrogeno${data._id}" class="form-control inputTime" required>
+           <div  class="logintitle2">
+           <strong>${data.apellido}</strong>
+           <img   width=20% src="/ESPIRADO.png" alt="">
+           </div>
+           <br>
+
+           <div class="labelAndInputContainer">
+           <label for="tHidrogeno" class="loginfieldname">Hora:</label>
+           <input type="time" name="tHidrogeno" id="tHidrogeno${data._id}" class=" inputTime" required>
+           </div>
+            <br>
+
+            <div class="labelAndInputContainer">
+               <label for="valorHidrogeno" class="loginfieldname">H2:</label>
+               <input type="number" name="valorHidrogeno" id="valorHidrogeno${data._id}" class="inputTime2" required>
+               </div>
                <br>
+
+
+               <div class="labelAndInputContainer">
+               <label for="valorMetano" class="loginfieldname">CH4:</label>
+               <input type="number" name="valorMetano" id="valorMetano${data._id}" class="inputTime2" required>
+               </div>
+               <br>
+
+
+
+               <div class="labelAndInputContainer">
+               <label for="sintoma" class="loginfieldname">Síntoma:</label>
+               <select id="sintoma${data._id}" class="inputTime2" name="sintoma"  required>
+               <option value="no">No</option>
+               <option value="distensión">Distensión Abdominal</option>
+               <option value="meteorismo">Meteorismo</option>
+               <option value="erutos">Erutos</option>
+               <option value="diarrea">Diarrea</option>
+               <option value="náuseas">Náuseas</option>
+               <option value="dolor abdominal">Dolor abdominal</option>
+               </select>
+               </div>
+               <div  class="logintitle">
+               </div>
               
-               <label for="valorHidrogeno" class="form-label">Valor Hidrógeno</label>
-               <input type="number" name="valorHidrogeno" id="valorHidrogeno${data._id}" class="form-control" required>
-               <br>
-          
-               <label for="valorMetano" class="form-label">Valor Metano</label>
-               <input type="number" name="valorMetano" id="valorMetano${data._id}" class="form-control" required>
-               <br>
-               <label for="sintoma" class="form-label">Síntoma</label>
-                <select id="sintoma${data._id}" class="form-control inputTime" name="sintoma"  required>
-                <option value="no">No</option>
-                <option value="distensión">Distensión Abdominal</option>
-                <option value="meteorismo">Meteorismo</option>
-                <option value="erutos">Erutos</option>
-                <option value="diarrea">Diarrea</option>
-                <option value="náuseas">Náuseas</option>
-                <option value="dolor abdominal">Dolor abdominal</option>
-                </select>
-                <br>
-                <br>
-               <button style="background-color: black; border-color: black; " onclick="addValueAndTime('${data.tipo}','${data._id}','${data.intervalo}','${minutosProtocolo}','${data.sala}')" class="btn-formx">Agregar</button>
-              <br>
-                <br>
-                <br>
-                <div class="botonX">
-                <button style="background-color: black; border-color: black; "  id="close${data._id}" class="btn-formx">X</button>
-                </div> 
+               <div class="botonX">
+               <button class="botonazul" onclick="addValueAndTime('${data.tipo}','${data._id}','${data.intervalo}','${minutosProtocolo}','${data.sala}')">Guardar Medición</button>
+               </div>
+             
+               <div class="botonX2">
+
+               <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+               
                </div>
            
            `
@@ -416,6 +446,9 @@ fetch('/dataInforme', {
 
 function renderHidrogeno (data){
 
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
    
   
     let contenedor = document.createElement("div");
@@ -448,9 +481,9 @@ function renderHidrogeno (data){
 
        
         <label class="loginfieldname" >${numero}</label>
-        <label for="inputGas1${index}" class="loginfieldname">Hora</label>
+        <label for="inputGas1${index}" class="loginfieldname">T</label>
         <input type="time" class="campo2" name="${index}" id="inputGas1${index}" value="${element.t}">
-        <label for="inputGas2${index}" class="loginfieldname">Valor</label>
+        <label for="inputGas2${index}" class="loginfieldname">H2</label>
         <input type="number" style="width: 20%;" class="campo2" name="${index}" id="inputGas2${index}" value="${element.valor}">
     
         <input style="display: none;" type="text" class="form-control" name="${index}" id="inputGas3${index}" value="${element.sintoma}">
@@ -484,19 +517,19 @@ function renderHidrogeno (data){
 
 function renderMetano (data){
 
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
    
   
   let contenedor = document.createElement("div");
-  contenedor.classList.add("d-flex")
-  contenedor.classList.add("flex-column")
-  contenedor.classList.add("p-5")
+  
   contenedor.innerHTML = 
   `     
-  <h3>Metano</h3>
   <form  action="/modificarMetano/${data._id}" method="post">
   <br>
   <div id="formMetano"></div>
-  <div id="botonformMetano"></div>
+  <div class="botonActualizar" id="botonformMetano"></div>
   
  </form>
      
@@ -513,20 +546,25 @@ function renderMetano (data){
      
 
       let contenedorM= document.createElement("div")
+      contenedorM.classList.add("filaValores") 
       contenedorM.setAttribute("id",`fila${numero}`)
-      contenedorM.classList.add("mb-3")
-      contenedorM.classList.add("rowInforme")
-      contenedorM.innerHTML=`
-      <h3>(${numero})</h3>
-      <label for="inputGas1${index}" class="form-label">Hora</label>
-      <input type="time" class="form-control" name="${index}" id="inputGas1${index}" value="${element.t}">
-      <label for="inputGas2${index}" class="form-label">Valor</label>
-      <input type="number" class="form-control" name="${index}" id="inputGas2${index}" value="${element.valor}">
       
-        <input style="display: none;" type="text" class="form-control" name="${index}" id="inputGas3${index}" value="${element.sintoma}">
-      <br>   
-      <div style="background-color: white; border-color: black; border-style: solid" onclick="eliminarFila('fila${numero}')"><img src="/delete.png" width=20px  alt=""></div>    
+      contenedorM.innerHTML=`
+
+      <label class="loginfieldname" >${numero}</label>
+      <label for="inputGas1${index}" class="loginfieldname">T</label>
+      <input type="time" class="campo2" name="${index}" id="inputGas1${index}" value="${element.t}">
+      <label for="inputGas2${index}" class="loginfieldname">CH4</label>
+      <input type="number" style="width: 20%;" class="campo2" name="${index}" id="inputGas2${index}" value="${element.valor}">
+  
+      <input style="display: none;" type="text" class="form-control" name="${index}" id="inputGas3${index}" value="${element.sintoma}">
+      <br>
+      <div  onclick="eliminarFila('fila${numero}')"><img src="/delete.png" width=20px  alt=""></div>    
       <br> 
+
+
+
+
           `
       document.getElementById("formMetano").appendChild(contenedorM)
 
@@ -539,9 +577,10 @@ function renderMetano (data){
   }
 
 
+
   let contenedorBoton = document.createElement("div");
   contenedorBoton.innerHTML=`
-  <button style="background-color: black; border-color: black; " type="submit" class="btn btn-primary">Guardar cambios CH4 </button>
+  <button  type="submit" class="botonazul">Guardar cambios CH4</button>
   
   `
   document.getElementById("botonformMetano").appendChild(contenedorBoton)
@@ -561,16 +600,14 @@ function renderHidrogenoYMetano(data){
   <br>
   <div class="dentroFormularioH2yCH3">
   <div id="formHidrogeno">
-  <h3>Hidrógeno</h3>
   </div>
   <br>
   <div id="formMetano">
-  <h3>Metano</h3>
   </div>
   </div>
   <br>
   <br>
-  <div class="botonformHidrogenoYmetano" id="botonformHidrogenoYmetano"></div>
+  <div class="botonActualizar" id="botonformHidrogenoYmetano"></div>
   
  </form>
      
@@ -583,22 +620,21 @@ function renderHidrogenoYMetano(data){
 
     const element = data.hidrogeno[index];
     let numero = index+1
-   
-
-    let contenedorH= document.createElement("div")
-    contenedorH.classList.add("rowInforme")
+      let contenedorH= document.createElement("div")
+      contenedorH.classList.add("filaValores") 
+    
     contenedorH.setAttribute("id",`filaH${numero}`)
     contenedorH.innerHTML=`
 
-    <h3>(${numero})</h3>
-    <label for="inputGas1${index}" class="form-label">Hora</label>
-    <input type="time" class="form-control" name="Hidrogeno" id="tHidrogeno${numero}" value="${element.t}" onchange="actualizarInput(this.value,'tMetano${numero}')">
-    <label for="inputGas2${index}" class="form-label">Valor</label>
-    <input type="number" class="form-control" name="Hidrogeno" id="vHidrogeno${numero}" value="${element.valor}">
+    <label class="loginfieldname" >${numero}</label>
+    <label for="inputGas1${index}" class="loginfieldname">T</label>
+    <input type="time" class="campo2" name="Hidrogeno" id="tHidrogeno${numero}" value="${element.t}" onchange="actualizarInput(this.value,'tMetano${numero}')">
+    <label for="inputGas2${index}" class="loginfieldname">H2</label>
+    <input type="number" style="width: 20%;" class="campo2" name="Hidrogeno" id="vHidrogeno${numero}" value="${element.valor}">
     
         <input style="display: none;" type="text" class="form-control" name="Hidrogeno" id="inputGas3${index}" value="${element.sintoma}">
     <br>
-    <div style="background-color: white; border-color: black; border-style: solid" onclick="eliminarFilaHyM('${numero}')"><img src="/delete.png" width=20px  alt=""></div>    
+    <div  onclick="eliminarFilaHyM('${numero}')"><img src="/delete.png" width=20px  alt=""></div>    
     <br>    
         `
     document.getElementById("formHidrogeno").appendChild(contenedorH)
@@ -615,17 +651,18 @@ for (let index = 0; index < data.metano.length; index++) {
 
   let contenedorM= document.createElement("div")
   contenedorM.setAttribute("id",`filaM${numero}`)
-  contenedorM.classList.add("rowInforme")
+  contenedorM.classList.add("filaValores") 
   contenedorM.innerHTML=`
-  <h3>${numero})</h3>
-  <label for="inputGas1${index}" class="form-label">Hora</label>
-  <input type="time" class="form-control" name="Metano" id="tMetano${numero}" value="${element.t}" onchange="actualizarInput(this.value,'tHidrogeno${numero}')">
-  <label for="inputGas2${index}" class="form-label">Valor</label>
-  <input type="number" class="form-control" name="Metano" id="vMetano${numero}" value="${element.valor}">
+  
+  <label class="loginfieldname" >${numero}</label>
+  <label for="inputGas1${index}" class="loginfieldname">T</label>
+  <input type="time" class="campo2" name="Metano" id="tMetano${numero}" value="${element.t}" onchange="actualizarInput(this.value,'tHidrogeno${numero}')">
+  <label for="inputGas2${index}" class="loginfieldname">CH4</label>
+  <input style="width: 20%;" type="number" class="campo2" name="Metano" id="vMetano${numero}" value="${element.valor}">
  
         <input style="display: none;" type="text" class="form-control" name="Metano" id="inputGas3${index}" value="${element.sintoma}">
   <br>
-  <div style="background-color: white; border-color: black; border-style: solid" onclick="eliminarFilaHyM('${numero}')"><img src="/delete.png" width=20px  alt=""></div>    
+  <div  onclick="eliminarFilaHyM('${numero}')"><img src="/delete.png" width=20px  alt=""></div>    
   <br>    
       `
   document.getElementById("formMetano").appendChild(contenedorM)
@@ -637,7 +674,7 @@ for (let index = 0; index < data.metano.length; index++) {
 
 let contenedorBoton = document.createElement("div");
 contenedorBoton.innerHTML=`
-<button style="background-color: black; border-color: black; " type="submit" class="btn btn-primary">Guardar cambios </button>
+<button  type="submit" class="botonazul">Guardar cambios </button>
 
 `
 document.getElementById("botonformHidrogenoYmetano").appendChild(contenedorBoton)
@@ -1670,6 +1707,7 @@ function actualizarInput(valor, id) {
 function eliminarFila(id){
   let borrado = document.getElementById(id)
   borrado.style.backgroundColor="red"
+  borrado.style.margin="10px"
   borrado.style.fontFamily="Roboto"
   borrado.style.color="white"
   borrado.innerHTML=`Registro seleccionado para borrar `
@@ -1678,11 +1716,17 @@ function eliminarFila(id){
 function eliminarFilaHyM(numero){
   let borradoH= document.getElementById(`filaH${numero}`)
   borradoH.style.backgroundColor="red"
-  borradoH.innerHTML=`XXXXXXXXXXX`
+  borradoH.style.margin="10px"
+  borradoH.style.fontFamily="Roboto"
+  borradoH.style.color="white"
+  borradoH.innerHTML=`Registro seleccionado para borrar `
 
   let borradoM= document.getElementById(`filaM${numero}`)
   borradoM.style.backgroundColor="red"
-  borradoM.innerHTML=`XXXXXXXXXXX`
+  borradoM.style.margin="10px"
+  borradoM.style.fontFamily="Roboto"
+  borradoM.style.color="white"
+  borradoM.innerHTML=`Registro seleccionado para borrar `
 
 
 }

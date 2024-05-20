@@ -1208,15 +1208,15 @@ function updateNextMeasurementColor() {
         }
 
         if(tipo=="mixto"){
-          tipo="MX"
+          tipo="H2/CH4"
         }
 
         if(tipo=="metano"){
-          tipo="CH"
+          tipo="CH4"
         }
 
         if(tipo=="intolerancia"){
-          tipo="IN"
+          tipo="INT"
         }
 
 
