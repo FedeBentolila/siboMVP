@@ -41,7 +41,9 @@ fetch('/dataInforme', {
           document.getElementById("ultimaMedicion").innerHTML=ultimaMedicion
  
           let proxMedicion= agregarMinutos(ultimaMedicion, intervalo)
-          document.getElementById("proxMedicion").innerHTML=`Próxima: ${proxMedicion}`
+          document.getElementById("proxMedicion").innerHTML=`Próxima medición:`
+          document.getElementById("horaAzul").innerHTML=` ${proxMedicion}`
+
 
         }
 
@@ -111,14 +113,35 @@ fetch('/dataInforme', {
         minutosProtocolo=180
     }
 
-  
+    let fechaYhora= data.timestamp.split(" ")
+
+    let tipo= data.tipo
+
+    if(tipo=="hidrogeno"){
+      tipo="H2"
+    }
+
+    if(tipo=="mixto"){
+      tipo="H2/CH4"
+    }
+
+    if(tipo=="metano"){
+      tipo="CH4"
+    }
+
+    if(tipo=="intolerancia"){
+      tipo="Intoleranica"
+    }
+
+
+
     let contenedor = document.createElement("div");
     contenedor.classList.add("botoneraYdatosPaciente")
     contenedor.innerHTML = 
     `     
 
 
-    <table class="table table-striped table-hover ">
+    <table class="tabla">
     <thead>
       <tr>
         <th scope="col"></th>
@@ -127,52 +150,80 @@ fetch('/dataInforme', {
     </thead>
     <tbody id="tbody1">
       <tr>
-        <th class="datoCelda" scope="row">Nombre</th>
-        <td class="datoCelda">${data.nombre}</td>
+        <th class="loginfieldname" scope="row">Nombre:</th>
+        <td class="campo">${data.nombre}</td>
       </tr>
       <tr>
-        <th class="datoCelda" scope="row">Apellido</th>
-        <td class="datoCelda">${data.apellido}</td>
+        <th class="loginfieldname" scope="row">Apellido</th>
+        <td class="campo">${data.apellido}</td>
       </tr>
       <tr>
-        <th class="datoCelda" scope="row">Fecha y Hora de inicio</th>
-        <td class="datoCelda" colspan="2">${data.timestamp}</td>
+        <th class="loginfieldname" scope="row">Fecha </th>
+        <td class="campo" colspan="2">${fechaYhora[0]}</td>
       </tr>
       <tr>
-        <th class="datoCelda" scope="row">Tipo de estudio</th>
-        <td class="datoCelda" colspan="2">${data.tipo}</td>
+      <th class="loginfieldname" scope="row">Hora de inicio</th>
+      <td class="campo" colspan="2">${fechaYhora[1]}</td>
+    </tr>
+      <tr>
+        <th class="loginfieldname" scope="row">Tipo de estudio</th>
+        <td class="campo" colspan="2">${tipo}</td>
       </tr>
       <tr>
-        <th class="datoCelda" scope="row">Cantidad de mediciones</th>
-        <td class="datoCelda" id="cantidadDeMediciones" colspan="2"></td>
+        <th class="loginfieldname" scope="row">Cantidad de mediciones</th>
+        <td class="campo" id="cantidadDeMediciones" colspan="2"></td>
       </tr>
       <tr>
-        <th class="datoCelda" scope="row">Ultima medición</th>
-        <td class="datoCelda" id="ultimaMedicion" colspan="2"></td>
+        <th class="loginfieldname" scope="row">Ultima medición</th>
+        <td class="campo" id="ultimaMedicion" colspan="2"></td>
       </tr>
       <tr>
-        <th class="datoCelda" scope="row">Encuesta</th>
-        <td class="datoCelda" id="estadoEncuesta" colspan="2"></td>
+        <th class="loginfieldname" scope="row">Encuesta</th>
+        <td class="campo" id="estadoEncuesta" colspan="2"></td>
       </tr>
       
       
     </tbody>
   </table>
 
-         
+  <div class="containerRelojAzul2">
+      <strong class="tituloseccion2" >Mediciones</strong>
+      
+     </div>
+    
+
+  <div id="ocultadorDeValores" class="ocultadorDeValores" >  
+  <div id="valores" class="valores">
+
+  </div>
+ </div>
+
+         <br>
+         <br>
         <div class="botonera" id="botonera">
-        
-          <button class="btn btn-primary m-3 btx" id="boton${data._id}" style="background-color: black; border-color: black; "> Medir</button>
-     
-          <button id="botonModificar" onclick="mostrar()"  class="btn btn-primary m-3 btx" style="background-color: black; border-color: black; ">Modificar</button>
 
-          <button onclick="finalizar('${data._id}','${data.intervalo}','${minutosProtocolo}','${data.tipo}')" class="btn btn-primary m-3 btx" style="background-color: black; border-color: black; " > Finalizar </button>
+      <div class="containerRelojAzul3">
+      <img class="botonNuevaMedicion" id="boton${data._id}" src="/NUEVAMEDICION.png" alt="">
+      <strong class="tituloseccion3" id="proxMedicion">Añadir nueva medición</strong>
+      </div>
+
+      <br>
+      <br>
+      
+          <div class="finalizarBorrar">
+         
+         
+          <button onclick="eliminar('${data._id}')" class="botonblanco" > Borrar  </button>
+
+          <button onclick="finalizar('${data._id}','${data.intervalo}','${minutosProtocolo}','${data.tipo}')" class="botonazul"  > Finalizar </button>
+
+
+          
+          </div>
 
          
-          <button onclick="eliminar('${data._id}')" class="btn btn-primary m-3 btx" style="background-color: red; border-color: red; "> Borrar  </button>
-
-          <button onclick="window.location.href='/salaDeEspera'" class="btn btn-primary m-3 btx" style="background-color: black; border-color: black; "> Salir </button>
           
+         
        </div>
      
        
@@ -217,35 +268,48 @@ fetch('/dataInforme', {
            contenedorOculto.innerHTML=`
 
           
-           <div id="form" class="form" >
-               
-               <label for="t" class="form-label">Hora</label>
-               <input type="time" name="tHidrogeno" id="tHidrogeno${data._id}" class="form-control inputTime" required>
-               <br>
           
-               <label for="valorHidrogeno" class="form-label">Valor Hidrógeno</label>
-               <input type="number" name="valorHidrogeno" id="valorHidrogeno${data._id}" class="form-control" required>
-               <br>
-               <label for="sintoma" class="form-label">Síntoma</label>
-               <select id="sintoma${data._id}" class="form-control inputTime" name="sintoma"  required>
-               <option value="no">No</option>
-               <option value="distensión">Distensión Abdominal</option>
-               <option value="meteorismo">Meteorismo</option>
-               <option value="erutos">Erutos</option>
-               <option value="diarrea">Diarrea</option>
-               <option value="náuseas">Náuseas</option>
-               <option value="dolor abdominal">Dolor abdominal</option>
-               </select>
-               <br>
-               <br>
-               <button class="btn-formx" style="background-color: black; border-color: black; " onclick="addValueAndTime('${data.tipo}','${data._id}','${data.intervalo}','${minutosProtocolo}','${data.sala}')">Agregar</button>
-               <br>
-               <br>
-               <br>
-               <div class="botonX">
-               <button style="background-color: black; border-color: black; "  id="close${data._id}" class="btn-formx">X</button>
-               </div>
-               </div>
+           
+           <div id="form" class="form" >
+           <br>
+           <br>
+
+           <div class="labelAndInputContainer">
+           <label for="t" class="loginfieldname">Hora:</label>
+           <input type="time" name="tHidrogeno" id="tHidrogeno${data._id}" class=" inputTime" required>
+           </div>
+            <br>
+            <div class="labelAndInputContainer">
+           <label for="valorHidrogeno" class="loginfieldname">H2:</label>
+           <input type="number" name="valorHidrogeno" id="valorHidrogeno${data._id}" class="inputTime2" required>
+           </div>
+           <br>
+           <div class="labelAndInputContainer">
+           <label for="sintoma" class="loginfieldname">Síntoma:</label>
+           <select id="sintoma${data._id}" class="inputTime2" name="sintoma"  required>
+           <option value="no">No</option>
+           <option value="distensión">Distensión Abdominal</option>
+           <option value="meteorismo">Meteorismo</option>
+           <option value="erutos">Erutos</option>
+           <option value="diarrea">Diarrea</option>
+           <option value="náuseas">Náuseas</option>
+           <option value="dolor abdominal">Dolor abdominal</option>
+           </select>
+           </div>
+           <div  class="logintitle">
+           </div>
+          
+           <div class="botonX">
+           <button class="botonazul" onclick="addValueAndTime('${data.tipo}','${data._id}','${data.intervalo}','${minutosProtocolo}')">Guardar</button>
+           </div>
+         
+           <div class="botonX2">
+
+           <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+           
+           </div>
+           </div>
+       
            
            `
 
@@ -355,16 +419,13 @@ function renderHidrogeno (data){
    
   
     let contenedor = document.createElement("div");
-    contenedor.classList.add("d-flex")
-    contenedor.classList.add("flex-column")
-    contenedor.classList.add("p-5")
     contenedor.innerHTML = 
     `     
-    <h3>Hidrógeno</h3>
+   
     <form  action="/modificarHidrogeno/${data._id}" method="post">
     <br>
     <div id="formHidrogeno"></div>
-    <div id="botonformHidrogeno"></div>
+    <div class="botonActualizar" id="botonformHidrogeno"></div>
     
    </form>
        
@@ -381,20 +442,20 @@ function renderHidrogeno (data){
        
 
         let contenedorH= document.createElement("div")
-        contenedorH.classList.add("mb-3")
-        contenedorH.classList.add("rowInforme")
+        contenedorH.classList.add("filaValores")
         contenedorH.setAttribute("id",`fila${numero}`)
         contenedorH.innerHTML=`
 
-        <h3>(${numero})</h3>
-        <label for="inputGas1${index}" class="form-label">Hora</label>
-        <input type="time" class="form-control" name="${index}" id="inputGas1${index}" value="${element.t}">
-        <label for="inputGas2${index}" class="form-label">Valor</label>
-        <input type="number" class="form-control" name="${index}" id="inputGas2${index}" value="${element.valor}">
+       
+        <label class="loginfieldname" >${numero}</label>
+        <label for="inputGas1${index}" class="loginfieldname">Hora</label>
+        <input type="time" class="campo2" name="${index}" id="inputGas1${index}" value="${element.t}">
+        <label for="inputGas2${index}" class="loginfieldname">Valor</label>
+        <input type="number" style="width: 20%;" class="campo2" name="${index}" id="inputGas2${index}" value="${element.valor}">
     
         <input style="display: none;" type="text" class="form-control" name="${index}" id="inputGas3${index}" value="${element.sintoma}">
         <br>
-        <div style="background-color: white; border-color: black; border-style: solid" onclick="eliminarFila('fila${numero}')"><img src="/delete.png" width=20px  alt=""></div>    
+        <div  onclick="eliminarFila('fila${numero}')"><img src="/delete.png" width=20px  alt=""></div>    
         <br> 
         `
         document.getElementById("formHidrogeno").appendChild(contenedorH)
@@ -409,7 +470,7 @@ function renderHidrogeno (data){
 
     let contenedorBoton = document.createElement("div");
     contenedorBoton.innerHTML=`
-    <button style="background-color: black; border-color: black; " type="submit" class="btn btn-primary">Guardar cambios H2</button>
+    <button  type="submit" class="botonazul">Guardar cambios H2</button>
     
     `
     document.getElementById("botonformHidrogeno").appendChild(contenedorBoton)
@@ -989,13 +1050,13 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo, sala){
 function eliminar (id){
 
   Swal.fire({
-    title: "¿Estás seguro?",
-    text: "Esto es irreversible y borra todo los datos del paciente, no podrás acceder al mismo y tendras que empezar todo nuevamente",
+    title: "¿Estás seguro de querer borrar este registro?",
+    text: "Se borrará permanentemente no se podrá deshacer",
     icon: "warning",
     iconColor: "red",
     showCancelButton: true,
-    confirmButtonColor: "black",
-    cancelButtonColor: "red",
+    confirmButtonColor: "#5D87B2",
+    cancelButtonColor: "gray",
     confirmButtonText: "Borrar",
     cancelButtonText: "Cancelar"
   }).then((result) => {
@@ -1049,8 +1110,8 @@ function finalizar (id, intervalo, minutosProtocolo, tipo){
     icon: "warning",
     iconColor: "red",
     showCancelButton: true,
-    confirmButtonColor: "black",
-    cancelButtonColor: "red",
+    confirmButtonColor: "#5D87B2",
+    cancelButtonColor: "gray",
     confirmButtonText: "Aceptar",
     cancelButtonText: "Cancelar"
   }).then((result) => {
@@ -1088,7 +1149,7 @@ function finalizar (id, intervalo, minutosProtocolo, tipo){
       
                   if(tipo=="hidrogeno"){
                     let valorMetano=document.getElementById("valorMetano").innerText
-                    if(valorMetano=="Pendiente"){
+                    if(valorMetano=="AcaDeciaPendiente"){
                       textoAlert="Faltan mediciones de H2 y también la única medición de CH4 para completar el estudio"
                     }else{
                       textoAlert="Faltan mediciones de H2 para completar el protocolo"
@@ -1147,7 +1208,7 @@ function finalizar (id, intervalo, minutosProtocolo, tipo){
                  if(tipo=="hidrogeno"){
                   let valorMetano=document.getElementById("valorMetano").innerText
       
-                  if(valorMetano=="Pendiente"){
+                  if(valorMetano=="AcaDeciaPendiente"){
       
                     //swallFire
       
@@ -1291,7 +1352,7 @@ function finalizar (id, intervalo, minutosProtocolo, tipo){
 
             if(tipo=="hidrogeno"){
               let valorMetano=document.getElementById("valorMetano").innerText
-              if(valorMetano=="Pendiente"){
+              if(valorMetano=="AcaDeciaPendiente"){
                 textoAlert="Faltan mediciones de H2 y también la única medición de CH4 para completar el estudio"
               }else{
                 textoAlert="Faltan mediciones de H2 para completar el protocolo"
@@ -1350,7 +1411,7 @@ function finalizar (id, intervalo, minutosProtocolo, tipo){
            if(tipo=="hidrogeno"){
             let valorMetano=document.getElementById("valorMetano").innerText
 
-            if(valorMetano=="Pendiente"){
+            if(valorMetano=="AcaDeciaPendiente"){
 
               //swallFire
 
@@ -1609,7 +1670,9 @@ function actualizarInput(valor, id) {
 function eliminarFila(id){
   let borrado = document.getElementById(id)
   borrado.style.backgroundColor="red"
-  borrado.innerHTML=`XXXXXXXXXXX`
+  borrado.style.fontFamily="Roboto"
+  borrado.style.color="white"
+  borrado.innerHTML=`Registro seleccionado para borrar `
 }
 
 function eliminarFilaHyM(numero){
@@ -1628,6 +1691,7 @@ function eliminarFilaHyM(numero){
 
 function renderMetanoUnicoDeHidrogeno(datosInforme){
   let contenedorCH4=document.createElement("tr")
+  contenedorCH4.setAttribute("style","display:none")
       contenedorCH4.innerHTML=`
       <th class="datoCelda">
       Medir CH4
@@ -1640,6 +1704,7 @@ function renderMetanoUnicoDeHidrogeno(datosInforme){
 
   if(datosInforme.metano.length==0){
     let contenedorCH42=document.createElement("tr")
+    contenedorCH42.setAttribute("style","display: none")
       contenedorCH42.innerHTML=`
       <th class="datoCelda">
       PPM CH4
@@ -1651,6 +1716,7 @@ function renderMetanoUnicoDeHidrogeno(datosInforme){
       document.getElementById("tbody1").appendChild(contenedorCH42)
   }else{
     let contenedorCH42=document.createElement("tr")
+    contenedorCH42.setAttribute("style","display: none")
       contenedorCH42.innerHTML=`
       <th class="datoCelda">
       PPM CH4
@@ -1768,3 +1834,49 @@ function addValueAndTimeMetanoUnico(id){
 
 
 }
+
+
+
+function reset(){
+  location.reload()
+}
+
+let botonHome=document.getElementById("brandLogo")
+botonHome.addEventListener("click", gotoHome)
+
+let botonHome2=document.getElementById("brandLogo2")
+botonHome2.addEventListener("click", gotoHome)
+
+function gotoHome(){
+ window.location="/"
+}
+
+let botonburger = document.getElementById("menuBurger")
+  botonburger.addEventListener("click", reveal)
+  
+  function reveal (){
+    let displayedNavbar=document.getElementById("reveal")
+  
+    if(displayedNavbar.style.display=="block"){
+      displayedNavbar.style.display="none"
+    }else{
+      displayedNavbar.style.display="block"
+    }
+  
+  
+    
+  }
+
+  
+fetch('/dataUser')
+.then(response => {
+  return response.json();
+})
+.then(data => {
+  
+let usuario= data.username
+document.getElementById("usuario3").innerText=`${usuario}`
+document.getElementById("usuario2").innerText=`${usuario}`
+
+
+})
