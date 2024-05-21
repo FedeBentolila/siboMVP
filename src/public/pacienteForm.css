@@ -12,6 +12,23 @@
    
 }
 
+.imagenNuevo{
+    width: 30%;
+}
+
+
+
+.divisorImgYtitulo{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.leyenda{
+    margin: 10px;
+}
+
 .brandLogo{
     width: 15%;
     cursor: pointer;
@@ -390,6 +407,11 @@ color: var(--Color, #5D87B2);
     .imagenNuevo{
         width: 20%;
     }
+
+    
+.leyenda{
+    font-size: 65%;
+}
 
     
     
