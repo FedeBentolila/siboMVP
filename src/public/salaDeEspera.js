@@ -1134,7 +1134,7 @@ socket.on('disconnect', function() {
         icon: "error",
         title: "Oops...",
         text: "Error de conexión con el servidor",
-        confirmButtonColor: "red",
+        confirmButtonColor: "#5D87B2",
       }).then((result) => {
         if (result.isConfirmed) {
             window.location.reload()
@@ -1151,7 +1151,7 @@ socket.on('connect_error', function() {
         icon: "error",
         title: "Oops...",
         text: "Error de conexión con el servidor",
-        confirmButtonColor: "red",
+        confirmButtonColor: "#5D87B2",
       }).then((result) => {
         if (result.isConfirmed) {
             window.location.reload()
@@ -1167,7 +1167,7 @@ socket.on('error', function(error) {
         icon: "error",
         title: "Oops...",
         text: "Error en el servidor",
-        confirmButtonColor: "red",
+        confirmButtonColor: "#5D87B2",
       }).then((result) => {
         if (result.isConfirmed) {
             window.location.reload()

@@ -747,7 +747,7 @@ socket.on('new2 hidrogeno', function(hidrogeno) {
       text: "Recarga de página necesaria!",
       icon: "success",
       iconColor: "red",
-      confirmButtonColor: "black",
+      confirmButtonColor: "#5D87B2",
       showConfirmButton: true,
     });
 
@@ -767,7 +767,7 @@ socket.on('new2 hidrogeno acceso', function(hidrogeno) {
       title: "Datos modificados",
       icon: "success",
       iconColor: "red",
-      confirmButtonColor: "black",
+      confirmButtonColor: "#5D87B2",
       showConfirmButton: true,
     });
 
@@ -792,7 +792,7 @@ socket.on('nuevaFila HidrogenoModificada', function(dataFila) {
       text: "Recarga de página necesaria!",
       icon: "success",
       iconColor: "red",
-      confirmButtonColor: "black",
+      confirmButtonColor: "#5D87B2",
       showConfirmButton: true,
     });
 
@@ -813,7 +813,7 @@ socket.on('new2 metano', function(metano) {
       text: "Recarga de página necesaria!",
       icon: "success",
       iconColor: "red",
-      confirmButtonColor: "black",
+      confirmButtonColor: "#5D87B2",
       showConfirmButton: true,
     });
 
@@ -834,7 +834,7 @@ socket.on('new2 metano acceso', function(metano) {
       icon: "success",
       iconColor: "red",
       showConfirmButton: true,
-      confirmButtonColor: "black",
+      confirmButtonColor: "#5D87B2",
     });
 
 
@@ -854,7 +854,7 @@ socket.on('new2 metano unico acceso', function(metano) {
       icon: "success",
       iconColor: "red",
       showConfirmButton: true,
-      confirmButtonColor: "black",
+      confirmButtonColor: "#5D87B2",
     });
 
 
@@ -874,7 +874,7 @@ socket.on('nuevaFila MetanoModificada', function(dataFila) {
       text: "Recarga de página necesaria!",
       icon: "success",
       iconColor: "red",
-      confirmButtonColor: "black",
+      confirmButtonColor: "#5D87B2",
       showConfirmButton: true,
     });
 
@@ -931,8 +931,8 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo, sala){
                 icon: "warning",
                 iconColor: "red",
                 showCancelButton: true,
-                confirmButtonColor: "black",
-                cancelButtonColor: "red",
+                confirmButtonColor: "#5D87B2",
+                cancelButtonColor: "gray",
                 confirmButtonText: "Confirmar",
                 cancelButtonText: "Cancelar"
               }).then((result) => {
@@ -991,8 +991,8 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo, sala){
                 icon: "warning",
                 iconColor: "red",
                 showCancelButton: true,
-                confirmButtonColor: "black",
-                cancelButtonColor: "red",
+                confirmButtonColor: "#5D87B2",
+                cancelButtonColor: "gray",
                 confirmButtonText: "Confirmar",
                 cancelButtonText: "Cancelar"
               }).then((result) => {
@@ -1060,8 +1060,8 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo, sala){
                     icon: "warning",
                     iconColor: "red",
                     showCancelButton: true,
-                    confirmButtonColor: "black",
-                    cancelButtonColor: "red",
+                    confirmButtonColor: "#5D87B2",
+                    cancelButtonColor: "gray",
                     confirmButtonText: "Confirmar",
                     cancelButtonText: "Cancelar"
                   }).then((result) => {
@@ -1596,7 +1596,7 @@ socket.on('disconnect', function() {
       icon: "error",
       title: "Oops...",
       text: "Error de conexión con el servidor",
-      confirmButtonColor: "red",
+      confirmButtonColor: "#5D87B2",
     }).then((result) => {
       if (result.isConfirmed) {
           window.location.reload()
@@ -1613,7 +1613,7 @@ socket.on('connect_error', function() {
       icon: "error",
       title: "Oops...",
       text: "Error de conexión con el servidor",
-      confirmButtonColor: "red",
+      confirmButtonColor: "#5D87B2",
     }).then((result) => {
       if (result.isConfirmed) {
           window.location.reload()
@@ -1629,7 +1629,7 @@ socket.on('error', function(error) {
       icon: "error",
       title: "Oops...",
       text: "Error en el servidor",
-      confirmButtonColor: "red",
+      confirmButtonColor: "#5D87B2",
     }).then((result) => {
       if (result.isConfirmed) {
           window.location.reload()
@@ -1866,7 +1866,7 @@ function addValueAndTimeMetanoUnico(id){
           icon: "error",
           title: "Oops...",
           text: "Algo salió mal!",
-          confirmButtonColor: "black",
+          confirmButtonColor: "#5D87B2",
         });
 
 

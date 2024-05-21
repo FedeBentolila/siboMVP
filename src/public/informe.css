@@ -261,6 +261,12 @@ input[type="number"] {
     font-family:Roboto;
   }
 
+  .swal2-text {
+    font-family:Roboto;
+  }
+
+  
+
   #sig-canvas {
     border: 2px dotted #CCCCCC;
     border-radius: 15px;
