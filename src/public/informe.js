@@ -1643,19 +1643,18 @@ function inputTime(){
   var inputHora = document.querySelectorAll('.inputTime');
 
   inputHora.forEach((t)=>{
-      // Obtener la hora actual
+      
       var now = new Date();
       var hours = now.getHours();
       var minutes = now.getMinutes();
 
-      // Formatear la hora y los minutos para que siempre tengan dos dígitos
+      
       hours = (hours < 10 ? '0' : '') + hours;
       minutes = (minutes < 10 ? '0' : '') + minutes;
 
-      // Concatenar la hora y los minutos en un solo string
+     
       var horaActual = hours + ':' + minutes;
 
-      // Establecer la hora actual como el marcador de posición del input
       t.value = horaActual;
   }) 
 }

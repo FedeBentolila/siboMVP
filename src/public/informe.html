@@ -67,52 +67,109 @@
     <div id="reveal" class="reveal">
     <div id="displayedNavbar" class="displayedNavbar">
 
-      <a class="linkComponenteMobile" href="/misInformes/1">
+     <a class="linkComponenteMobile" href="/">
         <div class="componenteNavBar">
-          <img style="padding-right: 10px;" src="/ARCHIVO.png" class="imgComponente" alt="nuevoUsuario">
-          <strong>Archivo</strong>
+          <img src="/HOME.png" width="10%" alt="nuevoUsuario">
+          <div style="margin-left: 5%;">
+          <strong class="StrongNav">Escritorio</strong>
+          <br>
+          <br>
+          <p>Herramientas</p>
+          </div>
         </div>
       </a>
-      <br>
-
-      <a class="linkComponenteMobile" href="/misDatos">
-        <div class="componenteNavBar">
-          <img style="padding-right: 10px;" src="/MISDATOS.png" class="imgComponente" alt="nuevoUsuario">
-          <strong>Mis Datos</strong>
-        </div>
-      </a>
-      <br>
-
-      <a class="linkComponenteMobile" href="/informes">
-        <div class="componenteNavBar">
-          <img style="padding-right: 10px;" src="/informes.png" class="imgComponente" alt="nuevoUsuario">
-          <strong>Informes</strong>
-        </div>
-      </a>
-      <br>
 
       <a class="linkComponenteMobile" href="/pacienteForm">
         <div class="componenteNavBar">
-          <img style="padding-right: 10px;" src="/nuevopaciente.png" class="imgComponente" alt="nuevoPaciente">
-          <strong>Agregar Paciente</strong>
+          <img src="/nuevopaciente.png" width="10%" alt="nuevoUsuario">
+          <div style="margin-left: 5%;">
+          <strong class="StrongNav">Nuevo Paciente</strong>
+          <br>
+          <br>
+          <p>Agregar un paciente a la sala</p>
+          </div>
         </div>
       </a>
-      <br>
 
       <a class="linkComponenteMobile" href="/salaDeEspera">
         <div class="componenteNavBar">
-          <img  style="padding-right: 10px;" src="/saladeespera.png" class="imgComponente" alt="nuevoPaciente">
-          <strong>Sala de Espera</strong>
+          <img src="/saladeespera.png" width="10%" alt="nuevoUsuario">
+          <div style="margin-left: 5%;">
+          <strong class="StrongNav">Sala de Espera</strong>
+          <br>
+          <br>
+          <p>Registrar H2 o CH4</p>
+          </div>
         </div>
       </a>
-      <br>
+
+
+      <a class="linkComponenteMobile" href="/informes">
+        <div class="componenteNavBar">
+          <img src="/informes.png" width="10%" alt="nuevoUsuario">
+          <div style="margin-left: 5%;">
+          <strong class="StrongNav">Informes</strong>
+          <br>
+          <br>
+          <p>Ver validar o modificar informes</p>
+          </div>
+        </div>
+      </a>
+
+      <a class="linkComponenteMobile" href="/misInformes/1">
+        <div class="componenteNavBar">
+          <img src="/ARCHIVO.png" width="10%" alt="nuevoUsuario">
+          <div style="margin-left: 5%;">
+          <strong class="StrongNav">Archivo</strong>
+          <br>
+          <br>
+          <p>Historial de informes, exportación a PDF</p>
+          </div>
+        </div>
+      </a>
+
+
+      <a class="linkComponenteMobile" href="/register">
+        <div class="componenteNavBar">
+          <img src="/NUEVOUSUARIO.png" width="10%" alt="nuevoUsuario">
+          <div style="margin-left: 5%;">
+          <strong class="StrongNav">Nuevo Usuario</strong>
+          <br>
+          <br>
+          <p>Crear nuevo usuario</p>
+          </div>
+        </div>
+      </a>
+
+      <a class="linkComponenteMobile" href="/misDatos">
+        <div class="componenteNavBar">
+          <img src="/MISDATOS.png" width="10%" alt="nuevoUsuario">
+          <div style="margin-left: 5%;">
+          <strong class="StrongNav">Mis Datos</strong>
+          <br>
+          <br>
+          <p>Ver datos, modificar firma</p>
+          </div>
+        </div>
+      </a>
 
       <a class="linkComponenteMobile" href="/logout">
         <div class="componenteNavBar">
-          <img src="/CLOSE.png"  class="imgComponente" alt="nuevoUsuario">
-          <strong style="padding-left: 5px;" id="usuario2"></strong>
+          <img src="/logout.png" width="10%" alt="nuevoUsuario">
+          <div style="margin-left: 5%;">
+          <strong class="StrongNav">Logout</strong>
+          <br>
+          </div>
+        </div>
+      </a>
+
+      <a style="display: none;" class="linkComponenteMobile" href="/logout">
+        <div class="componenteNavBar">
+          <img src="./logout.png"  class="imgComponente" alt="nuevoUsuario">
+          <strong  id="usuario2"></strong>
            </div>
       </a> 
+
 
     </div>
   </div>
@@ -196,97 +253,3 @@
 </html>
 
 
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informe</title>
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="/socket.io/socket.io.js"></script>
-  </head>
-<body >
-    <nav class="navbar ">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="/siboassist.png"  class="brandLogo" >
-          </a>
-        </div>
-      </nav>
-
-      <section  class="contenedorInforme" >
-
-        <div id="relojYproxMedicion" class="relojYproxMedicion">
-          <div class="clock" >
-            <div class="time">
-              <span class="hours"></span>
-              <span class="separator">:</span>
-              <span class="minutes"></span>
-        
-              </div>
-        </div>
-        <br>
-
-
-        <h1 id="proxMedicion">Inicio pendiente</h1>
-
-        </div>
-
-        <div id="datosInforme" class="datosInforme">
-
-        </div>
-
-        <div id="ocultadorDeValores" class="ocultadorDeValores" style="display: none;">  
-        <div id="valores" class="valores">
-
-        </div>
-       </div>
-
-        
-      </section>
-
-      <div id="ocultos"></div>
-
-
-    <br>
-    
-
-      <section >
-
-       
-
-       
-         
-
-         
-     
-         
-
-         
-        
-        <br>
-        <br>
-
-      
-       
-      
-
-    </section>
-    <br>
-    <br>
-    <br>
-
-   
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="/informe.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
-</html> -->

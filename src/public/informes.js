@@ -37,7 +37,7 @@ function render (data){
         <td> ${iterador.apellido} </td>
         <td> ${tipo} </td>
         <td> ${fechaYhora[0]} </td>
-        <td> <a href="/accederInforme/${iterador._id}"><img src="/QRLEIDO.png" width=30px  alt=""></a></td>
+        <td> <a href="/accederInforme/${iterador._id}"><img src="/validar.png" width=30px  alt=""></a></td>
               
         `;
         document.getElementById("registros").appendChild(contenedor)
@@ -92,7 +92,7 @@ socket.on('registroFinalizado', function(registroFinalizado) {
         <td> ${registroFinalizado[0].apellido} </td>
         <td> ${tipo} </td>
         <td> ${fechaYhora[0]} </td>
-        <td> <a href="/accederInforme/${registroFinalizado[0]._id}"><img src="/QRLEIDO.png" width=30px  alt=""></a></td>
+        <td> <a href="/accederInforme/${registroFinalizado[0]._id}"><img src="/validar.png" width=30px  alt=""></a></td>
               
         `;
         document.getElementById("registros").appendChild(contenedor)
