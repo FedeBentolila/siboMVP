@@ -16,7 +16,7 @@ function render (data){
       <br>
     <br>
     <br>
-      <h1 style="text-align:center; color:#5D87B2">Sin informes en la base de datos</h1>
+      <h1 style="text-align:center; color:#5D87B2">---</h1>
       <br>
     <br>
     <br>

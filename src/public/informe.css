@@ -500,21 +500,18 @@ color: var(--Color, #5D87B2);
    
    .campo2 {
     justify-content: flex-start;
-    align-self: stretch;
     color: #6c6c6c;
+    align-items: center;
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px /* 150% */;
     display: flex;
-    padding: 5px;
-    align-items: flex-start;
     gap: 10px;
     border-radius: 10px;
     border: 1px solid #DEE2E6;
     background: #FFF;
-    margin-bottom: 5px;
     height: min-content;
    } 
 

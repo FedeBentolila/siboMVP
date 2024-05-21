@@ -284,7 +284,7 @@ color: var(--Color, #5D87B2);
 
 
     .brandLogo{
-        width: 100px;
+        width: 40%;
         cursor: pointer;
     }
 
@@ -364,7 +364,7 @@ color: var(--Color, #5D87B2);
     }
 
     .linkComponenteMobile{
-        width: 50%;
+        width: 100%;
         text-decoration: none;
     }
 
@@ -379,6 +379,12 @@ color: var(--Color, #5D87B2);
         font-style: normal;
         font-weight: 500;
         padding: 10px;
+        border-bottom:1px solid rgba(93, 135, 178, 0.50);
+    }
+
+    
+    .StrongNav{
+        font-size:1.5rem;
     }
 
     .imagenNuevo{

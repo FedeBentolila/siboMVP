@@ -270,6 +270,11 @@ fetch('/dataInforme', {
           
            
            <div id="form" class="form" >
+           <div id="form" class="form" >
+           <div  class="logintitle2">
+           <strong>${data.apellido}</strong>
+           <img   width=20% src="/ESPIRADO.png" alt="">
+           </div>
            <br>
            <br>
 
@@ -322,6 +327,11 @@ fetch('/dataInforme', {
           
            
            <div id="form" class="form" >
+           <div id="form" class="form" >
+           <div  class="logintitle2">
+           <strong>${data.apellido}</strong>
+           <img   width=20% src="/ESPIRADO.png" alt="">
+           </div>
            <br>
            <br>
 
