@@ -1,13 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 
 body{
-    font-family: 'Montserrat', sans-serif;
+    font-family: Roboto;
     background: white;
     
 }
 
+.botonera{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 30%;
+}
+
 .sintomas{
-    width: 80%;
+    width: 50%;
+    border-radius: 10px;
 }
 
 a{
@@ -52,56 +60,86 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     width: 80%;
-     line-height:0;
+    font-size: larger;
 }
 
 .datosPaciente{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 80%;
+    margin: auto;
+    overflow: clip;
+    width: 50%;
+    border-radius: 30px;
+    border-color: black;
+    border-style: solid;
+    font-family: Roboto;
 
 }
 
 .tabla{
-    border-style: solid;
-    border-color: black;
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
     width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+    padding: 10px;
+}
+
+
+.tabla td, .tabla th {
+    text-align: left;
+    padding: 10px;
+}
+
+.tabla td {
     border: none;
-    border-collapse: collapse;
+    font-size: 15px;
+ 
+    border-bottom: gray;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    
 }
 
-.tabla td{
+.tabla th {
+    color: #ffffff;
     border-style: solid;
-    border-color: black;
+    border-color: #5D87B2;
+    background: #5D87B2;
+
 }
 
-.tablaResultado{
-    border-style: solid;
-    border-color: black;
-    font-size: 20px;
-    width: 40%;
-    border: none;
-    border-collapse: collapse;
+
+.tabla th:nth-child(odd) {
+    color: #ffffff;
+    background: #5D87B2;
 }
 
-.tablaResultado td{
-    border-style: solid;
-    border-color: black;
+.tabla tr:nth-child(even) {
+    background: #ffffff;
+    color: black;
+    font-family: Roboto;
+}
+
+.tabla tr:nth-child(odd) {
+    background: #ffffff;
+    color: black;
+    font-family: Roboto;
 }
 
 
 
 .medicionesYresultado{
-    width: 80%;
+    width: 90%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -150,6 +188,57 @@ textarea{
 
 
 
+.botonazul{
+    height: 30px;
+    border: none;
+    display: flex;
+    padding: 5px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: var(--Color, #5D87B2);
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px /* 112.254% */;
+    width: 100%;
+    cursor: pointer;
+   
+   }
+
+   
+   .botonblanco{
+
+    height: 30px;
+    display: flex;
+    padding: 5px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: white;
+    color: #5D86B2;
+    border-color: #5D86B2;
+    border-style: solid;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px /* 112.254% */;
+    width: 100%;
+    cursor: pointer;
+      
+   }
+
+
+
 @media (max-width: 500px) {
 
     .formValidar{
@@ -185,31 +274,54 @@ textarea{
     align-items: center;
     text-align: center;
 }
-
+/* 
 .chart-container{
     display: none;
    
+} */
+
+.separadores{
+    display: none;
+}
+
+.chart-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+.tipoProtocoloYfecha{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: larger;
+}
+
+.datosPaciente{
+    margin: auto;
+    overflow: clip;
+    width: 90%;
+    border-radius: 30px;
+    border-color: black;
+    border-style: solid;
+    font-family: Roboto;
+
+}
+
+.sintomas{
+    width: 90%;
+    border-radius: 10px;
+}
+
+.botonera{
+    width: 100%;
+}
+
 }
 
 
-}
-
-@media print{
-    .encabezado{
-        flex-direction: row;
-    }
-
-    .imagen{
-        width: 50%;
-    }
-
-    .medicionesYresultado{
-        width: 80%;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
-        
-    }
-
-}

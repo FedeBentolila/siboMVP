@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informe a Validar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/informeAvalidar.css">
     <script src="/socket.io/socket.io.js"></script>
 </head>
@@ -11,26 +15,17 @@
 
     <div id="encabezado" class="encabezado">
 
-        <!-- <img src="/siboassist.png" class="imagen" alt=""> -->
-
-      <!--   <div class="parrafitoEncabezado">
-            <p class="tituloEncabezado">Centro médico Dr Bustos Fernandez</p>
-            <p>Echeverría 2771</p>
-            <p>(1428) Belgrano</p>
-            <p>C.A.B.A</p>
-            <p>(011) 4788-6103/6102 y líneas rotativas </p>
-            <p>info@cmbf.com.ar</p>
-        </div> -->
-
     </div>
 
     <br>
     <br>
 
     <div class="tipoProtocoloYfecha">
-        <h2 id="tipoEstudio"></h2>
-        <h2 id="protocolo"></h2>
-        <h2 id="fecha"></h2>
+        <strong style="text-align: center;" id="tipoEstudio"></strong>
+        <br>
+        <strong id="protocolo"></strong>
+        <br>
+        <strong id="fecha"></strong>
 
     </div>
     <br>
@@ -40,19 +35,19 @@
 
         <table class="tabla">
             <tr>
-                <td>Paciente</td>
+                <td><strong>Paciente:</strong></td>
                 <td id="nombrePaciente"></td>
             </tr>
             <tr>
-                <td>DNI</td>
+                <td><strong>DNI:</strong></td>
                 <td id="dni"></td>
             </tr>
             <tr>
-                <td>Cobertura</td>
+                <td><strong>Cobertura:</strong></td>
                 <td id="cobertura"></td>
             </tr>
             <tr>
-                <td>Solicitado por</td>
+                <td><strong>Solicitado por:</strong></td>
                 <td id="solicitante"></td>
             </tr>
         </table>
@@ -63,24 +58,29 @@
 
     <div id="medicionesYresultado" class="medicionesYresultado">
 
-   
-            <table id="tablaResultado" class="tablaResultado">
+            <div class="datosPaciente">
+                <table id="tablaResultado" class="tabla">
 
-            </table>
-            <br>
+                </table>
+            </div>
+             <br>
       
 
      
         <form id="formValidar" class="formValidar" action="/validarInforme" method="post">
             <h3>Conclusiones</h3>
-            <textarea name="resultadoTexto" class="resultadoTexto" id="resultadoTexto" cols="40" rows="4"></textarea>
-            <h3 id="tituloH">Flora hidrogénica</h3>
-            <textarea name="floraHidrogenica" class="resultadoTexto" id="floraHidrogenica" cols="40" rows="3"></textarea>
-            <h3 id="tituloM">Flora metanogénica</h3>
-            <input type="text" id="floraMetanogenica" name="floraMetanogenica">
             <br>
-            <textarea name="sintomas" style="display: none;"  id="sintomasOcultos" cols="20" rows="4"></textarea>   
-            <input style="background-color: black; border-color: black; " class="btn" type="submit" value="Validar el informe">
+            <textarea style="border-radius: 10px;" name="resultadoTexto" class="resultadoTexto" id="resultadoTexto" cols="40" rows="4"></textarea>
+            <h3 id="tituloH">Flora hidrogénica</h3>
+            <br>
+            <textarea style="border-radius: 10px;" name="floraHidrogenica" class="resultadoTexto" id="floraHidrogenica" cols="40" rows="3"></textarea>
+            <h3 id="tituloM">Flora metanogénica</h3>
+            <br>
+            <input type="text" id="floraMetanogenica" name="floraMetanogenica">
+        
+            <h3>Síntomas</h3>
+            <textarea style="border-radius: 10px;" name="sintomas"  id="sintomasOcultos" cols="20" rows="4"></textarea>   
+            <!-- <input style="background-color: black; border-color: black; " class="btn" type="submit" value="Validar el informe"> -->
 
         </form>
 
@@ -88,29 +88,45 @@
 
         
     </div>
-    <br>
-    <br>
+
+    <div class="separadores">
+        <br>
+        <br>
+
+    </div>
+
   
     <div  class="chart-container" >
         <canvas id="myChart"></canvas>
         </div>
-    <br>
-    <br>
-
-    <textarea name="sintomas1" oninput="actualizarInput(this.value,'sintomasOcultos')" class="sintomas" id="sintomas" cols="20" rows="4"></textarea>   
+    
+    <textarea style="display: none;" name="sintomas1" oninput="actualizarInput(this.value,'sintomasOcultos')" class="sintomas" id="sintomas" cols="20" rows="4"></textarea>   
 
     
     
-    <div class="flip">
+    <div style="display: none;" class="flip">
         <br>
         <br>
         <h2>Gira el celular para ver el gráfico</h2>
         <img src="https://static.thenounproject.com/png/4208574-200.png" alt="">
     </div>
+
+    <div class="separadores">
+        <br>
+        <br>
+
+    </div>
     
+    <div class="botonera">
+
+        <button onclick="location.href='/informes';"  class="botonblanco">Cerrar</button>
+        <button id="botonEnviar" class="botonazul">Validar Informe</button>
+
+        
+
+    </div>
     <br>
-    <h2><a href="/informes"><img src="https://cdn-icons-png.flaticon.com/512/3114/3114883.png" width="50px" alt=""></a></h2>
-    <br>
+
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/informeAvalidar.js"></script>

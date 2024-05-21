@@ -36,10 +36,10 @@ fetch('/dataInforme', {
 
         let contenedorRow1 = document.createElement("tr")
         contenedorRow1.innerHTML=`
-        <td>Minuto</td>
-        <td>ppm H2</td>
-        <td>ppm CH3</td>
-        <td style="text-align: center;">I.S</td>
+        <th>Minuto</th>
+        <th>ppm H2</th>
+        <th>ppm CH3</th>
+        <th style="text-align: center;">I.S</th>
         
         `
         document.getElementById("tablaResultado").appendChild(contenedorRow1)
@@ -87,9 +87,9 @@ fetch('/dataInforme', {
 
         let contenedorRow1 = document.createElement("tr")
         contenedorRow1.innerHTML=`
-        <td>Minuto</td>
-        <td>ppm H2</td>
-        <td style="text-align: center;">I.S</td>
+        <th>Minuto</th>
+        <th>ppm H2</th>
+        <th style="text-align: center;">I.S</th>
         
         `
         document.getElementById("tablaResultado").appendChild(contenedorRow1)
@@ -129,9 +129,9 @@ fetch('/dataInforme', {
 
         let contenedorRow1 = document.createElement("tr")
         contenedorRow1.innerHTML=`
-        <td>Minuto</td>
-        <td>ppm CH3</td>
-        <td style="text-align: center;">I.S</td>
+        <th>Minuto</th>
+        <th>ppm CH3</th>
+        <th style="text-align: center;">I.S</th>
         
         `
         document.getElementById("tablaResultado").appendChild(contenedorRow1)
@@ -717,3 +717,12 @@ fetch('/dataInforme', {
     var input2 = document.getElementById(id);
     input2.value = valor;
 }
+
+
+const botonEnviar = document.getElementById("botonEnviar");
+const formulario = document.getElementById("formValidar");
+
+// Añadir evento click al botón
+botonEnviar.addEventListener("click", function() {
+    formulario.submit();
+});
