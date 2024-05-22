@@ -906,7 +906,7 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo, sala){
               icon: "error",
               title: "Oops...",
               text: "Algo salió mal!",
-              confirmButtonColor: "black",
+              confirmButtonColor: "#5D86B2",
             });
 
 
@@ -965,7 +965,7 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo, sala){
               icon: "error",
               title: "Oops...",
               text: "Algo salió mal!",
-              confirmButtonColor: "black",
+              confirmButtonColor: "b#5D86B2lack",
             });
 
 
@@ -1025,7 +1025,7 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo, sala){
               icon: "error",
               title: "Oops...",
               text: "Algo salió mal!",
-              confirmButtonColor: "black",
+              confirmButtonColor: "#5D86B2",
             });
 
 
@@ -1099,7 +1099,7 @@ function eliminar (id){
   Swal.fire({
     title: "¿Estás seguro de querer borrar este registro?",
     text: "Se borrará permanentemente no se podrá deshacer",
-    icon: "warning",
+    icon: "question",
     iconColor: "red",
     showCancelButton: true,
     confirmButtonColor: "#5D87B2",
@@ -1152,9 +1152,9 @@ function finalizar (id, intervalo, minutosProtocolo, tipo){
   let cantidadMaxMediciones= (minutosProtocolo/intervalo)+1
 
   Swal.fire({
-    title: "¿Estás seguro?",
-    text: "Los datos se enviarán para su validación y confección del informe y ya no se podrán modificar",
-    icon: "warning",
+    title: "¿Estás seguro de finalizar la toma?",
+    text: "Una vez finalizada pasará al archivo de informes para ser validado",
+    icon: "question",
     iconColor: "red",
     showCancelButton: true,
     confirmButtonColor: "#5D87B2",
@@ -1173,7 +1173,7 @@ function finalizar (id, intervalo, minutosProtocolo, tipo){
         Swal.fire({
           title: "¿Estás seguro?",
           text: "La encuesta todavía se encuentra pendiente ",
-          icon: "warning",
+          icon: "question",
           iconColor: "red",
           showCancelButton: true,
           confirmButtonColor: "#5D87B2",
@@ -1209,7 +1209,7 @@ function finalizar (id, intervalo, minutosProtocolo, tipo){
                   Swal.fire({
                       title: "¿Estás seguro?",
                       text: textoAlert,
-                      icon: "warning",
+                      icon: "question",
                       iconColor: "red",
                       showCancelButton: true,
                       confirmButtonColor: "#5D87B2",
@@ -1262,7 +1262,7 @@ function finalizar (id, intervalo, minutosProtocolo, tipo){
                     Swal.fire({
                       title: "¿Estás seguro?",
                       text: "Se encuentra pendiente la medición de CH4",
-                      icon: "warning",
+                      icon: "question",
                       iconColor: "red",
                       showCancelButton: true,
                       confirmButtonColor: "#5D87B2",
@@ -1412,7 +1412,7 @@ function finalizar (id, intervalo, minutosProtocolo, tipo){
             Swal.fire({
                 title: "¿Estás seguro?",
                 text: textoAlert,
-                icon: "warning",
+                icon: "question",
                 iconColor: "red",
                 showCancelButton: true,
                 confirmButtonColor: "#5D87B2",
@@ -1465,7 +1465,7 @@ function finalizar (id, intervalo, minutosProtocolo, tipo){
               Swal.fire({
                 title: "¿Estás seguro?",
                 text: "Se encuentra pendiente la medición de CH4",
-                icon: "warning",
+                icon: "question",
                 iconColor: "red",
                 showCancelButton: true,
                 confirmButtonColor: "#5D87B2",

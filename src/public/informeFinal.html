@@ -5,81 +5,77 @@
   
     <title>Informe final</title>
     <link rel="stylesheet" href="/informeFinal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
     <script src="/socket.io/socket.io.js"></script>
 </head>
 <body class="container1">
+    
 
     <div id="printable" class="container">
-    <div id="encabezado" class="encabezado">
-        <br>
-        <br>
-        <br>
-        
-       <!--  <img src="/cropped-logo.png" class="imagen" alt="">
-
-        <div class="parrafitoEncabezado">
-            <p class="tituloEncabezado">Centro médico Dr Bustos Fernandez</p>
-            <p>Echeverría 2771</p>
-            <p>(1428) Belgrano</p>
-            <p>C.A.B.A</p>
-            <p>(011) 4788-6103/6102 y líneas rotativas </p>
-            <p>info@cmbf.com.ar</p>
-        </div> -->
-
-    </div>
-
-
+       
+   
+<div class="page">
+    <br>
 
     <div class="tipoProtocoloYfecha">
-        <p id="tipoEstudio"></p>
-        <p id="protocolo"></p>
-        <p id="fecha"></p>
+        <strong id="tipoEstudio"></strong>
+        <strong id="protocolo"></strong>
+        <strong id="fecha"></strong>
 
     </div>
+
+    <br>
+    
     
 
     <div id="datosPaciente" class="datosPaciente">
 
         <table class="tabla">
             <tr>
-                <td>Paciente</td>
+                <td><strong>Paciente:</strong></td>
                 <td id="nombrePaciente"></td>
             </tr>
             <tr>
-                <td>DNI</td>
+                <td><strong>DNI:</strong></td>
                 <td id="dni"></td>
             </tr>
             <tr>
-                <td>Cobertura</td>
+                <td><strong>Cobertura:</strong></td>
                 <td id="cobertura"></td>
             </tr>
             <tr>
-                <td>Solicitado por</td>
+                <td><strong>Solicitado por:</strong></td>
                 <td id="solicitante"></td>
             </tr>
         </table>
 
     </div>
+
     <br>
+ 
 
     <div id="medicionesYresultado" class="medicionesYresultado">
 
-   
-            <table id="tablaResultado" class="tablaResultado">
+        <div class="datosPaciente">
+            <table id="tablaResultado" class="tabla">
 
             </table>
-           
+        </div>
 
-     
+      
+     <br>
         <div id="formValidar" class="formValidar">
-
-            <!-- <strong>Conclusiones</strong> -->
             <strong>Conclusiones</strong>
-            <p id="resultadoTexto"></p>
+            <p class="textarea" id="resultadoTexto"></p>
             <strong id="tituloH">Flora hidrogénica</strong>
-            <p id="floraHidrogenica"></p>
+            <p class="textarea" id="floraHidrogenica"></p>
             <strong id="tituloM">Flora metanogénica</strong>
-            <p id="floraMetanogenica"></p>
+            <p class="textarea" id="floraMetanogenica"></p>
+            <strong>Observaciones</strong>
+            <p class="textarea" id="sintomas" class="sintomas"></p>
             
            
         </div>
@@ -89,9 +85,12 @@
         
     </div>
     <br>
-    <p id="sintomas" class="sintomas"></p>
-    <br>
-    
+</div>
+
+<div class="page">
+
+      <br>
+
     <div class="chart-container" >
         <canvas id="myChart"></canvas>
     </div>
@@ -106,18 +105,31 @@
 
   
 </div> 
+<br>
+<br>
 
-<img id="btn"  class="pdfDownload" src="https://png.pngtree.com/png-vector/20221207/ourmid/pngtree-pdf-download-vector-icon-png-image_6514761.png" width="100px" alt="">
+</div>
 
-<!-- <button class="btn" id="btn">Descargar </button> -->
+<div class="botonera">
+
+    <button onclick="location.href='/misInformes/1'"  class="botonblanco">Cerrar</button>
+    <button id="btn" class="botonazul">Descargar PDF</button>
+
+    
+
+</div>
+<br>
+
+<!-- <img id="btn"  class="pdfDownload" src="https://png.pngtree.com/png-vector/20221207/ourmid/pngtree-pdf-download-vector-icon-png-image_6514761.png" width="100px" alt="">
+
+
     <br>
     <br>
     <a href="/misInformes/1"><img src="https://cdn-icons-png.flaticon.com/512/3114/3114883.png" width="50px" alt=""></a>
     
-    <!-- <button class="btn"><a style="color: white;" href="/misInformes/1">Volver</a></button> -->
     
     <br>
-  
+   -->
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/informeFinal.js"></script>

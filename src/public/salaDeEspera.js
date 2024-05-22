@@ -687,7 +687,7 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo){
                 icon: "error",
                 title: "Oops...",
                 text: "Algo salió mal!",
-                confirmButtonColor: "black",
+                confirmButtonColor: "#5D86B2",
               });
 
 
@@ -746,7 +746,7 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo){
                 icon: "error",
                 title: "Oops...",
                 text: "Algo salió mal!",
-                confirmButtonColor: "black",
+                confirmButtonColor: "#5D86B2",
               });
 
 
@@ -811,7 +811,7 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo){
                 icon: "error",
                 title: "Oops...",
                 text: "Algo salió mal!",
-                confirmButtonColor: "black",
+                confirmButtonColor: "#5D86B2",
               });
 
 

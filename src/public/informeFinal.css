@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 
 body{
-    font-family: 'Montserrat', sans-serif;
+    font-family: Roboto;
     background: white;
     
 }
@@ -25,6 +25,10 @@ a{
     justify-content: center;
     align-items: center;
     width: 900px;
+}
+
+.page{
+    width: 100%;
 }
 
 .encabezado{
@@ -53,41 +57,87 @@ a{
 
 .tipoProtocoloYfecha{
     display: flex;
+    text-align: center;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    width: 80%;
-     line-height:0;
-     font-size: 13px;
+    align-items: center;
+  
+    font-size: 15px;
 }
+
 
 .sintomas{
     text-align: center;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .datosPaciente{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 80%;
+    margin: auto;
+    overflow: clip;
+    width: 50%;
+    border-radius: 30px;
+    border-color: gray;
+    border-style: solid;
+    font-family: Roboto;
 
 }
 
 .tabla{
-    border-style: solid;
-    border-color: black;
     font-size: 15px;
-    width: 100%;
+    font-weight: normal;
     border: none;
     border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+    padding: 10px;
 }
 
-.tabla td{
-    border-style: solid;
-    border-color: black;
+
+.tabla td, .tabla th {
+    text-align: left;
+    padding: 10px;
 }
+
+.tabla td {
+    border: none;
+    font-size: 15px;
+ 
+    border-bottom: gray;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    
+}
+
+.tabla th {
+    color: #ffffff;
+    border-style: solid;
+    border-color: #5D87B2;
+    background: #5D87B2;
+
+}
+
+
+.tabla th:nth-child(odd) {
+    color: #ffffff;
+    background: #5D87B2;
+}
+
+.tabla tr:nth-child(even) {
+    background: #ffffff;
+    color: black;
+    font-family: Roboto;
+}
+
+.tabla tr:nth-child(odd) {
+    background: #ffffff;
+    color: black;
+    font-family: Roboto;
+}
+
 
 .tablaResultado{
     border-style: solid;
@@ -106,11 +156,11 @@ a{
 
 
 .medicionesYresultado{
-    width: 80%;
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -118,8 +168,18 @@ a{
     display: flex;
     flex-direction: column;
     width: 50%;
-    font-size: 14px
+    font-size: 15px
  
+}
+
+.textarea{
+    width: 100%;
+    font-style: Roboto ;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 10px;
+    border-color: gray;
+    border-style: solid;
 }
 
 
@@ -140,8 +200,8 @@ a{
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 70%;
-    width: 70%;
+    height: 80%;
+    width: 80%;
     margin: auto;
 }
 
@@ -150,18 +210,73 @@ a{
 .firma{
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     text-align: center;
     width: 100%;
     line-height: 0;
 }
 
+
+.botonazul{
+    height: 30px;
+    border: none;
+    display: flex;
+    padding: 5px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: var(--Color, #5D87B2);
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px /* 112.254% */;
+    width: 100%;
+    cursor: pointer;
+   
+   }
+
+   
+   .botonblanco{
+
+    height: 30px;
+    display: flex;
+    padding: 5px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: white;
+    color: #5D86B2;
+    border-color: #5D86B2;
+    border-style: solid;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px /* 112.254% */;
+    width: 100%;
+    cursor: pointer;
+      
+   }
+
+   .botonera{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 30%;
+}
+
 @media (max-width: 767px) {
 
-    .tipoProtocoloYfecha{
-        line-height: 1
-    }
+    
 
 }
 

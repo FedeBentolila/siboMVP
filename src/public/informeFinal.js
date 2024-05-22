@@ -59,10 +59,10 @@ fetch(`/dataUserFirma/${datosInforme.autor}`)
 
         let contenedorRow1 = document.createElement("tr")
         contenedorRow1.innerHTML=`
-        <td>Minuto</td>
-        <td>ppm H2</td>
-        <td>ppm CH3</td>
-        <td style="text-align: center;">I.S</td>
+        <th>Minuto</th>
+        <th>ppm H2</th>
+        <th>ppm CH3</th>
+        <th style="text-align: center;">I.S</th>
         
         `
         document.getElementById("tablaResultado").appendChild(contenedorRow1)
@@ -111,9 +111,9 @@ fetch(`/dataUserFirma/${datosInforme.autor}`)
 
         let contenedorRow1 = document.createElement("tr")
         contenedorRow1.innerHTML=`
-        <td>Minuto</td>
-        <td>ppm H2</td>
-        <td style="text-align: center;">I.S</td>
+        <th>Minuto</th>
+        <th>ppm H2</th>
+        <th style="text-align: center;">I.S</th>
         
         `
         document.getElementById("tablaResultado").appendChild(contenedorRow1)
@@ -154,9 +154,9 @@ fetch(`/dataUserFirma/${datosInforme.autor}`)
 
         let contenedorRow1 = document.createElement("tr")
         contenedorRow1.innerHTML=`
-        <td>Minuto</td>
-        <td>ppm CH3</td>
-        <td style="text-align: center;">I.S</td>
+        <th>Minuto</th>
+        <th>ppm CH3</th>
+        <th style="text-align: center;">I.S</th>
         `
         document.getElementById("tablaResultado").appendChild(contenedorRow1)
 
@@ -605,17 +605,24 @@ fetch(`/dataUserFirma/${datosInforme.autor}`)
 
 
 let btn = document.getElementById('btn');
-let page = document.getElementById('printable');
+//let page = document.getElementById('printable');
+const pages = document.getElementsByClassName('page');
 
 btn.addEventListener('click', function(){
-  html2PDF(page, {
+  html2PDF(pages, {
     jsPDF: {
       format: 'a4',
     },
-/*     html2canvas: {
+ html2canvas: {
       scrollX: 0,
       scrollY: -window.scrollY,
-    }, */
+    },
+    margin: {
+      top: 50,
+      right: 0,
+      bottom: 0,
+      left: 0,
+    },
     imageType: 'image/jpeg',
     output: './pdf/generate.pdf',
     success: function(pdf) {

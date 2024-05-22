@@ -1,3 +1,9 @@
+
+.swal2-popup {
+    font-family: Roboto;
+  }
+
+
 * {
     margin: 0;
     padding: 0;
@@ -432,6 +438,10 @@ color: var(--Color, #5D87B2);
     display: block;
 }
 
+.desktopIcon img{
+    width: 20%;
+}
+
 .containerreset{
     background-color: white;
     display: flex;
@@ -623,6 +633,11 @@ color: var(--Color, #5D87B2);
     .desktopIcon{
         display: none;
     }
+
+    .mobileIcon img{
+        width: 60%;
+    }
+    
 
     .table-wrapper{
         margin: auto;

@@ -1,3 +1,6 @@
+.swal2-popup {
+    font-family: Roboto;
+  }
 
 
 body{
@@ -70,7 +73,7 @@ a{
     overflow: clip;
     width: 50%;
     border-radius: 30px;
-    border-color: black;
+    border-color: gray;
     border-style: solid;
     font-family: Roboto;
 
@@ -135,7 +138,7 @@ a{
 
 
 .medicionesYresultado{
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -154,7 +157,7 @@ a{
 textarea{
     box-sizing: border-box;	
     width: 100%;
-    font-style: 'Montserrat', sans-serif ;
+    font-style: Roboto ;
     font-weight: bold;
     font-size: large;
 

@@ -1,3 +1,9 @@
+.swal2-popup {
+    font-family: Roboto;
+  }
+
+
+
 input[type="number"] {
     text-align: center;
   }
@@ -257,13 +263,7 @@ input[type="number"] {
   }
   
 
-  .swal2-title {
-    font-family:Roboto;
-  }
-
-  .swal2-text {
-    font-family:Roboto;
-  }
+ 
 
   
 
