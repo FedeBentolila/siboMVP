@@ -773,8 +773,8 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo){
                     icon: "warning",
                     iconColor: "red",
                     showCancelButton: true,
-                    confirmButtonColor: "black",
-                    cancelButtonColor: "red",
+                    confirmButtonColor: "#5D87B2",
+                    cancelButtonColor: "gray",
                     confirmButtonText: "Confirmar",
                     cancelButtonText: "Cancelar"
                   }).then((result) => {
@@ -846,8 +846,8 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo){
                     icon: "warning",
                     iconColor: "red",
                     showCancelButton: true,
-                    confirmButtonColor: "black",
-                    cancelButtonColor: "red",
+                    confirmButtonColor: "#5D87B2",
+                    cancelButtonColor: "gray",
                     confirmButtonText: "Confirmar",
                     cancelButtonText: "Cancelar"
                   }).then((result) => {
