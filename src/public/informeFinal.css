@@ -73,38 +73,38 @@ a{
 
 .datosPaciente{
     margin: auto;
-    overflow: clip;
     width: 50%;
-    border-radius: 30px;
-    border-color: gray;
-    border-style: solid;
     font-family: Roboto;
+  
 
 }
 
 .tabla{
     font-size: 12px;
+    overflow: clip;
     font-weight: normal;
    border-radius: 30px;
-   border-style: solid;
-    border-collapse: collapse;
+   border: 1px solid gray;
+   border-collapse: separate; /* Cambia a 'separate' para que el border-radius funcione */
+   border-spacing: 0; /* Evita el espacio extra entre bordes */
+  
     width: 100%;
     max-width: 100%;
     white-space: nowrap;
     background-color: white;
-    padding: 10px;
+   
 }
 
 
 .tabla td, .tabla th {
     text-align: left;
     padding: 10px;
+    border: 1px solid gray; 
 }
 
 .tabla td {
-    border: none;
     font-size: 12px;
- 
+    border: 1px solid gray; 
     border-bottom: gray;
     border-style: solid;
     border-top: none;
@@ -114,6 +114,7 @@ a{
 }
 
 .tabla th {
+    border: 1px solid gray; 
     color: #ffffff;
     border-style: solid;
     border-color: #5D87B2;
@@ -141,8 +142,6 @@ a{
 
 
 .tablaResultado{
-    border-style: solid;
-    border-color: black;
     font-size: 12px;
     width: 40%;
     border: none;
