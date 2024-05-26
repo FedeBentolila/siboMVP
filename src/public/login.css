@@ -132,9 +132,9 @@
     color: #FFF;
     text-align: center;
     font-family: Roboto;
-    font-size: 21.38px;
+    font-size: 15.88px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 24px /* 112.254% */;
     width: 100%;
     cursor: pointer;
@@ -201,18 +201,21 @@
    }
 
    .containerEmail{
+    margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: gray;
+    line-height: 0.5;
    }
 
    .botonvacio {
-    height: 50px;
+    width: 10%;
+    margin: 5px;
     color: #5D87B2;
     display: flex;
-    padding: 0px 20px;
+    padding: 10px;
     justify-content: center;
     align-items: center;
     gap: 10px;

@@ -144,6 +144,8 @@ const UserSchema= new Schemauser({
     matricula:{type: Number},
     nombre: {type: String},
     apellido: {type: String},
+    fechaNacimiento:{type: String},
+    email:{type: String},
 });
 
 UserSchema.plugin(passportLocalMongoose);

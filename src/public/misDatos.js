@@ -236,6 +236,12 @@
             contenedor.innerHTML = 
             `    
             <div class="label">
+            <label for="nombre" class="loginfieldname">Nombre de usuario</label>
+          </div> 
+          <p class="campo">${data.username}</p>
+
+
+            <div class="label">
             <label for="nombre" class="loginfieldname">Nombre</label>
           </div> 
           <p class="campo">${data.nombre}</p>
@@ -245,11 +251,30 @@
         </div> 
         <p class="campo">${data.apellido}</p>
 
+        <div class="label">
+        <label for="email" class="loginfieldname">Matrícula o DNI en su defecto</label>
+      </div> 
+      <p class="campo">${data.matricula}</p>
 
         <div class="label">
-        <label for="nombre" class="loginfieldname">Nombre de usuario</label>
+        <label for="nombre" class="loginfieldname">Fecha de Nacimiento</label>
       </div> 
-      <p class="campo">${data.username}</p>
+      <p class="campo">${data.fechaNacimiento}</p>
+
+      <div class="label">
+        <label for="email" class="loginfieldname">Email</label>
+      </div> 
+      <p class="campo">${data.email}</p>
+
+     
+
+      <div class="label">
+        <label for="email" class="loginfieldname">Tipo de Usuario</label>
+      </div> 
+      <p class="campo">${data.type}</p>
+
+
+       
 
         
           
@@ -267,7 +292,7 @@
               let contenedor3=document.createElement("h3");
               contenedor3.classList.add("sig-canvas")
               contenedor3.innerHTML = `Tienes pendiente cargar tu firma`;
-              document.getElementById("ultimaFirma").appendChild(contenedor3)
+              document.getElementById("ultimaFirma").remove()
   
             } 
   
@@ -311,6 +336,9 @@
 
   let botonHome2=document.getElementById("brandLogo2")
   botonHome2.addEventListener("click", gotoHome)
+
+  let botonHome3=document.getElementById("exit")
+  botonHome3.addEventListener("click", gotoHome)
 
   function gotoHome(){
    window.location="/"

@@ -16,43 +16,37 @@
 
     <a class="linkComponente" href="/salaDeEspera">
       <div class="componenteNavBar">
-        <strong style="padding-right: 10px;">Sala de espera</strong>
+        <strong >Sala de Espera</strong>
         <img src="./saladeespera.png" class="imgComponente" alt="nuevoUsuario">
       </div>
     </a>
 
     <a class="linkComponente" href="/misInformes/1">
       <div class="componenteNavBar">
-        <strong style="padding-right: 10px;">Archivo</strong>
+        <strong >Archivo</strong>
         <img src="./ARCHIVO.png" class="imgComponente" alt="nuevoUsuario">
       </div>
     </a>
 
     <a class="linkComponente" href="/informes">
       <div class="componenteNavBar">
-        <strong style="padding-right: 10px;">Informes</strong>
+        <strong >Informes</strong>
         <img src="./informes.png" class="imgComponente" alt="nuevoUsuario">
       </div>
     </a>
 
-    <a class="linkComponente" href="/register">
-      <div class="componenteNavBar">
-        <strong>Nuevo Usuario</strong>
-        <img src="./NUEVOUSUARIO.png" class="imgComponente" alt="nuevoUsuario">
-      </div>
-    </a>
 
     <a class="linkComponente" href="/pacienteForm">
       <div class="componenteNavBar">
-        <strong>Agregar Paciente</strong>
-        <img src="./nuevopaciente.png"  style="padding-left: 5px;" class="imgComponente" alt="nuevoPaciente">
+        <strong>Nuevo Paciente</strong>
+        <img src="./nuevopaciente.png"   class="imgComponente" alt="nuevoPaciente">
       </div>
     </a>
 
     <a class="linkComponente" href="/logout">
       <div class="componenteNavBar">
         <strong id="usuario3"></strong>
-        <img src="./logout.png" style="padding-left: 5px;" class="imgComponente" alt="nuevoUsuario">
+        <img src="./logout.png"  class="imgComponente" alt="nuevoUsuario">
       </div>
     </a> 
   </nav>
@@ -69,7 +63,7 @@
       <a class="linkComponenteMobile" href="/">
         <div class="componenteNavBar">
           <img src="./HOME.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Escritorio</strong>
           <br>
           <br>
@@ -81,7 +75,7 @@
       <a class="linkComponenteMobile" href="/pacienteForm">
         <div class="componenteNavBar">
           <img src="./nuevopaciente.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Nuevo Paciente</strong>
           <br>
           <br>
@@ -93,7 +87,7 @@
       <a class="linkComponenteMobile" href="/salaDeEspera">
         <div class="componenteNavBar">
           <img src="./saladeespera.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Sala de Espera</strong>
           <br>
           <br>
@@ -106,7 +100,7 @@
       <a class="linkComponenteMobile" href="/informes">
         <div class="componenteNavBar">
           <img src="./informes.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Informes</strong>
           <br>
           <br>
@@ -118,7 +112,7 @@
       <a class="linkComponenteMobile" href="/misInformes/1">
         <div class="componenteNavBar">
           <img src="./ARCHIVO.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Archivo</strong>
           <br>
           <br>
@@ -131,7 +125,7 @@
       <a class="linkComponenteMobile" href="/register">
         <div class="componenteNavBar">
           <img src="./NUEVOUSUARIO.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Nuevo Usuario</strong>
           <br>
           <br>
@@ -143,7 +137,7 @@
       <a class="linkComponenteMobile" href="/misDatos">
         <div class="componenteNavBar">
           <img src="./MISDATOS.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Mis Datos</strong>
           <br>
           <br>
@@ -155,7 +149,7 @@
       <a class="linkComponenteMobile" href="/logout">
         <div class="componenteNavBar">
           <img src="./logout.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Logout</strong>
           <br>
           </div>
@@ -182,10 +176,18 @@
   <div class="containerForm">
     <div class="form" id="form">
 
+      
+      <div class="botonX2" id="exit">
+        <img   id="close" width=8% src="/CLOSE.png" alt="">
+        
+        </div>
+
+     
+      
         <div class="tituloseccion">
           <div class="divisorImgYtitulo">
             <img class="imagenNuevo" src="./MISDATOS.png" >
-            <strong style="margin: 10px;">Mis Datos </strong>
+            <strong>Mis Datos </strong>
           </div>
             <p class="leyenda"  > Ver sus datos y firma digital </p>
         </div>
@@ -202,7 +204,7 @@
                 <br>
         
                     <div class="datosFirma ">
-                    <div style="text-align: center;" class="p-3">
+                    <div class="ultimaFirma" style="text-align: center;" >
                         <div >
                             <strong class="tituloFirma">Firma-Digital</strong>
                             
@@ -233,7 +235,7 @@
                 
                     <br>
                  
-                        <div style="text-align: center;" class="p-3" id="ultimaFirma">
+                        <div  class="ultimaFirma" id="ultimaFirma">
                             <strong class="tituloFirma">Tu Firma</strong>
                             
                         </div>

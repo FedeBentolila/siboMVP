@@ -387,7 +387,12 @@ aplicacion.get("/pacienteForm",ensureLoggedIn("/login"), (peticion, respuesta) =
 
 aplicacion.post("/register",ensureLoggedIn("/login"), (peticion, respuesta) => {
   User.register(
-    new User({ username: peticion.body.username, type: peticion.body.type, nombre:peticion.body.nombre, apellido: peticion.body.apellido,
+    new User({ username: peticion.body.username,
+    type: peticion.body.type, 
+    fechaNacimiento: peticion.body.fechaNacimiento,
+    nombre:peticion.body.nombre,
+    email: peticion.body.email,
+    apellido: peticion.body.apellido,
     matricula: peticion.body.matricula}),
     peticion.body.password,
     (err, user) => {

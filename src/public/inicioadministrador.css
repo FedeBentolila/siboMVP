@@ -54,6 +54,7 @@
 
 .imgComponente{
     width: 20%;
+    margin: 10%;
 }
 
 .tituloseccion{
@@ -176,7 +177,11 @@ color: var(--Color, #5D87B2);
 
 
     .brandLogo{
-        width: 40%;
+        width: 45%;
+    }
+
+    .brandLogo2{
+        width: 8%;
     }
 
     .linkComponente2{
@@ -251,7 +256,7 @@ color: var(--Color, #5D87B2);
 
     .textBoton{
         text-align: left;
-        font-size: small;
+        font-size: 12px;
     }
 
     .linkComponenteMobile{
@@ -276,6 +281,15 @@ color: var(--Color, #5D87B2);
 
     .StrongNav{
         font-size:1.5rem;
+    }
+
+    .separador{
+        display: none;
+    }
+
+    .imgBotonNavBar{
+        width: 10%;
+        margin: 5%;
     }
 
     
