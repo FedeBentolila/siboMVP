@@ -1335,6 +1335,17 @@ if(!peticionobj.nauseas){
   
   })
 
+  aplicacion.post("/modificarMisDatos",ensureLoggedIn("/login"), (peticion, respuesta) => {
+    let nombreUsuario= peticion.user.username
+    console.log(peticion.body)
 
-  // FALTA HACER EL INGRESADOR: usar agregarPacienteDesdeTurno que esta comentado
+   datosdeMongo.uptdateMongoUserData(nombreUsuario, peticion.body).then(()=>{
+    respuesta.redirect("/verTurnos")
+   }) 
+
+
+  })
+
+
+
 

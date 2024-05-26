@@ -238,44 +238,35 @@
             <div class="label">
             <label for="nombre" class="loginfieldname">Nombre de usuario</label>
           </div> 
-          <p class="campo">${data.username}</p>
+          <input type="text" name="username" class="campo" value="${data.username}">  
 
 
             <div class="label">
             <label for="nombre" class="loginfieldname">Nombre</label>
           </div> 
-          <p class="campo">${data.nombre}</p>
+          <input type="text" name="nombre" class="campo" value="${data.nombre}">  
 
           <div class="label">
           <label for="nombre" class="loginfieldname">Apellido</label>
         </div> 
-        <p class="campo">${data.apellido}</p>
+        <input type="text" name="apellido" class="campo" value="${data.apellido}"> 
 
         <div class="label">
         <label for="email" class="loginfieldname">Matrícula o DNI en su defecto</label>
       </div> 
-      <p class="campo">${data.matricula}</p>
+      <input type="number" name="matricula" class="campo" value="${data.matricula}"> 
 
         <div class="label">
         <label for="nombre" class="loginfieldname">Fecha de Nacimiento</label>
       </div> 
-      <p class="campo">${data.fechaNacimiento}</p>
+      <input type="date" name="fechaNacimiento" class="campo" value="${data.fechaNacimiento}"> 
 
       <div class="label">
         <label for="email" class="loginfieldname">Email</label>
       </div> 
-      <p class="campo">${data.email}</p>
-
-     
-
-      <div class="label">
-        <label for="email" class="loginfieldname">Tipo de Usuario</label>
-      </div> 
-      <p class="campo">${data.type}</p>
-
-
-       
-
+       <input type="email" name="email" class="campo" value="${data.email}"> 
+        <br>  
+       <input class="botonazul" type="submit" value="Guardar">
         
           
             `;

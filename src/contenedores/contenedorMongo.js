@@ -243,6 +243,22 @@ let dateStr =
       );
     }
 
+    async uptdateMongoUserData(user, objeto){
+      await User.updateOne(
+        { username: { $eq: user } },
+        {
+          $set: {
+            username: objeto.username,
+            nombre: objeto.nombre,
+            apellido: objeto.apellido,
+            matricula: objeto.matricula,
+            fechaNacimiento: objeto.fechaNacimiento,
+            email: objeto.email
+          },
+        }
+      );
+    }
+
     async uptdateMongoHidrogenoById(id, array){
       await pacientesmodule.updateOne(
         { _id: { $eq: id } },
