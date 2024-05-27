@@ -187,6 +187,11 @@ fetch('/dataUser')
      window.location="/"
     }
 
+    let botonHome3=document.getElementById("exit")
+    botonHome3.addEventListener("click", gotoHome)
+    
+    
+
     let botonburger = document.getElementById("menuBurger")
       botonburger.addEventListener("click", reveal)
       
@@ -202,3 +207,8 @@ fetch('/dataUser')
       
         
       }
+
+
+    
+    
+    

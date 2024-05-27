@@ -310,11 +310,11 @@ color: var(--Color, #5D87B2);
    }
 
    .botonblanco{
-    margin: 10px;
+    margin: 5px;
     height: 50px;
     border: none;
     display: flex;
-    padding: 7px 25px;
+    padding: 7px 20px;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -503,8 +503,12 @@ color: var(--Color, #5D87B2);
 
 
     .brandLogo{
-        width: 40%;
+        width: 45%;
         cursor: pointer;
+    }
+
+    .brandLogo2{
+        width: 8%;
     }
 
     .linkComponente2{
@@ -519,9 +523,10 @@ color: var(--Color, #5D87B2);
     }
     
     .tituloseccion{
+        width: 90%;
         display: flex;
      flex-direction: row;
-     justify-content: center;
+     justify-content: flex-start;
      align-items:center ;
      color: var(--Color, #5D87B2);
      text-align: center;
@@ -652,6 +657,11 @@ color: var(--Color, #5D87B2);
         justify-content: center;
         align-items: center;
         width: 50%;
+    }
+
+    .imgBotonNavBar{
+        width: 10%;
+        margin: 5%;
     }
 
 
