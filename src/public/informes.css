@@ -330,7 +330,7 @@ color: var(--Color, #5D87B2);
     font-style: normal;
     font-weight: 500;
     line-height: 24px /* 112.254% */;
-    width: 100%;
+    width: 10%;
     cursor: pointer;
    
    }
@@ -665,7 +665,9 @@ color: var(--Color, #5D87B2);
         margin: 5%;
     }
 
-
+    .botonblanco{
+        width: 35%;
+    }
     
     
 
