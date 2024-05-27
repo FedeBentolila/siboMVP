@@ -214,37 +214,16 @@ fetch(`/dataInformes/${miPagina}`)
   })
 
 
-  function buscar(){
-    Swal.fire({
-      title: "Buscar por DNI",
-      input: "number",
-      inputAttributes: {
-        autocapitalize: "off"
-      },
-      confirmButtonText: "Buscar",
-      cancelButtonText: "Cancelar",
-      color:"#5D86B2",
-      confirmButtonColor: "#5D87B2",
-      cancelButtonColor: "gray",
-      showCancelButton: true,
-      showLoaderOnConfirm: true,
-      preConfirm: async (dni) => {
-        try {
-          const response = await fetch(`/buscar/${dni}`);
-          
-          return response.json();
+function buscar(){
+       let buscar=document.getElementById("dniAbuscar").value
 
-        } catch (error) {
-          Swal.showValidationMessage(`
-            Busqueda fallida: ${error}
-          `);
-        }
-      }
-    }).then((result) => {
+       fetch(`/buscar/${buscar}`).then((res)=>{
+        
+        return res.json();
+       }).then((result) => {
 
-      console.log(result.value)
-
-        if(result.value.length==0){
+        console.log(result)
+        if(result.length==0){
           Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -268,13 +247,18 @@ fetch(`/dataInformes/${miPagina}`)
           </thead>
           <tbody id="registros"></tbody>
           </table>       
+          
+          `
+
+          document.getElementById("botonResetContainer").innerHTML=`
           <div class="containerreset">
           <button class="botonazul2" onclick="reset()">Salir</button> 
           </div> 
           `
+          
 
 
-          for (const iterador of result.value) {
+          for (const iterador of result) {
 
             let fechaYhora= iterador.timestamp.split(" ")
 
@@ -387,6 +371,9 @@ fetch(`/dataInformes/${miPagina}`)
   
     let botonHome2=document.getElementById("brandLogo2")
     botonHome2.addEventListener("click", gotoHome)
+
+    let botonHome3=document.getElementById("exit")
+    botonHome3.addEventListener("click", gotoHome)
   
     function gotoHome(){
      window.location="/"
@@ -407,3 +394,10 @@ fetch(`/dataInformes/${miPagina}`)
       
         
       }
+
+
+    
+       
+
+
+      

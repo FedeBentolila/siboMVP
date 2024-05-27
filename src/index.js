@@ -1028,6 +1028,7 @@ aplicacion.get("/ingresarTurno/:id", (peticion, respuesta) => {
     let dni= peticion.params.dni
 
     datosdeMongo.getByDNImongo(dni).then((res)=>{
+      
       respuesta.send(res)
 
     }).catch((err)=>{
