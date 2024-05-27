@@ -16,21 +16,21 @@
 
     <a class="linkComponente" href="/salaDeEspera">
       <div class="componenteNavBar">
-        <strong style="padding-right: 10px;">Sala de espera</strong>
+        <strong >Sala de espera</strong>
         <img src="./saladeespera.png" class="imgComponente" alt="nuevoUsuario">
       </div>
     </a>
 
     <a class="linkComponente" href="/misInformes/1">
       <div class="componenteNavBar">
-        <strong style="padding-right: 10px;">Archivo</strong>
+        <strong >Archivo</strong>
         <img src="./ARCHIVO.png" class="imgComponente" alt="nuevoUsuario">
       </div>
     </a>
 
     <a class="linkComponente" href="/informes">
       <div class="componenteNavBar">
-        <strong style="padding-right: 10px;">Informes</strong>
+        <strong >Informes</strong>
         <img src="./informes.png" class="imgComponente" alt="nuevoUsuario">
       </div>
     </a>
@@ -68,8 +68,8 @@
 
       <a class="linkComponenteMobile" href="/">
         <div class="componenteNavBar">
-          <img src="./HOME.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <img src="./HOME.png"  class="imgBotonNavBar" alt="nuevoUsuario">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Escritorio</strong>
           <br>
           <br>
@@ -80,8 +80,8 @@
 
       <a class="linkComponenteMobile" href="/pacienteForm">
         <div class="componenteNavBar">
-          <img src="./nuevopaciente.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <img src="./nuevopaciente.png" class="imgBotonNavBar"  alt="nuevoUsuario">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Nuevo Paciente</strong>
           <br>
           <br>
@@ -92,8 +92,8 @@
 
       <a class="linkComponenteMobile" href="/salaDeEspera">
         <div class="componenteNavBar">
-          <img src="./saladeespera.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <img src="./saladeespera.png" class="imgBotonNavBar"  alt="nuevoUsuario">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Sala de Espera</strong>
           <br>
           <br>
@@ -105,8 +105,8 @@
 
       <a class="linkComponenteMobile" href="/informes">
         <div class="componenteNavBar">
-          <img src="./informes.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <img src="./informes.png" class="imgBotonNavBar" alt="nuevoUsuario">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Informes</strong>
           <br>
           <br>
@@ -117,8 +117,8 @@
 
       <a class="linkComponenteMobile" href="/misInformes/1">
         <div class="componenteNavBar">
-          <img src="./ARCHIVO.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <img src="./ARCHIVO.png" class="imgBotonNavBar"  alt="nuevoUsuario">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Archivo</strong>
           <br>
           <br>
@@ -130,8 +130,8 @@
 
       <a class="linkComponenteMobile" href="/register">
         <div class="componenteNavBar">
-          <img src="./NUEVOUSUARIO.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <img src="./NUEVOUSUARIO.png" class="imgBotonNavBar"  alt="nuevoUsuario">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Nuevo Usuario</strong>
           <br>
           <br>
@@ -142,8 +142,8 @@
 
       <a class="linkComponenteMobile" href="/misDatos">
         <div class="componenteNavBar">
-          <img src="./MISDATOS.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <img src="./MISDATOS.png" class="imgBotonNavBar"  alt="nuevoUsuario">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Mis Datos</strong>
           <br>
           <br>
@@ -154,8 +154,8 @@
 
       <a class="linkComponenteMobile" href="/logout">
         <div class="componenteNavBar">
-          <img src="./logout.png" width="10%" alt="nuevoUsuario">
-          <div style="margin-left: 5%;">
+          <img src="./logout.png" class="imgBotonNavBar"  alt="nuevoUsuario">
+          <div style="margin: 5%;">
           <strong class="StrongNav">Logout</strong>
           <br>
           </div>
@@ -183,15 +183,20 @@
   <div class="containerForm">
     <form class="form" id="form" action="/agregarPaciente" method="post">
 
+      <div class="botonX2" id="exit">
+        <img   id="close" width=8% src="/CLOSE.png" alt="">
+        
+        </div>
+
       <div class="tituloseccion">
         <div class="divisorImgYtitulo">
           <img class="imagenNuevo" src="./nuevopaciente.png" >
-          <strong style="margin: 10px;">Nuevo Paciente </strong>
+          <strong >Nuevo Paciente </strong>
         </div>
-      <p class="leyenda" > (Ingrese los datos del nuevo paciente) </p>
+      <p class="leyenda" > Ingrese los datos del nuevo paciente </p>
       </div>
       <br>
-      <br>
+      
 
       <div class="label">
         <label for="nombre" class="loginfieldname">Nombre</label>

@@ -16,6 +16,9 @@ let dateStr =
   let botonHome2=document.getElementById("brandLogo2")
   botonHome2.addEventListener("click", gotoHome)
 
+  let botonHome3=document.getElementById("exit")
+botonHome3.addEventListener("click", gotoHome)
+
   function gotoHome(){
    window.location="/"
   }
@@ -98,3 +101,6 @@ function reveal (){
 
   
 }
+
+
+

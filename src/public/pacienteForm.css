@@ -12,6 +12,11 @@
    
 }
 
+.imgComponente{
+    width: 20%;
+    margin: 10%;
+}
+
 .imagenNuevo{
     width: 30%;
 }
@@ -74,15 +79,21 @@
     width: 20%;
 }
 
+.botonX2{
+    display: none;
+   
+}
+
 .tituloseccion{
     width: 100%;
 display: flex;
- flex-direction: row;
+ flex-direction: column;
  justify-content: center;
+ align-items: center;
  color: var(--Color, #5D87B2);
  text-align: center;
  font-family: Roboto;
- font-size: 15px;
+ font-size: 20px;
  font-style: normal;
  font-weight: 500;
  line-height: 33.6px /* 157.156% */;
@@ -189,15 +200,16 @@ color: var(--Color, #5D87B2);
 .form{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 100%;
     
 
    }
 
    .botonazul{
     height: 50px;
+    width: 50%;
     border: none;
     display: flex;
     padding: 7px 25px;
@@ -213,14 +225,13 @@ color: var(--Color, #5D87B2);
     font-style: normal;
     font-weight: 500;
     line-height: 24px /* 112.254% */;
-    width: 100%;
     cursor: pointer;
    
    }
 
 .containerForm{
     display: flex;
- width: 60%;
+ width: 50%;
  padding: 40px;
  flex-direction: row;
  justify-content: center;
@@ -250,7 +261,8 @@ color: var(--Color, #5D87B2);
 @media (max-width: 767px) {
 
     .containerForm{
-        width: 70%;
+        width: 90%;
+        padding: 0;
     }
 
     .form{
@@ -258,7 +270,7 @@ color: var(--Color, #5D87B2);
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        width: 100%;
+        width: 90%;
         
     
        }
@@ -301,9 +313,14 @@ color: var(--Color, #5D87B2);
 
 
     .brandLogo{
-        width: 40%;
+        width: 45%;
         cursor: pointer;
     }
+
+    .brandLogo2{
+        width: 8%;
+    }
+
 
     .linkComponente2{
         text-decoration: none;
@@ -317,16 +334,19 @@ color: var(--Color, #5D87B2);
     }
     
     .tituloseccion{
+        width: 90%;
         display: flex;
      flex-direction: column;
      justify-content: center;
-     align-items:center ;
+     align-items:flex-start ;
      color: var(--Color, #5D87B2);
      text-align: center;
      font-family: Roboto;
      font-size: 21.38px;
      font-style: normal;
      font-weight: 500;
+     border-color: lightgray;
+     border-bottom-style: solid;
      line-height: 33.6px /* 157.156% */;
     }
     
@@ -385,6 +405,10 @@ color: var(--Color, #5D87B2);
         text-decoration: none;
     }
 
+    .imgComponente{
+        width: 20%;
+    }
+
     .componenteNavBar{
         display: flex;
         flex-direction: row;
@@ -411,6 +435,24 @@ color: var(--Color, #5D87B2);
     
 .leyenda{
     font-size: 65%;
+}
+
+
+.imgBotonNavBar{
+    width: 10%;
+    margin: 5%;
+}
+
+.botonX2{
+    
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    width: 90%;
 }
 
     
