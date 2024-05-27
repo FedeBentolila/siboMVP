@@ -77,8 +77,7 @@ fetch(`/dataInformes/${miPagina}`)
 ////////////////////////////////////////
   render(data.articles.data)
 
-  ////aca modifique en render para probar paginacion en realidad tiene que ser render(data SOLO)
-
+ 
   ///paginacion
    let totalCount= parseInt(data.articles.metadata.totalCount) 
    let pagina= parseInt(data.articles.metadata.page)
@@ -252,7 +251,7 @@ function buscar(){
 
           document.getElementById("botonResetContainer").innerHTML=`
           <div class="containerreset">
-          <button class="botonazul2" onclick="reset()">Salir</button> 
+          <button class="botonazul2" onclick="reset()">Restaurar</button> 
           </div> 
           `
           
