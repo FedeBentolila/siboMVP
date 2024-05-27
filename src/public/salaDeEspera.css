@@ -790,7 +790,7 @@ color: var(--Color, #5D87B2);
 
 
     .brandLogo{
-        width: 40%;
+        width: 45%;
         cursor: pointer;
     }
 
@@ -894,6 +894,11 @@ color: var(--Color, #5D87B2);
 
     .imagenNuevo{
         width: 15%;
+    }
+
+    .imgBotonNavBar{
+        width: 10%;
+        margin: 5%;
     }
 
     .datosFirma{
