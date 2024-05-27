@@ -266,8 +266,9 @@
       </div> 
        <input type="email" name="email" class="campo" value="${data.email}"> 
         <br>  
-       <input class="botonazul" type="submit" value="Guardar">
-        
+        <div class="buttonContainer">
+       <input class="botonazul2" type="submit" value="Guardar">
+       </div>
           
             `;
             document.getElementById("usuario").appendChild(contenedor)
