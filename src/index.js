@@ -653,13 +653,23 @@ aplicacion.get("/ingresarTurno/:id", (peticion, respuesta) => {
         let intervalo= parseInt(res[0].intervalo) 
         let sala= parseInt(res[0].sala)
 
+        let minutosProtocolo
+
+        if (res[0].protocolo=="Glucosa 10gr" || res[0].tipo=="intolerancia"){
+            minutosProtocolo=120
+        }else{
+            minutosProtocolo=180
+        }
+
+
         datosdeMongo.uptdateMongoHidrogenoById(id, arrayModificado).then(()=>{
 
           let dataFila={
             "id":id,
             "datos": arrayModificado,
             "intervalo": intervalo,
-            "sala": sala
+            "sala": sala,
+            "minutosProtocolo":minutosProtocolo
           }
           //aca socket para resetear en la tabla de informes
           io.sockets.emit("nuevaFila HidrogenoModificada", dataFila);
@@ -708,6 +718,15 @@ aplicacion.get("/ingresarTurno/:id", (peticion, respuesta) => {
         let intervalo= parseInt(res[0].intervalo) 
         let sala= parseInt(res[0].sala)
 
+        let minutosProtocolo
+
+        if (res[0].protocolo=="Glucosa 10gr" || res[0].tipo=="intolerancia"){
+            minutosProtocolo=120
+        }else{
+            minutosProtocolo=180
+        }
+
+
 
         datosdeMongo.uptdateMongoMetanoById(id, arrayModificado).then(()=>{
 
@@ -715,7 +734,8 @@ aplicacion.get("/ingresarTurno/:id", (peticion, respuesta) => {
             "id":id,
             "datos": arrayModificado,
             "intervalo": intervalo,
-            "sala": sala
+            "sala": sala,
+            "minutosProtocolo":minutosProtocolo
           }
           //aca socket para resetear en la tabla de informes
           io.sockets.emit("nuevaFila MetanoModificada", dataFila);
@@ -782,6 +802,15 @@ aplicacion.get("/ingresarTurno/:id", (peticion, respuesta) => {
           let intervalo= parseInt(res[0].intervalo) 
           let sala=parseInt(res[0].sala)
 
+          let minutosProtocolo
+
+          if (res[0].protocolo=="Glucosa 10gr" || res[0].tipo=="intolerancia"){
+              minutosProtocolo=120
+          }else{
+              minutosProtocolo=180
+          }
+  
+
           datosdeMongo.uptdateMongoHidrogenoById(id,arrayHidrogenoModificado).then(()=>{
 
             datosdeMongo.uptdateMongoMetanoById(id,arrayMetanoModificado).then(()=>{
@@ -789,7 +818,8 @@ aplicacion.get("/ingresarTurno/:id", (peticion, respuesta) => {
                 "id":id,
                 "datos": arrayHidrogenoModificado,
                 "intervalo": intervalo,
-                "sala":sala
+                "sala":sala,
+                "minutosProtocolo":minutosProtocolo
               }
               io.sockets.emit("nuevaFila HidrogenoModificada", dataFila);
 
@@ -797,7 +827,8 @@ aplicacion.get("/ingresarTurno/:id", (peticion, respuesta) => {
                 "id":id,
                 "datos": arrayMetanoModificado,
                 "intervalo": intervalo,
-                "sala":sala
+                "sala":sala,
+                "minutosProtocolo":minutosProtocolo
               }
               //aca socket para resetear en la tabla de informes
               io.sockets.emit("nuevaFila MetanoModificada", dataFila);

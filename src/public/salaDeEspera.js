@@ -32,6 +32,7 @@ function render (data){
             minutosProtocolo=180
         }
         
+        let cantidadMaxMediciones= (minutosProtocolo/intervalo)+1
 
         if(iterador.tipo=="metano"){
 
@@ -102,8 +103,11 @@ function render (data){
         <td id="proxMedicion${iterador._id}"> ${proxMedicion} </td>
         <td> <a href="/exitoAgregar/${iterador._id}"><img src="/qr.png" width=40px  alt=""></a></td>
         <td> <a href="/acceder/${iterador._id}"><img src="/FICHA.png" width=40px  alt=""></a></td>
+        
+        <td id="proxMedicion2${iterador._id}"><div>${proxMedicion}</div><div>${nMedicion}/${cantidadMaxMediciones}</div></td>
+        
         <td class="celdaSoplar" id="boton${iterador._id}"> 
-        <img  src="/medirAzul.png" width=40px  alt="">
+        <img  src="/medirAzul.png" width=30px  alt="">
         </td>
         <td></td>
         
@@ -356,6 +360,8 @@ sortTableByNextMeasurement()
             minutosProtocolo=180
         }
 
+        let cantidadMaxMediciones= (minutosProtocolo/intervalo)+1
+
     
 
         if(data.tipo=="metano"){  
@@ -421,6 +427,7 @@ sortTableByNextMeasurement()
         <td id="proxMedicion${data._id}"> ${proxMedicion} </td>
         <td> <a href="/exitoAgregar/${data._id}"><img src="/qr.png" width=40px  alt=""></a></td>
         <td> <a href="/acceder/${data._id}"><img src="/FICHA.png" width=40px  alt=""></a></td>
+        <td id="proxMedicion2${data._id}"><div>${proxMedicion}</div><div>${nMedicion}/${cantidadMaxMediciones}</div></td>
         <td class="celdaSoplar" id="boton${data._id}"> <img  src="/medirAzul.png" width=40px  alt=""></td>
         <td></td>
      
@@ -618,7 +625,7 @@ sortTableByNextMeasurement()
 
         document.getElementById("ocultos").appendChild(contenedorOculto)
 
-        //updateNextMeasurementColor();
+        updateNextMeasurementColor();
 
         sortTableByNextMeasurement()
 
@@ -699,7 +706,8 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo){
                 "valor": valor,
                 "intervalo": intervalo,
                 "sintoma": sintoma,
-                "sala":sala
+                "sala":sala,
+                "minutosProtocolo":minutosProtocolo
 
             }
 
@@ -759,7 +767,8 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo){
                 "tipo": "metano",
                 "intervalo": intervalo,
                 "sintoma":sintoma,
-                "sala": sala
+                "sala": sala,
+                "minutosProtocolo":minutosProtocolo
 
             }
 
@@ -823,7 +832,8 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo){
                 "valor": valorH,
                 "intervalo": intervalo,
                 "sintoma": sintoma,
-                "sala":sala
+                "sala":sala,
+                "minutosProtocolo":minutosProtocolo
             }
         
             metano={
@@ -833,7 +843,8 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo){
                 "tipo": "mixto",
                 "intervalo": intervalo,
                 "sintoma": sintoma,
-                "sala": sala
+                "sala": sala,
+                "minutosProtocolo":minutosProtocolo
             }
 
             ///chequeo si ya tiene todas las mediciones
@@ -885,14 +896,19 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo){
 
 socket.on('new2 hidrogeno', function(hidrogeno) {
 
+    
+
     if(hidrogeno.sala!=sala){
         return
     }
     
+    let minutosProtocolo=hidrogeno.minutosProtocolo
     let id=hidrogeno.id
     let tiempo=hidrogeno.t
     let valor= hidrogeno.valor
     let intervalo= parseInt(hidrogeno.intervalo)
+
+    let cantidadMaxMediciones= (minutosProtocolo/intervalo)+1
 
     let nUltimaMedicionValor= parseInt(document.getElementById(`nMedicion${id}`).textContent) +1
 
@@ -905,6 +921,7 @@ socket.on('new2 hidrogeno', function(hidrogeno) {
     document.getElementById(`hrMedicion${id}`).innerHTML=`${tiempo}`
     document.getElementById(`proxMedicion${id}`).innerHTML=`${(agregarMinutos(tiempo, intervalo))}`
     document.getElementById(`proxMedicion${id}`).style.backgroundColor='white'
+    document.getElementById(`proxMedicion2${id}`).innerHTML=`<div>${(agregarMinutos(tiempo, intervalo))}</div><div>${nUltimaMedicionValor}/${cantidadMaxMediciones}</div>`
     updateNextMeasurementColor();
 
     sortTableByNextMeasurement()
@@ -921,12 +938,16 @@ socket.on('new2 metano', function(metano) {
         return
     }
     
+    let minutosProtocolo=metano.minutosProtocolo
     let id=metano.id
     let tiempo=metano.t
     let valor= metano.valor
     let tipo =metano.tipo
     let nUltimaMedicionValor
     let intervalo= parseInt(metano.intervalo)
+
+    let cantidadMaxMediciones= (minutosProtocolo/intervalo)+1
+
 
     console.log(tipo)
 
@@ -942,6 +963,7 @@ socket.on('new2 metano', function(metano) {
         document.getElementById(`hrMedicion${id}`).innerHTML=`${tiempo}`
         document.getElementById(`proxMedicion${id}`).innerHTML=`${(agregarMinutos(tiempo, intervalo))}`
         document.getElementById(`proxMedicion${id}`).style.backgroundColor='white'
+        document.getElementById(`proxMedicion2${id}`).innerHTML=`<div>${(agregarMinutos(tiempo, intervalo))}</div><div>${nUltimaMedicionValor}/${cantidadMaxMediciones}</div>`
         updateNextMeasurementColor();
 
         sortTableByNextMeasurement()
@@ -957,6 +979,7 @@ socket.on('new2 metano', function(metano) {
         document.getElementById(`nMedicion${id}`).innerHTML=`${nUltimaMedicionValor}`
         document.getElementById(`hrMedicion${id}`).innerHTML=`${tiempo}`
         document.getElementById(`proxMedicion${id}`).innerHTML=`${(agregarMinutos(tiempo, intervalo))}`
+        document.getElementById(`proxMedicion2${id}`).innerHTML=`<div>${(agregarMinutos(tiempo, intervalo))}</div><div>${nUltimaMedicionValor}/${cantidadMaxMediciones}</div>`
         document.getElementById(`proxMedicion${id}`).style.backgroundColor='white'
         updateNextMeasurementColor();
 
@@ -980,10 +1003,14 @@ socket.on('new2 hidrogeno acceso', function(hidrogeno) {
         return
     }
     
+    let minutosProtocolo=hidrogeno.minutosProtocolo
     let id=hidrogeno.id
     let tiempo=hidrogeno.t
     let valor= hidrogeno.valor
     let intervalo= parseInt(hidrogeno.intervalo)
+
+    let cantidadMaxMediciones= (minutosProtocolo/intervalo)+1
+
 
     let nUltimaMedicionValor= parseInt(document.getElementById(`nMedicion${id}`).textContent) +1
 
@@ -995,6 +1022,7 @@ socket.on('new2 hidrogeno acceso', function(hidrogeno) {
     document.getElementById(`nMedicion${id}`).innerHTML=`${nUltimaMedicionValor}`
     document.getElementById(`hrMedicion${id}`).innerHTML=`${tiempo}`
     document.getElementById(`proxMedicion${id}`).innerHTML=`${(agregarMinutos(tiempo, intervalo))}`
+    document.getElementById(`proxMedicion2${id}`).innerHTML=`<div>${(agregarMinutos(tiempo, intervalo))}</div><div>${nUltimaMedicionValor}/${cantidadMaxMediciones}</div>`
     document.getElementById(`proxMedicion${id}`).style.backgroundColor='white'
     updateNextMeasurementColor();
 
@@ -1009,12 +1037,15 @@ socket.on('new2 metano acceso', function(metano) {
         return
     }
     
+    let minutosProtocolo=metano.minutosProtocolo
     let id=metano.id
     let tiempo=metano.t
     let valor= metano.valor
     let tipo =metano.tipo
     let nUltimaMedicionValor
     let intervalo= parseInt(metano.intervalo) 
+    let cantidadMaxMediciones= (minutosProtocolo/intervalo)+1
+
 
     console.log(tipo)
 
@@ -1037,6 +1068,7 @@ socket.on('new2 metano acceso', function(metano) {
     document.getElementById(`nMedicion${id}`).innerHTML=`${nUltimaMedicionValor}`
     document.getElementById(`hrMedicion${id}`).innerHTML=`${tiempo}`
     document.getElementById(`proxMedicion${id}`).innerHTML=`${(agregarMinutos(tiempo, intervalo))}`
+    document.getElementById(`proxMedicion2${id}`).innerHTML=`<div>${(agregarMinutos(tiempo, intervalo))}</div><div>${nUltimaMedicionValor}/${cantidadMaxMediciones}</div>`
     document.getElementById(`proxMedicion${id}`).style.backgroundColor='white'
     updateNextMeasurementColor();
 
@@ -1056,15 +1088,19 @@ socket.on('nuevaFila HidrogenoModificada', function(dataFila) {
     }
 
     if(dataFila.datos.length!=0){
+        let minutosProtocolo=dataFila.minutosProtocolo
         let cantidadMediciones= dataFila.datos.length
         let intervalo =parseInt(dataFila.intervalo)
         let id= dataFila.id
         let ultimoValor= dataFila.datos[(dataFila.datos.length-1)]
+        let cantidadMaxMediciones= (minutosProtocolo/intervalo)+1
+
     
     
         document.getElementById(`nMedicion${id}`).innerHTML=`${cantidadMediciones}`
         document.getElementById(`hrMedicion${id}`).innerHTML=`${ultimoValor.t}`
         document.getElementById(`proxMedicion${id}`).innerHTML=`${(agregarMinutos(ultimoValor.t, intervalo))}`
+        document.getElementById(`proxMedicion2${id}`).innerHTML=`<div>${(agregarMinutos(ultimoValor.t, intervalo))}</div><div>${cantidadMediciones}/${cantidadMaxMediciones}</div>`
         document.getElementById(`proxMedicion${id}`).style.backgroundColor='white'
         updateNextMeasurementColor();
     
@@ -1088,14 +1124,18 @@ socket.on('nuevaFila MetanoModificada', function(dataFila) {
     }
 
     if(dataFila.datos.length!=0){
+        let minutosProtocolo=dataFila.minutosProtocolo
         let cantidadMediciones= dataFila.datos.length
         let intervalo =parseInt(dataFila.intervalo)
         let id= dataFila.id
         let ultimoValor= dataFila.datos[(dataFila.datos.length-1)]
-    
+        let cantidadMaxMediciones= (minutosProtocolo/intervalo)+1
+
+
         document.getElementById(`nMedicion${id}`).innerHTML=`${cantidadMediciones}`
         document.getElementById(`hrMedicion${id}`).innerHTML=`${ultimoValor.t}`
         document.getElementById(`proxMedicion${id}`).innerHTML=`${(agregarMinutos(ultimoValor.t, intervalo))}`
+        document.getElementById(`proxMedicion2${id}`).innerHTML=`<div>${(agregarMinutos(ultimoValor.t, intervalo))}</div><div>${cantidadMediciones}/${cantidadMaxMediciones}</div>`
         document.getElementById(`proxMedicion${id}`).style.backgroundColor='white'
         updateNextMeasurementColor();
     
@@ -1195,8 +1235,8 @@ function updateNextMeasurementColor() {
         const proxMedicionCell = row.querySelector('td:nth-child(8)'); // Índice 8 representa la columna de "Próxima Medición"
         const proxMedicionTime = proxMedicionCell.textContent.trim(); 
         const currentTimeString= currentTime.hours+":"+currentTime.minutes
-        const colorCell= row.querySelector('td:nth-child(12)');
-        const iconCell= row.querySelector('td:nth-child(11)');
+        const colorCell= row.querySelector('td:nth-child(13)');
+        const iconCell= row.querySelector('td:nth-child(12)');
         const tipoCell= row.querySelector('td:nth-child(3)');
 
         
@@ -1241,7 +1281,7 @@ function updateNextMeasurementColor() {
             iconCell.innerHTML=`
             <div class="celdaSoplar2">
             <p>${tipo}</p>
-            <img  src="/medirRojo.png" width=40px  alt="">
+            <img  src="/medirRojo.png" width=30px  alt="">
             </div>
             `
             
@@ -1250,7 +1290,7 @@ function updateNextMeasurementColor() {
             iconCell.innerHTML=`
             <div class="celdaSoplar2">
             <p>${tipo}</p>
-            <img  src="/medirAzul.png" width=40px  alt="">
+            <img  src="/medirAzul.png" width=30px  alt="">
             </div>
             `
         } 

@@ -918,7 +918,8 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo, sala){
               "valor": valor,
               "intervalo": intervalo,
               "sintoma": sintoma,
-              "sala": sala
+              "sala": sala,
+              "minutosProtocolo": minutosProtocolo
           }
 
           ///chequeo si ya tiene todas las mediciones
@@ -978,7 +979,8 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo, sala){
               "tipo": "metano",
               "intervalo": intervalo,
               "sintoma": sintoma,
-              "sala": sala
+              "sala": sala,
+              "minutosProtocolo": minutosProtocolo
 
           }
           ///chequeo si ya tiene todas las mediciones
@@ -1037,7 +1039,8 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo, sala){
               "valor": valorH,
               "intervalo":intervalo,
               "sintoma": sintoma,
-              "sala": sala
+              "sala": sala,
+              "minutosProtocolo": minutosProtocolo
           }
           metano={
               "id": id,
@@ -1046,7 +1049,8 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo, sala){
               "tipo": "mixto",
               "intervalo": intervalo,
               "sintoma": sintoma,
-              "sala":sala
+              "sala":sala,
+              "minutosProtocolo": minutosProtocolo
           }
 
 

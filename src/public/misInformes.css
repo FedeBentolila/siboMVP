@@ -323,7 +323,7 @@ color: var(--Color, #5D87B2);
     height: 50px;
     border: none;
 
-    padding: 7px;
+    padding: 7px 20px;
 
     gap: 10px;
     border-radius: 10px;
