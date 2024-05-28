@@ -11,6 +11,10 @@
   input[type="number"] {
     text-align: center;
   }
+
+  .medicionPopUp{
+    font-size: 12px;
+  }
   
 
   .celdaSoplar2{

@@ -147,7 +147,10 @@ function render (data){
            
             <div id="form" class="form" >
                 <div  class="logintitle2">
-                <strong>${iterador.apellido}</strong>
+                <div>
+                    <strong>${iterador.apellido}</strong>
+                    <p id="medicionPopUp${iterador._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+                </div>
                 <img   width=20% src="/ESPIRADO.png" alt="">
                 </div>
                 <br>
@@ -183,7 +186,7 @@ function render (data){
               
                 <div class="botonX2">
 
-                <img style="position: absolute; top: 10px; right: 10px;" id="close${iterador._id}" width=8% src="/CLOSE.png" alt="">
+                <img style="position: absolute; top: 20px; right: 20px;" id="close${iterador._id}" width=8% src="/CLOSE.png" alt="">
                 
                 </div>
                 </div>
@@ -199,7 +202,10 @@ function render (data){
            
             <div id="form" class="form" >
             <div  class="logintitle2">
+            <div>
             <strong>${iterador.apellido}</strong>
+            <p id="medicionPopUp${iterador._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+            </div>
             <img   width=20% src="/ESPIRADO.png" alt="">
             </div>
             <br>
@@ -236,7 +242,7 @@ function render (data){
               
                 <div class="botonX2">
 
-                <img style="position: absolute; top: 10px; right: 10px;" id="close${iterador._id}" width=8% src="/CLOSE.png" alt="">
+                <img style="position: absolute; top: 20px; right: 20px;" id="close${iterador._id}" width=8% src="/CLOSE.png" alt="">
                 
                 </div>
             `
@@ -249,7 +255,10 @@ function render (data){
            
             <div id="form" class="form" >
             <div  class="logintitle2">
+            <div>
             <strong>${iterador.apellido}</strong>
+            <p id="medicionPopUp${iterador._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+            </div>
             <img   width=20% src="/ESPIRADO.png" alt="">
             </div>
             <br>
@@ -296,7 +305,7 @@ function render (data){
               
                 <div class="botonX2">
 
-                <img style="position: absolute; top: 10px; right: 10px;" id="close${iterador._id}" width=8% src="/CLOSE.png" alt="">
+                <img style="position: absolute; top: 20px; right: 20px;" id="close${iterador._id}" width=8% src="/CLOSE.png" alt="">
                 
                 </div>
             `
@@ -467,7 +476,10 @@ sortTableByNextMeasurement()
            
             <div id="form" class="form" >
                 <div  class="logintitle2">
+                <div>
                 <strong>${data.apellido}</strong>
+                <p id="medicionPopUp${data._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+                </div>
                 <img   width=20% src="/ESPIRADO.png" alt="">
                 </div>
                 <br>
@@ -503,7 +515,7 @@ sortTableByNextMeasurement()
               
                 <div class="botonX2">
 
-                <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+                <img style="position: absolute; top: 20px; right: 20px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
                 
                 </div>
                 </div>
@@ -520,7 +532,10 @@ sortTableByNextMeasurement()
 
             <div id="form" class="form" >
             <div  class="logintitle2">
-            <strong>${data.apellido}</strong>
+            <div>
+                <strong>${data.apellido}</strong>
+                <p id="medicionPopUp${data._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+                </div>
             <img   width=20% src="/ESPIRADO.png" alt="">
             </div>
             <br>
@@ -557,7 +572,7 @@ sortTableByNextMeasurement()
               
                 <div class="botonX2">
 
-                <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+                <img style="position: absolute; top: 20px; right: 20px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
                 
                 </div>
             
@@ -569,7 +584,10 @@ sortTableByNextMeasurement()
             contenedorOculto.innerHTML=`
             <div id="form" class="form" >
             <div  class="logintitle2">
-            <strong>${data.apellido}</strong>
+            <div>
+                <strong>${data.apellido}</strong>
+                <p id="medicionPopUp${data._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+                </div>
             <img   width=20% src="/ESPIRADO.png" alt="">
             </div>
             <br>
@@ -616,7 +634,7 @@ sortTableByNextMeasurement()
               
                 <div class="botonX2">
 
-                <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+                <img style="position: absolute; top: 20px; right: 20px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
                 
                 </div>
             `
@@ -922,6 +940,8 @@ socket.on('new2 hidrogeno', function(hidrogeno) {
     document.getElementById(`proxMedicion${id}`).innerHTML=`${(agregarMinutos(tiempo, intervalo))}`
     document.getElementById(`proxMedicion${id}`).style.backgroundColor='white'
     document.getElementById(`proxMedicion2${id}`).innerHTML=`<div>${(agregarMinutos(tiempo, intervalo))}</div><div>${nUltimaMedicionValor}/${cantidadMaxMediciones}</div>`
+    document.getElementById(`medicionPopUp${id}`).innerHTML=`Medición: ${nUltimaMedicionValor}/${cantidadMaxMediciones}`
+    
     updateNextMeasurementColor();
 
     sortTableByNextMeasurement()
@@ -964,6 +984,7 @@ socket.on('new2 metano', function(metano) {
         document.getElementById(`proxMedicion${id}`).innerHTML=`${(agregarMinutos(tiempo, intervalo))}`
         document.getElementById(`proxMedicion${id}`).style.backgroundColor='white'
         document.getElementById(`proxMedicion2${id}`).innerHTML=`<div>${(agregarMinutos(tiempo, intervalo))}</div><div>${nUltimaMedicionValor}/${cantidadMaxMediciones}</div>`
+        document.getElementById(`medicionPopUp${id}`).innerHTML=`Medición: ${nUltimaMedicionValor}/${cantidadMaxMediciones}`
         updateNextMeasurementColor();
 
         sortTableByNextMeasurement()
@@ -981,6 +1002,7 @@ socket.on('new2 metano', function(metano) {
         document.getElementById(`proxMedicion${id}`).innerHTML=`${(agregarMinutos(tiempo, intervalo))}`
         document.getElementById(`proxMedicion2${id}`).innerHTML=`<div>${(agregarMinutos(tiempo, intervalo))}</div><div>${nUltimaMedicionValor}/${cantidadMaxMediciones}</div>`
         document.getElementById(`proxMedicion${id}`).style.backgroundColor='white'
+        document.getElementById(`medicionPopUp${id}`).innerHTML=`Medición: ${nUltimaMedicionValor}/${cantidadMaxMediciones}`
         updateNextMeasurementColor();
 
         sortTableByNextMeasurement()
@@ -1024,6 +1046,7 @@ socket.on('new2 hidrogeno acceso', function(hidrogeno) {
     document.getElementById(`proxMedicion${id}`).innerHTML=`${(agregarMinutos(tiempo, intervalo))}`
     document.getElementById(`proxMedicion2${id}`).innerHTML=`<div>${(agregarMinutos(tiempo, intervalo))}</div><div>${nUltimaMedicionValor}/${cantidadMaxMediciones}</div>`
     document.getElementById(`proxMedicion${id}`).style.backgroundColor='white'
+    document.getElementById(`medicionPopUp${id}`).innerHTML=`Medición: ${nUltimaMedicionValor}/${cantidadMaxMediciones}`
     updateNextMeasurementColor();
 
     sortTableByNextMeasurement()
@@ -1070,6 +1093,7 @@ socket.on('new2 metano acceso', function(metano) {
     document.getElementById(`proxMedicion${id}`).innerHTML=`${(agregarMinutos(tiempo, intervalo))}`
     document.getElementById(`proxMedicion2${id}`).innerHTML=`<div>${(agregarMinutos(tiempo, intervalo))}</div><div>${nUltimaMedicionValor}/${cantidadMaxMediciones}</div>`
     document.getElementById(`proxMedicion${id}`).style.backgroundColor='white'
+    document.getElementById(`medicionPopUp${id}`).innerHTML=`Medición: ${nUltimaMedicionValor}/${cantidadMaxMediciones}`
     updateNextMeasurementColor();
 
     sortTableByNextMeasurement()
@@ -1102,6 +1126,7 @@ socket.on('nuevaFila HidrogenoModificada', function(dataFila) {
         document.getElementById(`proxMedicion${id}`).innerHTML=`${(agregarMinutos(ultimoValor.t, intervalo))}`
         document.getElementById(`proxMedicion2${id}`).innerHTML=`<div>${(agregarMinutos(ultimoValor.t, intervalo))}</div><div>${cantidadMediciones}/${cantidadMaxMediciones}</div>`
         document.getElementById(`proxMedicion${id}`).style.backgroundColor='white'
+        document.getElementById(`medicionPopUp${id}`).innerHTML=`Medición: ${cantidadMediciones}/${cantidadMaxMediciones}`
         updateNextMeasurementColor();
     
         sortTableByNextMeasurement()
@@ -1137,6 +1162,7 @@ socket.on('nuevaFila MetanoModificada', function(dataFila) {
         document.getElementById(`proxMedicion${id}`).innerHTML=`${(agregarMinutos(ultimoValor.t, intervalo))}`
         document.getElementById(`proxMedicion2${id}`).innerHTML=`<div>${(agregarMinutos(ultimoValor.t, intervalo))}</div><div>${cantidadMediciones}/${cantidadMaxMediciones}</div>`
         document.getElementById(`proxMedicion${id}`).style.backgroundColor='white'
+        document.getElementById(`medicionPopUp${id}`).innerHTML=`Medición: ${cantidadMediciones}/${cantidadMaxMediciones}`
         updateNextMeasurementColor();
     
         sortTableByNextMeasurement()
