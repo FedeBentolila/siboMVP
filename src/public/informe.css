@@ -4,9 +4,7 @@
 
 
 
-input[type="number"] {
-    text-align: center;
-  }
+  
 
 
 * {
@@ -47,14 +45,22 @@ input[type="number"] {
     align-items: center;
   }
   
+  
 
   .filaValores{
     display: flex;
-    padding-left: 5px;
+    padding-bottom: 30px;
+    padding-top: 30px;
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-bottom: #A7A7A7;
+    border-bottom-style: solid;
+  }
+
+  .medicionPopUp{
+    font-size: 12px;
   }
 
 
@@ -530,7 +536,94 @@ color: var(--Color, #5D87B2);
     border: 1px solid #DEE2E6;
     background: #FFF;
     height: min-content;
+    width: max-content;
+    margin: auto;
    } 
+
+   
+   
+   .campo3 {
+    justify-content: flex-start;
+    color: #6c6c6c;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px /* 150% */;
+    display: flex;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid #DEE2E6;
+    background: #FFF;
+    height: min-content;
+    width:50%;
+    margin: auto;
+    text-align: center;
+   } 
+
+   
+.fl-table {
+
+    border-radius: 10px;
+    overflow: clip;
+    border-style: solid;
+    border-color: #A7A7A7;
+    font-size: 10px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+    padding: 10px;
+   
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 10px;
+}
+
+.fl-table td {
+    border: none;
+    font-size: 15px;
+ 
+    border-bottom: gray;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    border-style: solid;
+    border-color: #5D87B2;
+    background: #5D87B2;
+    font-size: 15px;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #5D87B2;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #ffffff;
+    color: gray;
+    font-family: Roboto;
+}
+
+.fl-table tr:nth-child(odd) {
+    background: #ffffff;
+    color: gray;
+    font-family: Roboto;
+}
+
 
    .sectionMisDatos{
     width: 100%;
@@ -680,6 +773,13 @@ color: var(--Color, #5D87B2);
     padding: 8px;
    }
 
+   .botonX3{
+    display: none;
+   
+}
+
+
+
 .containerForm{
     display: flex;
  width: 50%;
@@ -749,7 +849,7 @@ color: var(--Color, #5D87B2);
 }
 
 .containerRelojAzul3{
-    width: 100%;
+    width: 60%;
     padding: 10px;
     display: flex;
     flex-direction: row;
@@ -763,6 +863,21 @@ color: var(--Color, #5D87B2);
 
 
 @media (max-width: 767px) {
+
+    
+.containerRelojAzul3{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+
+
+   
+   }
+
+
 
     .contenedorIconoEimg{
         display: flex;
@@ -866,7 +981,7 @@ color: var(--Color, #5D87B2);
 
 
     .brandLogo{
-        width:40%;
+        width:45%;
         cursor: pointer;
     }
 
@@ -999,6 +1114,18 @@ color: var(--Color, #5D87B2);
         align-items: flex-start;
     }
 
+    
+.botonX2{
+    
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    margin: 30px;
+    width: 90%;
+}
 
 
     .celdaSoplar2{
@@ -1042,8 +1169,35 @@ color: var(--Color, #5D87B2);
        
        }
 
+       .imgBotonNavBar{
+        width: 10%;
+        margin: 5%;
+    }
 
     
+   .campo3 {
+    justify-content: flex-start;
+    color: #6c6c6c;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px /* 150% */;
+    display: flex;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid #DEE2E6;
+    background: #FFF;
+    height: min-content;
+    width:100%;
+    margin: auto;
+    text-align: center;
+   } 
+    
+
+
+   
     
 
 }

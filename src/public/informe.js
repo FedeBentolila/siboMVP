@@ -107,13 +107,29 @@ fetch('/dataInforme', {
 
   function renderDatos (data){
 
+
+    let nMedicion
+
+    if(data.tipo=="hidrogeno" || data.tipo=="intolerancia" || data.tipo=="mixto"){
+      nMedicion=data.hidrogeno.length
+    }
+
+    if(data.tipo=="metano" ){
+      nMedicion=data.metano.length
+    }
+
     let minutosProtocolo
+    let intervalo= parseInt(data.intervalo) 
+    
 
     if (data.protocolo=="Glucosa 10gr" || data.tipo=="intolerancia"){
         minutosProtocolo=120
     }else{
         minutosProtocolo=180
     }
+
+    let cantidadMaxMediciones= (minutosProtocolo/intervalo)+1
+
 
     let fechaYhora= data.timestamp.split(" ")
 
@@ -272,7 +288,10 @@ fetch('/dataInforme', {
            <div id="form" class="form" >
            <div id="form" class="form" >
            <div  class="logintitle2">
+           <div>
            <strong>${data.apellido}</strong>
+           <p id="medicionPopUp${data._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+       </div>
            <img   width=20% src="/ESPIRADO.png" alt="">
            </div>
            <br>
@@ -309,7 +328,7 @@ fetch('/dataInforme', {
          
            <div class="botonX2">
 
-           <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+           <img style="position: absolute; top: 20px; right: 20px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
            
            </div>
            </div>
@@ -329,7 +348,10 @@ fetch('/dataInforme', {
            <div id="form" class="form" >
            <div id="form" class="form" >
            <div  class="logintitle2">
+           <div>
            <strong>${data.apellido}</strong>
+           <p id="medicionPopUp${data._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+       </div>
            <img   width=20% src="/ESPIRADO.png" alt="">
            </div>
            <br>
@@ -366,7 +388,7 @@ fetch('/dataInforme', {
          
            <div class="botonX2">
 
-           <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+           <img style="position: absolute; top: 20px; right: 20px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
            
            </div>
            </div>
@@ -381,7 +403,10 @@ fetch('/dataInforme', {
           
            <div id="form" class="form" >
            <div  class="logintitle2">
+           <div>
            <strong>${data.apellido}</strong>
+           <p id="medicionPopUp${data._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+       </div>
            <img   width=20% src="/ESPIRADO.png" alt="">
            </div>
            <br>
@@ -428,7 +453,7 @@ fetch('/dataInforme', {
              
                <div class="botonX2">
 
-               <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+               <img style="position: absolute; top: 20px; right: 20px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
                
                </div>
            
@@ -456,6 +481,19 @@ fetch('/dataInforme', {
 
 function renderHidrogeno (data){
 
+  let minutosProtocolo
+  let intervalo= parseInt(data.intervalo) 
+  
+
+  if (data.protocolo=="Glucosa 10gr" || data.tipo=="intolerancia"){
+      minutosProtocolo=120
+  }else{
+      minutosProtocolo=180
+  }
+
+  let cantidadMaxMediciones= (minutosProtocolo/intervalo)+1
+
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -467,7 +505,24 @@ function renderHidrogeno (data){
    
     <form  action="/modificarHidrogeno/${data._id}" method="post">
     <br>
-    <div id="formHidrogeno"></div>
+    <div class="formHidrogeno" id="formHidrogeno">
+    <table class="fl-table">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Tiempo</th>
+      <th>PPM</th>
+      <th  style="display: none;"></th>
+      <th>Eliminar</th>
+    </tr>  
+    </thead>
+    <tbody id="tablaHidrogeno">
+    </tbody>
+    
+    </table>
+
+    <br>
+    </div>
     <div class="botonActualizar" id="botonformHidrogeno"></div>
     
    </form>
@@ -480,28 +535,34 @@ function renderHidrogeno (data){
 
     for (let index = 0; index < data.hidrogeno.length; index++) {
 
+
+        
         const element = data.hidrogeno[index];
         let numero = index+1
        
 
-        let contenedorH= document.createElement("div")
-        contenedorH.classList.add("filaValores")
+        let contenedorH= document.createElement("tr")
+        //contenedorH.classList.add("filaValores")
         contenedorH.setAttribute("id",`fila${numero}`)
         contenedorH.innerHTML=`
 
-       
-        <label class="loginfieldname" >${numero}</label>
-        <label for="inputGas1${index}" class="loginfieldname">T</label>
-        <input type="time" class="campo2" name="${index}" id="inputGas1${index}" value="${element.t}">
-        <label for="inputGas2${index}" class="loginfieldname">H2</label>
-        <input type="number" style="width: 20%;" class="campo2" name="${index}" id="inputGas2${index}" value="${element.valor}">
-    
+        <td>${numero}/${cantidadMaxMediciones}</td>
+        <td> 
+          <input type="time" class="campo2" name="${index}" id="inputGas1${index}" value="${element.t}">
+        </td>
+        <td class="valorGas">
+        <input  type="number"  class="campo3" name="${index}" id="inputGas2${index}" value="${element.valor}">
+        </td>
+        <td style="display: none;">
         <input style="display: none;" type="text" class="form-control" name="${index}" id="inputGas3${index}" value="${element.sintoma}">
-        <br>
+        </td>
+        <td>
         <div  onclick="eliminarFila('fila${numero}')"><img src="/delete.png" width=20px  alt=""></div>    
+        </td>
+
         <br> 
         `
-        document.getElementById("formHidrogeno").appendChild(contenedorH)
+        document.getElementById("tablaHidrogeno").appendChild(contenedorH)
 
         contadorH++
 
@@ -527,6 +588,17 @@ function renderHidrogeno (data){
 
 function renderMetano (data){
 
+  let minutosProtocolo
+  let intervalo= parseInt(data.intervalo) 
+  
+
+  if (data.protocolo=="Glucosa 10gr" || data.tipo=="intolerancia"){
+      minutosProtocolo=120
+  }else{
+      minutosProtocolo=180
+  }
+
+  let cantidadMaxMediciones= (minutosProtocolo/intervalo)+1
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -536,13 +608,32 @@ function renderMetano (data){
   
   contenedor.innerHTML = 
   `     
+   
   <form  action="/modificarMetano/${data._id}" method="post">
   <br>
-  <div id="formMetano"></div>
+  <div class="formHidrogeno" id="formMetano">
+  <table class="fl-table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Tiempo</th>
+    <th>PPM</th>
+    <th  style="display: none;"></th>
+    <th>Eliminar</th>
+  </tr>  
+  </thead>
+  <tbody id="tablaMetano">
+  </tbody>
+  
+  </table>
+
+  <br>
+  </div>
   <div class="botonActualizar" id="botonformMetano"></div>
   
  </form>
      
+   
 
   `;
   document.getElementById("valores").appendChild(contenedor)
@@ -551,36 +642,35 @@ function renderMetano (data){
 
   for (let index = 0; index < data.metano.length; index++) {
 
-      const element = data.metano[index];
-      let numero = index+1
-     
+    const element = data.metano[index];
+    let numero = index+1
+   
 
-      let contenedorM= document.createElement("div")
-      contenedorM.classList.add("filaValores") 
-      contenedorM.setAttribute("id",`fila${numero}`)
-      
-      contenedorM.innerHTML=`
+    let contenedorM= document.createElement("tr")
+    //contenedorH.classList.add("filaValores")
+    contenedorM.setAttribute("id",`fila${numero}`)
+    contenedorM.innerHTML=`
 
-      <label class="loginfieldname" >${numero}</label>
-      <label for="inputGas1${index}" class="loginfieldname">T</label>
+    <td>${numero}/${cantidadMaxMediciones}</td>
+    <td> 
       <input type="time" class="campo2" name="${index}" id="inputGas1${index}" value="${element.t}">
-      <label for="inputGas2${index}" class="loginfieldname">CH4</label>
-      <input type="number" style="width: 20%;" class="campo2" name="${index}" id="inputGas2${index}" value="${element.valor}">
-  
-      <input style="display: none;" type="text" class="form-control" name="${index}" id="inputGas3${index}" value="${element.sintoma}">
-      <br>
-      <div  onclick="eliminarFila('fila${numero}')"><img src="/delete.png" width=20px  alt=""></div>    
-      <br> 
+    </td>
+    <td class="valorGas">
+    <input  type="number"  class="campo3" name="${index}" id="inputGas2${index}" value="${element.valor}">
+    </td>
+    <td style="display: none;">
+    <input style="display: none;" type="text" class="form-control" name="${index}" id="inputGas3${index}" value="${element.sintoma}">
+    </td>
+    <td>
+    <div  onclick="eliminarFila('fila${numero}')"><img src="/delete.png" width=20px  alt=""></div>    
+    </td>
 
+    <br> 
+    `
+    document.getElementById("tablaMetano").appendChild(contenedorM)
 
+    contadorH++
 
-
-          `
-      document.getElementById("formMetano").appendChild(contenedorM)
-
-      contadorM++
-
-  
 
 
       
@@ -1723,7 +1813,26 @@ function eliminarFila(id){
   borrado.style.margin="10px"
   borrado.style.fontFamily="Roboto"
   borrado.style.color="white"
-  borrado.innerHTML=`Registro seleccionado para borrar `
+  borrado.innerHTML=`
+  <td>--</td>
+  <td> 
+    --
+  </td>
+  <td class="valorGas">
+  --
+  </td>
+  <td style="display: none;">
+  --
+  </td>
+  <td>
+  --
+  </td>
+
+  <br> 
+
+  
+  
+  `
 }
 
 function eliminarFilaHyM(numero){
@@ -1904,9 +2013,17 @@ botonHome.addEventListener("click", gotoHome)
 let botonHome2=document.getElementById("brandLogo2")
 botonHome2.addEventListener("click", gotoHome)
 
+let botonHome3=document.getElementById("exit")
+botonHome3.addEventListener("click", gotoSala)
+
 function gotoHome(){
  window.location="/"
 }
+
+
+function gotoSala(){
+  window.location="/salaDeEspera"
+ }
 
 let botonburger = document.getElementById("menuBurger")
   botonburger.addEventListener("click", reveal)
