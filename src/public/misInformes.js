@@ -283,7 +283,7 @@ function buscar(){
           
           </td>
           <td> 
-          <img style="cursor: pointer;" onclick="eliminarArchivo('${iterador._id}')" src="/DELETE.png" width=30px  alt="">
+          <img style="cursor: pointer;" onclick="eliminarArchivo('${iterador._id}')" src="/delete.png" width=30px  alt="">
           </td>
             `;
             document.getElementById("registros").appendChild(contenedor)
