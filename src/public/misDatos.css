@@ -60,11 +60,14 @@
 
 .body{
     background: #BDE7F9 108.42%;
+ 
+   
+}
+
+.containerContainerForm{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-   
 }
 
 .brandLogo{

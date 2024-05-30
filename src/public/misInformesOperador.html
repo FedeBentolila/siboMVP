@@ -31,7 +31,7 @@
 
     <a class="linkComponente" href="/pacienteForm">
       <div class="componenteNavBar">
-        <strong style="padding-right: 10px;">Nuevo Paciente</strong>
+        <strong >Nuevo Paciente</strong>
         <img src="/nuevopaciente.png" class="imgComponente" alt="nuevoPaciente">
       </div>
     </a>
@@ -155,13 +155,20 @@
    
 </div>
     <br>
-
+    <div class="buscadorContainer">
+      <div class="buscador">
+        <label class="loginfieldname" for="buscador">Buscar por DNI</label>
+        <input class="campo" id="dniAbuscar" type="text">
+        <img src="/LUPA.png" onclick="buscar()" width="8%" alt="">
+  
+      </div>
+    </div>
     
-    <div onclick="buscar()" class="botonesFirma" >
+   <!--  <div onclick="buscar()" class="botonesFirma" >
         <button  class="botonazul" >
           Buscador
         </button>
-    </div>
+    </div> -->
     <br>
    
     <div class="table-wrapper" id="results">
@@ -189,6 +196,20 @@
         </ul>
     
     </nav>
+
+    
+    <div class="botonResetContainer" id="botonResetContainer">
+
+    </div>
+
+    <br>
+    <br>
+    <div class="botonBlancoContainer">
+      <button id="exit" class="botonblanco">X Cerrar</button>
+    </div>
+    <br>
+    <br>
+
 
     
     

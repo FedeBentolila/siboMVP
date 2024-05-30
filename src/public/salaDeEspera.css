@@ -268,10 +268,7 @@ th:nth-child(13), td:nth-child(13) {
 
 .body{
     background: #BDE7F9 108.42%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  
    
 }
 
@@ -555,9 +552,16 @@ color: var(--Color, #5D87B2);
     font-style: normal;
     font-weight: 500;
     line-height: 24px /* 112.254% */;
-    width: 100%;
+    width: max-content;
     cursor: pointer;
    
+   }
+
+   .botonBlancoContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
    }
 
 .containerForm{
