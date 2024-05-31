@@ -85,6 +85,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-collapse: separate;
+    border-spacing: 30px 0;
   }
 
   

@@ -1372,7 +1372,7 @@ if(!peticionobj.nauseas){
     console.log(peticion.body)
 
    datosdeMongo.uptdateMongoUserData(nombreUsuario, peticion.body).then(()=>{
-    respuesta.redirect("/verTurnos")
+    respuesta.redirect("/misDatos")
    }) 
 
 

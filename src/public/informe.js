@@ -158,7 +158,7 @@ fetch('/dataInforme', {
     contenedor.innerHTML = 
     `     
 
-
+    <br>
     <table class="tabla">
     <thead>
       <tr>
@@ -239,7 +239,7 @@ fetch('/dataInforme', {
           
           </div>
 
-         
+         <br>
           
          
        </div>
