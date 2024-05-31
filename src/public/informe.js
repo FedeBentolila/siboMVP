@@ -166,7 +166,7 @@ fetch('/dataInforme', {
         <th scope="col"></th>
       </tr>
     </thead>
-    <tbody id="tbody1">
+    <tbody class="tbody" id="tbody1">
       <tr>
         <th class="loginfieldname" scope="row">Nombre:</th>
         <td class="campo">${data.nombre}</td>
@@ -188,7 +188,7 @@ fetch('/dataInforme', {
         <td class="campo" colspan="2">${tipo}</td>
       </tr>
       <tr>
-        <th class="loginfieldname" scope="row">Cantidad de mediciones</th>
+        <th class="loginfieldname" scope="row">Cantidad</th>
         <td class="campo" id="cantidadDeMediciones" colspan="2"></td>
       </tr>
       <tr>
@@ -692,20 +692,49 @@ function renderMetano (data){
 
 function renderHidrogenoYMetano(data){
 
+  let minutosProtocolo
+  let intervalo= parseInt(data.intervalo) 
+  
+
+  if (data.protocolo=="Glucosa 10gr" || data.tipo=="intolerancia"){
+      minutosProtocolo=120
+  }else{
+      minutosProtocolo=180
+  }
+
+  let cantidadMaxMediciones= (minutosProtocolo/intervalo)+1
+
+
   let contenedor = document.createElement("div");
   contenedor.classList.add("formularioH2yCH3")
   contenedor.innerHTML = 
   `     
   <form action="/modificarHidrogenoYmetano/${data._id}" method="post">
   <br>
-  <div class="dentroFormularioH2yCH3">
-  <div id="formHidrogeno">
+  
+  <div class="formHidrogeno" id="formHidrogeno">
+  <table class="fl-table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th><img src="/RELOJ_BLANCO.png" width=20% alt=""></th>
+    <th>H2</th>
+    <th>CH4</th>
+    <th  style="display: none;"></th>
+    <th></th>
+  </tr>  
+  </thead>
+  <tbody id="tablaHidrogeno">
+  </tbody>
+  
+  </table>
+
+  <br>
   </div>
   <br>
-  <div id="formMetano">
+  <div  style="display:none" id="formMetano">
   </div>
-  </div>
-  <br>
+  
   <br>
   <div class="botonActualizar" id="botonformHidrogenoYmetano"></div>
   
@@ -719,25 +748,36 @@ function renderHidrogenoYMetano(data){
   for (let index = 0; index < data.hidrogeno.length; index++) {
 
     const element = data.hidrogeno[index];
+    const elementM = data.metano[index];
     let numero = index+1
-      let contenedorH= document.createElement("div")
-      contenedorH.classList.add("filaValores") 
+      let contenedorH= document.createElement("tr")
+      //contenedorH.classList.add("filaValores") 
     
     contenedorH.setAttribute("id",`filaH${numero}`)
     contenedorH.innerHTML=`
 
-    <label class="loginfieldname" >${numero}</label>
-    <label for="inputGas1${index}" class="loginfieldname">T</label>
-    <input type="time" class="campo2" name="Hidrogeno" id="tHidrogeno${numero}" value="${element.t}" onchange="actualizarInput(this.value,'tMetano${numero}')">
-    <label for="inputGas2${index}" class="loginfieldname">H2</label>
-    <input type="number" style="width: 20%;" class="campo2" name="Hidrogeno" id="vHidrogeno${numero}" value="${element.valor}">
     
-        <input style="display: none;" type="text" class="form-control" name="Hidrogeno" id="inputGas3${index}" value="${element.sintoma}">
-    <br>
+    <td>${numero}/${cantidadMaxMediciones}</td>
+    <td> 
+      <input type="time" onchange="actualizarInput(this.value,'tMetano${numero}')" class="campo2" name="Hidrogeno" id="tHidrogeno${numero}" value="${element.t}">
+    </td>
+    <td class="valorGas">
+    <input  type="number"  class="campo3" name="Hidrogeno" id="inputGas2${index}" id="vHidrogeno${numero}" value="${element.valor}">
+    </td>
+    <td class="valorGas">
+    <input  type="number" onchange="actualizarInput(this.value,'vMetano${numero}')"  class="campo3" id="inputGas2${index}" id="fakeMetano${numero}" value="${elementM.valor}">
+    </td>
+    <td style="display: none;">
+    <input style="display: none;" type="text" class="form-control" name="Hidrogeno" id="inputGas3${index}" value="${element.sintoma}">
+    </td>
+    <td>
     <div  onclick="eliminarFilaHyM('${numero}')"><img src="/delete.png" width=20px  alt=""></div>    
-    <br>    
+    </td>
+
+    <br> 
+
         `
-    document.getElementById("formHidrogeno").appendChild(contenedorH)
+    document.getElementById("tablaHidrogeno").appendChild(contenedorH)
 
     contadorH++
     
@@ -1837,11 +1877,32 @@ function eliminarFila(id){
 
 function eliminarFilaHyM(numero){
   let borradoH= document.getElementById(`filaH${numero}`)
+
+  console.log(numero)
   borradoH.style.backgroundColor="red"
   borradoH.style.margin="10px"
   borradoH.style.fontFamily="Roboto"
   borradoH.style.color="white"
-  borradoH.innerHTML=`Registro seleccionado para borrar `
+  borradoH.innerHTML=`
+  <td>--</td>
+  <td> 
+    --
+  </td>
+  <td class="valorGas">
+  --
+  </td>
+  <td style="display: none;">
+  --
+  </td>
+  <td>
+  --
+  </td>
+
+  <br> 
+
+  
+  
+  `
 
   let borradoM= document.getElementById(`filaM${numero}`)
   borradoM.style.backgroundColor="red"

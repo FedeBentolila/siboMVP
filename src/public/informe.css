@@ -24,6 +24,11 @@
   .datosInforme{
     width: 80%;
   }
+
+  .tbodt{
+    
+    width: 100%;
+  }
   
 
   .celdaSoplar2{
@@ -123,6 +128,10 @@
     font-weight: 400;
     line-height: 24px /* 150% */;
    }
+
+   input[type="number"] {
+    text-align: center;
+  }
 
    .labelAndInputContainer{
     width: 100%;
@@ -557,7 +566,7 @@ color: var(--Color, #5D87B2);
     border: 1px solid #DEE2E6;
     background: #FFF;
     height: min-content;
-    width:50%;
+    width:80%;
     margin: auto;
     text-align: center;
    } 
@@ -1186,7 +1195,6 @@ color: var(--Color, #5D87B2);
     line-height: 24px /* 150% */;
     display: flex;
     gap: 10px;
-    border-radius: 10px;
     border: 1px solid #DEE2E6;
     background: #FFF;
     height: min-content;
@@ -1194,6 +1202,11 @@ color: var(--Color, #5D87B2);
     margin: auto;
     text-align: center;
    } 
+
+   
+  .datosInforme{
+    width: 90%;
+  }
     
 
 
