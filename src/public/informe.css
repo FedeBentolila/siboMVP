@@ -4,6 +4,13 @@
 
 
 
+.botoneraGuardarDeshacer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
   
 
 
@@ -1086,6 +1093,7 @@ color: var(--Color, #5D87B2);
         font-style: normal;
         font-weight: 500;
         padding: 10px;
+        border-bottom:1px solid rgba(93, 135, 178, 0.50);
     }
 
     .imagenNuevo{

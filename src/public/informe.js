@@ -573,8 +573,12 @@ function renderHidrogeno (data){
 
 
     let contenedorBoton = document.createElement("div");
+    contenedorBoton.classList.add("botoneraGuardarDeshacer")
     contenedorBoton.innerHTML=`
-    <button  type="submit" class="botonazul">Guardar cambios H2</button>
+   
+    <button  type="submit" class="botonazul">Guardar</button>
+    <button  type="button" onclick="reset2(event)" class="botonblanco">Deshacer</button>
+    
     
     `
     document.getElementById("botonformHidrogeno").appendChild(contenedorBoton)
@@ -679,9 +683,10 @@ function renderMetano (data){
 
 
   let contenedorBoton = document.createElement("div");
+  contenedorBoton.classList.add("botoneraGuardarDeshacer")
   contenedorBoton.innerHTML=`
-  <button  type="submit" class="botonazul">Guardar cambios CH4</button>
-  
+  <button  type="submit" class="botonazul">Guardar</button>
+  <button  type="button" onclick="reset2(event)" class="botonblanco">Deshacer</button>
   `
   document.getElementById("botonformMetano").appendChild(contenedorBoton)
 
@@ -813,8 +818,10 @@ for (let index = 0; index < data.metano.length; index++) {
 }
 
 let contenedorBoton = document.createElement("div");
+contenedorBoton.classList.add("botoneraGuardarDeshacer")
 contenedorBoton.innerHTML=`
-<button  type="submit" class="botonazul">Guardar cambios </button>
+<button  type="submit" class="botonazul">Guardar</button>
+<button  type="button" onclick="reset2(event)" class="botonblanco">Deshacer</button>
 
 `
 document.getElementById("botonformHidrogenoYmetano").appendChild(contenedorBoton)
@@ -1897,6 +1904,9 @@ function eliminarFilaHyM(numero){
   <td>
   --
   </td>
+  <td>
+  --
+  </td>
 
   <br> 
 
@@ -2067,6 +2077,13 @@ function addValueAndTimeMetanoUnico(id){
 function reset(){
   location.reload()
 }
+
+function reset2(event){
+  event.preventDefault()
+  location.reload()
+}
+
+
 
 let botonHome=document.getElementById("brandLogo")
 botonHome.addEventListener("click", gotoHome)
