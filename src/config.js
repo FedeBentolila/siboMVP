@@ -55,6 +55,10 @@ const pacientesSchema= new Schema({
     protocolo:{type: String},
     intervalo:{type: Number},
     sala:{type: Number},// 1 2 3
+    motivo:{type: String},
+    modelo:{type: String},
+    nCobertura:{type: String},
+    
 
     //Encuesta
     distensionAbdominal: {type: Boolean},

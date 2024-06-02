@@ -493,7 +493,7 @@ fetch('/dataInforme', {
         //// Variables patrón fermentativo
         let patronFermentativo=``
 
-        if(datosInforme.protocolo!="Glucosa 10gr"){
+        if(datosInforme.protocolo!="Glucosa 75gr"){
           if(aucH2>=3500 && siboHidrogeno==true){
             patronFermentativo=`PERFIL FERMENTATIVO AUMENTADO`
             }else if(aucH2>=3500 && interpretadoBasal!="NORMAL"){

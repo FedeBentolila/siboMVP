@@ -26,7 +26,7 @@ function render (data){
         let intervalo= parseInt(iterador.intervalo) 
         let minutosProtocolo
 
-        if (iterador.protocolo=="Glucosa 10gr" || iterador.tipo=="intolerancia"){
+        if (iterador.protocolo=="Glucosa 75gr" || iterador.tipo=="intolerancia"){
             minutosProtocolo=120
         }else{
             minutosProtocolo=180
@@ -363,7 +363,7 @@ sortTableByNextMeasurement()
 
         let minutosProtocolo
 
-        if (data.protocolo=="Glucosa 10gr" || data.tipo=="intolerancia"){
+        if (data.protocolo=="Glucosa 75gr" || data.tipo=="intolerancia"){
             minutosProtocolo=120
         }else{
             minutosProtocolo=180

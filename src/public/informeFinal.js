@@ -198,6 +198,10 @@ fetch(`/dataUserFirma/${datosInforme.autor}`)
 
     document.getElementById("protocolo").innerHTML=`Protocolo: ${datosInforme.protocolo}`
 
+    document.getElementById("modelo").innerHTML=`Equipo: ${datosInforme.modelo}`
+
+    document.getElementById("motivo").innerHTML=` ${datosInforme.motivo}`
+
 
 
 
@@ -606,7 +610,7 @@ fetch(`/dataUserFirma/${datosInforme.autor}`)
 
 let btn = document.getElementById('btn');
 //let page = document.getElementById('printable');
-const pages = document.getElementsByClassName('page');
+/* const pages = document.getElementsByClassName('page');
 
 btn.addEventListener('click', function(){
   html2PDF(pages, {
@@ -629,6 +633,6 @@ btn.addEventListener('click', function(){
       pdf.save(`${id}`);
     }
   });
-});
+}); */
 
 

@@ -27,6 +27,31 @@ a{
     width: 900px;
 }
 
+.contenido{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-color: #5D86B2;
+    border-width: 5px;
+    border-bottom-style: solid;
+    border-top-style: solid;
+
+}
+
+.tipoProtocoloYfechaYDatosPaciente{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin: 30px;
+    border-bottom-style: solid;
+    border-color: gray;
+    border-width: 2px;
+}
+
 .page{
     width: 100%;
 }
@@ -55,14 +80,15 @@ a{
   
 }
 
+
 .tipoProtocoloYfecha{
     display: flex;
-    text-align: center;
+    text-align: left;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  
-    font-size: 12px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 1rem;
+    width: 100%;
 }
 
 
@@ -72,15 +98,22 @@ a{
 }
 
 .datosPaciente{
-    margin: auto;
-    width: 50%;
+    width: 100%;
     font-family: Roboto;
   
 
 }
 
+.datosPaciente2{
+    width: 50%;
+    font-family: Roboto;
+    margin: 10px;
+  
+
+}
+
 .tabla{
-    font-size: 12px;
+    font-size: 1rem;
     overflow: clip;
     font-weight: normal;
    border-radius: 30px;
@@ -103,7 +136,7 @@ a{
 }
 
 .tabla td {
-    font-size: 12px;
+    font-size: 1rem;
     border: 1px solid gray; 
     border-bottom: gray;
     border-style: solid;
@@ -156,30 +189,49 @@ a{
 
 
 .medicionesYresultado{
-    width: 100%;
+    width: 90%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    border-bottom-style: solid;
+    border-color: gray;
+    border-width: 2px;
+    padding-bottom: 20px;
+  
     
 }
 
 .formValidar{
     display: flex;
-    flex-direction: column;
-    width: 50%;
-    font-size: 12px
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    font-size: 1rem;
  
 }
 
+.intraForm{
+    width: 50%;
+}
+
 .textarea{
-    width: 100%;
+    width: 80%;
     font-style: Roboto ;
-    font-size: 10px;
+    font-size: 1rem;
     padding: 5px;
+   /*  border-radius: 10px;
+    border-color: gray;
+    border-style: solid;*/
+} 
+
+.rebordeado{
     border-radius: 10px;
     border-color: gray;
     border-style: solid;
+    width: 90%;
+    padding: 10px;
 }
 
 
@@ -199,10 +251,9 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    height: 80%;
-    width: 80%;
-    margin: auto;
+    margin: 10px;
+    width: 60%;
+  
 }
 
 /* estaba en 50% y 50% en chart container */
@@ -210,8 +261,8 @@ a{
 .firma{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: flex-end;
     text-align: center;
     width: 100%;
     line-height: 0;

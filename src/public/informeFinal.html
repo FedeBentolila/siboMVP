@@ -15,85 +15,109 @@
     
 
     <div id="printable" class="container">
+
+    <div class="contenido">
        
    
-<div class="page">
-    <br>
 
-    <div class="tipoProtocoloYfecha">
-        <strong id="tipoEstudio"></strong>
-        <strong id="protocolo"></strong>
-        <strong id="fecha"></strong>
+    <div class="tipoProtocoloYfechaYDatosPaciente">
+
+        <div class="tipoProtocoloYfecha">
+            <strong style="width: 100%;" id="tipoEstudio"></strong>
+            <br>
+            <strong style="width: 100%;" id="protocolo"></strong>
+            <br>
+            <strong style="width: 100%;" id="fecha"></strong>
+            <br>
+            <strong style="width: 100%;" id="modelo"></strong>
+            <br>
+    
+        </div>
+    
+
+    
+        <div id="datosPaciente" class="datosPaciente">
+    
+            <table class="tabla">
+                <tr>
+                    <td><strong>Paciente:</strong></td>
+                    <td id="nombrePaciente"></td>
+                </tr>
+                <tr>
+                    <td><strong>DNI:</strong></td>
+                    <td id="dni"></td>
+                </tr>
+                <tr>
+                    <td><strong>Cobertura:</strong></td>
+                    <td id="cobertura"></td>
+                </tr>
+                <tr>
+                    <td><strong>Solicitado por:</strong></td>
+                    <td id="solicitante"></td>
+                </tr>
+                <tr>
+                    <td><strong>Motivo:</strong></td>
+                    <td id="motivo"></td>
+                </tr>
+            </table>
+            <br>
+            <br>
+        </div>
+
+       
 
     </div>
 
-    <br>
-    
-    
+   
 
-    <div id="datosPaciente" class="datosPaciente">
-
-        <table class="tabla">
-            <tr>
-                <td><strong>Paciente:</strong></td>
-                <td id="nombrePaciente"></td>
-            </tr>
-            <tr>
-                <td><strong>DNI:</strong></td>
-                <td id="dni"></td>
-            </tr>
-            <tr>
-                <td><strong>Cobertura:</strong></td>
-                <td id="cobertura"></td>
-            </tr>
-            <tr>
-                <td><strong>Solicitado por:</strong></td>
-                <td id="solicitante"></td>
-            </tr>
-        </table>
-
-    </div>
-
-    <br>
  
 
     <div id="medicionesYresultado" class="medicionesYresultado">
 
-        <div class="datosPaciente">
+        <div class="datosPaciente2">
             <table id="tablaResultado" class="tabla">
 
             </table>
         </div>
 
       
-     <br>
-        <div id="formValidar" class="formValidar">
-            <strong>Conclusiones</strong>
-            <p class="textarea" id="resultadoTexto"></p>
-            <strong id="tituloH">Flora hidrogénica</strong>
-            <p class="textarea" id="floraHidrogenica"></p>
-            <strong id="tituloM">Flora metanogénica</strong>
-            <p class="textarea" id="floraMetanogenica"></p>
-            <strong>Observaciones</strong>
-            <p class="textarea" id="sintomas" class="sintomas"></p>
-            
-           
+        <div class="chart-container" >
+            <canvas id="myChart"></canvas>
         </div>
-
+    
+       
         
 
         
     </div>
     <br>
-</div>
+    <br>
+    
 
-<div class="page">
-
-      <br>
-
-    <div class="chart-container" >
-        <canvas id="myChart"></canvas>
+    
+    <div id="formValidar" class="formValidar">
+        <div class="intraForm">
+        <strong>CONCLUSIONES</strong>
+        <div class="rebordeado">
+            <p class="textarea" id="resultadoTexto"></p>
+            <strong id="tituloH">FLORA HIDROGÉNICA</strong>
+            <p class="textarea" id="floraHidrogenica"></p>
+            <strong id="tituloM">FLORA METANOGÉNICA</strong>
+            <p class="textarea" id="floraMetanogenica"></p>
+        </div>  
+        </div>
+        <div class="intraForm">
+        <strong>OBSERVACIONES</strong>
+        <div class="rebordeado">
+            <p class="textarea" id="sintomas" class="sintomas"></p>
+        </div>
+        
+        
+        </div>
+        
+       
     </div>
+
 
     
     <div class="firma">
@@ -104,9 +128,10 @@
     </div>
 
   
-</div> 
-<br>
-<br>
+
+
+
+</div>
 
 </div>
 
@@ -118,7 +143,6 @@
     
 
 </div>
-<br>
 
 <!-- <img id="btn"  class="pdfDownload" src="https://png.pngtree.com/png-vector/20221207/ourmid/pngtree-pdf-download-vector-icon-png-image_6514761.png" width="100px" alt="">
 

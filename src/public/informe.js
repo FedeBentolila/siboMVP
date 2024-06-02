@@ -122,7 +122,7 @@ fetch('/dataInforme', {
     let intervalo= parseInt(data.intervalo) 
     
 
-    if (data.protocolo=="Glucosa 10gr" || data.tipo=="intolerancia"){
+    if (data.protocolo=="Glucosa 75gr" || data.tipo=="intolerancia"){
         minutosProtocolo=120
     }else{
         minutosProtocolo=180
@@ -485,7 +485,7 @@ function renderHidrogeno (data){
   let intervalo= parseInt(data.intervalo) 
   
 
-  if (data.protocolo=="Glucosa 10gr" || data.tipo=="intolerancia"){
+  if (data.protocolo=="Glucosa 75gr" || data.tipo=="intolerancia"){
       minutosProtocolo=120
   }else{
       minutosProtocolo=180
@@ -596,7 +596,7 @@ function renderMetano (data){
   let intervalo= parseInt(data.intervalo) 
   
 
-  if (data.protocolo=="Glucosa 10gr" || data.tipo=="intolerancia"){
+  if (data.protocolo=="Glucosa 75gr" || data.tipo=="intolerancia"){
       minutosProtocolo=120
   }else{
       minutosProtocolo=180
@@ -701,7 +701,7 @@ function renderHidrogenoYMetano(data){
   let intervalo= parseInt(data.intervalo) 
   
 
-  if (data.protocolo=="Glucosa 10gr" || data.tipo=="intolerancia"){
+  if (data.protocolo=="Glucosa 75gr" || data.tipo=="intolerancia"){
       minutosProtocolo=120
   }else{
       minutosProtocolo=180
