@@ -16,7 +16,11 @@ import { ConexionMongo } from "./config.js";
 import { User } from "./config.js";
 import nodemailer from "nodemailer"
 import { ContenedorMongo } from "./contenedores/contenedorMongo.js";
-
+import multer from "multer";
+import fs from "fs"
+import path from "path";
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 
 
@@ -1377,6 +1381,39 @@ if(!peticionobj.nauseas){
 
 
   })
+
+  aplicacion.post("/modificarMisColores",ensureLoggedIn("/login"), (peticion, respuesta) => {
+    let nombreUsuario= peticion.user.username
+
+    datosdeMongo.uptdateMongoColoresByUser(nombreUsuario, peticion.body).then(()=>{
+      respuesta.redirect("/misDatos")
+    })
+  
+
+  })
+
+  aplicacion.post('/modificarLogo', upload.single('file'), (req, res) => {
+    let nombreUsuario= req.user.username
+    if (!req.file) {
+      return res.status(400).send('No se ha subido ningún archivo');
+    }
+  
+    // Convertir el archivo a Data URL
+    const fileBuffer = req.file.buffer;
+    const fileExtension = path.extname(req.file.originalname).slice(1);
+    const dataURL = `data:image/${fileExtension};base64,${fileBuffer.toString('base64')}`;
+  
+    console.log(dataURL)
+
+    datosdeMongo.uptdateMongoLogoByUser(nombreUsuario, dataURL).then(()=>{
+
+      res.redirect("/misDatos")
+
+    })
+    
+
+
+  });
 
 
 

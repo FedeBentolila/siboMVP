@@ -150,6 +150,11 @@ const UserSchema= new Schemauser({
     apellido: {type: String},
     fechaNacimiento:{type: String},
     email:{type: String},
+    color1:{type: String},
+    color2:{type: String},
+    color3:{type: String},
+    logo:{type: String},
+
 });
 
 UserSchema.plugin(passportLocalMongoose);

@@ -287,9 +287,54 @@
               document.getElementById("ultimaFirma").remove()
   
             } 
-  
-  
+
+            document.getElementById("personalizables").innerHTML=`
+            <form action="/modificarMisColores" method="post" id="estilos" class="estilos">
+
+            <div class="colores">
+              <div> 
+                <div class="label">
+                  <label for="color1" class="loginfieldname">Color primario</label>
+                </div> 
+                <input type="color" name="color1" value="${data.color1}" required > 
+               </div>
+               <div> 
+                <div class="label">
+                  <label for="color2" class="loginfieldname">Color secundario</label>
+                </div> 
+                <input type="color" name="color2"  value="${data.color2}" required > 
+               </div>
+               <div> 
+                <div class="label">
+                  <label for="color3" class="loginfieldname">Color terciario</label>
+                </div> 
+                <input type="color"  value="${data.color3}" required name="color3" > 
+               </div>
+             
+              </div>
+            <br>
+            <br>
+              <div class="buttonContainer2">
+             <input class="botonazul2" type="submit" value="Guardar">
+             </div>
+          </form>
             
+            `
+  
+  
+            document.getElementById('estilos').addEventListener('submit', function(event) {
+              event.preventDefault(); 
+              Swal.fire({
+                  title: 'Cargando colores',
+                  icon: 'info',
+                  iconColor: "red",
+                  showConfirmButton: false,
+                  timer: 1500
+              }).then(() => {
+              
+                  document.getElementById('estilos').submit();
+              });
+          });
             
         
     }
@@ -335,3 +380,7 @@
   function gotoHome(){
    window.location="/"
   }
+
+
+
+ 

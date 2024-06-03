@@ -243,6 +243,30 @@ let dateStr =
       );
     }
 
+    async uptdateMongoColoresByUser(user, objeto){
+      await User.updateOne(
+        { username: { $eq: user } },
+        {
+          $set: {
+            color1: objeto.color1,
+            color2: objeto.color2,
+            color3: objeto.color3,
+          },
+        }
+      );
+    }
+
+    async uptdateMongoLogoByUser(user, dataURL){
+      await User.updateOne(
+        { username: { $eq: user } },
+        {
+          $set: {
+            logo: dataURL
+          },
+        }
+      );
+    }
+
     async uptdateMongoUserData(user, objeto){
       await User.updateOne(
         { username: { $eq: user } },
