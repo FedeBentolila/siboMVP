@@ -267,6 +267,17 @@ let dateStr =
       );
     }
 
+    async uptdateMongoEpigrafeByUser(user, objeto){
+      await User.updateOne(
+        { username: { $eq: user } },
+        {
+          $set: {
+            epigrafe: objeto.epigrafe
+          },
+        }
+      );
+    }
+
     async uptdateMongoUserData(user, objeto){
       await User.updateOne(
         { username: { $eq: user } },

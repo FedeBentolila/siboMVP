@@ -25,6 +25,21 @@ a{
     justify-content: center;
     align-items: center;
     width: 900px;
+    padding: 5px;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.criterios{
+    width: 80%;
+    font-size: 1vw;
+    
 }
 
 .contenido{
@@ -52,9 +67,6 @@ a{
     border-width: 2px;
 }
 
-.page{
-    width: 100%;
-}
 
 .encabezado{
     display: flex;
@@ -87,14 +99,14 @@ a{
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    font-size: 1rem;
+    font-size: 0.9rem;
     width: 100%;
 }
 
 
 .sintomas{
     text-align: center;
-    font-size: 12px;
+    font-size: 0.8rem;
 }
 
 .datosPaciente{
@@ -112,8 +124,14 @@ a{
 
 }
 
+.epigrafe{
+    font-size: 1vw;
+    text-align: center;
+    width: 100%;
+}
+
 .tabla{
-    font-size: 1rem;
+    font-size: 0.8rem;
     overflow: clip;
     font-weight: normal;
    border-radius: 30px;
@@ -136,7 +154,7 @@ a{
 }
 
 .tabla td {
-    font-size: 1rem;
+    font-size: 0.8rem;
     border: 1px solid gray; 
     border-bottom: gray;
     border-style: solid;
@@ -156,11 +174,6 @@ a{
 }
 
 
-.tabla th:nth-child(odd) {
-    color: #ffffff;
-    background: #5D87B2;
-}
-
 .tabla tr:nth-child(even) {
     background: #ffffff;
     color: black;
@@ -175,7 +188,7 @@ a{
 
 
 .tablaResultado{
-    font-size: 12px;
+    font-size: 0.8rem;
     width: 40%;
     border: none;
     border-collapse: collapse;
@@ -208,7 +221,7 @@ a{
     justify-content: space-between;
     align-items: flex-start;
     width: 90%;
-    font-size: 1rem;
+    font-size: 0.8rem;
  
 }
 
@@ -219,7 +232,7 @@ a{
 .textarea{
     width: 80%;
     font-style: Roboto ;
-    font-size: 1rem;
+    font-size: 0.8rem;
     padding: 5px;
    /*  border-radius: 10px;
     border-color: gray;

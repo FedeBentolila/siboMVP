@@ -154,6 +154,7 @@ const UserSchema= new Schemauser({
     color2:{type: String},
     color3:{type: String},
     logo:{type: String},
+    epigrafe:{type: String},
 
 });
 

@@ -1416,5 +1416,13 @@ if(!peticionobj.nauseas){
   });
 
 
+  aplicacion.post("/modificarEpigrafe",ensureLoggedIn("/login"), (peticion, respuesta) => {
+    let nombreUsuario= peticion.user.username
 
+    datosdeMongo.uptdateMongoEpigrafeByUser(nombreUsuario, peticion.body).then(()=>{
+      respuesta.redirect("/misDatos")
+    })
+  
+
+  })
 

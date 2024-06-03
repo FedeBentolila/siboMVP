@@ -320,6 +320,11 @@
           </form>
             
             `
+            
+            if(data.epigrafe){
+              document.getElementById("epigrafe").innerText=`${data.epigrafe}`
+            }
+
   
   
             document.getElementById('estilos').addEventListener('submit', function(event) {
