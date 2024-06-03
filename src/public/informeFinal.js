@@ -651,6 +651,7 @@ btn.addEventListener('click', function(){
  html2canvas: {
       scrollX: 0,
       scrollY: -window.scrollY,
+      quality:2
     },
     margin: {
       top: 1,
