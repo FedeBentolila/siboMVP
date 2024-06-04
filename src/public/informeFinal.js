@@ -343,7 +343,8 @@ if(datosInforme.tipo=="hidrogeno" || datosInforme.tipo=="intolerancia"){
           min: 0,
           max: limite,
         }
-      }
+      },
+        devicePixelRatio: 3
     }
   });
 
