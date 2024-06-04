@@ -384,7 +384,8 @@ if(MaxCH3>=100){
           min: 0,
           max: limite,
         }
-      }
+      },
+        devicePixelRatio: 3
     }
   });
 
@@ -432,7 +433,8 @@ new Chart(ctx, {
         min: 0,
         max: limite,
       }
-    }
+    },
+      devicePixelRatio: 3
   }
 });
 
