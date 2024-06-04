@@ -38,7 +38,7 @@ a{
 
 .criterios{
     width: 80%;
-    font-size: 2vw;
+    font-size: 12px;
     
 }
 
@@ -125,7 +125,7 @@ a{
 }
 
 .epigrafe{
-    font-size: 2vw;
+    font-size: 12px;
     text-align: center;
     width: 100%;
 }
