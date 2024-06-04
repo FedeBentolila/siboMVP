@@ -294,19 +294,19 @@
             <div class="colores">
               <div> 
                 <div class="label">
-                  <label for="color1" class="loginfieldname">Color primario</label>
+                  <label for="color1" class="loginfieldname">Color lineas</label>
                 </div> 
                 <input type="color" name="color1" value="${data.color1}" required > 
                </div>
                <div> 
                 <div class="label">
-                  <label for="color2" class="loginfieldname">Color secundario</label>
+                  <label for="color2" class="loginfieldname">Color H2</label>
                 </div> 
                 <input type="color" name="color2"  value="${data.color2}" required > 
                </div>
                <div> 
                 <div class="label">
-                  <label for="color3" class="loginfieldname">Color terciario</label>
+                  <label for="color3" class="loginfieldname">Color CH4</label>
                 </div> 
                 <input type="color"  value="${data.color3}" required name="color3" > 
                </div>

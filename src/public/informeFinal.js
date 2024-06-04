@@ -74,8 +74,8 @@ fetch(`/dataUserFirma/${datosInforme.autor}`)
     let contenedorRow1 = document.createElement("tr")
     contenedorRow1.innerHTML=`
     <th class="head">Minuto</th>
-    <th class="head">ppm H2</th>
-    <th class="head">ppm CH3</th>
+    <th class="hidrogeno">ppm H2</th>
+    <th class="metano">ppm CH3</th>
     <th class="head" style="text-align: center;">I.S</th>
     
     `
@@ -126,7 +126,7 @@ if(datosInforme.tipo=="hidrogeno" || datosInforme.tipo=="intolerancia"){
     let contenedorRow1 = document.createElement("tr")
     contenedorRow1.innerHTML=`
     <th class="head">Minuto</th>
-    <th class="head">ppm H2</th>
+    <th class="hidrogeno">ppm H2</th>
     <th class="head" style="text-align: center;">I.S</th>
     
     `
@@ -169,7 +169,7 @@ if(datosInforme.tipo=="metano"){
     let contenedorRow1 = document.createElement("tr")
     contenedorRow1.innerHTML=`
     <th class="head">Minuto</th>
-    <th class="head">ppm CH3</th>
+    <th class="metano">ppm CH3</th>
     <th class="head" style="text-align: center;">I.S</th>
     `
     document.getElementById("tablaResultado").appendChild(contenedorRow1)
@@ -216,14 +216,32 @@ document.getElementById("modelo").innerHTML=`Equipo: ${datosInforme.modelo}`
 
 document.getElementById("motivo").innerHTML=` ${datosInforme.motivo}`
 
-let heads=document.getElementsByClassName("head")
+let hidrogenos=document.getElementsByClassName("hidrogeno")
+
+let metanos=document.getElementsByClassName("metano")
+
+let colorH2="blue"
+let colorCH4="red"
 
 if(datosUsuario.color2){
-  for (const iterator of heads) {
+  
+  for (const iterator of hidrogenos) {
     iterator.style.backgroundColor=`${datosUsuario.color2}`
     iterator.style.borderColor=`${datosUsuario.color2}`
     }
+
+    colorH2=datosUsuario.color2
     
+}
+
+if(datosUsuario.color3){
+  
+  for (const iterator of metanos) {
+    iterator.style.backgroundColor=`${datosUsuario.color3}`
+    iterator.style.borderColor=`${datosUsuario.color3}`
+    }
+    colorCH4=datosUsuario.color3
+  
 }
 
 
@@ -312,6 +330,8 @@ if(datosInforme.tipo=="hidrogeno" || datosInforme.tipo=="intolerancia"){
         label: 'PPM HIDROGENO',
         data: ppmH,
         borderWidth: 3,
+        borderColor:colorH2,
+        backgroundColor:colorH2,
         tension: 0.4
       }
   ]
@@ -351,7 +371,8 @@ if(MaxCH3>=100){
         data: ppmM,
         borderWidth: 3,
         tension: 0.4,
-        borderColor: "red"
+        borderColor:colorCH4,
+        backgroundColor:colorCH4,
       }
   ]
     },
@@ -386,6 +407,8 @@ new Chart(ctx, {
       label: 'PPM HIDROGENO',
       data: ppmH,
       borderWidth: 3,
+      borderColor:colorH2,
+      backgroundColor:colorH2,
       tension: 0.4
     },
 
@@ -393,6 +416,8 @@ new Chart(ctx, {
         label: 'PPM METANO',
         data: ppmM,
         borderWidth: 3,
+        borderColor:colorCH4,
+        backgroundColor:colorCH4,
         tension: 0.4
       }
 
@@ -651,7 +676,7 @@ btn.addEventListener('click', function(){
  html2canvas: {
       scrollX: 0,
       scrollY: -window.scrollY,
-      quality:2
+      scale:5
     },
     margin: {
       top: 1,
