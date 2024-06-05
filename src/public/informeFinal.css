@@ -34,11 +34,29 @@ a{
     justify-content: center;
     align-items: center;
     width: 70%;
+    margin: 5px;
 }
 
+.criteriosContainer{
+    width: 90%;
+}
+
+.siboPositivo{
+    display: none;
+}
+
+.imoPositivo{
+    display: none;
+}
+
+.intolPositivo{
+    display: none;
+}
+
+
 .criterios{
-    width: 80%;
-    font-size: 12px;
+    width: 60%;
+    font-size: 0.4rem;
     
 }
 
@@ -48,7 +66,7 @@ a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-color: #5D86B2;
+    border-color: rgb(93, 134, 178);
     border-width: 5px;
     border-bottom-style: solid;
     border-top-style: solid;
@@ -99,20 +117,20 @@ a{
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    font-size: 0.9rem;
+    font-size: 1rem;
     width: 100%;
 }
 
 
 .sintomas{
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.5rem;
 }
 
 .datosPaciente{
     width: 100%;
     font-family: Roboto;
-  
+    
 
 }
 
@@ -154,7 +172,7 @@ a{
 }
 
 .tabla td {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     border: 1px solid gray; 
     border-bottom: gray;
     border-style: solid;
@@ -221,7 +239,7 @@ a{
     justify-content: space-between;
     align-items: flex-start;
     width: 90%;
-    font-size: 0.8rem;
+    font-size: 0.5rem;
  
 }
 
@@ -233,7 +251,7 @@ a{
     width: 80%;
     font-style: Roboto ;
     font-size: 0.8rem;
-    padding: 5px;
+    padding: 1px;
    /*  border-radius: 10px;
     border-color: gray;
     border-style: solid;*/
@@ -244,7 +262,7 @@ a{
     border-color: gray;
     border-style: solid;
     width: 90%;
-    padding: 10px;
+    padding: 5px;
 }
 
 

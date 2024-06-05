@@ -400,11 +400,12 @@ fetch('/dataInforme', {
   }
 
 
-
+  let intolerancia=false
   let siboHidrogeno=false 
     let siboMetano=false
     let resultado
     let basal= horasH[0]
+  
 
  
   
@@ -451,17 +452,7 @@ fetch('/dataInforme', {
         }
         
       }
-    
-/*       for (const iterator of horasH) {
-
-        if(diferenciaMayorIgual90Minutos(basal, iterator)){
-          
-            indexDeMayorAntesDe90= horasH.indexOf(iterator)
-            break
-        }
-      }
- */
-
+  
       
 
         for (let i = 0; i <= indexDeMayorAntesDe90; i++) {
@@ -489,6 +480,17 @@ fetch('/dataInforme', {
 
       }
 
+      for (let i = 0; i < ppmH.length; i++) {
+        
+        if(parseInt(ppmH[i])>= umbral){
+
+            intolerancia=true
+
+        }
+
+      }
+
+      console.log(intolerancia)
         console.log(interpretadoBasal)
         //// Variables patrón fermentativo
         let patronFermentativo=``
@@ -505,8 +507,30 @@ fetch('/dataInforme', {
 
         }
 
+        if(datosInforme.tipo=="intolerancia"){
+          //intolerancia
 
-      if(siboHidrogeno==true && siboMetano==true){
+          if(intolerancia==true){
+              document.getElementById("floraMetanogenica").remove()
+              document.getElementById("tituloM").remove()
+              document.getElementById("floraHidrogenica").remove()
+              document.getElementById("tituloH").remove()
+              document.getElementById("resultadoTexto").value=`INTOLERANCIA POSITIVA`
+    
+            }else{
+              document.getElementById("floraMetanogenica").remove()
+              document.getElementById("tituloM").remove()
+              document.getElementById("floraHidrogenica").remove()
+              document.getElementById("tituloH").remove()
+              document.getElementById("resultadoTexto").value=`INTOLERANCIA NEGATIVA`
+
+            }
+
+
+        }else{
+          //h2 ch4
+
+          if(siboHidrogeno==true && siboMetano==true){
             resultado= "MIXTO"
 
             if(datosInforme.tipo=="hidrogeno"){
@@ -546,15 +570,7 @@ fetch('/dataInforme', {
           
         }
 
-        if(datosInforme.tipo=="intolerancia"){
-          document.getElementById("floraMetanogenica").remove()
-          document.getElementById("tituloM").remove()
-          document.getElementById("floraHidrogenica").remove()
-          document.getElementById("tituloH").remove()
-          document.getElementById("resultadoTexto").value=`INTOLERANCIA POSITIVA`
-
-        }
-
+       
         if(datosInforme.tipo=="mixto"){
           document.getElementById("floraHidrogenica").value=`SIBO POSITIVO\r\n${patronFermentativo}\r\n${indiceSintomatico}`
           document.getElementById("resultadoTexto").value=`BASAL H2: ${interpretadoBasal}\r\nDIETA PREVIA: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nAUC CH4: ${aucCH3}`
@@ -641,25 +657,16 @@ fetch('/dataInforme', {
           
         }
 
-        if(datosInforme.tipo=="intolerancia"){
-          document.getElementById("floraMetanogenica").remove()
-          document.getElementById("tituloM").remove()
-          document.getElementById("floraHidrogenica").remove()
-          document.getElementById("tituloH").remove()
-          document.getElementById("resultadoTexto").value=`INTOLERANCIA NEGATIVA`
-
-        }
-
-
-    
-        
-           
-
-            
-
      }
 
 
+
+
+
+
+
+
+        }
 
 
 

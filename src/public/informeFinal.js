@@ -525,7 +525,8 @@ function diferenciaMayorIgual90Minutos(hora1, hora2) {
         document.getElementById("resultadoTexto").innerText=
         `${datosInforme.resultado.resultadoTexto}`
 
-        
+        document.getElementById("siboPositivo").style.display="block" 
+        document.getElementById("imoPositivo").style.display="block"        
 
   }
 
@@ -544,6 +545,10 @@ function diferenciaMayorIgual90Minutos(hora1, hora2) {
         document.getElementById("tituloM").remove()
 
       }
+
+      document.getElementById("siboPositivo").style.display="block" 
+
+
     }
 
     if(datosInforme.tipo=="intolerancia"){
@@ -552,12 +557,16 @@ function diferenciaMayorIgual90Minutos(hora1, hora2) {
       document.getElementById("tituloM").remove()
       document.getElementById("floraHidrogenica").remove()
         document.getElementById("tituloH").remove()
+
+      document.getElementById("intolPositivo").style.display="block"
     }
 
     if(datosInforme.tipo=="mixto"){
       document.getElementById("floraHidrogenica").innerText=`${datosInforme.resultado.floraHidrogenica}`
       document.getElementById("resultadoTexto").innerText=`${datosInforme.resultado.resultadoTexto}`
       document.getElementById("floraMetanogenica").innerText=`${datosInforme.resultado.floraMetanogenica}`
+      document.getElementById("siboPositivo").style.display="block" 
+      document.getElementById("imoPositivo").style.display="block" 
 
     }
 
@@ -572,6 +581,9 @@ function diferenciaMayorIgual90Minutos(hora1, hora2) {
       document.getElementById("floraHidrogenica").innerText=`${datosInforme.resultado.floraHidrogenica}`
       document.getElementById("resultadoTexto").innerText=`${datosInforme.resultado.resultadoTexto}`
       document.getElementById("floraMetanogenica").innerText=`${datosInforme.resultado.floraMetanogenica}`
+      document.getElementById("siboPositivo").style.display="block" 
+      document.getElementById("imoPositivo").style.display="block" 
+
 
     }
 
@@ -580,6 +592,7 @@ function diferenciaMayorIgual90Minutos(hora1, hora2) {
       document.getElementById("tituloH").remove()
       document.getElementById("resultadoTexto").innerText=`${datosInforme.resultado.resultadoTexto}`
       document.getElementById("floraMetanogenica").innerText=`${datosInforme.resultado.floraMetanogenica}`
+      document.getElementById("imoPositivo").style.display="block" 
 
     }
 
@@ -587,6 +600,8 @@ function diferenciaMayorIgual90Minutos(hora1, hora2) {
       document.getElementById("floraHidrogenica").innerText=`${datosInforme.resultado.floraHidrogenica}`
       document.getElementById("resultadoTexto").innerText=`${datosInforme.resultado.resultadoTexto}`          
       document.getElementById("floraMetanogenica").innerText=`${datosInforme.resultado.floraMetanogenica}`
+      document.getElementById("siboPositivo").style.display="block" 
+      document.getElementById("imoPositivo").style.display="block" 
 
     }
  
@@ -600,7 +615,8 @@ function diferenciaMayorIgual90Minutos(hora1, hora2) {
       document.getElementById("floraHidrogenica").innerText=`${datosInforme.resultado.floraHidrogenica}`
       document.getElementById("resultadoTexto").innerText=`${datosInforme.resultado.resultadoTexto}`
       document.getElementById("floraMetanogenica").innerText=`${datosInforme.resultado.floraMetanogenica}`
-
+      document.getElementById("siboPositivo").style.display="block" 
+      document.getElementById("imoPositivo").style.display="block"
     }
 
     
@@ -610,6 +626,7 @@ function diferenciaMayorIgual90Minutos(hora1, hora2) {
       document.getElementById("tituloM").remove()
       document.getElementById("floraHidrogenica").remove()
         document.getElementById("tituloH").remove()
+        document.getElementById("intolPositivo").style.display="block"
     }
 
     if(datosInforme.tipo=="metano"){
@@ -617,7 +634,7 @@ function diferenciaMayorIgual90Minutos(hora1, hora2) {
       document.getElementById("tituloH").remove()
       document.getElementById("resultadoTexto").innerText=`${datosInforme.resultado.resultadoTexto}`
       document.getElementById("floraMetanogenica").innerText=`${datosInforme.resultado.floraMetanogenica}`
-
+      document.getElementById("imoPositivo").style.display="block"
     }
 
     if(datosInforme.tipo=="hidrogeno"){
@@ -636,6 +653,8 @@ function diferenciaMayorIgual90Minutos(hora1, hora2) {
 
 
       }
+
+      document.getElementById("siboPositivo").style.display="block" 
 
       
     }
