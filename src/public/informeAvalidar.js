@@ -449,6 +449,9 @@ fetch('/dataInforme', {
         if(diferenciaMayorIgual90Minutos(basal, element)){
           indexDeMayorAntesDe90= index-1
           break
+        }else{
+          ////aca agregue este else para que los estudios incompletos sean contemplados
+          indexDeMayorAntesDe90= index
         }
         
       }
@@ -490,7 +493,6 @@ fetch('/dataInforme', {
 
       }
 
-      console.log(intolerancia)
         console.log(interpretadoBasal)
         //// Variables patrón fermentativo
         let patronFermentativo=``
