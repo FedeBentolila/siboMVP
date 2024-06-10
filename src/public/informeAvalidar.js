@@ -542,14 +542,14 @@ fetch('/dataInforme', {
               document.getElementById("floraHidrogenica").value=`SIBO POSITIVO\r\n${patronFermentativo}\r\n${indiceSintomatico}`
               document.getElementById("floraMetanogenica").value="IMO POSITIVO"
               document.getElementById("resultadoTexto").value=
-              `BASAL H2: ${interpretadoBasal}\r\nDIETA PREVIA: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nPPM CH4: ${ppmM[0]}`
+              `BASAL H2: ${interpretadoBasal}\r\nPREPARACION: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nPPM CH4: ${ppmM[0]}`
   
 
             }else{
               document.getElementById("floraHidrogenica").value=`SIBO POSITIVO\r\n${patronFermentativo}\r\n${indiceSintomatico}`
               document.getElementById("floraMetanogenica").value="IMO POSITIVO"
               document.getElementById("resultadoTexto").value=
-              `BASAL H2: ${interpretadoBasal}\r\nDIETA PREVIA: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nAUC CH4: ${aucCH3}`
+              `BASAL H2: ${interpretadoBasal}\r\nPREPARACION: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nAUC CH4: ${aucCH3}`
   
             }
 
@@ -565,10 +565,10 @@ fetch('/dataInforme', {
           document.getElementById("floraHidrogenica").value=`SIBO POSITIVO\r\n${patronFermentativo}\r\n${indiceSintomatico}`
         
           if(ppmM[0]){
-            document.getElementById("resultadoTexto").value=`BASAL H2: ${interpretadoBasal}\r\nDIETA PREVIA: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\PPM CH4: ${ppmM[0]}`
+            document.getElementById("resultadoTexto").value=`BASAL H2: ${interpretadoBasal}\r\nPREPARACION: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\PPM CH4: ${ppmM[0]}`
             document.getElementById("floraMetanogenica").value="IMO NEGATIVO"
           }else{
-            document.getElementById("resultadoTexto").value=`BASAL H2: ${interpretadoBasal}\r\nDIETA PREVIA: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}`
+            document.getElementById("resultadoTexto").value=`BASAL H2: ${interpretadoBasal}\r\nPREPARACION: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}`
             document.getElementById("floraMetanogenica").remove()
             document.getElementById("tituloM").remove()
           }
@@ -578,7 +578,7 @@ fetch('/dataInforme', {
        
         if(datosInforme.tipo=="mixto"){
           document.getElementById("floraHidrogenica").value=`SIBO POSITIVO\r\n${patronFermentativo}\r\n${indiceSintomatico}`
-          document.getElementById("resultadoTexto").value=`BASAL H2: ${interpretadoBasal}\r\nDIETA PREVIA: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nAUC CH4: ${aucCH3}`
+          document.getElementById("resultadoTexto").value=`BASAL H2: ${interpretadoBasal}\r\nPREPARACION: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nAUC CH4: ${aucCH3}`
           document.getElementById("floraMetanogenica").value="IMO NEGATIVO"
 
         }
@@ -593,7 +593,7 @@ fetch('/dataInforme', {
         if(datosInforme.tipo=="mixto"){
           document.getElementById("floraHidrogenica").value=`SIBO NEGATIVO\r\n${patronFermentativo}\r\n${indiceSintomatico}`
           document.getElementById("resultadoTexto").value=
-          `BASAL H2: ${interpretadoBasal}\r\nDIETA PREVIA: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nAUC CH4: ${aucCH3}`
+          `BASAL H2: ${interpretadoBasal}\r\nPREPARACION: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nAUC CH4: ${aucCH3}`
           document.getElementById("floraMetanogenica").value="IMO POSITIVO"
 
         }
@@ -601,7 +601,7 @@ fetch('/dataInforme', {
         if(datosInforme.tipo=="metano"){
           document.getElementById("floraHidrogenica").remove()
           document.getElementById("tituloH").remove()
-          document.getElementById("resultadoTexto").value=`BASAL CH4: ${ppmM[0]}\r\nDIETA PREVIA: ${datosInforme.estadoDieta}\r\nAUC CH4: ${aucCH3}`
+          document.getElementById("resultadoTexto").value=`BASAL CH4: ${ppmM[0]}\r\nPREPARACION: ${datosInforme.estadoDieta}\r\nAUC CH4: ${aucCH3}`
           document.getElementById("floraMetanogenica").value="IMO POSITIVO"
 
         }
@@ -611,10 +611,10 @@ fetch('/dataInforme', {
 
           if(ppmM.length!=1){
             document.getElementById("resultadoTexto").value=
-            `BASAL H2: ${interpretadoBasal}\r\nDIETA PREVIA: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nAUC CH4: ${aucCH3}`
+            `BASAL H2: ${interpretadoBasal}\r\nPREPARACION: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nAUC CH4: ${aucCH3}`
           }else{
             document.getElementById("resultadoTexto").value=
-            `BASAL H2: ${interpretadoBasal}\r\nDIETA PREVIA: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nPPM CH4: ${ppmM[0]}`
+            `BASAL H2: ${interpretadoBasal}\r\nPREPARACION: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nPPM CH4: ${ppmM[0]}`
 
           }
 
@@ -632,7 +632,7 @@ fetch('/dataInforme', {
 
         if(datosInforme.tipo=="mixto"){
           document.getElementById("floraHidrogenica").value=`SIBO NEGATIVO\r\n${patronFermentativo}\r\n${indiceSintomatico}`
-          document.getElementById("resultadoTexto").value=`BASAL H2: ${interpretadoBasal}\r\nDIETA PREVIA: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nAUC CH4: ${aucCH3}`
+          document.getElementById("resultadoTexto").value=`BASAL H2: ${interpretadoBasal}\r\nPREPARACION: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nAUC CH4: ${aucCH3}`
           document.getElementById("floraMetanogenica").value="IMO NEGATIVO"
 
         }
@@ -640,7 +640,7 @@ fetch('/dataInforme', {
         if(datosInforme.tipo=="metano"){
           document.getElementById("floraHidrogenica").remove()
           document.getElementById("tituloH").remove()
-          document.getElementById("resultadoTexto").value=`BASAL CH4: ${ppmM[0]}\r\nDIETA PREVIA: ${datosInforme.estadoDieta}\r\nAUC CH4: ${aucCH3}`
+          document.getElementById("resultadoTexto").value=`BASAL CH4: ${ppmM[0]}\r\nPREPARACION: ${datosInforme.estadoDieta}\r\nAUC CH4: ${aucCH3}`
           document.getElementById("floraMetanogenica").value="IMO NEGATIVO"
 
         }
@@ -651,11 +651,11 @@ fetch('/dataInforme', {
             document.getElementById("resultadoTexto").value=`BASAL H2: ${interpretadoBasal}\r\nAUC H2: ${aucH2}\r\PPM CH4: ${ppmM[0]}`
             document.getElementById("floraMetanogenica").value="IMO NEGATIVO"
             document.getElementById("floraHidrogenica").value=`SIBO NEGATIVO\r\n${patronFermentativo}\r\n${indiceSintomatico}`
-            document.getElementById("resultadoTexto").value=`BASAL H2: ${interpretadoBasal}\r\nDIETA PREVIA: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nPPM CH4: ${ppmM[0]}`
+            document.getElementById("resultadoTexto").value=`BASAL H2: ${interpretadoBasal}\r\nPREPARACION: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}\r\nPPM CH4: ${ppmM[0]}`
           }else{
           document.getElementById("floraMetanogenica").remove()
           document.getElementById("tituloM").remove()
-          document.getElementById("resultadoTexto").value=`BASAL H2: ${interpretadoBasal}\r\nDIETA PREVIA: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}`
+          document.getElementById("resultadoTexto").value=`BASAL H2: ${interpretadoBasal}\r\nPREPARACION: ${datosInforme.estadoDieta}\r\nAUC H2: ${aucH2}`
           document.getElementById("floraHidrogenica").value=`SIBO NEGATIVO\r\n${patronFermentativo}\r\n${indiceSintomatico}`
 
           }
