@@ -35,13 +35,6 @@
       </div>
     </a>
 
-   <!--  <a class="linkComponente" href="/register">
-      <div class="componenteNavBar">
-        <strong>Nuevo Usuario</strong>
-        <img src="./NUEVOUSUARIO.png" class="imgComponente" alt="nuevoUsuario">
-      </div>
-    </a> -->
-
     <a class="linkComponente" href="/misDatos">
       <div class="componenteNavBar">
         <strong>Mis Datos</strong>
@@ -50,6 +43,13 @@
     </a>
 
     <a class="linkComponente" href="/logout">
+      <div class="componenteNavBar">
+        <strong>Logout</strong>
+        <img src="./logout.png" style="padding-left: 5px;" class="imgComponente" alt="nuevoUsuario">
+      </div>
+    </a>
+
+    <a style="display: none;" class="linkComponente" href="/logout">
       <div class="componenteNavBar">
         <strong id="usuario"></strong>
         <img src="./logout.png" style="padding-left: 5px;" class="imgComponente" alt="nuevoUsuario">
@@ -181,7 +181,7 @@
 
       <div class="containerContainerForm">
   <div class="containerForm">
-    <form class="form" id="form" action="/agregarPaciente" method="post">
+    <form autocomplete="off" class="form" id="form" action="/agregarPaciente" method="post">
 
       <div class="botonX2" id="exit">
         <img   id="close" width=8% src="/CLOSE.png" alt="">
@@ -234,18 +234,23 @@
         <label for="solicitante" class="loginfieldname">¿Quién solicita el estudio?</label>
       </div>
         <input type="text" class="campo" id="solicitante" name="solicitante" required>
-
-        <div class="label"> 
-          <label for="motivo" class="loginfieldname">Motivo del estudio</label>
-        </div>
-          <input type="text" class="campo" id="motivo" name="motivo" required>
-     
+        
+        
+          <div class="label"> 
+            <label for="motivo" class="loginfieldname">Motivo del estudio</label>
+          </div>
+          <div class="autocomplete" style="width: 100%;">
+            <input  type="text" class="campoAutocomplete" id="motivo" name="motivo" required>
+          </div>
+    
 
         <div class="label"> 
         <label for="cobertura" class="loginfieldname">Cobertura</label>
       </div>
-        <input type="text" class="campo" id="cobertura" name="cobertura" required>
-
+      <div class="autocomplete" style="width: 100%;">
+        <input type="text" class="campoAutocomplete" id="cobertura" name="cobertura" required>
+      </div>
+        
         <div class="label"> 
           <label for="nCobertura" class="loginfieldname">N° Cobertura</label>
         </div>
@@ -277,10 +282,12 @@
         <option disabled selected value> -- Elegir opción -- </option>
         <option class="siboOption" value="Lactulosa 10gr">Lactulosa 10gr</option>
         <option class="siboOption" value="Glucosa 75gr">Glucosa 75 gr</option>
-        <option class="intoleranciaOption" value="Fructosa">Fructosa</option>
-        <option class="intoleranciaOption"  value="Lactosa">Lactosa</option>
-        <option class="intoleranciaOption" value="Sorbitol">Sorbitol</option>
-        <option class="intoleranciaOption" value="Fructosa-Sorbitol">Fructosa y Sorbitol</option>
+        <option class="siboOption" value="Glucosa 50gr">Glucosa 50 gr</option>
+        <option class="intoleranciaOption" value="Fructosa 25gr">Fructosa 25gr</option>
+        <option class="intoleranciaOption" value="Sacarosa 25gr">Sacarosa 25gr</option>
+        <option class="intoleranciaOption"  value="Lactosa 25gr">Lactosa 25gr</option>
+        <option class="intoleranciaOption" value="Sorbitol 25gr">Sorbitol 25gr</option>
+        <option class="intoleranciaOption" value="Fructosa 12,5gr, Sorbitol 12,5gr">Fructosa 12,5gr, Sorbitol 12,5gr</option>
       </select>
       <br>
    
@@ -306,8 +313,9 @@
     
       
 
-      <div class="label"> 
-      <label for="estadoDieta" class="loginfieldname">¿Dieta Previa suficiente?</label>
+      <div class="labelDieta"> 
+      <label for="estadoDieta" class="loginfieldname">¿Preparación suficiente?</label>
+      <img id="help" style="cursor: pointer;" src="./circle-help.png" alt="">
       </div>
       <select id="estadoDieta" class="campo" name="estadoDieta" required>
         <option value="SUFICIENTE">Suficiente</option>
@@ -315,6 +323,59 @@
       </select>
       <br>
       <br>
+
+      <div id="preparacionOculta" style="display: none;">
+        <div class="preparacion" >
+          <div  class="logintitle2">
+          <div>
+              <strong>Preparación previa  </strong>
+           </div>
+          </div>
+          <br>   
+          <div class="labelAndInputContainer">
+            <p class="loginfieldname2">
+              Dieta pobre en Hidratos de carbono complejos el día previo, no haber consumido legumbres, verduras de hoja, salvado o cereales con alto contenido de fibra
+            </p>
+          </div>
+          <br>
+          <div class="labelAndInputContainer">
+            <p class="loginfieldname2">
+              Ayuno de 12 hs para sólidos y líquidos
+            </p>
+          </div>
+          <br>
+          <div class="labelAndInputContainer">
+            <p class="loginfieldname2">
+              Suspensión de medicamentos proquinéticos, antiácidos, laxantes, antidiarreicos o antiflatulentos 72 hs antes
+            </p>
+          </div>
+          <br>
+          <div class="labelAndInputContainer">
+            <p class="loginfieldname2">
+            No haber consumido antibióticos al menos un mes antes del estudio  
+            </p>
+          </div>
+          <br>
+          <div class="labelAndInputContainer">
+            <p class="loginfieldname2">
+            No haber realizado estudios que requieran limpieza colónica 48 hs antes ej: Colonoscopía 
+            </p>
+          </div>
+          <br>
+          <div class="labelAndInputContainer">
+            <p class="loginfieldname2">
+            No lavarse los dientes con pasta dental
+            </p>
+          </div>
+        
+          <div class="botonX22">
+
+          <img class="X"  id="close2" src="/CLOSE.png" alt="">
+          
+          </div>
+          </div>
+
+      </div>
 
       
 

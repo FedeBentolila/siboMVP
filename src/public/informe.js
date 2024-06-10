@@ -3,6 +3,9 @@ const socket= io.connect();
 const urlParams =window.location.href;
 const myArray = urlParams.split("/");
 const id= myArray[4]
+const final=myArray[5]
+
+console.log(final)
 
 let contadorH=0
 let contadorM=0
@@ -99,6 +102,11 @@ fetch('/dataInforme', {
 }
 
 
+  if(final){
+   let elemento= document.getElementsByClassName("fl-table")
+   elemento[0].scrollIntoView()
+  }
+
 
 
   })
@@ -122,7 +130,7 @@ fetch('/dataInforme', {
     let intervalo= parseInt(data.intervalo) 
     
 
-    if (data.protocolo=="Glucosa 75gr" || data.tipo=="intolerancia"){
+    if (data.protocolo=="Glucosa 75gr" || data.protocolo=="Glucosa 50gr" || data.tipo=="intolerancia"){
         minutosProtocolo=120
     }else{
         minutosProtocolo=180
@@ -290,7 +298,7 @@ fetch('/dataInforme', {
            <div  class="logintitle2">
            <div>
            <strong>${data.apellido}</strong>
-           <p id="medicionPopUp${data._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+           <p id="medicionPopUp${data._id}" class="medicionPopUp">Mediciones: ${nMedicion}/${cantidadMaxMediciones}</p>
        </div>
            <img   width=20% src="/ESPIRADO.png" alt="">
            </div>
@@ -350,7 +358,7 @@ fetch('/dataInforme', {
            <div  class="logintitle2">
            <div>
            <strong>${data.apellido}</strong>
-           <p id="medicionPopUp${data._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+           <p id="medicionPopUp${data._id}" class="medicionPopUp">Mediciones: ${nMedicion}/${cantidadMaxMediciones}</p>
        </div>
            <img   width=20% src="/ESPIRADO.png" alt="">
            </div>
@@ -405,7 +413,7 @@ fetch('/dataInforme', {
            <div  class="logintitle2">
            <div>
            <strong>${data.apellido}</strong>
-           <p id="medicionPopUp${data._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+           <p id="medicionPopUp${data._id}" class="medicionPopUp">Mediciones: ${nMedicion}/${cantidadMaxMediciones}</p>
        </div>
            <img   width=20% src="/ESPIRADO.png" alt="">
            </div>
@@ -485,7 +493,7 @@ function renderHidrogeno (data){
   let intervalo= parseInt(data.intervalo) 
   
 
-  if (data.protocolo=="Glucosa 75gr" || data.tipo=="intolerancia"){
+  if (data.protocolo=="Glucosa 75gr" || data.protocolo=="Glucosa 50gr" || data.tipo=="intolerancia"){
       minutosProtocolo=120
   }else{
       minutosProtocolo=180
@@ -510,8 +518,8 @@ function renderHidrogeno (data){
     <thead>
     <tr>
       <th>#</th>
-      <th>Tiempo</th>
-      <th>PPM</th>
+      <th><img style="padding-top: 5px;" src="/RELOJ_BLANCO.png" width=20% alt=""></th>
+      <th>H2</th>
       <th  style="display: none;"></th>
       <th>Eliminar</th>
     </tr>  
@@ -596,7 +604,7 @@ function renderMetano (data){
   let intervalo= parseInt(data.intervalo) 
   
 
-  if (data.protocolo=="Glucosa 75gr" || data.tipo=="intolerancia"){
+  if (data.protocolo=="Glucosa 75gr" || data.protocolo=="Glucosa 50gr" || data.tipo=="intolerancia"){
       minutosProtocolo=120
   }else{
       minutosProtocolo=180
@@ -620,8 +628,8 @@ function renderMetano (data){
   <thead>
   <tr>
     <th>#</th>
-    <th>Tiempo</th>
-    <th>PPM</th>
+    <th><img style="padding-top: 5px;" src="/RELOJ_BLANCO.png" width=20% alt=""></th>
+    <th>CH4</th>
     <th  style="display: none;"></th>
     <th>Eliminar</th>
   </tr>  
@@ -701,7 +709,7 @@ function renderHidrogenoYMetano(data){
   let intervalo= parseInt(data.intervalo) 
   
 
-  if (data.protocolo=="Glucosa 75gr" || data.tipo=="intolerancia"){
+  if (data.protocolo=="Glucosa 75gr" || data.protocolo=="Glucosa 50gr" || data.tipo=="intolerancia"){
       minutosProtocolo=120
   }else{
       minutosProtocolo=180
@@ -722,7 +730,7 @@ function renderHidrogenoYMetano(data){
   <thead>
   <tr>
     <th>#</th>
-    <th><img src="/RELOJ_BLANCO.png" width=20% alt=""></th>
+    <th><img style="padding-top: 5px;" src="/RELOJ_BLANCO.png" width=20% alt=""></th>
     <th>H2</th>
     <th>CH4</th>
     <th  style="display: none;"></th>

@@ -272,23 +272,7 @@ aplicacion.get("/pacienteForm",ensureLoggedIn("/login"), (peticion, respuesta) =
 
    })
   
-/*  aplicacion.get("/eliminarTurno/:id",ensureLoggedIn("/login"), (peticion, respuesta) => {
-    let id= peticion.params.id
-  
-    datosdeMongo.deleteMongoTurnoById(id).then(()=>{
-      io.sockets.emit("nuevoTurno", "reload")
-      respuesta.redirect("/VerTurnos")
-    }).catch((err)=>{
-      console.log(err)
-      io.sockets.emit("error", err);
-    })
 
-   })  */
-
-
- /*   aplicacion.get("/turnosHoy",ensureLoggedIn("/login"), (peticion, respuesta) => {
-    respuesta.sendFile("turnosHoy.html", { root: publicRoot });
-  }); */
 
   aplicacion.get("/VerTurnos",ensureLoggedIn("/login"), (peticion, respuesta) => {
     respuesta.sendFile("verTurnos.html", { root: publicRoot });
@@ -537,46 +521,6 @@ aplicacion.get("/salaDeEsperaOperador/:sala",ensureLoggedIn("/login"), (peticion
 
 
 
-///////////////////////////////////
-aplicacion.get("/dataTurnos",ensureLoggedIn("/login"), (peticion, respuesta) => {
-  let databuscada
-
-  datosdeMongo.getAllTurnosParaConfirmar().then((res)=>{
-    databuscada=res
-    respuesta.json(databuscada)
-}).catch((err)=>{
-  console.log(err)
-})
-  
-
-}); 
-
-aplicacion.get("/dataTurnosAingresar",ensureLoggedIn("/login"), (peticion, respuesta) => {
-  let databuscada
-
-  datosdeMongo.getAllTurnosParaIngresar().then((res)=>{
-    databuscada=res
-    respuesta.json(databuscada)
-}).catch((err)=>{
-  console.log(err)
-})
-  
-
-}); 
-
-aplicacion.get("/confirmarTurno/:id", (peticion, respuesta) => {
-    
-  respuesta.sendFile("confirmador.html", { root: publicRoot });
-});
-
-
-aplicacion.get("/ingresarTurno/:id", (peticion, respuesta) => {
-    
-  respuesta.sendFile("ingresador.html", { root: publicRoot });
-});
-
-
-
 
     aplicacion.get("/datapacientes",ensureLoggedIn("/login"), (peticion, respuesta) => {
       let databuscada
@@ -595,6 +539,10 @@ aplicacion.get("/ingresarTurno/:id", (peticion, respuesta) => {
       respuesta.sendFile("informe.html", { root: publicRoot });
     } )
 
+     aplicacion.get("/acceder/:id/final",ensureLoggedIn("/login"),(peticion, respuesta) => {
+      respuesta.sendFile("informe.html", { root: publicRoot });
+    } )
+
     aplicacion.post("/dataInforme",ensureLoggedIn("/login"), (peticion, respuesta) => {
       let id= peticion.body
       let databuscada
@@ -610,25 +558,6 @@ aplicacion.get("/ingresarTurno/:id", (peticion, respuesta) => {
     
     
     })
-
-
-    aplicacion.post("/dataInformeTurno",ensureLoggedIn("/login"), (peticion, respuesta) => {
-      let id= peticion.body
-      let databuscada
-    
-      datosdeMongo.getByIdMongoTurno(id.id).then((res)=>{
-        databuscada=res
-        respuesta.json(databuscada[0])
-        
-      }).catch((err)=>{
-        console.log(err)
-      })
-    
-    
-    
-    })
-
-
     
 
     
@@ -659,7 +588,7 @@ aplicacion.get("/ingresarTurno/:id", (peticion, respuesta) => {
 
         let minutosProtocolo
 
-        if (res[0].protocolo=="Glucosa 10gr" || res[0].tipo=="intolerancia"){
+        if (res[0].protocolo=="Glucosa 75gr" || res[0].protocolo=="Glucosa 50gr" || res[0].tipo=="intolerancia"){
             minutosProtocolo=120
         }else{
             minutosProtocolo=180
@@ -724,7 +653,7 @@ aplicacion.get("/ingresarTurno/:id", (peticion, respuesta) => {
 
         let minutosProtocolo
 
-        if (res[0].protocolo=="Glucosa 10gr" || res[0].tipo=="intolerancia"){
+        if (res[0].protocolo=="Glucosa 75gr" || res[0].protocolo=="Glucosa 50gr" || res[0].tipo=="intolerancia"){
             minutosProtocolo=120
         }else{
             minutosProtocolo=180
@@ -808,7 +737,7 @@ aplicacion.get("/ingresarTurno/:id", (peticion, respuesta) => {
 
           let minutosProtocolo
 
-          if (res[0].protocolo=="Glucosa 10gr" || res[0].tipo=="intolerancia"){
+          if (res[0].protocolo=="Glucosa 75gr" || res[0].protocolo=="Glucosa 50gr" || res[0].tipo=="intolerancia"){
               minutosProtocolo=120
           }else{
               minutosProtocolo=180
@@ -976,9 +905,9 @@ aplicacion.get("/ingresarTurno/:id", (peticion, respuesta) => {
         io.sockets.emit("registroArchivado2", registroArchivado2);
 
       }).then(()=>{
-        /// una vez que lo tenga hecho puedo redireccionarlo directo para el informe archivado
+        
 
-        respuesta.redirect(`/informes`)
+        respuesta.redirect(`/informeFinal/${registroArchivado}`)
       }).catch((err)=>{
         console.log(err)
       io.sockets.emit("error", err);
@@ -1064,32 +993,6 @@ aplicacion.get("/ingresarTurno/:id", (peticion, respuesta) => {
 
     datosdeMongo.getByDNImongo(dni).then((res)=>{
       
-      respuesta.send(res)
-
-    }).catch((err)=>{
-      console.log(err)
-    })
-
-  });
-
-  aplicacion.get("/buscarTurnoParaConfirmar/:dni",ensureLoggedIn("/login"), (peticion, respuesta) => {
-
-    let dni= peticion.params.dni
-
-    datosdeMongo.getByDNImongoTurnosParaConfirmar(dni).then((res)=>{
-      respuesta.send(res)
-
-    }).catch((err)=>{
-      console.log(err)
-    })
-
-  });
-
-  aplicacion.get("/buscarTurnoParaIngresar/:dni",ensureLoggedIn("/login"), (peticion, respuesta) => {
-
-    let dni= peticion.params.dni
-
-    datosdeMongo.getByDNImongoTurnosParaIngresar(dni).then((res)=>{
       respuesta.send(res)
 
     }).catch((err)=>{
@@ -1266,11 +1169,6 @@ if(!peticionobj.nauseas){
         peticionobj.regurgitacion= true
     }
 
-   /*  if(!peticionobj.epigastralgia){
-      peticionobj.epigastralgia= false
-    }else{
-        peticionobj.epigastralgia= true
-    } */
 
     ///////////////////////////////////////////cesd
 
@@ -1357,19 +1255,6 @@ if(!peticionobj.nauseas){
   });
 
 
-  aplicacion.post("/confirmarTurno/:id", (peticion, respuesta) => {
-
-    let id= peticion.params.id
-    let peticionobj= peticion.body
-    peticionobj.estado="confirmado"
-    
-    datosdeMongo.confirmarTurnoById(id, peticionobj).then(()=>{
-      io.sockets.emit("nuevoTurno", "reload")
-        respuesta.redirect("/verTurnos")
-    })
-
-  
-  })
 
   aplicacion.post("/modificarMisDatos",ensureLoggedIn("/login"), (peticion, respuesta) => {
     let nombreUsuario= peticion.user.username

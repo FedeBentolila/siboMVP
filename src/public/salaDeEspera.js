@@ -26,7 +26,7 @@ function render (data){
         let intervalo= parseInt(iterador.intervalo) 
         let minutosProtocolo
 
-        if (iterador.protocolo=="Glucosa 75gr" || iterador.tipo=="intolerancia"){
+        if (iterador.protocolo=="Glucosa 75gr" || iterador.protocolo=="Glucosa 50gr" || iterador.tipo=="intolerancia"){
             minutosProtocolo=120
         }else{
             minutosProtocolo=180
@@ -149,7 +149,7 @@ function render (data){
                 <div  class="logintitle2">
                 <div>
                     <strong>${iterador.apellido}</strong>
-                    <p id="medicionPopUp${iterador._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+                    <p id="medicionPopUp${iterador._id}" class="medicionPopUp">Mediciones: ${nMedicion}/${cantidadMaxMediciones}</p>
                 </div>
                 <img   width=20% src="/ESPIRADO.png" alt="">
                 </div>
@@ -204,7 +204,7 @@ function render (data){
             <div  class="logintitle2">
             <div>
             <strong>${iterador.apellido}</strong>
-            <p id="medicionPopUp${iterador._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+            <p id="medicionPopUp${iterador._id}" class="medicionPopUp">Mediciones: ${nMedicion}/${cantidadMaxMediciones}</p>
             </div>
             <img   width=20% src="/ESPIRADO.png" alt="">
             </div>
@@ -257,7 +257,7 @@ function render (data){
             <div  class="logintitle2">
             <div>
             <strong>${iterador.apellido}</strong>
-            <p id="medicionPopUp${iterador._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+            <p id="medicionPopUp${iterador._id}" class="medicionPopUp">Mediciones: ${nMedicion}/${cantidadMaxMediciones}</p>
             </div>
             <img   width=20% src="/ESPIRADO.png" alt="">
             </div>
@@ -363,7 +363,7 @@ sortTableByNextMeasurement()
 
         let minutosProtocolo
 
-        if (data.protocolo=="Glucosa 75gr" || data.tipo=="intolerancia"){
+        if (data.protocolo=="Glucosa 75gr" || data.protocolo=="Glucosa 50gr" || data.tipo=="intolerancia"){
             minutosProtocolo=120
         }else{
             minutosProtocolo=180
@@ -478,7 +478,7 @@ sortTableByNextMeasurement()
                 <div  class="logintitle2">
                 <div>
                 <strong>${data.apellido}</strong>
-                <p id="medicionPopUp${data._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+                <p id="medicionPopUp${data._id}" class="medicionPopUp">Mediciones: ${nMedicion}/${cantidadMaxMediciones}</p>
                 </div>
                 <img   width=20% src="/ESPIRADO.png" alt="">
                 </div>
@@ -534,7 +534,7 @@ sortTableByNextMeasurement()
             <div  class="logintitle2">
             <div>
                 <strong>${data.apellido}</strong>
-                <p id="medicionPopUp${data._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+                <p id="medicionPopUp${data._id}" class="medicionPopUp">Mediciones: ${nMedicion}/${cantidadMaxMediciones}</p>
                 </div>
             <img   width=20% src="/ESPIRADO.png" alt="">
             </div>
@@ -586,7 +586,7 @@ sortTableByNextMeasurement()
             <div  class="logintitle2">
             <div>
                 <strong>${data.apellido}</strong>
-                <p id="medicionPopUp${data._id}" class="medicionPopUp">Medición: ${nMedicion}/${cantidadMaxMediciones}</p>
+                <p id="medicionPopUp${data._id}" class="medicionPopUp">Mediciones: ${nMedicion}/${cantidadMaxMediciones}</p>
                 </div>
             <img   width=20% src="/ESPIRADO.png" alt="">
             </div>
@@ -746,12 +746,36 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo){
                     cancelButtonText: "Cancelar"
                   }).then((result) => {
                     if (result.isConfirmed) {
-                        socket.emit('new hidrogeno', hidrogeno)        
+                        socket.emit('new hidrogeno', hidrogeno) 
+                        document.getElementById(`valorHidrogeno${id}`).value="" 
+                        document.getElementById(`sintoma${id}`).value =""   
                     }})
 
                 
             } else {
-                socket.emit('new hidrogeno', hidrogeno)                  
+                socket.emit('new hidrogeno', hidrogeno)
+                document.getElementById(`valorHidrogeno${id}`).value="" 
+                document.getElementById(`sintoma${id}`).value =""  
+                
+                ///redirigir a ficha en caso de estudio completado 
+                if(nMediciones==(cantidadMaxMediciones-1)){
+                    Swal.fire({
+                        title: "¿Queres finalizar las mediciones?",
+                        text: "Ya cargaste todas las mediciones del protocolo",
+                        icon: "warning",
+                        iconColor: "red",
+                        showCancelButton: true,
+                        confirmButtonColor: "#5D87B2",
+                        cancelButtonColor: "gray",
+                        confirmButtonText: "Confirmar",
+                        cancelButtonText: "Cancelar"
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.replace(`/acceder/${id}/final`);
+                            
+                        }})
+                }
+
             }
 
 
@@ -806,12 +830,36 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo){
                     cancelButtonText: "Cancelar"
                   }).then((result) => {
                     if (result.isConfirmed) {
-                        socket.emit('new metano', metano)        
+                        socket.emit('new metano', metano)
+                        document.getElementById(`valorMetano${id}`).value="" 
+                        document.getElementById(`sintoma${id}`).value =""          
                     }})
 
                 
             } else {
-                socket.emit('new metano', metano)                  
+                socket.emit('new metano', metano) 
+                document.getElementById(`valorMetano${id}`).value="" 
+                document.getElementById(`sintoma${id}`).value ="" 
+                
+                 ///redirigir a ficha en caso de estudio completado 
+
+                 if(nMediciones==(cantidadMaxMediciones-1)){
+                    Swal.fire({
+                        title: "¿Queres finalizar las mediciones?",
+                        text: "Ya cargaste todas las mediciones del protocolo",
+                        icon: "warning",
+                        iconColor: "red",
+                        showCancelButton: true,
+                        confirmButtonColor: "#5D87B2",
+                        cancelButtonColor: "gray",
+                        confirmButtonText: "Confirmar",
+                        cancelButtonText: "Cancelar"
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.replace(`/acceder/${id}/final`);
+                            
+                        }})
+                }
             }
 
 
@@ -882,13 +930,39 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo){
                   }).then((result) => {
                     if (result.isConfirmed) {
                         socket.emit('new hidrogeno', hidrogeno) 
-                        socket.emit('new metano', metano)        
+                        socket.emit('new metano', metano) 
+                        document.getElementById(`valorHidrogeno${id}`).value="" 
+                        document.getElementById(`valorMetano${id}`).value=""
+                        document.getElementById(`sintoma${id}`).value =""  
+                               
                     }})
 
                 
             } else {
                 socket.emit('new hidrogeno', hidrogeno) 
-                socket.emit('new metano', metano)                  
+                socket.emit('new metano', metano) 
+                document.getElementById(`valorHidrogeno${id}`).value="" 
+                document.getElementById(`valorMetano${id}`).value=""
+                document.getElementById(`sintoma${id}`).value =""      
+                
+                 ///redirigir a ficha en caso de estudio completado 
+                 if(nMediciones==(cantidadMaxMediciones-1)){
+                    Swal.fire({
+                        title: "¿Queres finalizar las mediciones?",
+                        text: "Ya cargaste todas las mediciones del protocolo",
+                        icon: "warning",
+                        iconColor: "red",
+                        showCancelButton: true,
+                        confirmButtonColor: "#5D87B2",
+                        cancelButtonColor: "gray",
+                        confirmButtonText: "Confirmar",
+                        cancelButtonText: "Cancelar"
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.replace(`/acceder/${id}/final`);
+                            
+                        }})
+                }
             }
           
 
@@ -904,6 +978,10 @@ function addValueAndTime(tipo, id, intervalo, minutosProtocolo){
     }
 
     document.getElementById(`formx${id}`).style.display="none"
+
+    ///aca refresh de campos de input
+
+
 }
 
 

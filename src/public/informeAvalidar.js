@@ -431,12 +431,15 @@ fetch('/dataInforme', {
       
         // Calcula la diferencia en minutos
         var diferenciaMinutos = Math.abs(totalMinutos1 - totalMinutos2);
+
+         // Considera la posibilidad de que las horas crucen la medianochec AGREGADO NUEVO
+        if (diferenciaMinutos > 720) { // 720 minutos son 12 horas
+        diferenciaMinutos = 1440 - diferenciaMinutos; // 1440 minutos son 24 horas
+         }
       
         // Verifica si la diferencia es mayor o igual a 90 minutos
-        //return diferenciaMinutos >= 90;
         return diferenciaMinutos > 90;
-        //Bustos quiere 100
-        //return diferenciaMinutos > 100;
+    
       }
 
 
@@ -497,7 +500,7 @@ fetch('/dataInforme', {
         //// Variables patrón fermentativo
         let patronFermentativo=``
 
-        if(datosInforme.protocolo!="Glucosa 75gr"){
+        if(datosInforme.protocolo!="Glucosa 75gr" && datosInforme.protocolo!="Glucosa 50gr" ){
           if(aucH2>=3500 && siboHidrogeno==true){
             patronFermentativo=`PERFIL FERMENTATIVO AUMENTADO`
             }else if(aucH2>=3500 && interpretadoBasal!="NORMAL"){
@@ -713,7 +716,7 @@ fetch('/dataInforme', {
         showConfirmButton: false
       });
   
-      window.location.replace("/informes")
+      window.location.replace(`/informeFinal/${id}`)
   
     }
     

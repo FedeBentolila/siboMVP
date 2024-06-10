@@ -38,6 +38,13 @@
 
     <a class="linkComponente" href="/logout">
       <div class="componenteNavBar">
+        <strong>Logout</strong>
+        <img src="/logout.png" style="padding-left: 5px;" class="imgComponente" alt="nuevoUsuario">
+      </div>
+    </a> 
+
+    <a style="display: none;" class="linkComponente" href="/logout">
+      <div class="componenteNavBar">
         <strong id="usuario3"></strong>
         <img src="/logout.png" style="padding-left: 5px;" class="imgComponente" alt="nuevoUsuario">
       </div>
@@ -159,16 +166,12 @@
       <div class="buscador">
         <label class="loginfieldname" for="buscador">Buscar por DNI</label>
         <input class="campo" id="dniAbuscar" type="text">
-        <img src="/LUPA.png" onclick="buscar()" width="8%" alt="">
+        <img src="/LUPA.png" style="cursor: pointer;" onclick="buscar()" width="8%" alt="">
   
       </div>
     </div>
     
-   <!--  <div onclick="buscar()" class="botonesFirma" >
-        <button  class="botonazul" >
-          Buscador
-        </button>
-    </div> -->
+
     <br>
    
     <div class="table-wrapper" id="results">
@@ -186,9 +189,6 @@
 
     <br>
    
-     
-
-
     
     <nav class="paginador">
         <ul  class="paginador2"  id="paginator">
