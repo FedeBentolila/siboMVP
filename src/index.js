@@ -228,59 +228,7 @@ aplicacion.get("/pacienteForm",ensureLoggedIn("/login"), (peticion, respuesta) =
     respuesta.sendFile("pacienteForm.html", { root: publicRoot });
   });
 
-  aplicacion.post("/agregarTurno", (peticion, respuesta)=>{
-    let peticionobj= peticion.body
-    let dni=peticionobj.dni
-    let tipo=peticionobj.tipo
-    peticionobj.estado="paraConfirmar"
-
-    datosdeMongo.getByDNIyTipoMongoTurnos(dni, tipo).then((res)=>{
-      if(res.length==0){
-        datosdeMongo.saveMongoTurno(peticionobj).then(()=>{
-          respuesta.sendFile("exitoAgregarTurno.html", { root: publicRoot });
-          io.sockets.emit("nuevoTurno", "reload")
-        }).catch((err)=>{
-          console.log(err)
-        })
-      }else{
-        respuesta.sendFile("falloAgregarTurno.html", { root: publicRoot });
-
-      }
-
-
-    })
-
-   
-
-  })
-
-  aplicacion.post("/eliminarTurno",ensureLoggedIn("/login"), (peticion, respuesta) => {
-    let id= peticion.body
-    
-      datosdeMongo.deleteMongoTurnoById(id.id).then(()=>{
-  
-        io.sockets.emit("nuevoTurno", "reload")
-  
-        respuesta.json("Ok")
-  
-      }).catch((err)=>{
-        console.log(err)
-        respuesta.json("notOk")
-        io.sockets.emit("nuevoTurno", "reload")
-      })
-
-
-   })
-  
-
-
-  aplicacion.get("/VerTurnos",ensureLoggedIn("/login"), (peticion, respuesta) => {
-    respuesta.sendFile("verTurnos.html", { root: publicRoot });
-  });
-
-  aplicacion.get("/ingresarAsala",ensureLoggedIn("/login"), (peticion, respuesta) => {
-    respuesta.sendFile("ingresarAsala.html", { root: publicRoot });
-  });
+ 
  
 
   aplicacion.post("/agregarPaciente", (peticion, respuesta)=>{
@@ -308,41 +256,7 @@ aplicacion.get("/pacienteForm",ensureLoggedIn("/login"), (peticion, respuesta) =
     
   })
 
-  aplicacion.post("/agregarPacienteDesdeTurno/:id", (peticion, respuesta)=>{
-
-    let idAborrar=peticion.params.id
-
-    let peticionobj= peticion.body
-
-      peticionobj.hidrogeno=[]
-      peticionobj.metano=[]
-      peticionobj.estado="enSala"
-
-
-    datosdeMongo.saveMongo(peticionobj).then((res)=>{
-      let idAgregado=res
-      peticionobj._id= res
-      let data = peticionobj
-      io.sockets.emit("notificacion", data);
-      
-      
-      datosdeMongo.deleteMongoTurnoById(idAborrar).then(()=>{
-        io.sockets.emit("nuevoTurno", "reload");
-        respuesta.redirect(`/exitoAgregar/${idAgregado}`)
-      }).catch((err)=>{
-        console.log(err)
-      })
-
-
-    }).catch((err)=>{
-      console.log(err)
-      io.sockets.emit("error", err);
-    })
-
-    
-  })
  
-
   aplicacion.get("/exitoAgregar/:id",ensureLoggedIn("/login"), (peticion, respuesta) => {
     respuesta.sendFile("exitoAgregar.html", { root: publicRoot });
   });

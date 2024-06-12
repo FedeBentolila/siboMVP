@@ -4,7 +4,7 @@ const sala= parseInt(myArray[4])
 
 //document.getElementById("salaTitle").innerHTML=`Sala de espera ${sala}`
 
-console.log(sala)
+
 
 const socket= io.connect();
 
@@ -1514,4 +1514,63 @@ fetch('/dataUser')
         
         
           
+        }
+
+
+
+        let botonLimpiar=document.getElementById("limpiarSala")
+        botonLimpiar.addEventListener("click", limpiarSala)
+
+        function limpiarSala(){
+
+            Swal.fire({
+                title: "¿Estás realmente seguro?",
+                text: "Este botón borra todos los pacientes de la sala de espera, no podrás recuperarlos",
+                icon: "warning",
+                iconColor: "red",
+                showCancelButton: true,
+                confirmButtonColor: "#5D87B2",
+                cancelButtonColor: "gray",
+                confirmButtonText: "Confirmar",
+                cancelButtonText: "Cancelar"
+              }).then((result) => {
+                if (result.isConfirmed) {
+
+                let filas= document.getElementsByTagName("tr")
+                var arr = [...filas]
+                   arr.shift()
+                   
+                   for (const iterator of arr) {
+
+                    let id=iterator.id
+                    
+                    let borrado={
+                        "id":id
+                    }
+                    
+                    fetch('/eliminar', {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json;charset=utf-8'
+                        },
+                        body: JSON.stringify(borrado)
+                      }).catch((err)=>{
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: "Algo salió mal!",
+                            confirmButtonColor: "#5D86B2",
+                          });
+                      })
+
+
+ 
+                   }
+                   
+                   
+                   
+
+                }})
+
+
         }
