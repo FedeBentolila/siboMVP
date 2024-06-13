@@ -28,7 +28,7 @@ fetch('/dataInforme', {
 
     if(datosInforme.tipo=="mixto"){
         
-        document.getElementById("tipoEstudio").innerHTML=`TEST DE H2 Y CH3 EN AIRE ESPIRADO`
+        document.getElementById("tipoEstudio").innerHTML=`TEST DE H2 Y CH4 EN AIRE ESPIRADO`
 
         let minuto=0
 
@@ -38,7 +38,7 @@ fetch('/dataInforme', {
         contenedorRow1.innerHTML=`
         <th>Minuto</th>
         <th>ppm H2</th>
-        <th>ppm CH3</th>
+        <th>ppm CH4</th>
         <th style="text-align: center;">I.S</th>
         
         `
@@ -121,7 +121,7 @@ fetch('/dataInforme', {
     }
 
     if(datosInforme.tipo=="metano"){
-        document.getElementById("tipoEstudio").innerHTML=`TEST DE CH3 EN AIRE ESPIRADO`
+        document.getElementById("tipoEstudio").innerHTML=`TEST DE CH4 EN AIRE ESPIRADO`
 
         let minuto=0
 
@@ -130,7 +130,7 @@ fetch('/dataInforme', {
         let contenedorRow1 = document.createElement("tr")
         contenedorRow1.innerHTML=`
         <th>Minuto</th>
-        <th>ppm CH3</th>
+        <th>ppm CH4</th>
         <th style="text-align: center;">I.S</th>
         
         `

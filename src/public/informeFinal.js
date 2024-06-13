@@ -65,7 +65,7 @@ fetch(`/dataUserFirma/${datosInforme.autor}`)
 
   if(datosInforme.tipo=="mixto"){
         
-    document.getElementById("tipoEstudio").innerHTML=`TEST DE H2 Y CH3 EN AIRE ESPIRADO`
+    document.getElementById("tipoEstudio").innerHTML=`TEST DE H2 Y CH4 EN AIRE ESPIRADO`
 
     let minuto=0
 
@@ -75,7 +75,7 @@ fetch(`/dataUserFirma/${datosInforme.autor}`)
     contenedorRow1.innerHTML=`
     <th class="head">Minuto</th>
     <th class="hidrogeno">ppm H2</th>
-    <th class="metano">ppm CH3</th>
+    <th class="metano">ppm CH4</th>
     <th class="head" style="text-align: center;">I.S</th>
     
     `
@@ -160,7 +160,7 @@ if(datosInforme.tipo=="hidrogeno" || datosInforme.tipo=="intolerancia"){
 }
 
 if(datosInforme.tipo=="metano"){
-    document.getElementById("tipoEstudio").innerHTML=`TEST DE CH3 EN AIRE ESPIRADO`
+    document.getElementById("tipoEstudio").innerHTML=`TEST DE CH4 EN AIRE ESPIRADO`
 
     let minuto=0
 
@@ -169,7 +169,7 @@ if(datosInforme.tipo=="metano"){
     let contenedorRow1 = document.createElement("tr")
     contenedorRow1.innerHTML=`
     <th class="head">Minuto</th>
-    <th class="metano">ppm CH3</th>
+    <th class="metano">ppm CH4</th>
     <th class="head" style="text-align: center;">I.S</th>
     `
     document.getElementById("tablaResultado").appendChild(contenedorRow1)
