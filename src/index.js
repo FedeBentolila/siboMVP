@@ -1170,18 +1170,50 @@ if(!peticionobj.nauseas){
 
 
 
-  aplicacion.post("/modificarMisDatos",ensureLoggedIn("/login"), (peticion, respuesta) => {
+  aplicacion.post("/modificarMisDatos",ensureLoggedIn("/login"),upload.single('file'), (peticion, respuesta) => {
     let nombreUsuario= peticion.user.username
-    console.log(peticion.body)
+
+    let ok={"ok":"ok"}
 
    datosdeMongo.uptdateMongoUserData(nombreUsuario, peticion.body).then(()=>{
-    respuesta.redirect("/misDatos")
+
+    datosdeMongo.uptdateMongoColoresByUser(nombreUsuario, peticion.body).then(()=>{
+      if (!peticion.file) {
+        //return res.status(400).send('No se ha subido ningún archivo');
+        datosdeMongo.uptdateMongoEpigrafeByUser(nombreUsuario, peticion.body).then(()=>{
+          respuesta.send(ok)
+        })
+      }else{
+          // Convertir el archivo a Data URL
+      const fileBuffer = peticion.file.buffer;
+      const fileExtension = path.extname(peticion.file.originalname).slice(1);
+      const dataURL = `data:image/${fileExtension};base64,${fileBuffer.toString('base64')}`;
+    
+      //console.log(dataURL)
+  
+      datosdeMongo.uptdateMongoLogoByUser(nombreUsuario, dataURL).then(()=>{
+  
+        datosdeMongo.uptdateMongoEpigrafeByUser(nombreUsuario, peticion.body).then(()=>{
+          respuesta.send(ok)
+        })
+  
+      })
+
+
+      }
+    
+      
+
+      
+    })
+
+    
    }) 
 
 
   })
 
-  aplicacion.post("/modificarMisColores",ensureLoggedIn("/login"), (peticion, respuesta) => {
+/*   aplicacion.post("/modificarMisColores",ensureLoggedIn("/login"), (peticion, respuesta) => {
     let nombreUsuario= peticion.user.username
 
     datosdeMongo.uptdateMongoColoresByUser(nombreUsuario, peticion.body).then(()=>{
@@ -1189,9 +1221,9 @@ if(!peticionobj.nauseas){
     })
   
 
-  })
+  }) */
 
-  aplicacion.post('/modificarLogo', upload.single('file'), (req, res) => {
+ /*  aplicacion.post('/modificarLogo', upload.single('file'), (req, res) => {
     let nombreUsuario= req.user.username
     if (!req.file) {
       return res.status(400).send('No se ha subido ningún archivo');
@@ -1212,10 +1244,10 @@ if(!peticionobj.nauseas){
     
 
 
-  });
+  }); */
 
 
-  aplicacion.post("/modificarEpigrafe",ensureLoggedIn("/login"), (peticion, respuesta) => {
+ /*  aplicacion.post("/modificarEpigrafe",ensureLoggedIn("/login"), (peticion, respuesta) => {
     let nombreUsuario= peticion.user.username
 
     datosdeMongo.uptdateMongoEpigrafeByUser(nombreUsuario, peticion.body).then(()=>{
@@ -1223,5 +1255,5 @@ if(!peticionobj.nauseas){
     })
   
 
-  })
+  }) */
 

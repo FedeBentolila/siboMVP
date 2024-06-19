@@ -185,16 +185,16 @@
 
       
       <div class="botonX2" id="exit">
-        <img   id="close" width=8% src="/CLOSE.png" alt="">
+        <img   id="close" width=10% src="/CLOSE.png" alt="">
         
         </div>
 
      
       
-        <div class="tituloseccion">
+        <div class="tituloseccionUp">
           <div class="divisorImgYtitulo">
             <img class="imagenNuevo" src="./MISDATOS.png" >
-            <strong>Mis Datos </strong>
+            <p>Mis Datos </p>
           </div>
             <p class="leyenda"  > Modifique sus datos y firma digital </p>
         </div>
@@ -203,19 +203,17 @@
 
             <section class="sectionMisDatos " >
               <br>
-              <br>
-                <form  action="/modificarMisDatos" method="post" id="usuario" class="usuario" > 
+                <form  action="/modificarMisDatos" method="post" id="usuario" class="usuario" enctype="multipart/form-data" > 
                       
                 </form>
-                <br>
-                <br>
+                
         
                     <div class="datosFirma ">
-                    <div class="ultimaFirma" style="text-align: center;" >
-                        <div >
+                    <div class="ultimaFirma"  >
+                       
                             <strong class="tituloFirma">Firma-Digital</strong>
                             
-                        </div>
+                        
                    
                         <div >
                              <canvas id="sig-canvas" width="auto" height="160">
@@ -248,85 +246,34 @@
                         </div>
                   
                     <br>
-                    <br>
                 </div>
                 
                
                 <div class="botonesFirma">
-                    <button  class="botonazul" id="sig-submitBtn">Subir Firma</button>
+                    <button style="display: none;" class="botonazul" id="sig-submitBtn">Subir Firma</button>
                     <button class="botonblanco" id="sig-clearBtn">Limpiar</button>
                 </div>
 
                 <br>
-                <br>
         
                 
               </section>
 
-              <div class="tituloseccion">
-                <div class="divisorImgYtitulo">
-                  <strong>Colores</strong>
-                </div>
-                  <p class="leyenda" >Colores del informe </p>
-              </div>
-
-              <section class="personalizables" id="personalizables">
-                
+              
 
 
-              </section>
-
-
-              <br>
-              <br>
-              <div class="tituloseccion">
-                <div class="divisorImgYtitulo">
-                  <strong>Logo del informe</strong>
-                </div>
-                  <p class="leyenda" >Modificar mi logo</p>
-              </div>
-              <br>
-              <section id="personalizablesLogo" class="personalizables">
-                <form action="/modificarLogo" method="post" id="estilos2" class="estilos" enctype="multipart/form-data">
-                  <input class="campo" type="file" name="file" accept=".jpg, .jpeg, .png" required />
-
-                  <br>
-                  <br>
-                    <div class="buttonContainer2">
-                   <input class="botonazul2" id="boton" type="submit" value="Guardar">
-                   </div>
-                </form>
-
-
-              </section>
-
-              <br>
-              <br>
-              <div class="tituloseccion">
-                <div class="divisorImgYtitulo">
-                  <strong>Pie de página</strong>
-                </div>
-                  <p class="leyenda" >Modificar el pie de página</p>
-              </div>
-              <br>
-              <section id="personalizablesLogo" class="personalizables">
-                <form action="/modificarEpigrafe" method="post" id="estilos2" class="estilos" >
-                  <textarea name="epigrafe" id="epigrafe" class="campo" placeholder="Ej: Nombre institución, dirección, teléfono"></textarea>
-                  <br>
-                  <br>
-                    <div class="buttonContainer2">
-                   <input class="botonazul2" id="boton" type="submit" value="Guardar">
-                   </div>
-                </form>
-
-
-              </section>
-
+            
+              
      
         
     
 
-     
+              <div class="botonesFirma">
+                <button class="botonazul" id="visible-save-button" >Guardar</button>
+              </div>
+            <br>  
+            <br>
+
         
             </div>
 
@@ -343,6 +290,7 @@
       <br>
       <br>
 
+      
    
 
 
