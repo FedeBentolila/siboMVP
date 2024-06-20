@@ -12,6 +12,10 @@
     background: #BDE7F9 108.42%;
 }
 
+.imgHerramienta{
+    width: 80%;
+}
+
 .brandLogo{
     width: 15%;
 }
@@ -288,8 +292,12 @@ color: var(--Color, #5D87B2);
     }
 
     .imgBotonNavBar{
-        width: 10%;
+        width: 12%;
         margin: 5%;
+    }
+
+    .imgHerramienta{
+        width: 60%;
     }
 
     
