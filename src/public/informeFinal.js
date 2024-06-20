@@ -45,9 +45,12 @@ fetch(`/dataUserFirma/${datosInforme.autor}`)
   
   `
 
-  document.getElementById("logo").innerHTML=`
-  <img src="${datosUsuario.logo}" width=40%  alt="" >
-  `
+  let logo= document.createElement("img")
+  logo.setAttribute("src",`${datosUsuario.logo}`)
+  logo.setAttribute("width",`15%`)
+
+
+  document.getElementById("logo").appendChild(logo) 
 
   if(datosUsuario.color1){
     document.getElementById("contenido").style.borderColor=`${datosUsuario.color1}`
