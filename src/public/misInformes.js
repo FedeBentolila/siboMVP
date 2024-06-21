@@ -39,20 +39,20 @@ function render (data){
         <td> 
         <div class="mobileIcon">
         <a href="/informeFinal/${iterador._id}">
-        <img style="cursor: pointer;" src="/show.png" alt="">
+        <img style="cursor: pointer; width: 24px" src="/show.png" alt="">
       </a>
       </div>
 
       <div class="desktopIcon">
         <a href="#" onclick="window.open('/informeFinal/${iterador._id}','mywin')">
-        <img style="cursor: pointer;" src="/show.png" alt="">
+        <img style="cursor: pointer; width: 24px" src="/show.png" alt="">
       </a>
       </div>
       
       
       </td>
         <td> 
-        <img style="cursor: pointer;" onclick="eliminarArchivo('${iterador._id}')"  src="/delete.png" width=30px  alt="">
+        <img style="cursor: pointer; width: 24px" onclick="eliminarArchivo('${iterador._id}')"  src="/delete.png" width=30px  alt="">
         </td>
         `;
         document.getElementById("registros").appendChild(contenedor)
@@ -270,20 +270,20 @@ function buscar(){
             <td> 
             <div class="mobileIcon">
             <a href="/informeFinal/${iterador._id}">
-            <img style="cursor: pointer;" src="/show.png" alt="">
+            <img style="cursor: pointer; width: 24px" src="/show.png" alt="">
           </a>
           </div>
     
           <div class="desktopIcon">
             <a href="#" onclick="window.open('/informeFinal/${iterador._id}','mywin')">
-            <img style="cursor: pointer;" src="/show.png" alt="">
+            <img style="cursor: pointer; width: 24px" src="/show.png" alt="">
           </a>
           </div>
           
           
           </td>
           <td> 
-          <img style="cursor: pointer;" onclick="eliminarArchivo('${iterador._id}')" src="/delete.png" width=30px  alt="">
+          <img style="cursor: pointer; width: 24px" onclick="eliminarArchivo('${iterador._id}')" src="/delete.png" width=30px  alt="">
           </td>
             `;
             document.getElementById("registros").appendChild(contenedor)
@@ -383,11 +383,14 @@ function buscar(){
       
       function reveal (){
         let displayedNavbar=document.getElementById("reveal")
+        let hideWhileNavBar1= document.getElementById("hideOnNavBar1")
       
         if(displayedNavbar.style.display=="block"){
           displayedNavbar.style.display="none"
+          hideWhileNavBar1.style.display=""
         }else{
           displayedNavbar.style.display="block"
+           hideWhileNavBar1.style.display="none"
         }
       
       

@@ -22,7 +22,7 @@ a{
 .container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 900px;
     padding: 5px;
@@ -33,12 +33,13 @@ a{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 90%;
     margin: 5px;
 }
 
 .criteriosContainer{
     width: 88%;
+   
 }
 
 .siboPositivo{
@@ -56,15 +57,16 @@ a{
 
 .criterios{
     width: 60%;
-    font-size: 10px;
+    font-size: 8px;
     
 }
 
 .contenido{
     width: 100%;
+    min-height: 1100px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border-color: rgb(93, 134, 178);
     border-width: 5px;
@@ -117,7 +119,7 @@ a{
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    font-size: 16px;
+    font-size: 14px;
     color: #626262;
     width: 100%;
 }
@@ -125,7 +127,7 @@ a{
 
 .sintomas{
     text-align: center;
-    font-size: 0.5rem;
+    font-size: 12px;
 }
 
 .datosPaciente{
@@ -209,17 +211,8 @@ a{
 }
 
 
-.tablaResultado{
-    font-size: 0.8rem;
-    width: 40%;
-    border: none;
-    border-collapse: collapse;
-}
 
-.tablaResultado td{
-    border-style: solid;
-    border-color: black;
-}
+
 
 
 
@@ -240,9 +233,10 @@ a{
 .formValidar{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
     width: 91%;
+   
     
  
 }
