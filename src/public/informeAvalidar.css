@@ -79,7 +79,7 @@ a{
     margin: auto;
     overflow: clip;
     width: 50%;
-    border-radius: 30px;
+    border-radius: 20px;
     border-color: gray;
     border-style: solid;
     font-family: Roboto;
@@ -319,7 +319,7 @@ textarea{
     margin: auto;
     overflow: clip;
     width: 90%;
-    border-radius: 30px;
+    border-radius: 20px;
     border-color: black;
     border-style: solid;
     font-family: Roboto;

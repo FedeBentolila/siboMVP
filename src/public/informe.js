@@ -693,8 +693,8 @@ function renderMetano (data){
   let contenedorBoton = document.createElement("div");
   contenedorBoton.classList.add("botoneraGuardarDeshacer")
   contenedorBoton.innerHTML=`
-  <button  type="submit" class="botonazul">Guardar</button>
-  <button  type="button" onclick="reset2(event)" class="botonblanco">Deshacer</button>
+  <button  type="submit" class="botonazul">Guardar Cambios</button>
+  <button  type="button" onclick="reset2(event)" class="botonblanco">Deshacer Cambios</button>
   `
   document.getElementById("botonformMetano").appendChild(contenedorBoton)
 
@@ -828,8 +828,8 @@ for (let index = 0; index < data.metano.length; index++) {
 let contenedorBoton = document.createElement("div");
 contenedorBoton.classList.add("botoneraGuardarDeshacer")
 contenedorBoton.innerHTML=`
-<button  type="submit" class="botonazul">Guardar</button>
-<button  type="button" onclick="reset2(event)" class="botonblanco">Deshacer</button>
+<button  type="submit" class="botonazul">Guardar Cambios</button>
+<button  type="button" onclick="reset2(event)" class="botonblanco">Deshacer Cambios</button>
 
 `
 document.getElementById("botonformHidrogenoYmetano").appendChild(contenedorBoton)
