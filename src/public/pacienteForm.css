@@ -9,13 +9,29 @@
    
 }
 
+.tituloseccionUp{
+    width: 100%;
+display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center;
+ color: var(--Color, #5D87B2);
+ text-align: center;
+ font-family: Roboto;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 33.6px /* 157.156% */;
+}
+
 .imgComponente{
     width: 20%;
     margin: 10%;
 }
 
 .imagenNuevo{
-    width: 30%;
+    width: 20%;
+    margin: 8px;
 }
 
 .autocomplete {
@@ -56,12 +72,15 @@
 
 .divisorImgYtitulo{
     display: flex;
+    width: 80%;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    margin-top: 5px;
 }
 
 .leyenda{
+    font-size: 20px;
     margin: 10px;
 }
 
@@ -202,7 +221,7 @@ color: var(--Color, #5D87B2);
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
    }
 
@@ -285,8 +304,8 @@ color: var(--Color, #5D87B2);
    
 
    .botonazul{
-    height: 50px;
-    width: 50%;
+    height: 40px;
+    width: 90%;
     border: none;
     display: flex;
     padding: 7px 25px;
@@ -580,7 +599,10 @@ color: var(--Color, #5D87B2);
 
     
 .leyenda{
-    font-size: 65%;
+    font-size: 70%;
+    margin-left: 10px;
+    margin-top: 0px;
+    font-weight: 400;
 }
 
 
@@ -597,8 +619,10 @@ color: var(--Color, #5D87B2);
     justify-content: flex-end;
     align-items: center;
     text-align: center;
-    margin: 20px;
-    width: 90%;
+    margin-left: 30px;
+    margin-right: 30px ;
+    margin-top: 30px;
+    width: 95%;
 }
 
 
@@ -644,6 +668,23 @@ color: var(--Color, #5D87B2);
     top: 20px;
     right: 20px;
     width: 8%;
+}
+
+.tituloseccionUp{
+    width: 100%;
+    display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items:flex-start ;
+ color: var(--Color, #5D87B2);
+ text-align: center;
+ font-family: Roboto;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 500;
+ border-color: lightgray;
+ border-bottom-style: solid;
+ line-height: 33.6px /* 157.156% */;
 }
 
 
