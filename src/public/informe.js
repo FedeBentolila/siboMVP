@@ -213,7 +213,7 @@ fetch('/dataInforme', {
   </table>
 
   <div class="containerRelojAzul2">
-      <strong class="tituloseccion2" >Mediciones</strong>
+      <strong class="tituloseccion2" ></strong>
       
      </div>
     
@@ -336,7 +336,7 @@ fetch('/dataInforme', {
          
            <div class="botonX2">
 
-           <img style="position: absolute; top: 20px; right: 20px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+           <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
            
            </div>
            </div>
@@ -396,7 +396,7 @@ fetch('/dataInforme', {
          
            <div class="botonX2">
 
-           <img style="position: absolute; top: 20px; right: 20px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+           <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
            
            </div>
            </div>
@@ -461,7 +461,7 @@ fetch('/dataInforme', {
              
                <div class="botonX2">
 
-               <img style="position: absolute; top: 20px; right: 20px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+               <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
                
                </div>
            
@@ -518,10 +518,10 @@ function renderHidrogeno (data){
     <thead>
     <tr>
       <th>#</th>
-      <th><img style="padding-top: 5px;" src="/RELOJ_BLANCO.png" width=20% alt=""></th>
+      <th><img  src="/RELOJ_BLANCO.png" class="relojBlancoTabla"  alt=""></th>
       <th>H2</th>
       <th  style="display: none;"></th>
-      <th>Eliminar</th>
+      <th></th>
     </tr>  
     </thead>
     <tbody id="tablaHidrogeno">
@@ -584,8 +584,8 @@ function renderHidrogeno (data){
     contenedorBoton.classList.add("botoneraGuardarDeshacer")
     contenedorBoton.innerHTML=`
    
-    <button  type="submit" class="botonazul">Guardar</button>
-    <button  type="button" onclick="reset2(event)" class="botonblanco">Deshacer</button>
+    <button  type="submit" class="botonazul">Guardar Cambios</button>
+    <button  type="button" onclick="reset2(event)" class="botonblanco">Deshacer Cambios</button>
     
     
     `
@@ -628,10 +628,10 @@ function renderMetano (data){
   <thead>
   <tr>
     <th>#</th>
-    <th><img style="padding-top: 5px;" src="/RELOJ_BLANCO.png" width=20% alt=""></th>
+    <th><img class="relojBlancoTabla" src="/RELOJ_BLANCO.png"  alt=""></th>
     <th>CH4</th>
     <th  style="display: none;"></th>
-    <th>Eliminar</th>
+    <th></th>
   </tr>  
   </thead>
   <tbody id="tablaMetano">
@@ -730,7 +730,7 @@ function renderHidrogenoYMetano(data){
   <thead>
   <tr>
     <th>#</th>
-    <th><img style="padding-top: 5px;" src="/RELOJ_BLANCO.png" width=20% alt=""></th>
+    <th><img class="relojBlancoTabla" src="/RELOJ_BLANCO.png" alt=""></th>
     <th>H2</th>
     <th>CH4</th>
     <th  style="display: none;"></th>
@@ -2116,11 +2116,17 @@ let botonburger = document.getElementById("menuBurger")
   
   function reveal (){
     let displayedNavbar=document.getElementById("reveal")
+    let hideWhileNavBar1= document.getElementById("hideOnNavBar1")
+    let hideWhileNavBar2= document.getElementById("hideOnNavBar2")
   
     if(displayedNavbar.style.display=="block"){
       displayedNavbar.style.display="none"
+      hideWhileNavBar1.style.display=""
+      hideWhileNavBar2.style.display=""
     }else{
       displayedNavbar.style.display="block"
+      hideWhileNavBar1.style.display="none"
+      hideWhileNavBar2.style.display="none"
     }
   
   

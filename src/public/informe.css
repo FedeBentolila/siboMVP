@@ -9,6 +9,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    width: 100%;
 }
 
   
@@ -251,8 +252,8 @@
     background-color: #ffffff;
     position: sticky;
     border-radius: 10px;
-    padding: 5px;
-    width: 15%;
+   
+    width: 10%;
     height: min-content;
   }
   
@@ -261,13 +262,13 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 19.31;
     font-weight: bold;
     color: #5D87B2;
   }
   
   .separator {
-    font-size: 2rem;
+    font-size: 19.31;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -282,6 +283,7 @@
       color: #5D87B2;
       border-radius: 30px;
       padding: 5px;
+      font-size: 19.31;
     
     
   }
@@ -528,14 +530,14 @@ color: var(--Color, #5D87B2);
     line-height: 24px /* 150% */;
     display: flex;
     padding: 10px;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
     border-radius: 10px;
     border: 1px solid #DEE2E6;
     background: #FFF;
     margin-bottom: 5px;
     cursor: default;
-    height: min-content;
+    height: 15px;
    } 
 
    
@@ -580,6 +582,10 @@ color: var(--Color, #5D87B2);
     text-align: center;
    } 
 
+   .valorGas{
+    width: 20%;
+   }
+
    
 .fl-table {
 
@@ -621,7 +627,13 @@ color: var(--Color, #5D87B2);
     border-style: solid;
     border-color: #5D87B2;
     background: #5D87B2;
-    font-size: 15px;
+    border-right-color: white;
+    font-size: 16px;
+}
+
+.relojBlancoTabla{
+    padding-top: 5px;
+    width: 10%;
 }
 
 
@@ -746,7 +758,7 @@ color: var(--Color, #5D87B2);
    }
 
    .horaAzul{
-    font-size: 2rem;
+    font-size: 19.31px;
     font-style: Roboto;
     color: white;
    }
@@ -787,8 +799,8 @@ color: var(--Color, #5D87B2);
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 40%;
-    padding: 8px;
+    width: 22%;
+    padding: 5px;
    }
 
    .botonX3{
@@ -912,8 +924,8 @@ color: var(--Color, #5D87B2);
     background-color: #ffffff;
     position: sticky;
     border-radius: 10px;
-    padding: 5px;
-    width: 30%;
+   
+    width: 40%;
     height: min-content;
   }
   
@@ -922,13 +934,13 @@ color: var(--Color, #5D87B2);
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 19.31px;
     font-weight: bold;
     color: #5D87B2;
   }
   
   .separator {
-    font-size: 1rem;
+    font-size: 19.31;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1142,8 +1154,9 @@ color: var(--Color, #5D87B2);
     justify-content: flex-end;
     align-items: center;
     text-align: center;
-    margin: 30px;
-    width: 90%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 95%;
 }
 
 
@@ -1159,7 +1172,7 @@ color: var(--Color, #5D87B2);
       }
 
       .imgRelojAzul{
-        width: 30%;
+        width: 25%;
       }
 
       .containerRelojAzul{
@@ -1171,7 +1184,7 @@ color: var(--Color, #5D87B2);
        }
 
        .horaAzul{
-        font-size: 1rem;
+        font-size: 19.31px;
         font-style: Roboto;
         color: white;
        }
@@ -1217,8 +1230,24 @@ color: var(--Color, #5D87B2);
   .datosInforme{
     width: 90%;
   }
-    
 
+  .relojAzul{
+    background-color: #5D86B2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    height: 25px;
+
+   }
+
+    
+   .relojBlancoTabla{
+    padding-top: 5px;
+    width: 20%;
+}
 
    
     

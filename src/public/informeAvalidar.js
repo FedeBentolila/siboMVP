@@ -260,10 +260,10 @@ fetch('/dataInforme', {
 
   let interpretadoBasal= parseInt(ppmH[0]) 
 
-  if(interpretadoBasal>14){
+  if(interpretadoBasal>19){
     interpretadoBasal="ALTO"
   }else if(interpretadoBasal>10){
-    interpretadoBasal="LEVEMENTE ALTO"
+    interpretadoBasal="NORMAL"
   }else{
     interpretadoBasal="NORMAL"
   }

@@ -79,7 +79,7 @@ th:nth-child(13), td:nth-child(13) {
     margin: auto;
     text-align: left;
     padding: 30px;
-    border-radius: 30px;
+    border-radius: 20px;
     border-color: #5D86B2;
     border-style: solid;
     
@@ -207,9 +207,10 @@ th:nth-child(13), td:nth-child(13) {
     align-items: center;
     background-color: #ffffff;
     position: sticky;
-    border-radius: 30px;
-    padding: 5px;
+    border-radius: 10px;
+   
     width: 15%;
+    height: min-content;
   }
   
   .time {
@@ -236,7 +237,7 @@ th:nth-child(13), td:nth-child(13) {
       text-align: center;
       background-color: #fff;
       color: #5D87B2;
-      border-radius: 30px;
+      border-radius: 20px;
       padding: 5px;
     
     
@@ -492,7 +493,7 @@ color: var(--Color, #5D87B2);
 
 
    .botonazul{
-    height: 30px;
+    height: 40px;
     border: none;
     display: flex;
     padding: 5px;
@@ -509,7 +510,7 @@ color: var(--Color, #5D87B2);
     font-style: normal;
     font-weight: 500;
     line-height: 24px /* 112.254% */;
-    width: 60%;
+    width: 90%;
     cursor: pointer;
    
    }
@@ -609,7 +610,7 @@ color: var(--Color, #5D87B2);
  flex-direction: column;
  justify-content: center;
  align-items: center;
- border-radius: 30px;
+ border-radius: 20px;
  background: white
 }
 
@@ -654,7 +655,7 @@ color: var(--Color, #5D87B2);
     margin: auto;
     overflow: clip;
     width: 80%;
-    border-radius: 30px;
+    border-radius: 20px;
     border-color: #5D87B2;
     border-style: solid;
     font-family: Roboto;
@@ -697,6 +698,7 @@ color: var(--Color, #5D87B2);
     border-style: solid;
     border-color: #5D87B2;
     background: #5D87B2;
+    border-right-color: white;
     font-size: 15px;
 }
 
@@ -753,9 +755,10 @@ color: var(--Color, #5D87B2);
     align-items: center;
     background-color: #ffffff;
     position: sticky;
-    border-radius: 30px;
-    padding: 5px;
+    border-radius: 10px;
+    
     width: 25%;
+    height: min-content;
   }
   
   .time {
@@ -782,7 +785,7 @@ color: var(--Color, #5D87B2);
       text-align: center;
       background-color: #fff;
       color: #5D87B2;
-      border-radius: 30px;
+      border-radius: 20px;
       padding: 5px;
     
     
@@ -974,7 +977,7 @@ color: var(--Color, #5D87B2);
     .table-wrapper{
         margin: auto;
         width: 100%;
-        border-radius: 30px;
+        border-radius: 20px;
         border-color: #5D87B2;
         border-style: solid;
         font-family: Roboto;

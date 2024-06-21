@@ -101,7 +101,7 @@ function render (data){
         <td id="nMedicion${iterador._id}"> ${nMedicion} </td>
         <td id="hrMedicion${iterador._id}"> ${hrMedicion} </td>
         <td id="proxMedicion${iterador._id}"> ${proxMedicion} </td>
-        <td> <a href="/exitoAgregar/${iterador._id}"><img src="/qr.png" width=40px  alt=""></a></td>
+        <td> <a href="/exitoAgregar/${iterador._id}"><img src="/qr.png" width=30px  alt=""></a></td>
         <td> <a href="/acceder/${iterador._id}"><img src="/FICHA.png" width=40px  alt=""></a></td>
         
         <td id="proxMedicion2${iterador._id}"><div>${proxMedicion}</div><div>${nMedicion}/${cantidadMaxMediciones}</div></td>
@@ -186,7 +186,7 @@ function render (data){
               
                 <div class="botonX2">
 
-                <img style="position: absolute; top: 20px; right: 20px;" id="close${iterador._id}" width=8% src="/CLOSE.png" alt="">
+                <img style="position: absolute; top: 10px; right: 10px;" id="close${iterador._id}" width=8% src="/CLOSE.png" alt="">
                 
                 </div>
                 </div>
@@ -242,7 +242,7 @@ function render (data){
               
                 <div class="botonX2">
 
-                <img style="position: absolute; top: 20px; right: 20px;" id="close${iterador._id}" width=8% src="/CLOSE.png" alt="">
+                <img style="position: absolute; top: 10px; right: 10px;" id="close${iterador._id}" width=8% src="/CLOSE.png" alt="">
                 
                 </div>
             `
@@ -305,7 +305,7 @@ function render (data){
               
                 <div class="botonX2">
 
-                <img style="position: absolute; top: 20px; right: 20px;" id="close${iterador._id}" width=8% src="/CLOSE.png" alt="">
+                <img style="position: absolute; top: 10px; right: 10px;" id="close${iterador._id}" width=8% src="/CLOSE.png" alt="">
                 
                 </div>
             `
@@ -434,7 +434,7 @@ sortTableByNextMeasurement()
         <td id="nMedicion${data._id}"> ${nMedicion} </td>
         <td id="hrMedicion${data._id}"> ${hrMedicion} </td>
         <td id="proxMedicion${data._id}"> ${proxMedicion} </td>
-        <td> <a href="/exitoAgregar/${data._id}"><img src="/qr.png" width=40px  alt=""></a></td>
+        <td> <a href="/exitoAgregar/${data._id}"><img src="/qr.png" width=30px  alt=""></a></td>
         <td> <a href="/acceder/${data._id}"><img src="/FICHA.png" width=40px  alt=""></a></td>
         <td id="proxMedicion2${data._id}"><div>${proxMedicion}</div><div>${nMedicion}/${cantidadMaxMediciones}</div></td>
         <td class="celdaSoplar" id="boton${data._id}"> <img  src="/medirAzul.png" width=40px  alt=""></td>
@@ -515,7 +515,7 @@ sortTableByNextMeasurement()
               
                 <div class="botonX2">
 
-                <img style="position: absolute; top: 20px; right: 20px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+                <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
                 
                 </div>
                 </div>
@@ -572,7 +572,7 @@ sortTableByNextMeasurement()
               
                 <div class="botonX2">
 
-                <img style="position: absolute; top: 20px; right: 20px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+                <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
                 
                 </div>
             
@@ -634,7 +634,7 @@ sortTableByNextMeasurement()
               
                 <div class="botonX2">
 
-                <img style="position: absolute; top: 20px; right: 20px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
+                <img style="position: absolute; top: 10px; right: 10px;" id="close${data._id}" width=8% src="/CLOSE.png" alt="">
                 
                 </div>
             `
@@ -1505,11 +1505,23 @@ fetch('/dataUser')
         
         function reveal (){
           let displayedNavbar=document.getElementById("reveal")
-        
+          let hideWhileNavBar1= document.getElementById("hideOnNavBar1")
+          let hideWhileNavBar2= document.getElementById("hideOnNavBar2")
+          let hideWhileNavBar3= document.getElementById("hideOnNavBar3")
+          let results=document.getElementById("results")
+
           if(displayedNavbar.style.display=="block"){
             displayedNavbar.style.display="none"
+            hideWhileNavBar1.style.display=""
+            hideWhileNavBar2.style.display=""
+            hideWhileNavBar3.style.display=""
+            results.style.display=""
           }else{
             displayedNavbar.style.display="block"
+            hideWhileNavBar1.style.display="none"
+            hideWhileNavBar2.style.display="none"
+            hideWhileNavBar3.style.display="none"
+            results.style.display="none"
           }
         
         

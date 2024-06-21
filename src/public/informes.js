@@ -197,11 +197,14 @@ fetch('/dataUser')
       
       function reveal (){
         let displayedNavbar=document.getElementById("reveal")
+        let hideWhileNavBar1= document.getElementById("hideOnNavBar1")
       
         if(displayedNavbar.style.display=="block"){
           displayedNavbar.style.display="none"
+          hideWhileNavBar1.style.display=""
         }else{
           displayedNavbar.style.display="block"
+          hideWhileNavBar1.style.display="none"
         }
       
       
