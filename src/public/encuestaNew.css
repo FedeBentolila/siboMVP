@@ -1,0 +1,9 @@
+input[type='radio']{
+    width: 25px;
+    height: 25px;
+}
+
+input[type='checkbox']{
+    width: 25px;
+    height: 25px;
+}

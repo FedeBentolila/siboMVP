@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta para el paciente</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/encuestaNew.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body >
+    <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="/cropped-logo.png"  class="brandLogo" >
+          </a>
+        </div>
+      </nav>
+      <br>
+    
+      
+
+      <section class="section-padding container-fluid col-xs-12 col-md-5" >
+        <br>
+
+        <form class="p-3 mt-3" id="form" action="/agregarEncuestaNew" method="post">
+
+          <div class="mb-3 text-left">
+
+          <h4>La siguiente encuesta es para conocer más sobre tu salud digestiva y seguir mejorando el conocimiento sobre el sistema digestivo</h4>
+           <br>
+          <h4>Complétalo considerando tus síntomas, te llevará aproximadamente 20 minutos</h4>
+          </div>
+          <br>
+
+          <div class="mb-3">
+            <label for="edad" class="form-label">Edad</label>
+            <input type="number" class="form-control" id="edad" name="edad" required >
+
+          </div>
+
+          <label for="genero" class="form-label">Genero</label>
+          <select id="genero" class="form-select" name="genero" required>
+            <option disabled selected value> -- Elegir opción -- </option>
+            <option  value="Masculino">Masculino</option>
+            <option  value="Femenino">Femenino</option>
+            <option  value="Otro">Otro</option>
+          </select>
+          <br>
+
+          <div class="mb-3">
+            <label for="peso" class="form-label">Peso en Kilogramos</label>
+            <input type="number" class="form-control" id="peso" name="peso" required >
+
+          </div>
+
+          <div class="mb-3">
+            <label for="altura" class="form-label">Altura en centímetros</label>
+            <input type="number" class="form-control" id="altura" name="altura" required >
+
+          </div>
+
+          <h5>Señale si presenta alguna de las siguientes condiciones</h5>
+          <br>
+
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="diabetes" name="diabetes">
+            <label class="form-check-label m-2" for="diabetes">
+              Diabetes
+            </label>
+          </div>
+
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="crohn" name="crohn">
+            <label class="form-check-label m-2" for="crohn">
+              Enfermedad de Crohn
+            </label>
+          </div>
+
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="cu" name="cu">
+            <label class="form-check-label m-2" for="cu">
+              Colitis ulcerosa
+            </label>
+          </div> 
+
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="hipotiroidismo" name="hipotiroidismo">
+            <label class="form-check-label m-2" for="hipotiroidismo">
+              Hipotiroidismo
+            </label>
+          </div>
+
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="esclerodermia" name="esclerodermia">
+            <label class="form-check-label m-2" for="esclerodermia">
+              Esclerodermia
+            </label>
+          </div>
+
+
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="celiaquia" name="celiaquia">
+            <label class="form-check-label m-2" for="celiaquia">
+              Enfermedad celíaca
+            </label>
+          </div>
+
+
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="parkinson" name="parkinson">
+            <label class="form-check-label m-2" for="parkinson">
+              Parkinson
+            </label>
+          </div>
+        
+      
+          <br>
+
+          <h5>¿Fue operado alguna vez de las siguientes cirugías?</h5>
+          <br>
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="colecistectomia" name="colecistectomia">
+            <label class="form-check-label m-2" for="colecistectomia">
+              Cirugía de vesícula (colecistectomía)
+            </label>
+          </div>
+
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="apendicectomia" name="apendicectomia">
+            <label class="form-check-label m-2" for="apendicectomia">
+              Cirugía de apéndice (apendicectomía)
+            </label>
+          </div>
+
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="enterectomiaColectomia" name="enterectomiaColectomia">
+            <label class="form-check-label m-2" for="enterectomiaColectomia">
+              Cirugía de intestino o colon 
+            </label>
+          </div>
+
+          <br>
+
+          <h5>¿Toma alguno de los siguientes medicamentos de manera regular?</h5>
+          <br>
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="ibp" name="ibp">
+            <label class="form-check-label m-2" for="ibp">
+              Omeprazol (pantoprazol, esomeprazol etc) u otros antiácidos
+            </label>
+          </div>
+
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="probiotico" name="probiotico">
+            <label class="form-check-label m-2" for="probiotico">
+              Probióticos: floratil o enterogermina o similares
+             </label>
+          </div>
+
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="antibioticos" name="antibioticos">
+            <label class="form-check-label m-2" for="antibioticos">
+              Antibióticos como por ejemplo: Rifaximina
+            </label>
+          </div>
+
+         
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="antiespasmodico" name="antiespasmodico">
+            <label class="form-check-label m-2" for="antiespasmodico">
+              Antiespasmódicos (Buscapina, Sertal, Miopropan, Plidex, Paratropina, Spasmoctyl, Biorgan)
+            </label>
+          </div>
+
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="bzd" name="bzd">
+            <label class="form-check-label m-2" for="bzd">
+              Digestivos con Benzodiazepinas (eudon, tensium gastric, miopropan T, plidex T) 
+            </label>
+          </div>
+
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="antialergico" name="antialergico">
+            <label class="form-check-label m-2" for="antialergico">
+              Antialérgicos (Loratadina, Difenhidramina, Levocetirizina, Cetirizina)
+            </label>
+          </div>
+
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="laxante" name="laxante">
+            <label class="form-check-label m-2" for="laxante">
+              Laxantes
+            </label>
+          </div>
+          <br>
+
+      
+          
+
+          <input style="background-color: black; border-color: black; " class="btn btn-primary" type="submit" value="Continuar">
+            <br>
+            
+          </form>
+      </section>
+
+    
+      <br>
+      <br>
+      <br>
+
+   
+
+
+
+
+
+<script src="/encuestaNew.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

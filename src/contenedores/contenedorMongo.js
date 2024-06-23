@@ -417,6 +417,185 @@ let dateStr =
       );
     }
 
+    async uptdateMongoEncuesta1(objeto, id){
+
+      if(!objeto.diabetes){
+        objeto.diabetes=false
+      }
+      if(!objeto.crohn){
+        objeto.crohn=false
+      }
+      if(!objeto.cu){
+        objeto.cu=false
+      }
+      if(!objeto.hipotiroidismo){
+        objeto.hipotiroidismo=false
+      }
+      if(!objeto.esclerodermia){
+        objeto.esclerodermia=false
+      }
+      if(!objeto.celiaquia){
+        objeto.celiaquia=false
+      }
+      if(!objeto.parkinson){
+        objeto.parkinson=false
+      }
+      if(!objeto.colecistectomia){
+        objeto.colecistectomia=false
+      }
+      if(!objeto.apendicectomia){
+        objeto.apendicectomia=false
+      }
+      if(!objeto.enterectomiaColectomia){
+        objeto.enterectomiaColectomia=false
+      }
+      if(!objeto.ibp){
+        objeto.ibp=false
+      }
+      if(!objeto.probiotico){
+        objeto.probiotico=false
+      }
+      if(!objeto.antibioticos){
+        objeto.antibioticos=false
+      }
+      if(!objeto.antiespasmodico){
+        objeto.antiespasmodico=false
+      }
+      if(!objeto.bzd){
+        objeto.bzd=false
+      }
+      if(!objeto.antialergico){
+        objeto.antialergico=false
+      }
+      if(!objeto.laxante){
+        objeto.laxante=false
+      }
+
+
+      await pacientesmodule.updateOne(
+        { _id: { $eq: id } },
+        {
+          $set: {
+            edad: objeto.edad,
+            genero: objeto.genero,
+            peso: objeto.peso,
+            altura: objeto.altura,
+            diabetes:objeto.diabetes,
+            crohn:objeto.crohn,
+            cu:objeto.cu,
+            hipotiroidismo:objeto.hipotiroidismo,
+            esclerodermia:objeto.esclerodermia,
+            celiaquia:objeto.celiaquia,
+            parkinson:objeto.parkinson,
+            colecistectomia:objeto.colecistectomia,
+            apendicectomia:objeto.apendicectomia,
+            enterectomiaColectomia:objeto.enterectomiaColectomia,
+            ibp:objeto.ibp,
+            probiotico:objeto.probiotico,
+            antibioticos:objeto.antibioticos,
+            antiespasmodico:objeto.antiespasmodico,
+            bzd:objeto.bzd,
+            antialergico:objeto.antialergico,
+            laxante:objeto.laxante,
+
+
+          },
+        }
+      );
+    }
+
+    async uptdateMongoEncuesta2(objeto, id){
+
+      if(!objeto.cefalea){
+        objeto.cefalea=false
+      }
+      if(!objeto.cervicalgia){
+        objeto.cervicalgia=false
+      }
+      if(!objeto.fatiga){
+        objeto.fatiga=false
+      }
+      if(!objeto.fog){
+        objeto.fog=false
+      }
+      if(!objeto.fibromialgia){
+        objeto.fibromialgia=false
+      }
+      if(!objeto.artralgias){
+        objeto.artralgias=false
+      }
+      if(!objeto.fascitisPlantar){
+        objeto.fascitisPlantar=false
+      }
+      if(!objeto.hormigueosManos){
+        objeto.hormigueosManos=false
+      }
+
+      await pacientesmodule.updateOne(
+        { _id: { $eq: id } },
+        {
+          $set: {
+            ibssDolor:objeto.ibssDolor,
+            ibssDiasDolor:objeto.ibssDiasDolor,
+            severidadDolor:objeto.severidadDolor,
+            severidadDistension:objeto.severidadDistension,
+            ibssDistension:objeto.ibssDistension,
+            ibssSatisfaccionHabito:objeto.ibssSatisfaccionHabito,
+            ibssInterferenciaVida:objeto.ibssInterferenciaVida,
+            sintomasIbs:objeto.sintomasIbs,
+            bristol:objeto.bristol,
+            deposicionesAcuosas:objeto.deposicionesAcuosas,
+            deposicionesMuySolidas:objeto.deposicionesMuySolidas,
+            urgenciaEvacuatoria:objeto.urgenciaEvacuatoria,
+            evacuacionIncompleta:objeto.evacuacionIncompleta,
+            pirosis:objeto.pirosis,
+            epigastralgia:objeto.epigastralgia,
+            erutos:objeto.erutos,
+            meteorismo:objeto.meteorismo,
+            olorMeteorismo:objeto.olorMeteorismo,
+            rha:objeto.rha,
+            cefalea:objeto.cefalea,
+            cervicalgia:objeto.cervicalgia,
+            fascitisPlantar:objeto.fascitisPlantar,
+            fog:objeto.fog,
+            fatiga:objeto.fatiga,
+            fibromialgia:objeto.fibromialgia,
+            artralgias:objeto.artralgias,
+            hormigueosManos:objeto.hormigueosManos
+
+          },
+        }
+      );
+    }
+
+    async uptdateMongoEncuesta3(objeto, id){
+
+      await pacientesmodule.updateOne(
+        { _id: { $eq: id } },
+        {
+          $set: {
+            dass21Ansiedad:objeto.dass21Ansiedad,
+            dass21Stress:objeto.dass21Stress,
+            dass21Depresión:objeto.dass21Depresión,
+          },
+        }
+      );
+    }
+
+    async uptdateMongoEstadoEncuesta(estado, id){
+
+      await pacientesmodule.updateOne(
+        { _id: { $eq: id } },
+        {
+          $set: {
+            estadoEncuesta: estado
+          },
+        }
+      );
+    }
+
+
+
     
 
 

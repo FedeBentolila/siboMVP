@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta para el paciente</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/encuestaNew.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body >
+    <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="/cropped-logo.png"  class="brandLogo" >
+          </a>
+        </div>
+      </nav>
+      <br>
+    
+      
+
+      <section class="section-padding container-fluid col-xs-12 col-md-5" >
+        <br>
+
+        <form class="p-3 mt-3" id="form" action="/agregarEncuestaNew2" method="post">
+
+          <div class="mb-3 text-center">
+
+          <h3>Por favor continue la encuesta</h3>
+            
+          </div>
+          <br>
+
+         
+
+        <h4>Cuestionario de síntomas intestinales</h4>
+            <br>
+        <h5>Las siguientes preguntas hacen referencia a la presencia de síntomas durante los últimos 10 días</h5>
+            
+        <br>
+        <label for="ibssDolor" class="form-label">¿Sufre frecuentemente dolor abdominal?</label>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ibssDolor" id="ibssDolor1" value="true" required onclick="showFields()">
+          <label class="form-check-label" for="ibssDolor1">
+            Si
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ibssDolor" id="ibssDolor2" value="false" required onclick="hideFields()">
+          <label class="form-check-label" for="ibssDolor2">
+            No
+          </label>
+        </div>
+        <br>
+      
+        <div class="mb-3" id="ibssDiasDolorField" style="display: none;">
+          <label for="ibssDiasDolor" class="form-label">Escriba el número de días con dolor en los últimos 10 días, si anota 4 significa que tuvo dolor 4 días de 10 días, si anota 0 no tuvo dolor alguno.</label>
+          <input type="number" class="form-control" id="ibssDiasDolor" name="ibssDiasDolor" value="0" required >
+        </div>
+
+        <div id="severidadDolorField" style="display: none;">
+        <label for="severidadDolor" class="form-label">¿Cuán severo es su dolor? 0 no tengo dolor, 100 es el peor dolor</label>
+        <div class="d-flex flex-row justify-content-between"><h5>0</h5><h5>50</h5><h5>100</h5></div>
+        <input type="range" class="form-range" min="0" max="100" id="severidadDolor" name="severidadDolor" value="0">
+
+        <br>
+        <br>
+        </div>
+
+        <label for="ibssDistension" class="form-label">¿Sufre frecuentemente distensión abdominal (hinchazón de la panza)?</label>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ibssDistension" id="ibssDistension1" value="true" required onclick="showFields2()">
+          <label class="form-check-label" for="ibssDistension1">
+            Si
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ibssDistension" id="ibssDistension2" value="false" required onclick="hideFields2()">
+          <label class="form-check-label" for="ibssDistension2">
+            No
+          </label>
+        </div>
+        <br>
+        <div id="severidadDistensionField" style="display: none;">
+        <br>
+        <label for="severidadDistension" class="form-label">¿Cuán severa es su distensión? 0 no tengo distensión, 100 distensión muy severa</label>
+        <div class="d-flex flex-row justify-content-between"><h5>0</h5><h5>50</h5><h5>100</h5></div>
+        <input type="range" class="form-range" min="0" max="100" id="severidadDistension" name="severidadDistension" value="0">
+
+        <br>
+        <br>
+      </div>
+        <br>
+
+
+        <label for="ibssSatisfaccionHabito" class="form-label">¿Cuán satisfecho está con su hábito intestinal: con ir de cuerpo? 0 completamente satisfecho, 100 completamente insatisfecho.</label>
+        <div class="d-flex flex-row justify-content-between"><h5>0</h5><h5>50</h5><h5>100</h5></div>
+        <input type="range" class="form-range" min="0" max="100" id="ibssSatisfaccionHabito" name="ibssSatisfaccionHabito">
+        <br>
+        <br>
+
+        <label for="ibssInterferenciaVida" class="form-label">¿En que nivel sus síntomas abdominales interfieren con su vida diaria? 0 no interfieren nada, 100 impiden mi vida diaria.</label>
+        <div class="d-flex flex-row justify-content-between"><h5>0</h5><h5>50</h5><h5>100</h5></div>
+        <input type="range" class="form-range" min="0" max="100" id="ibssInterferenciaVida" name="ibssInterferenciaVida">
+        <br>
+        <br>
+
+        <label for="sintomasIbs" class="form-label">Durante los últimos 3 meses: ¿Ha manifestado de forma reiterada alguno de los siguientes síntomas?</label>
+        <br>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="sintomasIbs" id="sintomasIbs1" value="diarrea" required>
+          <label class="form-check-label" for="sintomasIbs1">
+            Diarrea
+          </label>
+        </div>
+        <br>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="sintomasIbs" id="sintomasIbs2" value="constipacion" required>
+          <label class="form-check-label" for="sintomasIbs2">
+            Constipación
+          </label>
+        </div>
+        <br>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="sintomasIbs" id="sintomasIbs3" value="diarreaYconstipacion" required>
+          <label class="form-check-label" for="sintomasIbs3">
+            Diarrea y Constipación
+          </label>
+        </div>
+        <br>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="sintomasIbs" id="sintomasIbs4" value="sinDiarreaOconstipacion" required>
+          <label class="form-check-label" for="sintomasIbs4">
+           No padezco diarrea ni constipación
+          </label>
+        </div>
+        <br>
+        <br>
+
+        <h5>¿Cómo es el aspecto predominante de su materia fecal?</h5>
+        <br>
+        <label for="bristol1">Trozos duros separados, como nueces o excrementos de oveja, que pasan con dificultad</label>
+        <div class="d-flex flex-row align-items-center justify-content-between">
+          <input class="form-check-input" type="radio" name="bristol" id="bristol1" value="1" required>
+          <img src="/bristol1.png" width="40%" alt=""> 
+        </div>
+        <br>
+        <label for="bristol2">Como una salchicha compuesta de fragmentos</label>
+        <div class="d-flex flex-row align-items-center justify-content-between">
+          <input class="form-check-input" type="radio" name="bristol" id="bristol2" value="2" required>
+          <img src="/bristol2.png" width="40%" alt=""> 
+        </div>
+        <br>
+        <label for="bristol3">Con forma de morcilla, con grietas en la superficie</label>
+        <div class="d-flex flex-row align-items-center justify-content-between">
+          <input class="form-check-input" type="radio" name="bristol" id="bristol3" value="3" required>
+          <img src="/bristol3.png" width="40%" alt=""> 
+        </div>
+        <br>
+        <label for="bristol4">Como una salchicha o cómo serpiente, lisa y blanda</label>
+        <div class="d-flex flex-row align-items-center justify-content-between">
+          <input class="form-check-input" type="radio" name="bristol" id="bristol4" value="4" required>
+          <img src="/bristol4.png" width="40%" alt=""> 
+        </div>
+        <br>
+        <label for="bristol5">Trozos de masa pastosa con bordes definidos, que se defecan fácilmente</label>
+        <div class="d-flex flex-row align-items-center justify-content-between">
+          <input class="form-check-input" type="radio" name="bristol" id="bristol5" value="5" required>
+          <img src="/bristol5.png" width="40%" alt=""> 
+        </div>
+        <br>
+        <label for="bristol6">Fragmentos blandos y esponjosos, con bordes irregulares y consistencia pastosa</label>
+        <div class="d-flex flex-row align-items-center justify-content-between">
+          <input class="form-check-input" type="radio" name="bristol" id="bristol6" value="6" required>
+          <img src="/bristol6.png" width="40%" alt=""> 
+        </div>
+        <br>
+        <label for="bristol7">Acuosa, sin pedazos sólidos, totalmente líquida</label>
+        <div class="d-flex flex-row align-items-center justify-content-between">
+          <input class="form-check-input" type="radio" name="bristol" id="bristol7" value="7" required>
+          <img src="/bristol7.png" width="40%" alt=""> 
+        </div>
+
+
+        <br>
+        <br>
+       <h5>¿Tuvo deposiciones acuosas en las últimas 2 semanas?</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="deposicionesAcuosas" id="deposicionesAcuosas1" value="0" required>
+          <label class="form-check-label" for="deposicionesAcuosas1">
+            No
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="deposicionesAcuosas" id="deposicionesAcuosas2" value="1" required>
+          <label class="form-check-label" for="deposicionesAcuosas2">
+            Sí, muy leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="deposicionesAcuosas" id="deposicionesAcuosas3" value="2" required>
+          <label class="form-check-label" for="deposicionesAcuosas3">
+            Sí, leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="deposicionesAcuosas" id="deposicionesAcuosas4" value="3" required>
+          <label class="form-check-label" for="deposicionesAcuosas4">
+           Sí molesta bastante
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="deposicionesAcuosas" id="deposicionesAcuosas5" value="4" required>
+          <label class="form-check-label" for="deposicionesAcuosas5">
+           Sí molesta todos los días
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="deposicionesAcuosas" id="deposicionesAcuosas6" value="5" required>
+          <label class="form-check-label" for="deposicionesAcuosas6">
+           Sí molesta todos los días y es muy intensa
+          </label>
+        </div>
+        
+        <br>
+        <br>
+       <h5>¿Tuvo deposiciones muy sólidas, duras en las últimas 2 semanas?</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="deposicionesMuySolidas" id="deposicionesMuySolidas1" value="0" required>
+          <label class="form-check-label" for="deposicionesMuySolidas1">
+            No
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="deposicionesMuySolidas" id="deposicionesMuySolidas2" value="1" required>
+          <label class="form-check-label" for="deposicionesMuySolidas2">
+            Sí, muy leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="deposicionesMuySolidas" id="deposicionesMuySolidas3" value="2" required>
+          <label class="form-check-label" for="deposicionesMuySolidas3">
+            Sí, leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="deposicionesMuySolidas" id="deposicionesMuySolidas4" value="3" required>
+          <label class="form-check-label" for="deposicionesMuySolidas4">
+           Sí molesta bastante
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="deposicionesMuySolidas" id="deposicionesMuySolidas5" value="4" required>
+          <label class="form-check-label" for="deposicionesMuySolidas5">
+           Sí molesta todos los días
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="deposicionesMuySolidas" id="deposicionesMuySolidas6" value="5" required>
+          <label class="form-check-label" for="deposicionesMuySolidas6">
+           Sí molesta todos los días y es muy intensa
+          </label>
+        </div>
+
+
+        <br>
+        <br>
+       <h5>¿Tuvo sensación de urgencia evacuatoria, en las últimas 2 semanas?</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="urgenciaEvacuatoria" id="urgenciaEvacuatoria1" value="0" required>
+          <label class="form-check-label" for="urgenciaEvacuatoria1">
+            No
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="urgenciaEvacuatoria" id="urgenciaEvacuatoria2" value="1" required>
+          <label class="form-check-label" for="urgenciaEvacuatoria2">
+            Sí, muy leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="urgenciaEvacuatoria" id="urgenciaEvacuatoria3" value="2" required>
+          <label class="form-check-label" for="urgenciaEvacuatoria3">
+            Sí, leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="urgenciaEvacuatoria" id="urgenciaEvacuatoria4" value="3" required>
+          <label class="form-check-label" for="urgenciaEvacuatoria4">
+           Sí molesta bastante
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="urgenciaEvacuatoria" id="urgenciaEvacuatoria5" value="4" required>
+          <label class="form-check-label" for="urgenciaEvacuatoria5">
+           Sí molesta todos los días
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="urgenciaEvacuatoria" id="urgenciaEvacuatoria6" value="5" required>
+          <label class="form-check-label" for="urgenciaEvacuatoria6">
+           Sí molesta todos los días y es muy intensa
+          </label>
+        </div>
+
+        <br>
+        <br>
+       <h5>¿Tuvo sensación de evacuación incompleta, en las últimas 2 semanas?</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="evacuacionIncompleta" id="evacuacionIncompleta1" value="0" required>
+          <label class="form-check-label" for="evacuacionIncompleta1">
+            No
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="evacuacionIncompleta" id="evacuacionIncompleta2" value="1" required>
+          <label class="form-check-label" for="evacuacionIncompleta2">
+            Sí, muy leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="evacuacionIncompleta" id="evacuacionIncompleta3" value="2" required>
+          <label class="form-check-label" for="evacuacionIncompleta3">
+            Sí, leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="evacuacionIncompleta" id="evacuacionIncompleta4" value="3" required>
+          <label class="form-check-label" for="evacuacionIncompleta4">
+           Sí molesta bastante
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="evacuacionIncompleta" id="evacuacionIncompleta5" value="4" required>
+          <label class="form-check-label" for="evacuacionIncompleta5">
+           Sí molesta todos los días
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="evacuacionIncompleta" id="evacuacionIncompleta6" value="5" required>
+          <label class="form-check-label" for="evacuacionIncompleta6">
+           Sí molesta todos los días y es muy intensa
+          </label>
+        </div>
+
+
+        <br>
+        <br>
+       <h5>¿Tuvo sensación de acidez o quemazón que sube detrás de pecho en las últimas 2 semanas?</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="pirosis" id="pirosis1" value="0" required>
+          <label class="form-check-label" for="pirosis1">
+            No
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="pirosis" id="pirosis2" value="1" required>
+          <label class="form-check-label" for="pirosis2">
+            Sí, muy leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="pirosis" id="pirosis3" value="2" required>
+          <label class="form-check-label" for="pirosis3">
+            Sí, leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="pirosis" id="pirosis4" value="3" required>
+          <label class="form-check-label" for="pirosis4">
+           Sí molesta bastante
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="pirosis" id="pirosis5" value="4" required>
+          <label class="form-check-label" for="pirosis5">
+           Sí molesta todos los días
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="pirosis" id="pirosis6" value="5" required>
+          <label class="form-check-label" for="pirosis6">
+           Sí molesta todos los días y es muy intensa
+          </label>
+        </div>
+
+        <br>
+        <br>
+       <h5>¿Tuvo sensación de epigastralgia (dolor en la boca del estómago) en las últimas 2 semanas?</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="epigastralgia" id="epigastralgia1" value="0" required>
+          <label class="form-check-label" for="epigastralgia1">
+            No
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="epigastralgia" id="epigastralgia2" value="1" required>
+          <label class="form-check-label" for="epigastralgia2">
+            Sí, muy leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="epigastralgia" id="epigastralgia3" value="2" required>
+          <label class="form-check-label" for="epigastralgia3">
+            Sí, leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="epigastralgia" id="epigastralgia4" value="3" required>
+          <label class="form-check-label" for="epigastralgia4">
+           Sí molesta bastante
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="epigastralgia" id="epigastralgia5" value="4" required>
+          <label class="form-check-label" for="epigastralgia5">
+           Sí molesta todos los días
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="epigastralgia" id="epigastralgia6" value="5" required>
+          <label class="form-check-label" for="epigastralgia6">
+           Sí molesta todos los días y es muy intensa
+          </label>
+        </div>
+
+        <br>
+        <br>
+       <h5>¿Tuvo erutos en las últimas 2 semanas?</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="erutos" id="erutos1" value="0" required>
+          <label class="form-check-label" for="erutos1">
+            No
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="erutos" id="erutos2" value="1" required>
+          <label class="form-check-label" for="erutos2">
+            Sí, muy leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="erutos" id="erutos3" value="2" required>
+          <label class="form-check-label" for="erutos3">
+            Sí, leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="erutos" id="erutos4" value="3" required>
+          <label class="form-check-label" for="erutos4">
+           Sí molesta bastante
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="erutos" id="erutos5" value="4" required>
+          <label class="form-check-label" for="erutos5">
+           Sí molesta todos los días
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="erutos" id="erutos6" value="5" required>
+          <label class="form-check-label" for="erutos6">
+           Sí molesta todos los días y es muy intensa
+          </label>
+        </div>
+
+
+        <br>
+        <br>
+       <h5>¿Tuvo sensación de aumento de las flatulencias/gases eliminados por el ano en las últimas 2 semanas?</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="meteorismo" id="meteorismo1" value="0" required>
+          <label class="form-check-label" for="meteorismo1">
+            No
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="meteorismo" id="meteorismo2" value="1" required>
+          <label class="form-check-label" for="meteorismo2">
+            Sí, muy leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="meteorismo" id="meteorismo3" value="2" required>
+          <label class="form-check-label" for="meteorismo3">
+            Sí, leve
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="meteorismo" id="meteorismo4" value="3" required>
+          <label class="form-check-label" for="meteorismo4">
+           Sí molesta bastante
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="meteorismo" id="meteorismo5" value="4" required>
+          <label class="form-check-label" for="meteorismo5">
+           Sí molesta todos los días
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="meteorismo" id="meteorismo6" value="5" required>
+          <label class="form-check-label" for="meteorismo6">
+           Sí molesta todos los días y es muy intensa
+          </label>
+        </div>
+
+        <br>
+        <h5>¿Sus flatulencias/gases tienen olor desagradable frecuentemente?</h5>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="olorMeteorismo" id="olorMeteorismo1" value="true" required>
+          <label class="form-check-label" for="olorMeteorismo1">
+            Si
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="olorMeteorismo" id="olorMeteorismo2" value="false" required>
+          <label class="form-check-label" for="olorMeteorismo2">
+            No
+          </label>
+        </div>
+        <br>
+
+        <h5>¿Siente sus intestinos moverse con una frecuencia aumentada, ruidosa y/o molesta?</h5>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="rha" id="rha1" value="true" required>
+          <label class="form-check-label" for="rha1">
+            Si
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="rha" id="rha2" value="false" required>
+          <label class="form-check-label" for="rha2">
+            No
+          </label>
+        </div>
+
+        <br>
+
+        <h5>¿Sufre frecuentemente alguno de estos otros síntomas?</h5>
+        <br>
+        <div class="form-check d-flex flex-row ">
+          <input class="form-check-input m-2" type="checkbox" value="true" id="cefalea" name="cefalea">
+          <label class="form-check-label m-2" for="cefalea">
+            Cefalea: dolor de cabeza
+          </label>
+        </div>
+
+        <div class="form-check d-flex flex-row ">
+          <input class="form-check-input m-2" type="checkbox" value="true" id="fatiga" name="fatiga">
+          <label class="form-check-label m-2" for="fatiga">
+            Fatiga, cansancio desmedido respecto a mi actividad diaria
+           </label>
+        </div>
+
+        <div class="form-check d-flex flex-row ">
+          <input class="form-check-input m-2" type="checkbox" value="true" id="fibromialgia" name="fibromialgia">
+          <label class="form-check-label m-2" for="fibromialgia">
+            Fibromialgia
+          </label>
+        </div>
+
+        <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="fog" name="fog">
+            <label class="form-check-label m-2" for="fog">
+              Confusión o sensación de niebla mental
+            </label>
+          </div>
+
+          <div class="form-check d-flex flex-row ">
+            <input class="form-check-input m-2" type="checkbox" value="true" id="hormigueosManos" name="hormigueosManos">
+            <label class="form-check-label m-2" for="hormigueosManos">
+              Hormigueos en las manos
+            </label>
+          </div>  
+
+        <div class="form-check d-flex flex-row ">
+          <input class="form-check-input m-2" type="checkbox" value="true" id="artralgias" name="artralgias">
+          <label class="form-check-label m-2" for="artralgias">
+            Dolores articulares
+          </label>
+        </div>
+
+        <div class="form-check d-flex flex-row ">
+          <input class="form-check-input m-2" type="checkbox" value="true" id="cervicalgia" name="cervicalgia">
+          <label class="form-check-label m-2" for="cervicalgia">
+            Contractura Cervical
+          </label>
+        </div>
+
+        <div class="form-check d-flex flex-row ">
+          <input class="form-check-input m-2" type="checkbox" value="true" id="fascitisPlantar" name="fascitisPlantar">
+          <label class="form-check-label m-2" for="fascitisPlantar">
+            Fascitis plantar
+          </label>
+        </div>
+
+        <br>
+      
+
+
+          
+
+          <input style="background-color: black; border-color: black; " class="btn btn-primary" type="submit" value="Continuar">
+            <br>
+            
+          </form>
+      </section>
+
+    
+      <br>
+      <br>
+      <br>
+
+   
+
+
+
+
+
+<script src="/encuestaNew.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

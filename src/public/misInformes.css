@@ -431,6 +431,8 @@ color: var(--Color, #5D87B2);
     border-color: #5D87B2;
     background: #5D87B2;
     font-size: 15px;
+    border-right-color: white;
+
 }
 
 

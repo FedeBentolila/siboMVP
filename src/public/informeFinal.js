@@ -47,7 +47,7 @@ fetch(`/dataUserFirma/${datosInforme.autor}`)
 
   let logo= document.createElement("img")
   logo.setAttribute("src",`${datosUsuario.logo}`)
-  logo.setAttribute("width",`15%`)
+  logo.setAttribute("width",`20%`)
 
 
   document.getElementById("logo").appendChild(logo) 

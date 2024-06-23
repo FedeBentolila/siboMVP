@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta para el paciente</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/encuestaNew.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body >
+    <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="/cropped-logo.png"  class="brandLogo" >
+          </a>
+        </div>
+      </nav>
+      <br>
+    
+      
+
+      <section class="section-padding container-fluid col-xs-12 col-md-5" >
+        <br>
+
+        <form class="p-3 mt-3" id="form" action="/agregarEncuestaNew3" method="post">
+
+          <div class="mb-3 text-center">
+
+          <h3>Excelente sólo te falta un último paso</h3>
+            
+          </div>
+          <br>
+
+       
+    
+       <h4>Cuestionario sobre estado de ansiedad, stress y depresión</h4>
+        <br>
+        <h6>Contanos como te sentiste en la ultima semana. Marcá como te identificás con las siguientes afirmaciones. No hay repuestas correctas ni incorrectas.</h6>  
+        <br>
+
+       <h5>Me resultó difícil calmarme.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress1" id="relax1" value="0" required>
+          <label class="form-check-label" for="relax1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress1" id="relax2" value="1" required>
+          <label class="form-check-label" for="relax2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress1" id="relax3" value="2" required>
+          <label class="form-check-label" for="relax3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress1" id="relax4" value="3" required>
+          <label class="form-check-label" for="meteorismo4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        <h5>Estaba consciente de la sequedad en mi boca.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad1" id="boca1" value="0" required>
+          <label class="form-check-label" for="boca1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad1" id="boca2" value="1" required>
+          <label class="form-check-label" for="boca2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad1" id="boca3" value="2" required>
+          <label class="form-check-label" for="boca3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad1" id="boca4" value="3" required>
+          <label class="form-check-label" for="boca4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        <h5>No parecía experimentar ningún sentimiento positivo en absoluto.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion1" id="sentimiento1" value="0" required>
+          <label class="form-check-label" for="sentimiento1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion1" id="sentimiento2" value="1" required>
+          <label class="form-check-label" for="sentimiento2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion1" id="sentimiento3" value="2" required>
+          <label class="form-check-label" for="sentimiento3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion1" id="sentimiento4" value="3" required>
+          <label class="form-check-label" for="sentimiento4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+
+        <h5>Experimenté dificultad para respirar (por ejemplo, respiración excesivamente rápida, falta de aire en ausencia de esfuerzo físico).</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad2" id="resp1" value="0" required>
+          <label class="form-check-label" for="resp1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad2" id="resp2" value="1" required>
+          <label class="form-check-label" for="resp2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad2" id="resp3" value="2" required>
+          <label class="form-check-label" for="resp3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad2" id="resp4" value="3" required>
+          <label class="form-check-label" for="resp4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+      
+        <h5>Me cuesta trabajo encontrar la motivación para hacer cosas.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion2" id="motiv1" value="0" required>
+          <label class="form-check-label" for="motiv1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion2" id="motiv2" value="1" required>
+          <label class="form-check-label" for="motiv2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion2" id="motiv3" value="2" required>
+          <label class="form-check-label" for="motiv3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion2" id="motiv4" value="3" required>
+          <label class="form-check-label" for="motiv4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        <h5>Tiendo a reaccionar exageradamente ante situaciones diversas.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress2" id="reaccion1" value="0" required>
+          <label class="form-check-label" for="reaccion1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress2" id="reaccion2" value="1" required>
+          <label class="form-check-label" for="reaccion2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress2" id="reaccion3" value="2" required>
+          <label class="form-check-label" for="reaccion3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress2" id="reaccion4" value="3" required>
+          <label class="form-check-label" for="reaccion4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        <h5>Experimenté temblores (por ejemplo, en las manos).</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad3" id="temblor1" value="0" required>
+          <label class="form-check-label" for="temblor1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad3" id="temblor2" value="1" required>
+          <label class="form-check-label" for="temblor2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad3" id="temblor3" value="2" required>
+          <label class="form-check-label" for="temblor3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad3" id="temblor4" value="3" required>
+          <label class="form-check-label" for="temblor4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        <h5>Sentí que estaba utilizando mucha energía nerviosa.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress3" id="energia1" value="0" required>
+          <label class="form-check-label" for="energia1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress3" id="energia2" value="1" required>
+          <label class="form-check-label" for="energia2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress3" id="energia3" value="2" required>
+          <label class="form-check-label" for="energia3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress3" id="energia4" value="3" required>
+          <label class="form-check-label" for="energia4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        <h5>Estaba preocupado por situaciones en las que podría entrar en pánico y hacer el ridículo.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad4" id="panic1" value="0" required>
+          <label class="form-check-label" for="panic1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad4" id="panic2" value="1" required>
+          <label class="form-check-label" for="panic2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad4" id="panic3" value="2" required>
+          <label class="form-check-label" for="panic3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad4" id="panic4" value="3" required>
+          <label class="form-check-label" for="panic4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        <h5>Sentí que no tenía nada que esperar con ilusión en el futuro.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion3" id="ilusion1" value="0" required>
+          <label class="form-check-label" for="ilusion1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion3" id="ilusion2" value="1" required>
+          <label class="form-check-label" for="ilusion2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion3" id="ilusion3" value="2" required>
+          <label class="form-check-label" for="ilusion3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion3" id="ilusion4" value="3" required>
+          <label class="form-check-label" for="ilusion4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        <h5>Me encontré agitado.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress4" id="agit1" value="0" required>
+          <label class="form-check-label" for="agit1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress4" id="agit2" value="1" required>
+          <label class="form-check-label" for="agit2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress4" id="agit3" value="2" required>
+          <label class="form-check-label" for="agit3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress4" id="agit4" value="3" required>
+          <label class="form-check-label" for="agit4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        <h5>Me resultó difícil relajarme.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress5" id="relax1" value="0" required>
+          <label class="form-check-label" for="relax1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress5" id="relax2" value="1" required>
+          <label class="form-check-label" for="relax2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress5" id="relax3" value="2" required>
+          <label class="form-check-label" for="relax3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress5" id="relax4" value="3" required>
+          <label class="form-check-label" for="relax4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        <h5>Me sentí desanimado y triste.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion4" id="triste1" value="0" required>
+          <label class="form-check-label" for="relax1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion4" id="triste2" value="1" required>
+          <label class="form-check-label" for="triste2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion4" id="triste3" value="2" required>
+          <label class="form-check-label" for="triste3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion4" id="triste4" value="3" required>
+          <label class="form-check-label" for="triste4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        
+        <h5>No toleraba nada que me impidiera continuar con lo que estaba haciendo.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress6" id="tolerancia1" value="0" required>
+          <label class="form-check-label" for="tolerancia1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress6" id="tolerancia2" value="1" required>
+          <label class="form-check-label" for="tolerancia2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress6" id="tolerancia3" value="2" required>
+          <label class="form-check-label" for="tolerancia3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress6" id="tolerancia4" value="3" required>
+          <label class="form-check-label" for="tolerancia4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+         
+        <h5>Sentí que estaba cerca del pánico.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad5" id="panico1" value="0" required>
+          <label class="form-check-label" for="panico1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad5" id="panico2" value="1" required>
+          <label class="form-check-label" for="panico2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad5" id="panico2" value="2" required>
+          <label class="form-check-label" for="panico3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad5" id="panico4" value="3" required>
+          <label class="form-check-label" for="panico4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        <h5>No podía entusiasmarme con nada.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion5" id="enstusiasmo1" value="0" required>
+          <label class="form-check-label" for="enstusiasmo1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion5" id="enstusiasmo2" value="1" required>
+          <label class="form-check-label" for="enstusiasmo2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion5" id="enstusiasmo3" value="2" required>
+          <label class="form-check-label" for="enstusiasmo3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion5" id="enstusiasmo4" value="3" required>
+          <label class="form-check-label" for="enstusiasmo4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        <h5>Sentí que no valía mucho como persona.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion6" id="persona1" value="0" required>
+          <label class="form-check-label" for="persona1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion6" id="persona2" value="1" required>
+          <label class="form-check-label" for="persona2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion6" id="persona3" value="2" required>
+          <label class="form-check-label" for="persona3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion6" id="persona4" value="3" required>
+          <label class="form-check-label" for="persona4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        <h5>Sentí que estaba bastante irritable.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress7" id="irritable1" value="0" required>
+          <label class="form-check-label" for="irritable1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress7" id="irritable2" value="1" required>
+          <label class="form-check-label" for="irritable2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress7" id="irritable3" value="2" required>
+          <label class="form-check-label" for="irritable3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="stress7" id="irritable4" value="3" required>
+          <label class="form-check-label" for="irritable4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        <h5>Me di cuenta de la acción de mi corazón en ausencia de esfuerzo físico (por ejemplo, sensación de aumento del ritmo cardíaco, latidos irregulares).</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad6" id="heart1" value="0" required>
+          <label class="form-check-label" for="heart1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad6" id="heart2" value="1" required>
+          <label class="form-check-label" for="heart2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad6" id="heart3" value="2" required>
+          <label class="form-check-label" for="heart3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad6" id="heart4" value="3" required>
+          <label class="form-check-label" for="heart4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+
+        <h5>Sentí miedo sin ninguna razón válida.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad7" id="miedo1" value="0" required>
+          <label class="form-check-label" for="miedo1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad7" id="miedo2" value="1" required>
+          <label class="form-check-label" for="miedo2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad7" id="miedo3" value="2" required>
+          <label class="form-check-label" for="miedo3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="ansiedad7" id="miedo4" value="3" required>
+          <label class="form-check-label" for="miedo4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+
+        <h5>Sentí que la vida carecía de sentido.</h5>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion7" id="suicide1" value="0" required>
+          <label class="form-check-label" for="suicide1">
+            No se aplica a mi en ningún momento
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion7" id="suicide2" value="1" required>
+          <label class="form-check-label" for="suicide2">
+            Se aplicó a mí en cierta medida, o parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion7" id="suicide3" value="2" required>
+          <label class="form-check-label" for="suicide3">Se aplicó a mí en gran medida o durante buena parte del tiempo.
+          </label>
+        </div>
+        <br>
+        <div class="form-check d-flex align-items-center">
+          <input class="form-check-input" type="radio" name="depresion7" id="suicide4" value="3" required>
+          <label class="form-check-label" for="suicide4">
+            Se aplicó a mí mucho o la mayor parte del tiempo.
+          </label>
+        </div>
+        <br>
+ 
+
+
+
+
+
+
+
+
+        
+
+          
+
+
+       
+
+         
+          
+
+          
+
+          <input style="background-color: black; border-color: black; " class="btn btn-primary" type="submit" value="Continuar">
+            <br>
+            
+          </form>
+      </section>
+
+    
+      <br>
+      <br>
+      <br>
+
+   
+
+
+
+
+
+<script src="/encuestaNew.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

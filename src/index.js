@@ -943,9 +943,133 @@ aplicacion.get("/salaDeEsperaOperador/:sala",ensureLoggedIn("/login"), (peticion
    })
 
 
-   /////////////////////// HACER ENCUESTA
+   /////////////////////// ENCUESTA
 
    aplicacion.get("/encuesta/:id", (peticion, respuesta) => {
+    
+    respuesta.sendFile("encuestaNew.html", { root: publicRoot });
+  });
+
+  aplicacion.post("/agregarEncuestaNew", (peticion, respuesta) => {
+    
+    let peticionobj= peticion.body
+    let id= peticionobj.id
+
+    datosdeMongo.uptdateMongoEncuesta1(peticionobj, id).then(()=>{
+      respuesta.redirect(`/encuesta2/${id}`)
+
+    }).catch((err)=>{
+      console.log(err)
+    })
+
+  })
+
+
+  aplicacion.post("/agregarEncuestaNew2", (peticion, respuesta) => {
+    
+    let peticionobj= peticion.body
+    let id= peticionobj.id
+
+    datosdeMongo.uptdateMongoEncuesta2(peticionobj, id).then(()=>{
+      respuesta.redirect(`/encuesta3/${id}`)
+
+    }).catch((err)=>{
+      console.log(err)
+    })
+
+  })
+
+  ////aca me quede
+
+
+  aplicacion.post("/agregarEncuestaNew3", (peticion, respuesta) => {
+    
+    let peticionobj= peticion.body
+    let id= peticionobj.id
+    let stress=[peticionobj.stress1,
+      peticionobj.stress2,
+      peticionobj.stress3,
+      peticionobj.stress4,
+      peticionobj.stress5,
+      peticionobj.stress6,
+      peticionobj.stress7
+    ]
+    let sumaStress=0
+
+    stress.forEach(element => {
+     sumaStress=sumaStress+parseInt(element)
+    });
+
+    let depresion=[peticionobj.depresion1,
+      peticionobj.depresion2,
+      peticionobj.depresion3,
+      peticionobj.depresion4,
+      peticionobj.depresion5,
+      peticionobj.depresion6,
+      peticionobj.depresion7
+    ]
+    let sumaDepresion=0
+
+    depresion.forEach(element => {
+     sumaDepresion=sumaDepresion+parseInt(element)
+    });
+
+    let ansiedad=[peticionobj.ansiedad1,
+      peticionobj.ansiedad2,
+      peticionobj.ansiedad3,
+      peticionobj.ansiedad4,
+      peticionobj.ansiedad5,
+      peticionobj.ansiedad6,
+      peticionobj.ansiedad7
+    ]
+    let sumaAnsiedad=0
+
+    ansiedad.forEach(element => {
+     sumaAnsiedad=sumaAnsiedad+parseInt(element)
+    });
+
+    let dass21Stress= sumaStress*2
+    let dass21Depresión= sumaDepresion*2
+    let dass21Ansiedad= sumaDepresion*2
+
+    let dass21={
+      dass21Ansiedad,
+      dass21Depresión,
+      dass21Stress
+    }
+
+    
+    
+    datosdeMongo.uptdateMongoEncuesta3(dass21, id).then(()=>{
+      let estadoEncuesta="finalizada"
+      let encuesta=id
+
+    datosdeMongo.uptdateMongoEstadoEncuesta(estadoEncuesta, id).then(()=>{
+      io.sockets.emit("encuesta", encuesta)
+      respuesta.sendFile("gracias.html", { root: publicRoot });
+
+    }) 
+
+  }).catch((err)=>{
+    console.log(err)
+  })
+})
+
+  aplicacion.get("/encuesta3/:id", (peticion, respuesta) => {
+    
+    respuesta.sendFile("encuestaNew3.html", { root: publicRoot });
+  });
+
+  aplicacion.get("/encuesta2/:id", (peticion, respuesta) => {
+    
+    respuesta.sendFile("encuestaNew2.html", { root: publicRoot });
+  });
+
+
+
+
+
+/*    aplicacion.get("/encuesta/:id", (peticion, respuesta) => {
     
     respuesta.sendFile("encuesta.html", { root: publicRoot });
   });
@@ -955,7 +1079,6 @@ aplicacion.get("/salaDeEsperaOperador/:sala",ensureLoggedIn("/login"), (peticion
     
     let peticionobj= peticion.body
 
-  ///validacion checkboxes sintomas
 
   if(!peticionobj.distensionAbdominal){
     peticionobj.distensionAbdominal= false
@@ -1083,9 +1206,6 @@ if(!peticionobj.nauseas){
         peticionobj.regurgitacion= true
     }
 
-
-    ///////////////////////////////////////////cesd
-
     peticionobj.cesd= (parseInt(peticionobj.CESD1)+parseInt(peticionobj.CESD2)+parseInt(peticionobj.CESD3)+
     parseInt(peticionobj.CESD4)+parseInt(peticionobj.CESD5)+parseInt(peticionobj.CESD6)+parseInt(peticionobj.CESD7))
 
@@ -1097,7 +1217,6 @@ if(!peticionobj.nauseas){
     delete peticionobj.CESD6
     delete peticionobj.CESD7
 
-    ///validacion checkboxes características diarrea
     if(!peticionobj.voluminosas){
       peticionobj.voluminosas= false
     }else{
@@ -1167,7 +1286,7 @@ if(!peticionobj.nauseas){
 
     
   });
-
+ */
 
 
   aplicacion.post("/modificarMisDatos",ensureLoggedIn("/login"),upload.single('file'), (peticion, respuesta) => {

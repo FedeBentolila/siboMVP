@@ -79,6 +79,7 @@ a{
     margin: auto;
     overflow: clip;
     width: 50%;
+    border: none;
     border-radius: 20px;
     border-color: gray;
     border-style: solid;
