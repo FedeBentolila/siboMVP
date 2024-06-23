@@ -696,7 +696,7 @@ let btn = document.getElementById('btn');
 btn.addEventListener('click', function(){
   html2PDF(pages, {
     jsPDF: {
-      format: 'a4',
+      format: 'legal',
     },
  html2canvas: {
       scrollX: 0,
