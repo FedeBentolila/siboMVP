@@ -518,7 +518,7 @@ function renderHidrogeno (data){
     <thead>
     <tr>
       <th>#</th>
-      <th><img  src="/RELOJ_BLANCO.png" class="relojBlancoTabla"  alt=""></th>
+      <th><img class="relojBlancoTabla"  src="/RELOJ_BLANCO.png"   alt=""></th>
       <th>H2</th>
       <th  style="display: none;"></th>
       <th></th>
@@ -585,7 +585,7 @@ function renderHidrogeno (data){
     contenedorBoton.innerHTML=`
    
     <button  type="submit" class="botonazul">Guardar Cambios</button>
-    <button  type="button" onclick="reset2(event)" class="botonblanco">Deshacer Cambios</button>
+    <button  type="button" onclick="reset2(event)" class="botonblanco">Deshacer</button>
     
     
     `
@@ -694,7 +694,7 @@ function renderMetano (data){
   contenedorBoton.classList.add("botoneraGuardarDeshacer")
   contenedorBoton.innerHTML=`
   <button  type="submit" class="botonazul">Guardar Cambios</button>
-  <button  type="button" onclick="reset2(event)" class="botonblanco">Deshacer Cambios</button>
+  <button  type="button" onclick="reset2(event)" class="botonblanco">Deshacer</button>
   `
   document.getElementById("botonformMetano").appendChild(contenedorBoton)
 
@@ -829,7 +829,7 @@ let contenedorBoton = document.createElement("div");
 contenedorBoton.classList.add("botoneraGuardarDeshacer")
 contenedorBoton.innerHTML=`
 <button  type="submit" class="botonazul">Guardar Cambios</button>
-<button  type="button" onclick="reset2(event)" class="botonblanco">Deshacer Cambios</button>
+<button  type="button" onclick="reset2(event)" class="botonblanco">Deshacer</button>
 
 `
 document.getElementById("botonformHidrogenoYmetano").appendChild(contenedorBoton)
