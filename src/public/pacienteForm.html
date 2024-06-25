@@ -259,7 +259,10 @@
         <div class="label"> 
           <label for="modelo" class="loginfieldname">Equipo o modelo utilizado</label>
         </div>
-          <input type="text" class="campo" id="modelo" name="modelo" required>
+        <div class="autocomplete" style="width: 100%;">
+          <input type="text" class="campoAutocomplete" id="modelo" name="modelo" required>
+        </div>
+  
 
       <br>
 
@@ -280,8 +283,8 @@
     </div>
       <select id="protocolo" class="campo" name="protocolo" required>
         <option disabled selected value> -- Elegir opción -- </option>
-        <option class="siboOption" value="Lactulosa 10gr">Lactulosa 10gr</option>
-        <option class="siboOption" value="Glucosa 75gr">Glucosa 75 gr</option>
+        <option style="font-style: italic; font-weight: bold;"  class="siboOption" value="Lactulosa 10gr">Lactulosa 10 gr; Recomendado por guía ACG</option>
+        <option style="font-style: italic; font-weight: bold;"  class="siboOption" value="Glucosa 75gr">Glucosa 75 gr; Recomendado por guía ACG</option>
         <option class="siboOption" value="Glucosa 50gr">Glucosa 50 gr</option>
         <option class="intoleranciaOption" value="Fructosa 25gr">Fructosa 25gr</option>
         <option class="intoleranciaOption" value="Sacarosa 25gr">Sacarosa 25gr</option>

@@ -188,8 +188,11 @@ var coberturas = ["Osde","Medicus","PMHA","OSDIP","Sancor Salud","Poder Judicial
   "Col. Escribanos","OMINT","Galeno","Hope","Swiss Medical","Prevención Salud","Medife","Hominis",
   "Unión Personal","OPDEA","OSDEPYM","ENSALUD","OSPOSE","Centro Médico Pueyrredón","Hospital Italiano",
 ];
+
+var modelos=["Gastro Gastrolyzer","GastroCheck Gastrolyzer"]
 autocomplete(document.getElementById("motivo"), sintomas);
 autocomplete(document.getElementById("cobertura"), coberturas);
+autocomplete(document.getElementById("modelo"), modelos);
 
 
 let botonDisplay= document.getElementById(`help`)
@@ -212,3 +215,4 @@ let botonClose= document.getElementById(`close2`)
 botonClose.addEventListener("click", function(){
  document.getElementById(`preparacionOculta`).style.display="none"
 })
+
